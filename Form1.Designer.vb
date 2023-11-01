@@ -22,15 +22,25 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        MonthCalendar1 = New MonthCalendar()
         SuspendLayout()
+        ' 
+        ' MonthCalendar1
+        ' 
+        MonthCalendar1.Location = New Point(65, 212)
+        MonthCalendar1.Name = "MonthCalendar1"
+        MonthCalendar1.TabIndex = 0
         ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(424, 751)
+        Controls.Add(MonthCalendar1)
         Name = "Form1"
         Text = "Form1"
         ResumeLayout(False)
     End Sub
+
+    Friend WithEvents MonthCalendar1 As MonthCalendar
 End Class
