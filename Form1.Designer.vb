@@ -23,24 +23,39 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         MonthCalendar1 = New MonthCalendar()
+        Label1 = New Label()
         SuspendLayout()
         ' 
         ' MonthCalendar1
         ' 
-        MonthCalendar1.Location = New Point(65, 212)
+        MonthCalendar1.Location = New Point(64, 217)
+        MonthCalendar1.Margin = New Padding(8, 7, 8, 7)
         MonthCalendar1.Name = "MonthCalendar1"
         MonthCalendar1.TabIndex = 0
         ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Location = New Point(92, 195)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(185, 15)
+        Label1.TabIndex = 1
+        Label1.Text = "Bosko's The Coolest Person Ever!!!"
+        ' 
         ' Form1
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(424, 751)
+        ClientSize = New Size(371, 563)
+        Controls.Add(Label1)
         Controls.Add(MonthCalendar1)
+        Margin = New Padding(3, 2, 3, 2)
         Name = "Form1"
         Text = "Form1"
         ResumeLayout(False)
+        PerformLayout()
     End Sub
 
     Friend WithEvents MonthCalendar1 As MonthCalendar
+    Friend WithEvents Label1 As Label
 End Class
