@@ -22,38 +22,40 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        MonthCalendar1 = New MonthCalendar()
-        Label1 = New Label()
-        SuspendLayout()
-        ' 
-        ' MonthCalendar1
-        ' 
-        MonthCalendar1.Location = New Point(64, 217)
-        MonthCalendar1.Margin = New Padding(8, 7, 8, 7)
-        MonthCalendar1.Name = "MonthCalendar1"
-        MonthCalendar1.TabIndex = 0
-        ' 
-        ' Label1
-        ' 
-        Label1.AutoSize = True
-        Label1.Location = New Point(92, 195)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(185, 15)
-        Label1.TabIndex = 1
-        Label1.Text = "Bosko's The Coolest Person Ever!!!"
-        ' 
-        ' Form1
-        ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
-        AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(371, 563)
-        Controls.Add(Label1)
-        Controls.Add(MonthCalendar1)
-        Margin = New Padding(3, 2, 3, 2)
-        Name = "Form1"
-        Text = "Form1"
-        ResumeLayout(False)
-        PerformLayout()
+        Me.MonthCalendar1 = New System.Windows.Forms.MonthCalendar()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.SuspendLayout()
+        '
+        'MonthCalendar1
+        '
+        Me.MonthCalendar1.Location = New System.Drawing.Point(171, 463)
+        Me.MonthCalendar1.Margin = New System.Windows.Forms.Padding(15, 15, 15, 15)
+        Me.MonthCalendar1.Name = "MonthCalendar1"
+        Me.MonthCalendar1.TabIndex = 0
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(171, 416)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(215, 32)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "A9 rules the world!"
+        '
+        'Form1
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(13.0!, 32.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.ClientSize = New System.Drawing.Size(689, 1201)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.MonthCalendar1)
+        Me.Margin = New System.Windows.Forms.Padding(6, 4, 6, 4)
+        Me.Name = "Form1"
+        Me.Text = "Form1"
+        Me.ResumeLayout(False)
+        Me.PerformLayout()
+
     End Sub
 
     Friend WithEvents MonthCalendar1 As MonthCalendar
