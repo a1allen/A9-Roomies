@@ -28,9 +28,9 @@ Partial Class Form1
         ' 
         ' BackgroundPictureBox
         ' 
-        BackgroundPictureBox.Location = New Point(1, -2)
+        BackgroundPictureBox.Location = New Point(0, -1)
         BackgroundPictureBox.Name = "BackgroundPictureBox"
-        BackgroundPictureBox.Size = New Size(429, 759)
+        BackgroundPictureBox.Size = New Size(486, 887)
         BackgroundPictureBox.TabIndex = 0
         BackgroundPictureBox.TabStop = False
         ' 
@@ -38,10 +38,10 @@ Partial Class Form1
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(424, 751)
+        ClientSize = New Size(487, 884)
         Controls.Add(BackgroundPictureBox)
         Name = "Form1"
-        Text = "Form1"
+        Text = "Roomies Application"
         CType(BackgroundPictureBox, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
