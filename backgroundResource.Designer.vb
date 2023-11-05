@@ -67,9 +67,9 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Friend Shared ReadOnly Property phoneBackground() As System.Drawing.Bitmap
+        Friend Shared ReadOnly Property phoneBackground2() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("phoneBackground", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("phoneBackground2", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

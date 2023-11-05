@@ -28,9 +28,10 @@ Partial Class Form1
         ' 
         ' BackgroundPictureBox
         ' 
-        BackgroundPictureBox.Location = New Point(0, -1)
+        BackgroundPictureBox.BackgroundImage = My.Resources.backgroundResource.phoneBackground2
+        BackgroundPictureBox.Location = New Point(0, 1)
         BackgroundPictureBox.Name = "BackgroundPictureBox"
-        BackgroundPictureBox.Size = New Size(486, 887)
+        BackgroundPictureBox.Size = New Size(498, 901)
         BackgroundPictureBox.TabIndex = 0
         BackgroundPictureBox.TabStop = False
         ' 
@@ -38,7 +39,7 @@ Partial Class Form1
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(487, 884)
+        ClientSize = New Size(497, 904)
         Controls.Add(BackgroundPictureBox)
         Name = "Form1"
         Text = "Roomies Application"
