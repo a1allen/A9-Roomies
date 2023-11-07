@@ -87,7 +87,7 @@ Partial Class Form1
         MonthLabel = New Label()
         BudgetTabPage = New TabPage()
         BudgetControl1 = New BudgetControl()
-        HouseholdTabPage = New TabPage()
+        ManagementTabPage = New TabPage()
         PointsControl1 = New ManagementControl()
         CType(BackgroundPictureBox, ComponentModel.ISupportInitialize).BeginInit()
         TabControl1.SuspendLayout()
@@ -98,7 +98,7 @@ Partial Class Form1
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         Panel4.SuspendLayout()
         BudgetTabPage.SuspendLayout()
-        HouseholdTabPage.SuspendLayout()
+        ManagementTabPage.SuspendLayout()
         SuspendLayout()
         ' 
         ' BackgroundPictureBox
@@ -124,11 +124,13 @@ Partial Class Form1
         TabControl1.Alignment = TabAlignment.Bottom
         TabControl1.Controls.Add(CalendarTabPage)
         TabControl1.Controls.Add(BudgetTabPage)
-        TabControl1.Controls.Add(HouseholdTabPage)
-        TabControl1.Location = New Point(34, 65)
+        TabControl1.Controls.Add(ManagementTabPage)
+        TabControl1.ItemSize = New Size(144, 40)
+        TabControl1.Location = New Point(34, 62)
         TabControl1.Name = "TabControl1"
         TabControl1.SelectedIndex = 0
-        TabControl1.Size = New Size(435, 767)
+        TabControl1.Size = New Size(435, 775)
+        TabControl1.SizeMode = TabSizeMode.Fixed
         TabControl1.TabIndex = 5
         ' 
         ' CalendarTabPage
@@ -195,14 +197,14 @@ Partial Class Form1
         CalendarTabPage.Location = New Point(4, 4)
         CalendarTabPage.Name = "CalendarTabPage"
         CalendarTabPage.Padding = New Padding(3)
-        CalendarTabPage.Size = New Size(427, 734)
+        CalendarTabPage.Size = New Size(427, 727)
         CalendarTabPage.TabIndex = 0
         CalendarTabPage.Text = "Calendar"
         ' 
         ' Roomie4PointsLabel
         ' 
         Roomie4PointsLabel.AutoSize = True
-        Roomie4PointsLabel.Location = New Point(376, 662)
+        Roomie4PointsLabel.Location = New Point(376, 657)
         Roomie4PointsLabel.Name = "Roomie4PointsLabel"
         Roomie4PointsLabel.Size = New Size(17, 20)
         Roomie4PointsLabel.TabIndex = 64
@@ -211,7 +213,7 @@ Partial Class Form1
         ' Roomie3PointsLabel
         ' 
         Roomie3PointsLabel.AutoSize = True
-        Roomie3PointsLabel.Location = New Point(276, 662)
+        Roomie3PointsLabel.Location = New Point(276, 657)
         Roomie3PointsLabel.Name = "Roomie3PointsLabel"
         Roomie3PointsLabel.Size = New Size(17, 20)
         Roomie3PointsLabel.TabIndex = 63
@@ -220,7 +222,7 @@ Partial Class Form1
         ' Roomie2PointsLabel
         ' 
         Roomie2PointsLabel.AutoSize = True
-        Roomie2PointsLabel.Location = New Point(176, 662)
+        Roomie2PointsLabel.Location = New Point(176, 657)
         Roomie2PointsLabel.Name = "Roomie2PointsLabel"
         Roomie2PointsLabel.Size = New Size(17, 20)
         Roomie2PointsLabel.TabIndex = 62
@@ -229,7 +231,7 @@ Partial Class Form1
         ' Roomie1PointsLabel
         ' 
         Roomie1PointsLabel.AutoSize = True
-        Roomie1PointsLabel.Location = New Point(76, 662)
+        Roomie1PointsLabel.Location = New Point(76, 657)
         Roomie1PointsLabel.Name = "Roomie1PointsLabel"
         Roomie1PointsLabel.Size = New Size(17, 20)
         Roomie1PointsLabel.TabIndex = 61
@@ -246,7 +248,7 @@ Partial Class Form1
         ' DecorationPanel3
         ' 
         DecorationPanel3.BackColor = Color.Gainsboro
-        DecorationPanel3.Location = New Point(9, 714)
+        DecorationPanel3.Location = New Point(9, 698)
         DecorationPanel3.Name = "DecorationPanel3"
         DecorationPanel3.Size = New Size(408, 5)
         DecorationPanel3.TabIndex = 60
@@ -262,7 +264,7 @@ Partial Class Form1
         ' RoomiesTitleLabel
         ' 
         RoomiesTitleLabel.AutoSize = True
-        RoomiesTitleLabel.Location = New Point(158, 622)
+        RoomiesTitleLabel.Location = New Point(158, 617)
         RoomiesTitleLabel.Name = "RoomiesTitleLabel"
         RoomiesTitleLabel.Size = New Size(110, 20)
         RoomiesTitleLabel.TabIndex = 58
@@ -272,7 +274,7 @@ Partial Class Form1
         ' 
         PictureBox4.BackgroundImage = My.Resources.myResources.purple
         PictureBox4.BackgroundImageLayout = ImageLayout.Center
-        PictureBox4.Location = New Point(334, 653)
+        PictureBox4.Location = New Point(334, 648)
         PictureBox4.Name = "PictureBox4"
         PictureBox4.Size = New Size(40, 40)
         PictureBox4.TabIndex = 57
@@ -282,7 +284,7 @@ Partial Class Form1
         ' 
         PictureBox3.BackgroundImage = My.Resources.myResources.blue
         PictureBox3.BackgroundImageLayout = ImageLayout.Center
-        PictureBox3.Location = New Point(234, 653)
+        PictureBox3.Location = New Point(234, 648)
         PictureBox3.Name = "PictureBox3"
         PictureBox3.Size = New Size(40, 40)
         PictureBox3.TabIndex = 56
@@ -292,7 +294,7 @@ Partial Class Form1
         ' 
         PictureBox2.BackgroundImage = My.Resources.myResources.green
         PictureBox2.BackgroundImageLayout = ImageLayout.Center
-        PictureBox2.Location = New Point(134, 653)
+        PictureBox2.Location = New Point(134, 648)
         PictureBox2.Name = "PictureBox2"
         PictureBox2.Size = New Size(40, 40)
         PictureBox2.TabIndex = 55
@@ -302,7 +304,7 @@ Partial Class Form1
         ' 
         PictureBox1.BackgroundImage = My.Resources.myResources.pink
         PictureBox1.BackgroundImageLayout = ImageLayout.Center
-        PictureBox1.Location = New Point(34, 653)
+        PictureBox1.Location = New Point(34, 648)
         PictureBox1.Name = "PictureBox1"
         PictureBox1.Size = New Size(40, 40)
         PictureBox1.TabIndex = 54
@@ -313,7 +315,7 @@ Partial Class Form1
         NextButton.BackColor = Color.WhiteSmoke
         NextButton.Location = New Point(210, 561)
         NextButton.Name = "NextButton"
-        NextButton.Size = New Size(94, 27)
+        NextButton.Size = New Size(94, 30)
         NextButton.TabIndex = 53
         NextButton.Text = "Next >"
         NextButton.UseVisualStyleBackColor = False
@@ -323,7 +325,7 @@ Partial Class Form1
         PreviousButton.BackColor = Color.WhiteSmoke
         PreviousButton.Location = New Point(110, 561)
         PreviousButton.Name = "PreviousButton"
-        PreviousButton.Size = New Size(94, 27)
+        PreviousButton.Size = New Size(94, 30)
         PreviousButton.TabIndex = 52
         PreviousButton.Text = "< Previous"
         PreviousButton.UseVisualStyleBackColor = False
@@ -695,7 +697,7 @@ Partial Class Form1
         ' 
         ' AddToCalendarButton
         ' 
-        AddToCalendarButton.BackColor = SystemColors.ControlLight
+        AddToCalendarButton.BackColor = SystemColors.Control
         AddToCalendarButton.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
         AddToCalendarButton.ForeColor = Color.Black
         AddToCalendarButton.Location = New Point(329, 20)
@@ -721,7 +723,7 @@ Partial Class Form1
         BudgetTabPage.Location = New Point(4, 4)
         BudgetTabPage.Name = "BudgetTabPage"
         BudgetTabPage.Padding = New Padding(3)
-        BudgetTabPage.Size = New Size(427, 734)
+        BudgetTabPage.Size = New Size(427, 727)
         BudgetTabPage.TabIndex = 1
         BudgetTabPage.Text = "Budget"
         BudgetTabPage.UseVisualStyleBackColor = True
@@ -733,16 +735,16 @@ Partial Class Form1
         BudgetControl1.Size = New Size(427, 655)
         BudgetControl1.TabIndex = 0
         ' 
-        ' HouseholdTabPage
+        ' ManagementTabPage
         ' 
-        HouseholdTabPage.Controls.Add(PointsControl1)
-        HouseholdTabPage.Location = New Point(4, 4)
-        HouseholdTabPage.Name = "HouseholdTabPage"
-        HouseholdTabPage.Padding = New Padding(3)
-        HouseholdTabPage.Size = New Size(427, 734)
-        HouseholdTabPage.TabIndex = 2
-        HouseholdTabPage.Text = "Household Management"
-        HouseholdTabPage.UseVisualStyleBackColor = True
+        ManagementTabPage.Controls.Add(PointsControl1)
+        ManagementTabPage.Location = New Point(4, 4)
+        ManagementTabPage.Name = "ManagementTabPage"
+        ManagementTabPage.Padding = New Padding(3)
+        ManagementTabPage.Size = New Size(427, 727)
+        ManagementTabPage.TabIndex = 2
+        ManagementTabPage.Text = "Management"
+        ManagementTabPage.UseVisualStyleBackColor = True
         ' 
         ' PointsControl1
         ' 
@@ -771,7 +773,7 @@ Partial Class Form1
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         Panel4.ResumeLayout(False)
         BudgetTabPage.ResumeLayout(False)
-        HouseholdTabPage.ResumeLayout(False)
+        ManagementTabPage.ResumeLayout(False)
         ResumeLayout(False)
     End Sub
 
@@ -780,7 +782,7 @@ Partial Class Form1
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents CalendarTabPage As TabPage
     Friend WithEvents BudgetTabPage As TabPage
-    Friend WithEvents HouseholdTabPage As TabPage
+    Friend WithEvents ManagementTabPage As TabPage
     Friend WithEvents BudgetControl1 As BudgetControl
     Friend WithEvents PointsControl1 As ManagementControl
     Friend WithEvents AddToCalendarButton As Button
