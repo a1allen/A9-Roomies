@@ -23,7 +23,7 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         BackgroundPictureBox = New PictureBox()
-        Panel1 = New Panel()
+        DecorationPanel4 = New Panel()
         TabControl1 = New TabControl()
         CalendarTabPage = New TabPage()
         Roomie4PointsLabel = New Label()
@@ -74,7 +74,7 @@ Partial Class Form1
         Panel11 = New Panel()
         Panel15 = New Panel()
         Panel4 = New Panel()
-        DayPanelControl1 = New DayPanelControl()
+        DayPanelControl2 = New DayPanelControl()
         Panel10 = New Panel()
         Panel3 = New Panel()
         Panel14 = New Panel()
@@ -82,13 +82,11 @@ Partial Class Form1
         Panel9 = New Panel()
         Panel8 = New Panel()
         Panel2 = New Panel()
-        Panel0 = New Panel()
+        Panel1 = New Panel()
         AddToCalendarButton = New Button()
         MonthLabel = New Label()
         BudgetTabPage = New TabPage()
-        BudgetControl1 = New BudgetControl()
         ManagementTabPage = New TabPage()
-        PointsControl1 = New ManagementControl()
         CType(BackgroundPictureBox, ComponentModel.ISupportInitialize).BeginInit()
         TabControl1.SuspendLayout()
         CalendarTabPage.SuspendLayout()
@@ -97,8 +95,6 @@ Partial Class Form1
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         Panel4.SuspendLayout()
-        BudgetTabPage.SuspendLayout()
-        ManagementTabPage.SuspendLayout()
         SuspendLayout()
         ' 
         ' BackgroundPictureBox
@@ -111,13 +107,13 @@ Partial Class Form1
         BackgroundPictureBox.TabIndex = 0
         BackgroundPictureBox.TabStop = False
         ' 
-        ' Panel1
+        ' DecorationPanel4
         ' 
-        Panel1.BackColor = SystemColors.ActiveCaptionText
-        Panel1.Location = New Point(32, 840)
-        Panel1.Name = "Panel1"
-        Panel1.Size = New Size(440, 38)
-        Panel1.TabIndex = 4
+        DecorationPanel4.BackColor = SystemColors.ActiveCaptionText
+        DecorationPanel4.Location = New Point(32, 840)
+        DecorationPanel4.Name = "DecorationPanel4"
+        DecorationPanel4.Size = New Size(440, 38)
+        DecorationPanel4.TabIndex = 4
         ' 
         ' TabControl1
         ' 
@@ -191,7 +187,7 @@ Partial Class Form1
         CalendarTabPage.Controls.Add(Panel9)
         CalendarTabPage.Controls.Add(Panel8)
         CalendarTabPage.Controls.Add(Panel2)
-        CalendarTabPage.Controls.Add(Panel0)
+        CalendarTabPage.Controls.Add(Panel1)
         CalendarTabPage.Controls.Add(AddToCalendarButton)
         CalendarTabPage.Controls.Add(MonthLabel)
         CalendarTabPage.Location = New Point(4, 4)
@@ -264,11 +260,11 @@ Partial Class Form1
         ' RoomiesTitleLabel
         ' 
         RoomiesTitleLabel.AutoSize = True
-        RoomiesTitleLabel.Location = New Point(158, 617)
+        RoomiesTitleLabel.Location = New Point(129, 617)
         RoomiesTitleLabel.Name = "RoomiesTitleLabel"
-        RoomiesTitleLabel.Size = New Size(110, 20)
+        RoomiesTitleLabel.Size = New Size(169, 20)
         RoomiesTitleLabel.TabIndex = 58
-        RoomiesTitleLabel.Text = "Roomies Points"
+        RoomiesTitleLabel.Text = "Roomates Contributions"
         ' 
         ' PictureBox4
         ' 
@@ -313,7 +309,7 @@ Partial Class Form1
         ' NextButton
         ' 
         NextButton.BackColor = Color.WhiteSmoke
-        NextButton.Location = New Point(210, 561)
+        NextButton.Location = New Point(216, 561)
         NextButton.Name = "NextButton"
         NextButton.Size = New Size(94, 30)
         NextButton.TabIndex = 53
@@ -323,7 +319,7 @@ Partial Class Form1
         ' PreviousButton
         ' 
         PreviousButton.BackColor = Color.WhiteSmoke
-        PreviousButton.Location = New Point(110, 561)
+        PreviousButton.Location = New Point(116, 561)
         PreviousButton.Name = "PreviousButton"
         PreviousButton.Size = New Size(94, 30)
         PreviousButton.TabIndex = 52
@@ -618,18 +614,18 @@ Partial Class Form1
         ' Panel4
         ' 
         Panel4.BorderStyle = BorderStyle.Fixed3D
-        Panel4.Controls.Add(DayPanelControl1)
+        Panel4.Controls.Add(DayPanelControl2)
         Panel4.Location = New Point(185, 170)
         Panel4.Name = "Panel4"
         Panel4.Size = New Size(58, 74)
         Panel4.TabIndex = 23
         ' 
-        ' DayPanelControl1
+        ' DayPanelControl2
         ' 
-        DayPanelControl1.Location = New Point(-2, -2)
-        DayPanelControl1.Name = "DayPanelControl1"
-        DayPanelControl1.Size = New Size(58, 74)
-        DayPanelControl1.TabIndex = 0
+        DayPanelControl2.Location = New Point(-2, -2)
+        DayPanelControl2.Name = "DayPanelControl2"
+        DayPanelControl2.Size = New Size(58, 74)
+        DayPanelControl2.TabIndex = 0
         ' 
         ' Panel10
         ' 
@@ -687,13 +683,13 @@ Partial Class Form1
         Panel2.Size = New Size(58, 74)
         Panel2.TabIndex = 22
         ' 
-        ' Panel0
+        ' Panel1
         ' 
-        Panel0.BorderStyle = BorderStyle.Fixed3D
-        Panel0.Location = New Point(2, 170)
-        Panel0.Name = "Panel0"
-        Panel0.Size = New Size(58, 74)
-        Panel0.TabIndex = 21
+        Panel1.BorderStyle = BorderStyle.Fixed3D
+        Panel1.Location = New Point(2, 170)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(58, 74)
+        Panel1.TabIndex = 21
         ' 
         ' AddToCalendarButton
         ' 
@@ -719,7 +715,6 @@ Partial Class Form1
         ' 
         ' BudgetTabPage
         ' 
-        BudgetTabPage.Controls.Add(BudgetControl1)
         BudgetTabPage.Location = New Point(4, 4)
         BudgetTabPage.Name = "BudgetTabPage"
         BudgetTabPage.Padding = New Padding(3)
@@ -728,16 +723,8 @@ Partial Class Form1
         BudgetTabPage.Text = "Budget"
         BudgetTabPage.UseVisualStyleBackColor = True
         ' 
-        ' BudgetControl1
-        ' 
-        BudgetControl1.Location = New Point(0, 0)
-        BudgetControl1.Name = "BudgetControl1"
-        BudgetControl1.Size = New Size(427, 655)
-        BudgetControl1.TabIndex = 0
-        ' 
         ' ManagementTabPage
         ' 
-        ManagementTabPage.Controls.Add(PointsControl1)
         ManagementTabPage.Location = New Point(4, 4)
         ManagementTabPage.Name = "ManagementTabPage"
         ManagementTabPage.Padding = New Padding(3)
@@ -746,20 +733,13 @@ Partial Class Form1
         ManagementTabPage.Text = "Management"
         ManagementTabPage.UseVisualStyleBackColor = True
         ' 
-        ' PointsControl1
-        ' 
-        PointsControl1.Location = New Point(0, 0)
-        PointsControl1.Name = "PointsControl1"
-        PointsControl1.Size = New Size(431, 701)
-        PointsControl1.TabIndex = 0
-        ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(497, 904)
         Controls.Add(TabControl1)
-        Controls.Add(Panel1)
+        Controls.Add(DecorationPanel4)
         Controls.Add(BackgroundPictureBox)
         Name = "Form1"
         Text = "Roomies Application"
@@ -772,13 +752,11 @@ Partial Class Form1
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         Panel4.ResumeLayout(False)
-        BudgetTabPage.ResumeLayout(False)
-        ManagementTabPage.ResumeLayout(False)
         ResumeLayout(False)
     End Sub
 
     Friend WithEvents BackgroundPictureBox As PictureBox
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents DecorationPanel4 As Panel
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents CalendarTabPage As TabPage
     Friend WithEvents BudgetTabPage As TabPage
@@ -821,7 +799,7 @@ Partial Class Form1
     Friend WithEvents Panel9 As Panel
     Friend WithEvents Panel8 As Panel
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents Panel0 As Panel
+    Friend WithEvents Panel1 As Panel
     Friend WithEvents FriLabel As Label
     Friend WithEvents SatLabel As Label
     Friend WithEvents ThursLabel As Label
@@ -844,4 +822,5 @@ Partial Class Form1
     Friend WithEvents Roomie3PointsLabel As Label
     Friend WithEvents Roomie2PointsLabel As Label
     Friend WithEvents Roomie1PointsLabel As Label
+    Friend WithEvents DayPanelControl2 As DayPanelControl
 End Class
