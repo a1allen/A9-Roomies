@@ -44,7 +44,8 @@ Partial Class DayPanelControl
         ' 
         ' Roomate1PictureBox
         ' 
-        Roomate1PictureBox.Location = New Point(9, 26)
+        Roomate1PictureBox.Image = My.Resources.myResources.pink
+        Roomate1PictureBox.Location = New Point(10, 26)
         Roomate1PictureBox.Name = "Roomate1PictureBox"
         Roomate1PictureBox.Size = New Size(17, 17)
         Roomate1PictureBox.TabIndex = 1
@@ -52,7 +53,8 @@ Partial Class DayPanelControl
         ' 
         ' Roomate2PictureBox
         ' 
-        Roomate2PictureBox.Location = New Point(32, 26)
+        Roomate2PictureBox.Image = My.Resources.myResources.green
+        Roomate2PictureBox.Location = New Point(29, 26)
         Roomate2PictureBox.Name = "Roomate2PictureBox"
         Roomate2PictureBox.Size = New Size(17, 17)
         Roomate2PictureBox.TabIndex = 2
@@ -60,7 +62,8 @@ Partial Class DayPanelControl
         ' 
         ' Roomate3PictureBox
         ' 
-        Roomate3PictureBox.Location = New Point(9, 49)
+        Roomate3PictureBox.Image = My.Resources.myResources.blue
+        Roomate3PictureBox.Location = New Point(11, 45)
         Roomate3PictureBox.Name = "Roomate3PictureBox"
         Roomate3PictureBox.Size = New Size(17, 17)
         Roomate3PictureBox.TabIndex = 3
@@ -68,7 +71,8 @@ Partial Class DayPanelControl
         ' 
         ' Roomate4PictureBox
         ' 
-        Roomate4PictureBox.Location = New Point(32, 49)
+        Roomate4PictureBox.Image = My.Resources.myResources.purple
+        Roomate4PictureBox.Location = New Point(29, 45)
         Roomate4PictureBox.Name = "Roomate4PictureBox"
         Roomate4PictureBox.Size = New Size(17, 17)
         Roomate4PictureBox.TabIndex = 4

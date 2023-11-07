@@ -70,6 +70,7 @@ Partial Class Form1
         Panel8 = New Panel()
         Panel2 = New Panel()
         Panel0 = New Panel()
+        DayPanelControl1 = New DayPanelControl()
         AddToCalendarButton = New Button()
         MonthLabel = New Label()
         BudgetTabPage = New TabPage()
@@ -79,6 +80,7 @@ Partial Class Form1
         CType(BackgroundPictureBox, ComponentModel.ISupportInitialize).BeginInit()
         TabControl1.SuspendLayout()
         CalendarTabPage.SuspendLayout()
+        Panel4.SuspendLayout()
         BudgetTabPage.SuspendLayout()
         HouseholdTabPage.SuspendLayout()
         SuspendLayout()
@@ -475,6 +477,7 @@ Partial Class Form1
         ' Panel4
         ' 
         Panel4.BorderStyle = BorderStyle.Fixed3D
+        Panel4.Controls.Add(DayPanelControl1)
         Panel4.Location = New Point(185, 203)
         Panel4.Name = "Panel4"
         Panel4.Size = New Size(58, 74)
@@ -543,6 +546,13 @@ Partial Class Form1
         Panel0.Name = "Panel0"
         Panel0.Size = New Size(58, 74)
         Panel0.TabIndex = 21
+        ' 
+        ' DayPanelControl1
+        ' 
+        DayPanelControl1.Location = New Point(-2, -2)
+        DayPanelControl1.Name = "DayPanelControl1"
+        DayPanelControl1.Size = New Size(58, 74)
+        DayPanelControl1.TabIndex = 0
         ' 
         ' AddToCalendarButton
         ' 
@@ -617,6 +627,7 @@ Partial Class Form1
         TabControl1.ResumeLayout(False)
         CalendarTabPage.ResumeLayout(False)
         CalendarTabPage.PerformLayout()
+        Panel4.ResumeLayout(False)
         BudgetTabPage.ResumeLayout(False)
         HouseholdTabPage.ResumeLayout(False)
         ResumeLayout(False)
@@ -676,4 +687,5 @@ Partial Class Form1
     Friend WithEvents SunLabel As Label
     Friend WithEvents NextButton As Button
     Friend WithEvents PreviousButton As Button
+    Friend WithEvents DayPanelControl1 As DayPanelControl
 End Class
