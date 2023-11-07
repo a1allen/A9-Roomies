@@ -26,6 +26,8 @@ Partial Class Form1
         Panel1 = New Panel()
         TabControl1 = New TabControl()
         CalendarTabPage = New TabPage()
+        NextButton = New Button()
+        PreviousButton = New Button()
         FriLabel = New Label()
         Panel34 = New Panel()
         SatLabel = New Label()
@@ -74,8 +76,6 @@ Partial Class Form1
         BudgetControl1 = New BudgetControl()
         HouseholdTabPage = New TabPage()
         PointsControl1 = New PointsControl()
-        PreviousButton = New Button()
-        NextButton = New Button()
         CType(BackgroundPictureBox, ComponentModel.ISupportInitialize).BeginInit()
         TabControl1.SuspendLayout()
         CalendarTabPage.SuspendLayout()
@@ -86,7 +86,7 @@ Partial Class Form1
         ' BackgroundPictureBox
         ' 
         BackgroundPictureBox.BackColor = SystemColors.ButtonHighlight
-        BackgroundPictureBox.BackgroundImage = My.Resources.backgroundResource.phoneBackground2
+        BackgroundPictureBox.BackgroundImage = My.Resources.myResources.phoneBackground2
         BackgroundPictureBox.Location = New Point(0, 1)
         BackgroundPictureBox.Name = "BackgroundPictureBox"
         BackgroundPictureBox.Size = New Size(498, 901)
@@ -168,6 +168,24 @@ Partial Class Form1
         CalendarTabPage.Size = New Size(427, 744)
         CalendarTabPage.TabIndex = 0
         CalendarTabPage.Text = "Calendar"
+        ' 
+        ' NextButton
+        ' 
+        NextButton.Location = New Point(234, 631)
+        NextButton.Name = "NextButton"
+        NextButton.Size = New Size(94, 29)
+        NextButton.TabIndex = 53
+        NextButton.Text = "Next"
+        NextButton.UseVisualStyleBackColor = True
+        ' 
+        ' PreviousButton
+        ' 
+        PreviousButton.Location = New Point(88, 631)
+        PreviousButton.Name = "PreviousButton"
+        PreviousButton.Size = New Size(94, 29)
+        PreviousButton.TabIndex = 52
+        PreviousButton.Text = "Previous"
+        PreviousButton.UseVisualStyleBackColor = True
         ' 
         ' FriLabel
         ' 
@@ -543,7 +561,7 @@ Partial Class Form1
         ' 
         MonthLabel.AutoSize = True
         MonthLabel.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point)
-        MonthLabel.Location = New Point(16, 55)
+        MonthLabel.Location = New Point(15, 35)
         MonthLabel.Name = "MonthLabel"
         MonthLabel.Size = New Size(248, 41)
         MonthLabel.TabIndex = 18
@@ -584,24 +602,6 @@ Partial Class Form1
         PointsControl1.Name = "PointsControl1"
         PointsControl1.Size = New Size(431, 701)
         PointsControl1.TabIndex = 0
-        ' 
-        ' PreviousButton
-        ' 
-        PreviousButton.Location = New Point(88, 631)
-        PreviousButton.Name = "PreviousButton"
-        PreviousButton.Size = New Size(94, 29)
-        PreviousButton.TabIndex = 52
-        PreviousButton.Text = "Previous"
-        PreviousButton.UseVisualStyleBackColor = True
-        ' 
-        ' NextButton
-        ' 
-        NextButton.Location = New Point(234, 631)
-        NextButton.Name = "NextButton"
-        NextButton.Size = New Size(94, 29)
-        NextButton.TabIndex = 53
-        NextButton.Text = "Next"
-        NextButton.UseVisualStyleBackColor = True
         ' 
         ' Form1
         ' 

@@ -15,10 +15,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="backgroundResource.Designer.vb">
+    <Compile Update="myResources.Designer.vb">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>backgroundResource.resx</DependentUpon>
+      <DependentUpon>myResources.resx</DependentUpon>
     </Compile>
     <Compile Update="My Project\Application.Designer.vb">
       <DesignTime>True</DesignTime>
@@ -33,10 +33,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="backgroundResource.resx">
+    <EmbeddedResource Update="myResources.resx">
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>backgroundResource.Designer.vb</LastGenOutput>
+      <LastGenOutput>myResources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="My Project\Resources.resx">
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
