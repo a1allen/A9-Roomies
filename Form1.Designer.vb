@@ -26,58 +26,61 @@ Partial Class Form1
         Panel1 = New Panel()
         TabControl1 = New TabControl()
         CalendarTabPage = New TabPage()
-        CalendarTableLayoutPanel = New TableLayoutPanel()
-        Label27 = New Label()
-        Label26 = New Label()
-        Label25 = New Label()
-        Label22 = New Label()
-        Label21 = New Label()
-        DayLabel2 = New Label()
-        DayLabel3 = New Label()
-        DayLabel4 = New Label()
-        Label1 = New Label()
-        Label8 = New Label()
-        Label5 = New Label()
-        Label4 = New Label()
-        Label6 = New Label()
-        Label7 = New Label()
-        Label3 = New Label()
-        Label2 = New Label()
-        Label12 = New Label()
-        Label13 = New Label()
-        Label9 = New Label()
-        Label10 = New Label()
-        Label11 = New Label()
-        Label14 = New Label()
-        Label18 = New Label()
-        Label20 = New Label()
-        Label17 = New Label()
-        Label15 = New Label()
-        Label16 = New Label()
-        Label19 = New Label()
-        Label23 = New Label()
-        DayLabel1 = New Label()
-        AddToCalendarButton = New Button()
-        DaysPanel = New Panel()
         FriLabel = New Label()
+        Panel34 = New Panel()
         SatLabel = New Label()
+        Panel27 = New Panel()
         ThursLabel = New Label()
+        Panel33 = New Panel()
         WedLabel = New Label()
+        Panel20 = New Panel()
         TuesLabel = New Label()
         MonLabel = New Label()
+        Panel32 = New Panel()
         SunLabel = New Label()
+        Panel26 = New Panel()
+        Panel31 = New Panel()
+        Panel35 = New Panel()
+        Panel13 = New Panel()
+        Panel30 = New Panel()
+        Panel25 = New Panel()
+        Panel29 = New Panel()
+        Panel19 = New Panel()
+        Panel24 = New Panel()
+        Panel18 = New Panel()
+        Panel28 = New Panel()
+        Panel6 = New Panel()
+        Panel23 = New Panel()
+        Panel22 = New Panel()
+        Panel17 = New Panel()
+        Panel12 = New Panel()
+        Panel21 = New Panel()
+        Panel5 = New Panel()
+        Panel16 = New Panel()
+        Panel11 = New Panel()
+        Panel15 = New Panel()
+        Panel4 = New Panel()
+        Panel10 = New Panel()
+        Panel3 = New Panel()
+        Panel14 = New Panel()
+        Panel7 = New Panel()
+        Panel9 = New Panel()
+        Panel8 = New Panel()
+        Panel2 = New Panel()
+        Panel0 = New Panel()
+        AddToCalendarButton = New Button()
         MonthLabel = New Label()
         BudgetTabPage = New TabPage()
         BudgetControl1 = New BudgetControl()
-        PointsTabPage = New TabPage()
+        HouseholdTabPage = New TabPage()
         PointsControl1 = New PointsControl()
+        PreviousButton = New Button()
+        NextButton = New Button()
         CType(BackgroundPictureBox, ComponentModel.ISupportInitialize).BeginInit()
         TabControl1.SuspendLayout()
         CalendarTabPage.SuspendLayout()
-        CalendarTableLayoutPanel.SuspendLayout()
-        DaysPanel.SuspendLayout()
         BudgetTabPage.SuspendLayout()
-        PointsTabPage.SuspendLayout()
+        HouseholdTabPage.SuspendLayout()
         SuspendLayout()
         ' 
         ' BackgroundPictureBox
@@ -103,7 +106,7 @@ Partial Class Form1
         TabControl1.Alignment = TabAlignment.Bottom
         TabControl1.Controls.Add(CalendarTabPage)
         TabControl1.Controls.Add(BudgetTabPage)
-        TabControl1.Controls.Add(PointsTabPage)
+        TabControl1.Controls.Add(HouseholdTabPage)
         TabControl1.Location = New Point(34, 57)
         TabControl1.Name = "TabControl1"
         TabControl1.SelectedIndex = 0
@@ -113,9 +116,51 @@ Partial Class Form1
         ' CalendarTabPage
         ' 
         CalendarTabPage.BackColor = Color.White
-        CalendarTabPage.Controls.Add(CalendarTableLayoutPanel)
+        CalendarTabPage.Controls.Add(NextButton)
+        CalendarTabPage.Controls.Add(PreviousButton)
+        CalendarTabPage.Controls.Add(FriLabel)
+        CalendarTabPage.Controls.Add(Panel34)
+        CalendarTabPage.Controls.Add(SatLabel)
+        CalendarTabPage.Controls.Add(Panel27)
+        CalendarTabPage.Controls.Add(ThursLabel)
+        CalendarTabPage.Controls.Add(Panel33)
+        CalendarTabPage.Controls.Add(WedLabel)
+        CalendarTabPage.Controls.Add(Panel20)
+        CalendarTabPage.Controls.Add(TuesLabel)
+        CalendarTabPage.Controls.Add(MonLabel)
+        CalendarTabPage.Controls.Add(Panel32)
+        CalendarTabPage.Controls.Add(SunLabel)
+        CalendarTabPage.Controls.Add(Panel26)
+        CalendarTabPage.Controls.Add(Panel31)
+        CalendarTabPage.Controls.Add(Panel35)
+        CalendarTabPage.Controls.Add(Panel13)
+        CalendarTabPage.Controls.Add(Panel30)
+        CalendarTabPage.Controls.Add(Panel25)
+        CalendarTabPage.Controls.Add(Panel29)
+        CalendarTabPage.Controls.Add(Panel19)
+        CalendarTabPage.Controls.Add(Panel24)
+        CalendarTabPage.Controls.Add(Panel18)
+        CalendarTabPage.Controls.Add(Panel28)
+        CalendarTabPage.Controls.Add(Panel6)
+        CalendarTabPage.Controls.Add(Panel23)
+        CalendarTabPage.Controls.Add(Panel22)
+        CalendarTabPage.Controls.Add(Panel17)
+        CalendarTabPage.Controls.Add(Panel12)
+        CalendarTabPage.Controls.Add(Panel21)
+        CalendarTabPage.Controls.Add(Panel5)
+        CalendarTabPage.Controls.Add(Panel16)
+        CalendarTabPage.Controls.Add(Panel11)
+        CalendarTabPage.Controls.Add(Panel15)
+        CalendarTabPage.Controls.Add(Panel4)
+        CalendarTabPage.Controls.Add(Panel10)
+        CalendarTabPage.Controls.Add(Panel3)
+        CalendarTabPage.Controls.Add(Panel14)
+        CalendarTabPage.Controls.Add(Panel7)
+        CalendarTabPage.Controls.Add(Panel9)
+        CalendarTabPage.Controls.Add(Panel8)
+        CalendarTabPage.Controls.Add(Panel2)
+        CalendarTabPage.Controls.Add(Panel0)
         CalendarTabPage.Controls.Add(AddToCalendarButton)
-        CalendarTabPage.Controls.Add(DaysPanel)
         CalendarTabPage.Controls.Add(MonthLabel)
         CalendarTabPage.Location = New Point(4, 4)
         CalendarTabPage.Name = "CalendarTabPage"
@@ -124,328 +169,362 @@ Partial Class Form1
         CalendarTabPage.TabIndex = 0
         CalendarTabPage.Text = "Calendar"
         ' 
-        ' CalendarTableLayoutPanel
+        ' FriLabel
         ' 
-        CalendarTableLayoutPanel.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single
-        CalendarTableLayoutPanel.ColumnCount = 7
-        CalendarTableLayoutPanel.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 14.2857141F))
-        CalendarTableLayoutPanel.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 14.2857141F))
-        CalendarTableLayoutPanel.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 14.2857141F))
-        CalendarTableLayoutPanel.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 14.2857141F))
-        CalendarTableLayoutPanel.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 14.2857141F))
-        CalendarTableLayoutPanel.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 14.2857141F))
-        CalendarTableLayoutPanel.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 14.2857141F))
-        CalendarTableLayoutPanel.Controls.Add(Label27, 0, 4)
-        CalendarTableLayoutPanel.Controls.Add(Label26, 0, 4)
-        CalendarTableLayoutPanel.Controls.Add(Label25, 0, 4)
-        CalendarTableLayoutPanel.Controls.Add(Label22, 0, 4)
-        CalendarTableLayoutPanel.Controls.Add(Label21, 0, 4)
-        CalendarTableLayoutPanel.Controls.Add(DayLabel2, 4, 0)
-        CalendarTableLayoutPanel.Controls.Add(DayLabel3, 5, 0)
-        CalendarTableLayoutPanel.Controls.Add(DayLabel4, 6, 0)
-        CalendarTableLayoutPanel.Controls.Add(Label1, 0, 1)
-        CalendarTableLayoutPanel.Controls.Add(Label8, 1, 1)
-        CalendarTableLayoutPanel.Controls.Add(Label5, 2, 1)
-        CalendarTableLayoutPanel.Controls.Add(Label4, 3, 1)
-        CalendarTableLayoutPanel.Controls.Add(Label6, 4, 1)
-        CalendarTableLayoutPanel.Controls.Add(Label7, 5, 1)
-        CalendarTableLayoutPanel.Controls.Add(Label3, 6, 1)
-        CalendarTableLayoutPanel.Controls.Add(Label2, 0, 2)
-        CalendarTableLayoutPanel.Controls.Add(Label12, 1, 2)
-        CalendarTableLayoutPanel.Controls.Add(Label13, 2, 2)
-        CalendarTableLayoutPanel.Controls.Add(Label9, 3, 2)
-        CalendarTableLayoutPanel.Controls.Add(Label10, 4, 2)
-        CalendarTableLayoutPanel.Controls.Add(Label11, 5, 2)
-        CalendarTableLayoutPanel.Controls.Add(Label14, 6, 2)
-        CalendarTableLayoutPanel.Controls.Add(Label18, 0, 3)
-        CalendarTableLayoutPanel.Controls.Add(Label20, 1, 3)
-        CalendarTableLayoutPanel.Controls.Add(Label17, 2, 3)
-        CalendarTableLayoutPanel.Controls.Add(Label15, 3, 3)
-        CalendarTableLayoutPanel.Controls.Add(Label16, 4, 3)
-        CalendarTableLayoutPanel.Controls.Add(Label19, 5, 3)
-        CalendarTableLayoutPanel.Controls.Add(Label23, 6, 3)
-        CalendarTableLayoutPanel.Controls.Add(DayLabel1, 3, 0)
-        CalendarTableLayoutPanel.Location = New Point(3, 206)
-        CalendarTableLayoutPanel.Name = "CalendarTableLayoutPanel"
-        CalendarTableLayoutPanel.RowCount = 5
-        CalendarTableLayoutPanel.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
-        CalendarTableLayoutPanel.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
-        CalendarTableLayoutPanel.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
-        CalendarTableLayoutPanel.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
-        CalendarTableLayoutPanel.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
-        CalendarTableLayoutPanel.RowStyles.Add(New RowStyle(SizeType.Absolute, 20F))
-        CalendarTableLayoutPanel.Size = New Size(424, 415)
-        CalendarTableLayoutPanel.TabIndex = 21
+        FriLabel.BackColor = SystemColors.ButtonHighlight
+        FriLabel.Font = New Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point)
+        FriLabel.Location = New Point(306, 146)
+        FriLabel.Name = "FriLabel"
+        FriLabel.Size = New Size(59, 54)
+        FriLabel.TabIndex = 13
+        FriLabel.Text = "F"
+        FriLabel.TextAlign = ContentAlignment.MiddleCenter
         ' 
-        ' Label27
+        ' Panel34
         ' 
-        Label27.AutoSize = True
-        Label27.Location = New Point(4, 329)
-        Label27.Name = "Label27"
-        Label27.Size = New Size(25, 20)
-        Label27.TabIndex = 30
-        Label27.Text = "27"
+        Panel34.BorderStyle = BorderStyle.Fixed3D
+        Panel34.Location = New Point(307, 507)
+        Panel34.Name = "Panel34"
+        Panel34.Size = New Size(58, 74)
+        Panel34.TabIndex = 47
         ' 
-        ' Label26
+        ' SatLabel
         ' 
-        Label26.AutoSize = True
-        Label26.Location = New Point(244, 329)
-        Label26.Name = "Label26"
-        Label26.Size = New Size(25, 20)
-        Label26.TabIndex = 29
-        Label26.Text = "26"
+        SatLabel.BackColor = SystemColors.ButtonHighlight
+        SatLabel.Font = New Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point)
+        SatLabel.Location = New Point(367, 146)
+        SatLabel.Name = "SatLabel"
+        SatLabel.Size = New Size(59, 54)
+        SatLabel.TabIndex = 12
+        SatLabel.Text = "S"
+        SatLabel.TextAlign = ContentAlignment.MiddleCenter
         ' 
-        ' Label25
+        ' Panel27
         ' 
-        Label25.AutoSize = True
-        Label25.Location = New Point(64, 329)
-        Label25.Name = "Label25"
-        Label25.Size = New Size(25, 20)
-        Label25.TabIndex = 28
-        Label25.Text = "28"
+        Panel27.BorderStyle = BorderStyle.Fixed3D
+        Panel27.Location = New Point(307, 431)
+        Panel27.Name = "Panel27"
+        Panel27.Size = New Size(58, 74)
+        Panel27.TabIndex = 40
         ' 
-        ' Label22
+        ' ThursLabel
         ' 
-        Label22.AutoSize = True
-        Label22.Location = New Point(124, 329)
-        Label22.Name = "Label22"
-        Label22.Size = New Size(25, 20)
-        Label22.TabIndex = 25
-        Label22.Text = "30"
+        ThursLabel.BackColor = SystemColors.ButtonHighlight
+        ThursLabel.Font = New Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point)
+        ThursLabel.Location = New Point(245, 146)
+        ThursLabel.Name = "ThursLabel"
+        ThursLabel.Size = New Size(59, 54)
+        ThursLabel.TabIndex = 11
+        ThursLabel.Text = "T"
+        ThursLabel.TextAlign = ContentAlignment.MiddleCenter
         ' 
-        ' Label21
+        ' Panel33
         ' 
-        Label21.AutoSize = True
-        Label21.Location = New Point(184, 329)
-        Label21.Name = "Label21"
-        Label21.Size = New Size(25, 20)
-        Label21.TabIndex = 24
-        Label21.Text = "29"
+        Panel33.BorderStyle = BorderStyle.Fixed3D
+        Panel33.Location = New Point(246, 507)
+        Panel33.Name = "Panel33"
+        Panel33.Size = New Size(58, 74)
+        Panel33.TabIndex = 48
         ' 
-        ' DayLabel2
+        ' WedLabel
         ' 
-        DayLabel2.AutoSize = True
-        DayLabel2.Location = New Point(244, 1)
-        DayLabel2.Name = "DayLabel2"
-        DayLabel2.Size = New Size(17, 20)
-        DayLabel2.TabIndex = 1
-        DayLabel2.Text = "2"
+        WedLabel.BackColor = SystemColors.ButtonHighlight
+        WedLabel.Font = New Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point)
+        WedLabel.Location = New Point(184, 146)
+        WedLabel.Name = "WedLabel"
+        WedLabel.Size = New Size(59, 54)
+        WedLabel.TabIndex = 10
+        WedLabel.Text = "W"
+        WedLabel.TextAlign = ContentAlignment.MiddleCenter
         ' 
-        ' DayLabel3
+        ' Panel20
         ' 
-        DayLabel3.AutoSize = True
-        DayLabel3.Location = New Point(304, 1)
-        DayLabel3.Name = "DayLabel3"
-        DayLabel3.Size = New Size(17, 20)
-        DayLabel3.TabIndex = 2
-        DayLabel3.Text = "3"
+        Panel20.BorderStyle = BorderStyle.Fixed3D
+        Panel20.Location = New Point(307, 355)
+        Panel20.Name = "Panel20"
+        Panel20.Size = New Size(58, 74)
+        Panel20.TabIndex = 33
         ' 
-        ' DayLabel4
+        ' TuesLabel
         ' 
-        DayLabel4.AutoSize = True
-        DayLabel4.Location = New Point(364, 1)
-        DayLabel4.Name = "DayLabel4"
-        DayLabel4.Size = New Size(17, 20)
-        DayLabel4.TabIndex = 3
-        DayLabel4.Text = "4"
+        TuesLabel.BackColor = SystemColors.ButtonHighlight
+        TuesLabel.Font = New Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point)
+        TuesLabel.Location = New Point(123, 146)
+        TuesLabel.Name = "TuesLabel"
+        TuesLabel.Size = New Size(59, 54)
+        TuesLabel.TabIndex = 9
+        TuesLabel.Text = "T"
+        TuesLabel.TextAlign = ContentAlignment.MiddleCenter
         ' 
-        ' Label1
+        ' MonLabel
         ' 
-        Label1.AutoSize = True
-        Label1.Location = New Point(4, 83)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(17, 20)
-        Label1.TabIndex = 4
-        Label1.Text = "5"
+        MonLabel.BackColor = SystemColors.ButtonHighlight
+        MonLabel.Font = New Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point)
+        MonLabel.Location = New Point(62, 146)
+        MonLabel.Name = "MonLabel"
+        MonLabel.Size = New Size(59, 54)
+        MonLabel.TabIndex = 8
+        MonLabel.Text = "M"
+        MonLabel.TextAlign = ContentAlignment.MiddleCenter
         ' 
-        ' Label8
+        ' Panel32
         ' 
-        Label8.AutoSize = True
-        Label8.Location = New Point(64, 83)
-        Label8.Name = "Label8"
-        Label8.Size = New Size(17, 20)
-        Label8.TabIndex = 11
-        Label8.Text = "6"
+        Panel32.BorderStyle = BorderStyle.Fixed3D
+        Panel32.Location = New Point(185, 507)
+        Panel32.Name = "Panel32"
+        Panel32.Size = New Size(58, 74)
+        Panel32.TabIndex = 49
         ' 
-        ' Label5
+        ' SunLabel
         ' 
-        Label5.AutoSize = True
-        Label5.Location = New Point(124, 83)
-        Label5.Name = "Label5"
-        Label5.Size = New Size(17, 20)
-        Label5.TabIndex = 8
-        Label5.Text = "7"
+        SunLabel.BackColor = SystemColors.ButtonHighlight
+        SunLabel.Font = New Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point)
+        SunLabel.Location = New Point(1, 146)
+        SunLabel.Name = "SunLabel"
+        SunLabel.Size = New Size(59, 54)
+        SunLabel.TabIndex = 7
+        SunLabel.Text = "S"
+        SunLabel.TextAlign = ContentAlignment.MiddleCenter
         ' 
-        ' Label4
+        ' Panel26
         ' 
-        Label4.AutoSize = True
-        Label4.Location = New Point(184, 83)
-        Label4.Name = "Label4"
-        Label4.Size = New Size(17, 20)
-        Label4.TabIndex = 7
-        Label4.Text = "8"
+        Panel26.BorderStyle = BorderStyle.Fixed3D
+        Panel26.Location = New Point(246, 431)
+        Panel26.Name = "Panel26"
+        Panel26.Size = New Size(58, 74)
+        Panel26.TabIndex = 41
         ' 
-        ' Label6
+        ' Panel31
         ' 
-        Label6.AutoSize = True
-        Label6.Location = New Point(244, 83)
-        Label6.Name = "Label6"
-        Label6.Size = New Size(17, 20)
-        Label6.TabIndex = 9
-        Label6.Text = "9"
+        Panel31.BorderStyle = BorderStyle.Fixed3D
+        Panel31.Location = New Point(124, 507)
+        Panel31.Name = "Panel31"
+        Panel31.Size = New Size(58, 74)
+        Panel31.TabIndex = 50
         ' 
-        ' Label7
+        ' Panel35
         ' 
-        Label7.AutoSize = True
-        Label7.Location = New Point(304, 83)
-        Label7.Name = "Label7"
-        Label7.Size = New Size(25, 20)
-        Label7.TabIndex = 10
-        Label7.Text = "10"
+        Panel35.BorderStyle = BorderStyle.Fixed3D
+        Panel35.Location = New Point(368, 507)
+        Panel35.Name = "Panel35"
+        Panel35.Size = New Size(58, 74)
+        Panel35.TabIndex = 51
         ' 
-        ' Label3
+        ' Panel13
         ' 
-        Label3.AutoSize = True
-        Label3.Location = New Point(364, 83)
-        Label3.Name = "Label3"
-        Label3.Size = New Size(25, 20)
-        Label3.TabIndex = 6
-        Label3.Text = "11"
+        Panel13.BorderStyle = BorderStyle.Fixed3D
+        Panel13.Location = New Point(307, 279)
+        Panel13.Name = "Panel13"
+        Panel13.Size = New Size(58, 74)
+        Panel13.TabIndex = 26
         ' 
-        ' Label2
+        ' Panel30
         ' 
-        Label2.AutoSize = True
-        Label2.Location = New Point(4, 165)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(25, 20)
-        Label2.TabIndex = 5
-        Label2.Text = "12"
+        Panel30.BorderStyle = BorderStyle.Fixed3D
+        Panel30.Location = New Point(63, 507)
+        Panel30.Name = "Panel30"
+        Panel30.Size = New Size(58, 74)
+        Panel30.TabIndex = 46
         ' 
-        ' Label12
+        ' Panel25
         ' 
-        Label12.AutoSize = True
-        Label12.Location = New Point(64, 165)
-        Label12.Name = "Label12"
-        Label12.Size = New Size(25, 20)
-        Label12.TabIndex = 15
-        Label12.Text = "13"
+        Panel25.BorderStyle = BorderStyle.Fixed3D
+        Panel25.Location = New Point(185, 431)
+        Panel25.Name = "Panel25"
+        Panel25.Size = New Size(58, 74)
+        Panel25.TabIndex = 42
         ' 
-        ' Label13
+        ' Panel29
         ' 
-        Label13.AutoSize = True
-        Label13.Location = New Point(124, 165)
-        Label13.Name = "Label13"
-        Label13.Size = New Size(25, 20)
-        Label13.TabIndex = 16
-        Label13.Text = "14"
+        Panel29.BorderStyle = BorderStyle.Fixed3D
+        Panel29.Location = New Point(2, 507)
+        Panel29.Name = "Panel29"
+        Panel29.Size = New Size(58, 74)
+        Panel29.TabIndex = 45
         ' 
-        ' Label9
+        ' Panel19
         ' 
-        Label9.AutoSize = True
-        Label9.Location = New Point(184, 165)
-        Label9.Name = "Label9"
-        Label9.Size = New Size(25, 20)
-        Label9.TabIndex = 12
-        Label9.Text = "15"
+        Panel19.BorderStyle = BorderStyle.Fixed3D
+        Panel19.Location = New Point(246, 355)
+        Panel19.Name = "Panel19"
+        Panel19.Size = New Size(58, 74)
+        Panel19.TabIndex = 34
         ' 
-        ' Label10
+        ' Panel24
         ' 
-        Label10.AutoSize = True
-        Label10.Location = New Point(244, 165)
-        Label10.Name = "Label10"
-        Label10.Size = New Size(25, 20)
-        Label10.TabIndex = 13
-        Label10.Text = "16"
+        Panel24.BorderStyle = BorderStyle.Fixed3D
+        Panel24.Location = New Point(124, 431)
+        Panel24.Name = "Panel24"
+        Panel24.Size = New Size(58, 74)
+        Panel24.TabIndex = 43
         ' 
-        ' Label11
+        ' Panel18
         ' 
-        Label11.AutoSize = True
-        Label11.Location = New Point(304, 165)
-        Label11.Name = "Label11"
-        Label11.Size = New Size(25, 20)
-        Label11.TabIndex = 14
-        Label11.Text = "17"
+        Panel18.BorderStyle = BorderStyle.Fixed3D
+        Panel18.Location = New Point(185, 355)
+        Panel18.Name = "Panel18"
+        Panel18.Size = New Size(58, 74)
+        Panel18.TabIndex = 35
         ' 
-        ' Label14
+        ' Panel28
         ' 
-        Label14.AutoSize = True
-        Label14.Location = New Point(364, 165)
-        Label14.Name = "Label14"
-        Label14.Size = New Size(25, 20)
-        Label14.TabIndex = 17
-        Label14.Text = "18"
+        Panel28.BorderStyle = BorderStyle.Fixed3D
+        Panel28.Location = New Point(368, 431)
+        Panel28.Name = "Panel28"
+        Panel28.Size = New Size(58, 74)
+        Panel28.TabIndex = 44
         ' 
-        ' Label18
+        ' Panel6
         ' 
-        Label18.AutoSize = True
-        Label18.Location = New Point(4, 247)
-        Label18.Name = "Label18"
-        Label18.Size = New Size(25, 20)
-        Label18.TabIndex = 21
-        Label18.Text = "19"
+        Panel6.BorderStyle = BorderStyle.Fixed3D
+        Panel6.Location = New Point(307, 203)
+        Panel6.Name = "Panel6"
+        Panel6.Size = New Size(58, 74)
+        Panel6.TabIndex = 23
         ' 
-        ' Label20
+        ' Panel23
         ' 
-        Label20.AutoSize = True
-        Label20.Location = New Point(64, 247)
-        Label20.Name = "Label20"
-        Label20.Size = New Size(25, 20)
-        Label20.TabIndex = 23
-        Label20.Text = "20"
+        Panel23.BorderStyle = BorderStyle.Fixed3D
+        Panel23.Location = New Point(63, 431)
+        Panel23.Name = "Panel23"
+        Panel23.Size = New Size(58, 74)
+        Panel23.TabIndex = 39
         ' 
-        ' Label17
+        ' Panel22
         ' 
-        Label17.AutoSize = True
-        Label17.Location = New Point(124, 247)
-        Label17.Name = "Label17"
-        Label17.Size = New Size(25, 20)
-        Label17.TabIndex = 20
-        Label17.Text = "21"
+        Panel22.BorderStyle = BorderStyle.Fixed3D
+        Panel22.Location = New Point(2, 431)
+        Panel22.Name = "Panel22"
+        Panel22.Size = New Size(58, 74)
+        Panel22.TabIndex = 38
         ' 
-        ' Label15
+        ' Panel17
         ' 
-        Label15.AutoSize = True
-        Label15.Location = New Point(184, 247)
-        Label15.Name = "Label15"
-        Label15.Size = New Size(25, 20)
-        Label15.TabIndex = 18
-        Label15.Text = "22"
+        Panel17.BorderStyle = BorderStyle.Fixed3D
+        Panel17.Location = New Point(124, 355)
+        Panel17.Name = "Panel17"
+        Panel17.Size = New Size(58, 74)
+        Panel17.TabIndex = 36
         ' 
-        ' Label16
+        ' Panel12
         ' 
-        Label16.AutoSize = True
-        Label16.Location = New Point(244, 247)
-        Label16.Name = "Label16"
-        Label16.Size = New Size(25, 20)
-        Label16.TabIndex = 19
-        Label16.Text = "23"
+        Panel12.BorderStyle = BorderStyle.Fixed3D
+        Panel12.Location = New Point(246, 279)
+        Panel12.Name = "Panel12"
+        Panel12.Size = New Size(58, 74)
+        Panel12.TabIndex = 27
         ' 
-        ' Label19
+        ' Panel21
         ' 
-        Label19.AutoSize = True
-        Label19.Location = New Point(304, 247)
-        Label19.Name = "Label19"
-        Label19.Size = New Size(25, 20)
-        Label19.TabIndex = 22
-        Label19.Text = "24"
+        Panel21.BorderStyle = BorderStyle.Fixed3D
+        Panel21.Location = New Point(368, 355)
+        Panel21.Name = "Panel21"
+        Panel21.Size = New Size(58, 74)
+        Panel21.TabIndex = 37
         ' 
-        ' Label23
+        ' Panel5
         ' 
-        Label23.AutoSize = True
-        Label23.Location = New Point(364, 247)
-        Label23.Name = "Label23"
-        Label23.Size = New Size(25, 20)
-        Label23.TabIndex = 26
-        Label23.Text = "25"
+        Panel5.BorderStyle = BorderStyle.Fixed3D
+        Panel5.Location = New Point(246, 203)
+        Panel5.Name = "Panel5"
+        Panel5.Size = New Size(58, 74)
+        Panel5.TabIndex = 23
         ' 
-        ' DayLabel1
+        ' Panel16
         ' 
-        DayLabel1.AutoSize = True
-        DayLabel1.Location = New Point(184, 1)
-        DayLabel1.Name = "DayLabel1"
-        DayLabel1.Size = New Size(17, 20)
-        DayLabel1.TabIndex = 0
-        DayLabel1.Text = "1"
+        Panel16.BorderStyle = BorderStyle.Fixed3D
+        Panel16.Location = New Point(63, 355)
+        Panel16.Name = "Panel16"
+        Panel16.Size = New Size(58, 74)
+        Panel16.TabIndex = 32
+        ' 
+        ' Panel11
+        ' 
+        Panel11.BorderStyle = BorderStyle.Fixed3D
+        Panel11.Location = New Point(185, 279)
+        Panel11.Name = "Panel11"
+        Panel11.Size = New Size(58, 74)
+        Panel11.TabIndex = 28
+        ' 
+        ' Panel15
+        ' 
+        Panel15.BorderStyle = BorderStyle.Fixed3D
+        Panel15.Location = New Point(2, 355)
+        Panel15.Name = "Panel15"
+        Panel15.Size = New Size(58, 74)
+        Panel15.TabIndex = 31
+        ' 
+        ' Panel4
+        ' 
+        Panel4.BorderStyle = BorderStyle.Fixed3D
+        Panel4.Location = New Point(185, 203)
+        Panel4.Name = "Panel4"
+        Panel4.Size = New Size(58, 74)
+        Panel4.TabIndex = 23
+        ' 
+        ' Panel10
+        ' 
+        Panel10.BorderStyle = BorderStyle.Fixed3D
+        Panel10.Location = New Point(124, 279)
+        Panel10.Name = "Panel10"
+        Panel10.Size = New Size(58, 74)
+        Panel10.TabIndex = 29
+        ' 
+        ' Panel3
+        ' 
+        Panel3.BorderStyle = BorderStyle.Fixed3D
+        Panel3.Location = New Point(124, 203)
+        Panel3.Name = "Panel3"
+        Panel3.Size = New Size(58, 74)
+        Panel3.TabIndex = 23
+        ' 
+        ' Panel14
+        ' 
+        Panel14.BorderStyle = BorderStyle.Fixed3D
+        Panel14.Location = New Point(368, 279)
+        Panel14.Name = "Panel14"
+        Panel14.Size = New Size(58, 74)
+        Panel14.TabIndex = 30
+        ' 
+        ' Panel7
+        ' 
+        Panel7.BorderStyle = BorderStyle.Fixed3D
+        Panel7.Location = New Point(368, 203)
+        Panel7.Name = "Panel7"
+        Panel7.Size = New Size(58, 74)
+        Panel7.TabIndex = 23
+        ' 
+        ' Panel9
+        ' 
+        Panel9.BorderStyle = BorderStyle.Fixed3D
+        Panel9.Location = New Point(63, 279)
+        Panel9.Name = "Panel9"
+        Panel9.Size = New Size(58, 74)
+        Panel9.TabIndex = 25
+        ' 
+        ' Panel8
+        ' 
+        Panel8.BorderStyle = BorderStyle.Fixed3D
+        Panel8.Location = New Point(2, 279)
+        Panel8.Name = "Panel8"
+        Panel8.Size = New Size(58, 74)
+        Panel8.TabIndex = 24
+        ' 
+        ' Panel2
+        ' 
+        Panel2.BorderStyle = BorderStyle.Fixed3D
+        Panel2.Location = New Point(63, 203)
+        Panel2.Name = "Panel2"
+        Panel2.Size = New Size(58, 74)
+        Panel2.TabIndex = 22
+        ' 
+        ' Panel0
+        ' 
+        Panel0.BorderStyle = BorderStyle.Fixed3D
+        Panel0.Location = New Point(2, 203)
+        Panel0.Name = "Panel0"
+        Panel0.Size = New Size(58, 74)
+        Panel0.TabIndex = 21
         ' 
         ' AddToCalendarButton
         ' 
@@ -459,104 +538,6 @@ Partial Class Form1
         AddToCalendarButton.Text = "+"
         AddToCalendarButton.TextAlign = ContentAlignment.TopRight
         AddToCalendarButton.UseVisualStyleBackColor = False
-        ' 
-        ' DaysPanel
-        ' 
-        DaysPanel.Controls.Add(FriLabel)
-        DaysPanel.Controls.Add(SatLabel)
-        DaysPanel.Controls.Add(ThursLabel)
-        DaysPanel.Controls.Add(WedLabel)
-        DaysPanel.Controls.Add(TuesLabel)
-        DaysPanel.Controls.Add(MonLabel)
-        DaysPanel.Controls.Add(SunLabel)
-        DaysPanel.Location = New Point(-3, 146)
-        DaysPanel.Name = "DaysPanel"
-        DaysPanel.Size = New Size(434, 54)
-        DaysPanel.TabIndex = 19
-        ' 
-        ' FriLabel
-        ' 
-        FriLabel.BackColor = Color.LightBlue
-        FriLabel.BorderStyle = BorderStyle.FixedSingle
-        FriLabel.Font = New Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point)
-        FriLabel.Location = New Point(309, 0)
-        FriLabel.Name = "FriLabel"
-        FriLabel.Size = New Size(59, 54)
-        FriLabel.TabIndex = 6
-        FriLabel.Text = "F"
-        FriLabel.TextAlign = ContentAlignment.MiddleCenter
-        ' 
-        ' SatLabel
-        ' 
-        SatLabel.BackColor = Color.LightBlue
-        SatLabel.BorderStyle = BorderStyle.FixedSingle
-        SatLabel.Font = New Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point)
-        SatLabel.Location = New Point(370, 0)
-        SatLabel.Name = "SatLabel"
-        SatLabel.Size = New Size(59, 54)
-        SatLabel.TabIndex = 5
-        SatLabel.Text = "S"
-        SatLabel.TextAlign = ContentAlignment.MiddleCenter
-        ' 
-        ' ThursLabel
-        ' 
-        ThursLabel.BackColor = Color.LightBlue
-        ThursLabel.BorderStyle = BorderStyle.FixedSingle
-        ThursLabel.Font = New Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point)
-        ThursLabel.Location = New Point(248, 0)
-        ThursLabel.Name = "ThursLabel"
-        ThursLabel.Size = New Size(59, 54)
-        ThursLabel.TabIndex = 4
-        ThursLabel.Text = "T"
-        ThursLabel.TextAlign = ContentAlignment.MiddleCenter
-        ' 
-        ' WedLabel
-        ' 
-        WedLabel.BackColor = Color.LightBlue
-        WedLabel.BorderStyle = BorderStyle.FixedSingle
-        WedLabel.Font = New Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point)
-        WedLabel.Location = New Point(187, 0)
-        WedLabel.Name = "WedLabel"
-        WedLabel.Size = New Size(59, 54)
-        WedLabel.TabIndex = 3
-        WedLabel.Text = "W"
-        WedLabel.TextAlign = ContentAlignment.MiddleCenter
-        ' 
-        ' TuesLabel
-        ' 
-        TuesLabel.BackColor = Color.LightBlue
-        TuesLabel.BorderStyle = BorderStyle.FixedSingle
-        TuesLabel.Font = New Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point)
-        TuesLabel.Location = New Point(126, 0)
-        TuesLabel.Name = "TuesLabel"
-        TuesLabel.Size = New Size(59, 54)
-        TuesLabel.TabIndex = 2
-        TuesLabel.Text = "T"
-        TuesLabel.TextAlign = ContentAlignment.MiddleCenter
-        ' 
-        ' MonLabel
-        ' 
-        MonLabel.BackColor = Color.LightBlue
-        MonLabel.BorderStyle = BorderStyle.FixedSingle
-        MonLabel.Font = New Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point)
-        MonLabel.Location = New Point(65, 0)
-        MonLabel.Name = "MonLabel"
-        MonLabel.Size = New Size(59, 54)
-        MonLabel.TabIndex = 1
-        MonLabel.Text = "M"
-        MonLabel.TextAlign = ContentAlignment.MiddleCenter
-        ' 
-        ' SunLabel
-        ' 
-        SunLabel.BackColor = Color.LightBlue
-        SunLabel.BorderStyle = BorderStyle.FixedSingle
-        SunLabel.Font = New Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point)
-        SunLabel.Location = New Point(4, 0)
-        SunLabel.Name = "SunLabel"
-        SunLabel.Size = New Size(59, 54)
-        SunLabel.TabIndex = 0
-        SunLabel.Text = "S"
-        SunLabel.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' MonthLabel
         ' 
@@ -586,16 +567,16 @@ Partial Class Form1
         BudgetControl1.Size = New Size(427, 655)
         BudgetControl1.TabIndex = 0
         ' 
-        ' PointsTabPage
+        ' HouseholdTabPage
         ' 
-        PointsTabPage.Controls.Add(PointsControl1)
-        PointsTabPage.Location = New Point(4, 4)
-        PointsTabPage.Name = "PointsTabPage"
-        PointsTabPage.Padding = New Padding(3)
-        PointsTabPage.Size = New Size(427, 744)
-        PointsTabPage.TabIndex = 2
-        PointsTabPage.Text = "Points"
-        PointsTabPage.UseVisualStyleBackColor = True
+        HouseholdTabPage.Controls.Add(PointsControl1)
+        HouseholdTabPage.Location = New Point(4, 4)
+        HouseholdTabPage.Name = "HouseholdTabPage"
+        HouseholdTabPage.Padding = New Padding(3)
+        HouseholdTabPage.Size = New Size(427, 744)
+        HouseholdTabPage.TabIndex = 2
+        HouseholdTabPage.Text = "Household Management"
+        HouseholdTabPage.UseVisualStyleBackColor = True
         ' 
         ' PointsControl1
         ' 
@@ -603,6 +584,24 @@ Partial Class Form1
         PointsControl1.Name = "PointsControl1"
         PointsControl1.Size = New Size(431, 701)
         PointsControl1.TabIndex = 0
+        ' 
+        ' PreviousButton
+        ' 
+        PreviousButton.Location = New Point(88, 631)
+        PreviousButton.Name = "PreviousButton"
+        PreviousButton.Size = New Size(94, 29)
+        PreviousButton.TabIndex = 52
+        PreviousButton.Text = "Previous"
+        PreviousButton.UseVisualStyleBackColor = True
+        ' 
+        ' NextButton
+        ' 
+        NextButton.Location = New Point(234, 631)
+        NextButton.Name = "NextButton"
+        NextButton.Size = New Size(94, 29)
+        NextButton.TabIndex = 53
+        NextButton.Text = "Next"
+        NextButton.UseVisualStyleBackColor = True
         ' 
         ' Form1
         ' 
@@ -618,11 +617,8 @@ Partial Class Form1
         TabControl1.ResumeLayout(False)
         CalendarTabPage.ResumeLayout(False)
         CalendarTabPage.PerformLayout()
-        CalendarTableLayoutPanel.ResumeLayout(False)
-        CalendarTableLayoutPanel.PerformLayout()
-        DaysPanel.ResumeLayout(False)
         BudgetTabPage.ResumeLayout(False)
-        PointsTabPage.ResumeLayout(False)
+        HouseholdTabPage.ResumeLayout(False)
         ResumeLayout(False)
     End Sub
 
@@ -631,42 +627,46 @@ Partial Class Form1
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents CalendarTabPage As TabPage
     Friend WithEvents BudgetTabPage As TabPage
-    Friend WithEvents PointsTabPage As TabPage
+    Friend WithEvents HouseholdTabPage As TabPage
     Friend WithEvents BudgetControl1 As BudgetControl
     Friend WithEvents PointsControl1 As PointsControl
-    Friend WithEvents CalendarTableLayoutPanel As TableLayoutPanel
-    Friend WithEvents Label27 As Label
-    Friend WithEvents Label26 As Label
-    Friend WithEvents Label25 As Label
-    Friend WithEvents Label22 As Label
-    Friend WithEvents Label21 As Label
-    Friend WithEvents DayLabel2 As Label
-    Friend WithEvents DayLabel3 As Label
-    Friend WithEvents DayLabel4 As Label
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label8 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label12 As Label
-    Friend WithEvents Label13 As Label
-    Friend WithEvents Label9 As Label
-    Friend WithEvents Label10 As Label
-    Friend WithEvents Label11 As Label
-    Friend WithEvents Label14 As Label
-    Friend WithEvents Label18 As Label
-    Friend WithEvents Label20 As Label
-    Friend WithEvents Label17 As Label
-    Friend WithEvents Label15 As Label
-    Friend WithEvents Label16 As Label
-    Friend WithEvents Label19 As Label
-    Friend WithEvents Label23 As Label
-    Friend WithEvents DayLabel1 As Label
     Friend WithEvents AddToCalendarButton As Button
-    Friend WithEvents DaysPanel As Panel
+    Friend WithEvents MonthLabel As Label
+    Friend WithEvents Panel6 As Panel
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Panel7 As Panel
+    Friend WithEvents Panel34 As Panel
+    Friend WithEvents Panel27 As Panel
+    Friend WithEvents Panel33 As Panel
+    Friend WithEvents Panel20 As Panel
+    Friend WithEvents Panel32 As Panel
+    Friend WithEvents Panel26 As Panel
+    Friend WithEvents Panel31 As Panel
+    Friend WithEvents Panel35 As Panel
+    Friend WithEvents Panel13 As Panel
+    Friend WithEvents Panel30 As Panel
+    Friend WithEvents Panel25 As Panel
+    Friend WithEvents Panel29 As Panel
+    Friend WithEvents Panel19 As Panel
+    Friend WithEvents Panel24 As Panel
+    Friend WithEvents Panel18 As Panel
+    Friend WithEvents Panel28 As Panel
+    Friend WithEvents Panel23 As Panel
+    Friend WithEvents Panel22 As Panel
+    Friend WithEvents Panel17 As Panel
+    Friend WithEvents Panel12 As Panel
+    Friend WithEvents Panel21 As Panel
+    Friend WithEvents Panel16 As Panel
+    Friend WithEvents Panel11 As Panel
+    Friend WithEvents Panel15 As Panel
+    Friend WithEvents Panel10 As Panel
+    Friend WithEvents Panel14 As Panel
+    Friend WithEvents Panel9 As Panel
+    Friend WithEvents Panel8 As Panel
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Panel0 As Panel
     Friend WithEvents FriLabel As Label
     Friend WithEvents SatLabel As Label
     Friend WithEvents ThursLabel As Label
@@ -674,5 +674,6 @@ Partial Class Form1
     Friend WithEvents TuesLabel As Label
     Friend WithEvents MonLabel As Label
     Friend WithEvents SunLabel As Label
-    Friend WithEvents MonthLabel As Label
+    Friend WithEvents NextButton As Button
+    Friend WithEvents PreviousButton As Button
 End Class
