@@ -30,8 +30,6 @@ Partial Class CalendarControl
         Label25 = New Label()
         Label22 = New Label()
         Label21 = New Label()
-        DayLabel1 = New Label()
-        DayLabel2 = New Label()
         DayLabel3 = New Label()
         DayLabel4 = New Label()
         Label1 = New Label()
@@ -55,6 +53,7 @@ Partial Class CalendarControl
         Label16 = New Label()
         Label19 = New Label()
         Label23 = New Label()
+        DayLabel1 = New Label()
         AddToCalendarButton = New Button()
         DaysPanel = New Panel()
         FriLabel = New Label()
@@ -65,6 +64,7 @@ Partial Class CalendarControl
         MonLabel = New Label()
         SunLabel = New Label()
         MonthLabel = New Label()
+        DayLabel2 = New Label()
         CalendarTableLayoutPanel.SuspendLayout()
         DaysPanel.SuspendLayout()
         SuspendLayout()
@@ -208,24 +208,6 @@ Partial Class CalendarControl
         Label21.Size = New Size(25, 20)
         Label21.TabIndex = 24
         Label21.Text = "29"
-        ' 
-        ' DayLabel1
-        ' 
-        DayLabel1.AutoSize = True
-        DayLabel1.Location = New Point(187, 1)
-        DayLabel1.Name = "DayLabel1"
-        DayLabel1.Size = New Size(17, 20)
-        DayLabel1.TabIndex = 0
-        DayLabel1.Text = "1"
-        ' 
-        ' DayLabel2
-        ' 
-        DayLabel2.AutoSize = True
-        DayLabel2.Location = New Point(248, 1)
-        DayLabel2.Name = "DayLabel2"
-        DayLabel2.Size = New Size(17, 20)
-        DayLabel2.TabIndex = 1
-        DayLabel2.Text = "2"
         ' 
         ' DayLabel3
         ' 
@@ -434,6 +416,15 @@ Partial Class CalendarControl
         Label23.TabIndex = 26
         Label23.Text = "25"
         ' 
+        ' DayLabel1
+        ' 
+        DayLabel1.AutoSize = True
+        DayLabel1.Location = New Point(187, 1)
+        DayLabel1.Name = "DayLabel1"
+        DayLabel1.Size = New Size(17, 20)
+        DayLabel1.TabIndex = 0
+        DayLabel1.Text = "1"
+        ' 
         ' AddToCalendarButton
         ' 
         AddToCalendarButton.BackColor = Color.White
@@ -555,6 +546,15 @@ Partial Class CalendarControl
         MonthLabel.TabIndex = 14
         MonthLabel.Text = "November, 2023"
         ' 
+        ' DayLabel2
+        ' 
+        DayLabel2.AutoSize = True
+        DayLabel2.Location = New Point(248, 1)
+        DayLabel2.Name = "DayLabel2"
+        DayLabel2.Size = New Size(17, 20)
+        DayLabel2.TabIndex = 1
+        DayLabel2.Text = "2"
+        ' 
         ' CalendarControl
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
@@ -586,7 +586,6 @@ Partial Class CalendarControl
     Friend WithEvents SunLabel As Label
     Friend WithEvents MonthLabel As Label
     Friend WithEvents DayLabel1 As Label
-    Friend WithEvents DayLabel2 As Label
     Friend WithEvents DayLabel3 As Label
     Friend WithEvents DayLabel4 As Label
     Friend WithEvents Label1 As Label
@@ -615,4 +614,5 @@ Partial Class CalendarControl
     Friend WithEvents Label16 As Label
     Friend WithEvents Label19 As Label
     Friend WithEvents Label23 As Label
+    Friend WithEvents DayLabel2 As Label
 End Class
