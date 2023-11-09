@@ -80,8 +80,7 @@ Partial Class DayPanelControl
         ' 
         ' DayPanelControl
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
-        AutoScaleMode = AutoScaleMode.Font
+        AutoScaleMode = AutoScaleMode.None
         Controls.Add(Roomate4PictureBox)
         Controls.Add(Roomate3PictureBox)
         Controls.Add(Roomate2PictureBox)
