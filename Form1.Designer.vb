@@ -26,8 +26,10 @@ Partial Class Form1
         DecorationPanel4 = New Panel()
         TabControl1 = New TabControl()
         CalendarTabPage = New TabPage()
-        DayPanelControl36 = New DayPanelControl()
+        Panel2 = New Panel()
         DayPanelControl37 = New DayPanelControl()
+        Panel1 = New Panel()
+        DayPanelControl36 = New DayPanelControl()
         CalendarTableLayoutPanel = New TableLayoutPanel()
         DayPanelControl1 = New DayPanelControl()
         DayPanelControl2 = New DayPanelControl()
@@ -89,18 +91,16 @@ Partial Class Form1
         MonthLabel = New Label()
         BudgetTabPage = New TabPage()
         ManagementTabPage = New TabPage()
-        Panel1 = New Panel()
-        Panel2 = New Panel()
         CType(BackgroundPictureBox, ComponentModel.ISupportInitialize).BeginInit()
         TabControl1.SuspendLayout()
         CalendarTabPage.SuspendLayout()
+        Panel2.SuspendLayout()
+        Panel1.SuspendLayout()
         CalendarTableLayoutPanel.SuspendLayout()
         CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
-        Panel1.SuspendLayout()
-        Panel2.SuspendLayout()
         SuspendLayout()
         ' 
         ' BackgroundPictureBox
@@ -171,13 +171,14 @@ Partial Class Form1
         CalendarTabPage.TabIndex = 0
         CalendarTabPage.Text = "Calendar"
         ' 
-        ' DayPanelControl36
+        ' Panel2
         ' 
-        DayPanelControl36.DayNum = 0
-        DayPanelControl36.Location = New Point(1, -1)
-        DayPanelControl36.Name = "DayPanelControl36"
-        DayPanelControl36.Size = New Size(58, 74)
-        DayPanelControl36.TabIndex = 33
+        Panel2.BorderStyle = BorderStyle.FixedSingle
+        Panel2.Controls.Add(DayPanelControl37)
+        Panel2.Location = New Point(61, 515)
+        Panel2.Name = "Panel2"
+        Panel2.Size = New Size(61, 75)
+        Panel2.TabIndex = 67
         ' 
         ' DayPanelControl37
         ' 
@@ -186,6 +187,23 @@ Partial Class Form1
         DayPanelControl37.Name = "DayPanelControl37"
         DayPanelControl37.Size = New Size(58, 74)
         DayPanelControl37.TabIndex = 34
+        ' 
+        ' Panel1
+        ' 
+        Panel1.BorderStyle = BorderStyle.FixedSingle
+        Panel1.Controls.Add(DayPanelControl36)
+        Panel1.Location = New Point(1, 515)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(61, 75)
+        Panel1.TabIndex = 66
+        ' 
+        ' DayPanelControl36
+        ' 
+        DayPanelControl36.DayNum = 0
+        DayPanelControl36.Location = New Point(1, -1)
+        DayPanelControl36.Name = "DayPanelControl36"
+        DayPanelControl36.Size = New Size(58, 74)
+        DayPanelControl36.TabIndex = 33
         ' 
         ' CalendarTableLayoutPanel
         ' 
@@ -236,12 +254,12 @@ Partial Class Form1
         CalendarTableLayoutPanel.Location = New Point(1, 137)
         CalendarTableLayoutPanel.Name = "CalendarTableLayoutPanel"
         CalendarTableLayoutPanel.RowCount = 5
-        CalendarTableLayoutPanel.RowStyles.Add(New RowStyle(SizeType.Percent, 20.0F))
-        CalendarTableLayoutPanel.RowStyles.Add(New RowStyle(SizeType.Percent, 20.0F))
-        CalendarTableLayoutPanel.RowStyles.Add(New RowStyle(SizeType.Percent, 20.0F))
-        CalendarTableLayoutPanel.RowStyles.Add(New RowStyle(SizeType.Percent, 20.0F))
-        CalendarTableLayoutPanel.RowStyles.Add(New RowStyle(SizeType.Percent, 20.0F))
-        CalendarTableLayoutPanel.RowStyles.Add(New RowStyle(SizeType.Absolute, 20.0F))
+        CalendarTableLayoutPanel.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
+        CalendarTableLayoutPanel.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
+        CalendarTableLayoutPanel.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
+        CalendarTableLayoutPanel.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
+        CalendarTableLayoutPanel.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
+        CalendarTableLayoutPanel.RowStyles.Add(New RowStyle(SizeType.Absolute, 20F))
         CalendarTableLayoutPanel.Size = New Size(424, 379)
         CalendarTableLayoutPanel.TabIndex = 65
         ' 
@@ -734,7 +752,7 @@ Partial Class Form1
         ' AddToCalendarButton
         ' 
         AddToCalendarButton.BackColor = SystemColors.Control
-        AddToCalendarButton.Font = New Font("Segoe UI", 12.0F, FontStyle.Regular, GraphicsUnit.Point)
+        AddToCalendarButton.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
         AddToCalendarButton.ForeColor = Color.Black
         AddToCalendarButton.Location = New Point(329, 8)
         AddToCalendarButton.Name = "AddToCalendarButton"
@@ -773,28 +791,9 @@ Partial Class Form1
         ManagementTabPage.Text = "Management"
         ManagementTabPage.UseVisualStyleBackColor = True
         ' 
-        ' Panel1
-        ' 
-        Panel1.BorderStyle = BorderStyle.FixedSingle
-        Panel1.Controls.Add(DayPanelControl36)
-        Panel1.Location = New Point(1, 515)
-        Panel1.Name = "Panel1"
-        Panel1.Size = New Size(61, 75)
-        Panel1.TabIndex = 66
-        ' 
-        ' Panel2
-        ' 
-        Panel2.BorderStyle = BorderStyle.FixedSingle
-        Panel2.Controls.Add(DayPanelControl37)
-        Panel2.Location = New Point(61, 515)
-        Panel2.Name = "Panel2"
-        Panel2.Size = New Size(61, 75)
-        Panel2.TabIndex = 67
-        ' 
         ' Form1
         ' 
-        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
-        AutoScaleMode = AutoScaleMode.Font
+        AutoScaleMode = AutoScaleMode.None
         ClientSize = New Size(499, 904)
         Controls.Add(TabControl1)
         Controls.Add(DecorationPanel4)
@@ -805,13 +804,13 @@ Partial Class Form1
         TabControl1.ResumeLayout(False)
         CalendarTabPage.ResumeLayout(False)
         CalendarTabPage.PerformLayout()
+        Panel2.ResumeLayout(False)
+        Panel1.ResumeLayout(False)
         CalendarTableLayoutPanel.ResumeLayout(False)
         CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
-        Panel1.ResumeLayout(False)
-        Panel2.ResumeLayout(False)
         ResumeLayout(False)
     End Sub
 
