@@ -87,6 +87,56 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend Shared ReadOnly Property istockphoto_1446180973_1024x1024() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("istockphoto-1446180973-1024x1024", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend Shared ReadOnly Property istockphoto_944927622_1024x1024() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("istockphoto-944927622-1024x1024", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend Shared ReadOnly Property Jar() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Jar", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend Shared ReadOnly Property phoneBackground() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("phoneBackground", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend Shared ReadOnly Property phoneBackground1() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("phoneBackground1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend Shared ReadOnly Property phoneBackground2() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("phoneBackground2", resourceCulture)

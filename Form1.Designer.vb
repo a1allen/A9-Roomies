@@ -23,7 +23,6 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         BackgroundPictureBox = New PictureBox()
-        DecorationPanel4 = New Panel()
         TabControl1 = New TabControl()
         CalendarTabPage = New TabPage()
         Panel2 = New Panel()
@@ -90,7 +89,17 @@ Partial Class Form1
         AddToCalendarButton = New Button()
         MonthLabel = New Label()
         BudgetTabPage = New TabPage()
+        Button1 = New Button()
+        addMoneyButton = New Button()
+        collectButton = New Button()
+        MoneyStatus = New Label()
+        PictureBox5 = New PictureBox()
+        BudgetTitle = New Label()
         ManagementTabPage = New TabPage()
+        PictureBox6 = New PictureBox()
+        Label1 = New Label()
+        Label2 = New Label()
+        Label3 = New Label()
         CType(BackgroundPictureBox, ComponentModel.ISupportInitialize).BeginInit()
         TabControl1.SuspendLayout()
         CalendarTabPage.SuspendLayout()
@@ -101,25 +110,21 @@ Partial Class Form1
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        BudgetTabPage.SuspendLayout()
+        CType(PictureBox5, ComponentModel.ISupportInitialize).BeginInit()
+        ManagementTabPage.SuspendLayout()
+        CType(PictureBox6, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' BackgroundPictureBox
         ' 
         BackgroundPictureBox.BackColor = SystemColors.ButtonHighlight
-        BackgroundPictureBox.BackgroundImage = My.Resources.myResources.phoneBackground2
+        BackgroundPictureBox.BackgroundImage = My.Resources.myResources.phoneBackground1
         BackgroundPictureBox.Location = New Point(0, 1)
         BackgroundPictureBox.Name = "BackgroundPictureBox"
         BackgroundPictureBox.Size = New Size(498, 901)
         BackgroundPictureBox.TabIndex = 0
         BackgroundPictureBox.TabStop = False
-        ' 
-        ' DecorationPanel4
-        ' 
-        DecorationPanel4.BackColor = SystemColors.ActiveCaptionText
-        DecorationPanel4.Location = New Point(32, 840)
-        DecorationPanel4.Name = "DecorationPanel4"
-        DecorationPanel4.Size = New Size(440, 38)
-        DecorationPanel4.TabIndex = 4
         ' 
         ' TabControl1
         ' 
@@ -128,10 +133,10 @@ Partial Class Form1
         TabControl1.Controls.Add(BudgetTabPage)
         TabControl1.Controls.Add(ManagementTabPage)
         TabControl1.ItemSize = New Size(144, 40)
-        TabControl1.Location = New Point(34, 62)
+        TabControl1.Location = New Point(33, 67)
         TabControl1.Name = "TabControl1"
         TabControl1.SelectedIndex = 0
-        TabControl1.Size = New Size(435, 775)
+        TabControl1.Size = New Size(437, 770)
         TabControl1.SizeMode = TabSizeMode.Fixed
         TabControl1.TabIndex = 5
         ' 
@@ -167,7 +172,7 @@ Partial Class Form1
         CalendarTabPage.Location = New Point(4, 4)
         CalendarTabPage.Name = "CalendarTabPage"
         CalendarTabPage.Padding = New Padding(3)
-        CalendarTabPage.Size = New Size(427, 727)
+        CalendarTabPage.Size = New Size(429, 722)
         CalendarTabPage.TabIndex = 0
         CalendarTabPage.Text = "Calendar"
         ' 
@@ -548,7 +553,7 @@ Partial Class Form1
         Roomie4PointsLabel.AutoSize = True
         Roomie4PointsLabel.Location = New Point(376, 671)
         Roomie4PointsLabel.Name = "Roomie4PointsLabel"
-        Roomie4PointsLabel.Size = New Size(17, 20)
+        Roomie4PointsLabel.Size = New Size(13, 15)
         Roomie4PointsLabel.TabIndex = 64
         Roomie4PointsLabel.Text = "0"
         ' 
@@ -557,7 +562,7 @@ Partial Class Form1
         Roomie3PointsLabel.AutoSize = True
         Roomie3PointsLabel.Location = New Point(276, 671)
         Roomie3PointsLabel.Name = "Roomie3PointsLabel"
-        Roomie3PointsLabel.Size = New Size(17, 20)
+        Roomie3PointsLabel.Size = New Size(13, 15)
         Roomie3PointsLabel.TabIndex = 63
         Roomie3PointsLabel.Text = "0"
         ' 
@@ -566,7 +571,7 @@ Partial Class Form1
         Roomie2PointsLabel.AutoSize = True
         Roomie2PointsLabel.Location = New Point(176, 671)
         Roomie2PointsLabel.Name = "Roomie2PointsLabel"
-        Roomie2PointsLabel.Size = New Size(17, 20)
+        Roomie2PointsLabel.Size = New Size(13, 15)
         Roomie2PointsLabel.TabIndex = 62
         Roomie2PointsLabel.Text = "0"
         ' 
@@ -575,7 +580,7 @@ Partial Class Form1
         Roomie1PointsLabel.AutoSize = True
         Roomie1PointsLabel.Location = New Point(76, 671)
         Roomie1PointsLabel.Name = "Roomie1PointsLabel"
-        Roomie1PointsLabel.Size = New Size(17, 20)
+        Roomie1PointsLabel.Size = New Size(13, 15)
         Roomie1PointsLabel.TabIndex = 61
         Roomie1PointsLabel.Text = "0"
         ' 
@@ -608,7 +613,7 @@ Partial Class Form1
         RoomiesTitleLabel.AutoSize = True
         RoomiesTitleLabel.Location = New Point(129, 631)
         RoomiesTitleLabel.Name = "RoomiesTitleLabel"
-        RoomiesTitleLabel.Size = New Size(169, 20)
+        RoomiesTitleLabel.Size = New Size(136, 15)
         RoomiesTitleLabel.TabIndex = 58
         RoomiesTitleLabel.Text = "Roomates Contributions"
         ' 
@@ -767,36 +772,147 @@ Partial Class Form1
         MonthLabel.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point)
         MonthLabel.Location = New Point(21, 24)
         MonthLabel.Name = "MonthLabel"
-        MonthLabel.Size = New Size(277, 46)
+        MonthLabel.Size = New Size(224, 37)
         MonthLabel.TabIndex = 18
         MonthLabel.Text = "November 2023"
         ' 
         ' BudgetTabPage
         ' 
+        BudgetTabPage.Controls.Add(Label3)
+        BudgetTabPage.Controls.Add(Label2)
+        BudgetTabPage.Controls.Add(Label1)
+        BudgetTabPage.Controls.Add(Button1)
+        BudgetTabPage.Controls.Add(addMoneyButton)
+        BudgetTabPage.Controls.Add(collectButton)
+        BudgetTabPage.Controls.Add(MoneyStatus)
+        BudgetTabPage.Controls.Add(PictureBox5)
+        BudgetTabPage.Controls.Add(BudgetTitle)
         BudgetTabPage.Location = New Point(4, 4)
         BudgetTabPage.Name = "BudgetTabPage"
         BudgetTabPage.Padding = New Padding(3)
-        BudgetTabPage.Size = New Size(427, 727)
+        BudgetTabPage.Size = New Size(429, 722)
         BudgetTabPage.TabIndex = 1
         BudgetTabPage.Text = "Budget"
         BudgetTabPage.UseVisualStyleBackColor = True
         ' 
+        ' Button1
+        ' 
+        Button1.BackColor = Color.DarkSeaGreen
+        Button1.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
+        Button1.Location = New Point(92, 559)
+        Button1.Name = "Button1"
+        Button1.Size = New Size(244, 50)
+        Button1.TabIndex = 25
+        Button1.Text = "View Balance Sheet"
+        Button1.UseVisualStyleBackColor = False
+        ' 
+        ' addMoneyButton
+        ' 
+        addMoneyButton.BackColor = Color.DarkSeaGreen
+        addMoneyButton.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
+        addMoneyButton.Location = New Point(215, 612)
+        addMoneyButton.Name = "addMoneyButton"
+        addMoneyButton.Size = New Size(121, 50)
+        addMoneyButton.TabIndex = 24
+        addMoneyButton.Text = "Pay To The Jar"
+        addMoneyButton.UseVisualStyleBackColor = False
+        ' 
+        ' collectButton
+        ' 
+        collectButton.BackColor = Color.DarkSeaGreen
+        collectButton.Enabled = False
+        collectButton.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
+        collectButton.Location = New Point(92, 612)
+        collectButton.Name = "collectButton"
+        collectButton.Size = New Size(121, 50)
+        collectButton.TabIndex = 23
+        collectButton.Text = "Take My Money From The Jar"
+        collectButton.UseVisualStyleBackColor = False
+        ' 
+        ' MoneyStatus
+        ' 
+        MoneyStatus.AutoSize = True
+        MoneyStatus.Font = New Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point)
+        MoneyStatus.Location = New Point(127, 425)
+        MoneyStatus.Name = "MoneyStatus"
+        MoneyStatus.Size = New Size(175, 25)
+        MoneyStatus.TabIndex = 21
+        MoneyStatus.Text = "I owe $15 to the Jar"
+        ' 
+        ' PictureBox5
+        ' 
+        PictureBox5.BackgroundImageLayout = ImageLayout.Stretch
+        PictureBox5.Image = My.Resources.myResources.Jar
+        PictureBox5.Location = New Point(74, 109)
+        PictureBox5.Name = "PictureBox5"
+        PictureBox5.Size = New Size(262, 302)
+        PictureBox5.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox5.TabIndex = 20
+        PictureBox5.TabStop = False
+        ' 
+        ' BudgetTitle
+        ' 
+        BudgetTitle.AutoSize = True
+        BudgetTitle.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point)
+        BudgetTitle.Location = New Point(158, 44)
+        BudgetTitle.Name = "BudgetTitle"
+        BudgetTitle.Size = New Size(110, 37)
+        BudgetTitle.TabIndex = 19
+        BudgetTitle.Text = "Budget"
+        ' 
         ' ManagementTabPage
         ' 
+        ManagementTabPage.Controls.Add(PictureBox6)
         ManagementTabPage.Location = New Point(4, 4)
         ManagementTabPage.Name = "ManagementTabPage"
         ManagementTabPage.Padding = New Padding(3)
-        ManagementTabPage.Size = New Size(427, 727)
+        ManagementTabPage.Size = New Size(429, 722)
         ManagementTabPage.TabIndex = 2
         ManagementTabPage.Text = "Management"
         ManagementTabPage.UseVisualStyleBackColor = True
+        ' 
+        ' PictureBox6
+        ' 
+        PictureBox6.Image = My.Resources.myResources.istockphoto_944927622_1024x1024
+        PictureBox6.Location = New Point(77, 105)
+        PictureBox6.Name = "PictureBox6"
+        PictureBox6.Size = New Size(276, 268)
+        PictureBox6.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox6.TabIndex = 0
+        PictureBox6.TabStop = False
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Location = New Point(155, 471)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(117, 15)
+        Label1.TabIndex = 26
+        Label1.Text = "Roomate1: Owes $15"
+        ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.Location = New Point(155, 495)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(119, 15)
+        Label2.TabIndex = 27
+        Label2.Text = "Roomate2: Owed $30"
+        ' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.Location = New Point(135, 450)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(157, 15)
+        Label3.TabIndex = 28
+        Label3.Text = "______________________________"
         ' 
         ' Form1
         ' 
         AutoScaleMode = AutoScaleMode.None
         ClientSize = New Size(499, 904)
         Controls.Add(TabControl1)
-        Controls.Add(DecorationPanel4)
         Controls.Add(BackgroundPictureBox)
         Name = "Form1"
         Text = "Roomies Application"
@@ -811,11 +927,15 @@ Partial Class Form1
         CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        BudgetTabPage.ResumeLayout(False)
+        BudgetTabPage.PerformLayout()
+        CType(PictureBox5, ComponentModel.ISupportInitialize).EndInit()
+        ManagementTabPage.ResumeLayout(False)
+        CType(PictureBox6, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
     Friend WithEvents BackgroundPictureBox As PictureBox
-    Friend WithEvents DecorationPanel4 As Panel
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents CalendarTabPage As TabPage
     Friend WithEvents BudgetTabPage As TabPage
@@ -885,4 +1005,14 @@ Partial Class Form1
     Friend WithEvents CalendarTableLayoutPanel As TableLayoutPanel
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents BudgetTitle As Label
+    Friend WithEvents collectButton As Button
+    Friend WithEvents MoneyStatus As Label
+    Friend WithEvents addMoneyButton As Button
+    Friend WithEvents PictureBox5 As PictureBox
+    Friend WithEvents Button1 As Button
+    Friend WithEvents PictureBox6 As PictureBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label1 As Label
 End Class
