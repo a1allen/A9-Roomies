@@ -89,6 +89,9 @@ Partial Class Form1
         AddToCalendarButton = New Button()
         MonthLabel = New Label()
         BudgetTabPage = New TabPage()
+        Label3 = New Label()
+        Label2 = New Label()
+        Label1 = New Label()
         Button1 = New Button()
         addMoneyButton = New Button()
         collectButton = New Button()
@@ -96,10 +99,11 @@ Partial Class Form1
         PictureBox5 = New PictureBox()
         BudgetTitle = New Label()
         ManagementTabPage = New TabPage()
+        Label4 = New Label()
+        Button2 = New Button()
+        Button3 = New Button()
+        Label5 = New Label()
         PictureBox6 = New PictureBox()
-        Label1 = New Label()
-        Label2 = New Label()
-        Label3 = New Label()
         CType(BackgroundPictureBox, ComponentModel.ISupportInitialize).BeginInit()
         TabControl1.SuspendLayout()
         CalendarTabPage.SuspendLayout()
@@ -553,7 +557,7 @@ Partial Class Form1
         Roomie4PointsLabel.AutoSize = True
         Roomie4PointsLabel.Location = New Point(376, 671)
         Roomie4PointsLabel.Name = "Roomie4PointsLabel"
-        Roomie4PointsLabel.Size = New Size(13, 15)
+        Roomie4PointsLabel.Size = New Size(17, 20)
         Roomie4PointsLabel.TabIndex = 64
         Roomie4PointsLabel.Text = "0"
         ' 
@@ -562,7 +566,7 @@ Partial Class Form1
         Roomie3PointsLabel.AutoSize = True
         Roomie3PointsLabel.Location = New Point(276, 671)
         Roomie3PointsLabel.Name = "Roomie3PointsLabel"
-        Roomie3PointsLabel.Size = New Size(13, 15)
+        Roomie3PointsLabel.Size = New Size(17, 20)
         Roomie3PointsLabel.TabIndex = 63
         Roomie3PointsLabel.Text = "0"
         ' 
@@ -571,7 +575,7 @@ Partial Class Form1
         Roomie2PointsLabel.AutoSize = True
         Roomie2PointsLabel.Location = New Point(176, 671)
         Roomie2PointsLabel.Name = "Roomie2PointsLabel"
-        Roomie2PointsLabel.Size = New Size(13, 15)
+        Roomie2PointsLabel.Size = New Size(17, 20)
         Roomie2PointsLabel.TabIndex = 62
         Roomie2PointsLabel.Text = "0"
         ' 
@@ -580,7 +584,7 @@ Partial Class Form1
         Roomie1PointsLabel.AutoSize = True
         Roomie1PointsLabel.Location = New Point(76, 671)
         Roomie1PointsLabel.Name = "Roomie1PointsLabel"
-        Roomie1PointsLabel.Size = New Size(13, 15)
+        Roomie1PointsLabel.Size = New Size(17, 20)
         Roomie1PointsLabel.TabIndex = 61
         Roomie1PointsLabel.Text = "0"
         ' 
@@ -613,7 +617,7 @@ Partial Class Form1
         RoomiesTitleLabel.AutoSize = True
         RoomiesTitleLabel.Location = New Point(129, 631)
         RoomiesTitleLabel.Name = "RoomiesTitleLabel"
-        RoomiesTitleLabel.Size = New Size(136, 15)
+        RoomiesTitleLabel.Size = New Size(169, 20)
         RoomiesTitleLabel.TabIndex = 58
         RoomiesTitleLabel.Text = "Roomates Contributions"
         ' 
@@ -772,7 +776,7 @@ Partial Class Form1
         MonthLabel.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point)
         MonthLabel.Location = New Point(21, 24)
         MonthLabel.Name = "MonthLabel"
-        MonthLabel.Size = New Size(224, 37)
+        MonthLabel.Size = New Size(277, 46)
         MonthLabel.TabIndex = 18
         MonthLabel.Text = "November 2023"
         ' 
@@ -794,6 +798,33 @@ Partial Class Form1
         BudgetTabPage.TabIndex = 1
         BudgetTabPage.Text = "Budget"
         BudgetTabPage.UseVisualStyleBackColor = True
+        ' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.Location = New Point(120, 450)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(189, 20)
+        Label3.TabIndex = 28
+        Label3.Text = "______________________________"
+        ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.Location = New Point(138, 495)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(152, 20)
+        Label2.TabIndex = 27
+        Label2.Text = "Roomate2: Owed $30"
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Location = New Point(140, 471)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(149, 20)
+        Label1.TabIndex = 26
+        Label1.Text = "Roomate1: Owes $15"
         ' 
         ' Button1
         ' 
@@ -833,9 +864,9 @@ Partial Class Form1
         ' 
         MoneyStatus.AutoSize = True
         MoneyStatus.Font = New Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point)
-        MoneyStatus.Location = New Point(127, 425)
+        MoneyStatus.Location = New Point(102, 425)
         MoneyStatus.Name = "MoneyStatus"
-        MoneyStatus.Size = New Size(175, 25)
+        MoneyStatus.Size = New Size(224, 32)
         MoneyStatus.TabIndex = 21
         MoneyStatus.Text = "I owe $15 to the Jar"
         ' 
@@ -843,7 +874,7 @@ Partial Class Form1
         ' 
         PictureBox5.BackgroundImageLayout = ImageLayout.Stretch
         PictureBox5.Image = My.Resources.myResources.Jar
-        PictureBox5.Location = New Point(74, 109)
+        PictureBox5.Location = New Point(83, 109)
         PictureBox5.Name = "PictureBox5"
         PictureBox5.Size = New Size(262, 302)
         PictureBox5.SizeMode = PictureBoxSizeMode.StretchImage
@@ -854,14 +885,18 @@ Partial Class Form1
         ' 
         BudgetTitle.AutoSize = True
         BudgetTitle.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point)
-        BudgetTitle.Location = New Point(158, 44)
+        BudgetTitle.Location = New Point(146, 44)
         BudgetTitle.Name = "BudgetTitle"
-        BudgetTitle.Size = New Size(110, 37)
+        BudgetTitle.Size = New Size(136, 46)
         BudgetTitle.TabIndex = 19
         BudgetTitle.Text = "Budget"
         ' 
         ' ManagementTabPage
         ' 
+        ManagementTabPage.Controls.Add(Label4)
+        ManagementTabPage.Controls.Add(Button2)
+        ManagementTabPage.Controls.Add(Button3)
+        ManagementTabPage.Controls.Add(Label5)
         ManagementTabPage.Controls.Add(PictureBox6)
         ManagementTabPage.Location = New Point(4, 4)
         ManagementTabPage.Name = "ManagementTabPage"
@@ -871,42 +906,55 @@ Partial Class Form1
         ManagementTabPage.Text = "Management"
         ManagementTabPage.UseVisualStyleBackColor = True
         ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
+        Label4.Location = New Point(182, 456)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(61, 20)
+        Label4.TabIndex = 73
+        Label4.Text = "Options"
+        ' 
+        ' Button2
+        ' 
+        Button2.BackColor = Color.SeaShell
+        Button2.Location = New Point(94, 573)
+        Button2.Name = "Button2"
+        Button2.Size = New Size(240, 67)
+        Button2.TabIndex = 71
+        Button2.Text = "FAQ"
+        Button2.UseVisualStyleBackColor = False
+        ' 
+        ' Button3
+        ' 
+        Button3.BackColor = Color.SeaShell
+        Button3.Location = New Point(94, 500)
+        Button3.Name = "Button3"
+        Button3.Size = New Size(240, 67)
+        Button3.TabIndex = 70
+        Button3.Text = "Roomate Profiles"
+        Button3.UseVisualStyleBackColor = False
+        ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point)
+        Label5.Location = New Point(94, 38)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(232, 46)
+        Label5.TabIndex = 69
+        Label5.Text = "Management"
+        ' 
         ' PictureBox6
         ' 
         PictureBox6.Image = My.Resources.myResources.istockphoto_944927622_1024x1024
-        PictureBox6.Location = New Point(77, 105)
+        PictureBox6.Location = New Point(54, 111)
         PictureBox6.Name = "PictureBox6"
-        PictureBox6.Size = New Size(276, 268)
+        PictureBox6.Size = New Size(326, 301)
         PictureBox6.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox6.TabIndex = 0
         PictureBox6.TabStop = False
-        ' 
-        ' Label1
-        ' 
-        Label1.AutoSize = True
-        Label1.Location = New Point(155, 471)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(117, 15)
-        Label1.TabIndex = 26
-        Label1.Text = "Roomate1: Owes $15"
-        ' 
-        ' Label2
-        ' 
-        Label2.AutoSize = True
-        Label2.Location = New Point(155, 495)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(119, 15)
-        Label2.TabIndex = 27
-        Label2.Text = "Roomate2: Owed $30"
-        ' 
-        ' Label3
-        ' 
-        Label3.AutoSize = True
-        Label3.Location = New Point(135, 450)
-        Label3.Name = "Label3"
-        Label3.Size = New Size(157, 15)
-        Label3.TabIndex = 28
-        Label3.Text = "______________________________"
         ' 
         ' Form1
         ' 
@@ -931,6 +979,7 @@ Partial Class Form1
         BudgetTabPage.PerformLayout()
         CType(PictureBox5, ComponentModel.ISupportInitialize).EndInit()
         ManagementTabPage.ResumeLayout(False)
+        ManagementTabPage.PerformLayout()
         CType(PictureBox6, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
@@ -1015,4 +1064,8 @@ Partial Class Form1
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Label5 As Label
 End Class
