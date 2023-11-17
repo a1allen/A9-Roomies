@@ -78,4 +78,38 @@
         setupCalendar()
     End Sub
 
+    Private Sub AddToCalendarButton_Click(sender As Object, e As EventArgs) Handles AddToCalendarButton.Click
+        'Hide all other elements on the tab
+        MonthLabel.Hide()
+        AddToCalendarButton.Hide()
+        DecorationPanel1.Hide()
+        DecorationPanel2.Hide()
+        DecorationPanel3.Hide()
+        SunLabel.Hide()
+        MonLabel.Hide()
+        TuesLabel.Hide()
+        WedLabel.Hide()
+        ThursLabel.Hide()
+        FriLabel.Hide()
+        SatLabel.Hide()
+        CalendarTableLayoutPanel.Hide()
+        Panel1.Hide()
+        Panel2.Hide()
+        PreviousButton.Hide()
+        NextButton.Hide()
+        RoomiesTitleLabel.Hide()
+        PictureBox1.Hide()
+        PictureBox2.Hide()
+        PictureBox3.Hide()
+        PictureBox4.Hide()
+        Roomie1PointsLabel.Hide()
+        Roomie2PointsLabel.Hide()
+        Roomie3PointsLabel.Hide()
+        Roomie4PointsLabel.Hide()
+
+        'Put control on screen
+        Dim choreControl As New AddChoreControl()
+        CalendarTabPage.Controls.Add(choreControl)
+
+    End Sub
 End Class
