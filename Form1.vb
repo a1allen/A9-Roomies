@@ -188,8 +188,6 @@ Public Class Form1
         FriLabel.Show()
         SatLabel.Show()
         CalendarTableLayoutPanel.Show()
-        Panel1.Show()
-        Panel2.Show()
         PreviousButton.Show()
         NextButton.Show()
         RoomiesTitleLabel.Show()
@@ -201,6 +199,8 @@ Public Class Form1
         Roomie2PointsLabel.Show()
         Roomie3PointsLabel.Show()
         Roomie4PointsLabel.Show()
+
+
     End Sub
 
 End Class

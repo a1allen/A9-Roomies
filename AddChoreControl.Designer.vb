@@ -90,7 +90,7 @@ Partial Class AddChoreControl
         ' 
         AddChoreTitleLabel.AutoSize = True
         AddChoreTitleLabel.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point)
-        AddChoreTitleLabel.Location = New Point(133, 35)
+        AddChoreTitleLabel.Location = New Point(146, 46)
         AddChoreTitleLabel.Name = "AddChoreTitleLabel"
         AddChoreTitleLabel.Size = New Size(168, 41)
         AddChoreTitleLabel.TabIndex = 14
