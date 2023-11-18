@@ -33,8 +33,8 @@ Partial Class AddChoreControl
         CustomChorePanel = New Panel()
         DecorationPanel5 = New Panel()
         DecorationPanel4 = New Panel()
-        ChoreWeightComboBox = New ComboBox()
-        TextBox1 = New TextBox()
+        NewChoreWeightComboBox = New ComboBox()
+        NewChoreTextBox = New TextBox()
         NewChorePointsLabel = New Label()
         RoomateComboBox = New ComboBox()
         AssignedToLabel = New Label()
@@ -43,6 +43,7 @@ Partial Class AddChoreControl
         RepeatComboBox = New ComboBox()
         RepeatLabel = New Label()
         RepeatFrequencyComboBox = New ComboBox()
+        Label1 = New Label()
         CustomChorePanel.SuspendLayout()
         SuspendLayout()
         ' 
@@ -131,10 +132,10 @@ Partial Class AddChoreControl
         ' 
         ChoreTypeComboBox.DropDownStyle = ComboBoxStyle.DropDownList
         ChoreTypeComboBox.FormattingEnabled = True
-        ChoreTypeComboBox.Items.AddRange(New Object() {"Vacuum (1 point)", "Wash Dishes (1 point)", "Shovel Snow (2 points)", "Grocery (2 points)", "Add Custom Chore"})
+        ChoreTypeComboBox.Items.AddRange(New Object() {"Vacuum", "Wash Dishes", "Shovel Snow", "Grocery", "Add Custom Chore"})
         ChoreTypeComboBox.Location = New Point(158, 146)
         ChoreTypeComboBox.Name = "ChoreTypeComboBox"
-        ChoreTypeComboBox.Size = New Size(230, 28)
+        ChoreTypeComboBox.Size = New Size(156, 28)
         ChoreTypeComboBox.TabIndex = 56
         ' 
         ' NewChoreLabel
@@ -150,8 +151,8 @@ Partial Class AddChoreControl
         ' 
         CustomChorePanel.Controls.Add(DecorationPanel5)
         CustomChorePanel.Controls.Add(DecorationPanel4)
-        CustomChorePanel.Controls.Add(ChoreWeightComboBox)
-        CustomChorePanel.Controls.Add(TextBox1)
+        CustomChorePanel.Controls.Add(NewChoreWeightComboBox)
+        CustomChorePanel.Controls.Add(NewChoreTextBox)
         CustomChorePanel.Controls.Add(NewChorePointsLabel)
         CustomChorePanel.Controls.Add(NewChoreLabel)
         CustomChorePanel.Location = New Point(39, 180)
@@ -176,22 +177,22 @@ Partial Class AddChoreControl
         DecorationPanel4.Size = New Size(5, 85)
         DecorationPanel4.TabIndex = 62
         ' 
-        ' ChoreWeightComboBox
+        ' NewChoreWeightComboBox
         ' 
-        ChoreWeightComboBox.DropDownStyle = ComboBoxStyle.DropDownList
-        ChoreWeightComboBox.FormattingEnabled = True
-        ChoreWeightComboBox.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"})
-        ChoreWeightComboBox.Location = New Point(181, 46)
-        ChoreWeightComboBox.Name = "ChoreWeightComboBox"
-        ChoreWeightComboBox.Size = New Size(168, 28)
-        ChoreWeightComboBox.TabIndex = 61
+        NewChoreWeightComboBox.DropDownStyle = ComboBoxStyle.DropDownList
+        NewChoreWeightComboBox.FormattingEnabled = True
+        NewChoreWeightComboBox.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"})
+        NewChoreWeightComboBox.Location = New Point(181, 46)
+        NewChoreWeightComboBox.Name = "NewChoreWeightComboBox"
+        NewChoreWeightComboBox.Size = New Size(168, 28)
+        NewChoreWeightComboBox.TabIndex = 61
         ' 
-        ' TextBox1
+        ' NewChoreTextBox
         ' 
-        TextBox1.Location = New Point(181, 11)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(168, 27)
-        TextBox1.TabIndex = 59
+        NewChoreTextBox.Location = New Point(181, 11)
+        NewChoreTextBox.Name = "NewChoreTextBox"
+        NewChoreTextBox.Size = New Size(168, 27)
+        NewChoreTextBox.TabIndex = 59
         ' 
         ' NewChorePointsLabel
         ' 
@@ -206,7 +207,7 @@ Partial Class AddChoreControl
         ' 
         RoomateComboBox.DropDownStyle = ComboBoxStyle.DropDownList
         RoomateComboBox.FormattingEnabled = True
-        RoomateComboBox.Items.AddRange(New Object() {"Roomate 1 ", "Roomate 2", "Roomate 3", "Roomate 4"})
+        RoomateComboBox.Items.AddRange(New Object() {"Roomate 1", "Roomate 2", "Roomate 3", "Roomate 4"})
         RoomateComboBox.Location = New Point(158, 299)
         RoomateComboBox.Name = "RoomateComboBox"
         RoomateComboBox.Size = New Size(230, 28)
@@ -266,11 +267,20 @@ Partial Class AddChoreControl
         RepeatFrequencyComboBox.Size = New Size(155, 28)
         RepeatFrequencyComboBox.TabIndex = 61
         ' 
+        ' Label1
+        ' 
+        Label1.Location = New Point(320, 149)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(58, 20)
+        Label1.TabIndex = 66
+        Label1.Text = "Weight"
+        ' 
         ' AddChoreControl
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
+        Controls.Add(Label1)
         Controls.Add(RepeatComboBox)
         Controls.Add(RepeatFrequencyComboBox)
         Controls.Add(RepeatLabel)
@@ -335,13 +345,14 @@ Partial Class AddChoreControl
     Friend WithEvents Label23 As Label
     Friend WithEvents DayLabel2 As Label
     Friend WithEvents RoomateComboBox As ComboBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents NewChoreTextBox As TextBox
     Friend WithEvents DecorationPanel4 As Panel
-    Friend WithEvents ChoreWeightComboBox As ComboBox
+    Friend WithEvents NewChoreWeightComboBox As ComboBox
     Friend WithEvents DecorationPanel5 As Panel
     Friend WithEvents DateLabel As Label
     Friend WithEvents AddChoreDateTimePicker As DateTimePicker
     Friend WithEvents RepeatComboBox As ComboBox
     Friend WithEvents RepeatLabel As Label
     Friend WithEvents RepeatFrequencyComboBox As ComboBox
+    Friend WithEvents Label1 As Label
 End Class

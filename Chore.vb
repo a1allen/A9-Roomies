@@ -1,6 +1,7 @@
 ﻿Public Class Chore
     Private choreType As String
     Private chorePerson As String
+    Private choreWeight As Integer
 
     Public Sub New(typeOfChore As String, assignedPerson As String)
         choreType = typeOfChore
@@ -21,6 +22,15 @@
             Return chorePerson
         End Get
         Set(ByVal value As String)
+            chorePerson = value
+        End Set
+    End Property
+
+    Public Property Weight() As Integer
+        Get
+            Return choreWeight
+        End Get
+        Set(ByVal value As Integer)
             chorePerson = value
         End Set
     End Property

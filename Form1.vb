@@ -1,4 +1,6 @@
-﻿Public Class Form1
+﻿Imports System.Security.Cryptography.X509Certificates
+
+Public Class Form1
 
     Dim dayPanelArray(36) As DayPanelControl
     Dim controlName As String
@@ -8,6 +10,8 @@
     Dim currentDate As DateTime
     Dim startDayOfWeek As Integer
     Dim count As Integer
+    Dim choreControl As AddChoreControl
+    Public ChoreList As New List(Of Chore)()
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         For i As Integer = 0 To dayPanelArray.Length - 1
@@ -107,9 +111,93 @@
         Roomie3PointsLabel.Hide()
         Roomie4PointsLabel.Hide()
 
-        'Put control on screen
-        Dim choreControl As New AddChoreControl()
+        'Create instance
+        choreControl = New AddChoreControl()
         CalendarTabPage.Controls.Add(choreControl)
 
+        AddHandler choreControl.AddChoreButtonClick, AddressOf AddChoreButton_Click
+        AddHandler choreControl.CancelChoreButtonClick, AddressOf CancelChoreButton_Click
     End Sub
+
+    Private Sub AddChoreButton_Click(sender As Object, e As EventArgs)
+        'Add new default chore if added by user
+        If choreControl.ChoreTypeComboBox.Text = "Add Custom Chore" Then
+            'Add chore to ChoreList
+            ChoreList.Add(New Chore(choreControl.NewChoreTextBox.Text, choreControl.RoomateComboBox.Text))
+        Else
+            'Add chore to ChoreList
+            ChoreList.Add(New Chore(choreControl.ChoreTypeComboBox.Text, choreControl.RoomateComboBox.Text))
+        End If
+
+        'Add the chore to the Day class
+        Dim dayChores As New Day(choreControl.AddChoreDateTimePicker.Value.Date, ChoreList)
+
+        updateCalendar(choreControl.AddChoreDateTimePicker.Value.Date, choreControl.RoomateComboBox.SelectedIndex)
+        showCalendarTab()
+
+    End Sub
+
+    Private Sub updateCalendar(choreDate As Date, person As Integer)
+        numDaysInMonth = DateTime.DaysInMonth(choreDate.Year, choreDate.Month)
+        currentDate = New DateTime(choreDate.Year, choreDate.Month, 1)
+        startDayOfWeek = (currentDate.DayOfWeek)
+
+        count = 0
+        For i As Integer = 0 To dayPanelArray.Length - 1
+            If (i >= startDayOfWeek) And (count <= numDaysInMonth - 1) Then
+                count += 1
+                If (count = choreDate.Day) Then
+                    If person = 0 Then
+                        dayPanelArray(i).Roomate1PictureBox.Show()
+                    ElseIf person = 1 Then
+                        dayPanelArray(i).Roomate2PictureBox.Show()
+                    ElseIf person = 2 Then
+                        dayPanelArray(i).Roomate3PictureBox.Show()
+                    ElseIf person = 3 Then
+                        dayPanelArray(i).Roomate4PictureBox.Show()
+                    End If
+                End If
+                'Check if extra panels were used
+                currentDate = currentDate.AddDays(1)
+            End If
+        Next
+    End Sub
+
+    Private Sub CancelChoreButton_Click(sender As Object, e As EventArgs)
+        showCalendarTab()
+    End Sub
+
+    Private Sub showCalendarTab()
+        'Remove instance 
+        CalendarTabPage.Controls.Remove(choreControl)
+
+        'Show all other elements on the tab
+        MonthLabel.Show()
+        AddToCalendarButton.Show()
+        DecorationPanel1.Show()
+        DecorationPanel2.Show()
+        DecorationPanel3.Show()
+        SunLabel.Show()
+        MonLabel.Show()
+        TuesLabel.Show()
+        WedLabel.Show()
+        ThursLabel.Show()
+        FriLabel.Show()
+        SatLabel.Show()
+        CalendarTableLayoutPanel.Show()
+        Panel1.Show()
+        Panel2.Show()
+        PreviousButton.Show()
+        NextButton.Show()
+        RoomiesTitleLabel.Show()
+        PictureBox1.Show()
+        PictureBox2.Show()
+        PictureBox3.Show()
+        PictureBox4.Show()
+        Roomie1PointsLabel.Show()
+        Roomie2PointsLabel.Show()
+        Roomie3PointsLabel.Show()
+        Roomie4PointsLabel.Show()
+    End Sub
+
 End Class
