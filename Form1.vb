@@ -135,6 +135,9 @@ Public Class Form1
         updateCalendar(choreControl.AddChoreDateTimePicker.Value.Date, choreControl.RoomateComboBox.SelectedIndex)
         showCalendarTab()
 
+        'Update the weights at the bottom of the page
+
+
     End Sub
 
     Private Sub updateCalendar(choreDate As Date, person As Integer)
@@ -157,10 +160,10 @@ Public Class Form1
                         dayPanelArray(i).Roomate4PictureBox.Show()
                     End If
                 End If
-                'Check if extra panels were used
                 currentDate = currentDate.AddDays(1)
             End If
         Next
+
     End Sub
 
     Private Sub CancelChoreButton_Click(sender As Object, e As EventArgs)

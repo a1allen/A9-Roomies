@@ -2,6 +2,7 @@
 
     Public Event AddChoreButtonClick As EventHandler
     Public Event CancelChoreButtonClick As EventHandler
+
     Private Sub AddChoreControl_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CustomChorePanel.Hide()
         RepeatComboBox.SelectedIndex = 0
