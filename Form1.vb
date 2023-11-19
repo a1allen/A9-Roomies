@@ -22,11 +22,23 @@ Public Class Form1
             dayPanelArray(i).Roomate2PictureBox.Hide()
             dayPanelArray(i).Roomate3PictureBox.Hide()
             dayPanelArray(i).Roomate4PictureBox.Hide()
+            AddHandler dayPanelArray(i).Click, AddressOf DayPanel_Click
+            Me.Controls.Find(controlName, True)
         Next
         'Set up the calendar for November
         year = 2023
         month = 11
         setupCalendar()
+    End Sub
+    Private Sub DayPanel_Click(sender As Object, e As EventArgs)
+        ' Handle the click event for the panels
+        Dim clickedPanel As DayPanelControl = DirectCast(sender, A9.DayPanelControl)
+
+        ' Find the index of the clicked panel in the array
+        Dim index As Integer = Array.IndexOf(dayPanelArray, clickedPanel)
+
+        ' Do something with the index
+        MessageBox.Show($"Clicked panel at index {clickedPanel.DayNum}, {MonthLabel.Text}, ")
     End Sub
     Private Sub setupCalendar()
         numDaysInMonth = DateTime.DaysInMonth(year, month)
@@ -202,5 +214,6 @@ Public Class Form1
 
 
     End Sub
+
 
 End Class
