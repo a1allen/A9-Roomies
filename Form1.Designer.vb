@@ -191,6 +191,7 @@ Partial Class Form1
         ' 
         ' DayPanelControl37
         ' 
+        DayPanelControl37.DayDate = New Date(0L)
         DayPanelControl37.DayNum = 0
         DayPanelControl37.Location = New Point(2, -1)
         DayPanelControl37.Name = "DayPanelControl37"
@@ -208,6 +209,7 @@ Partial Class Form1
         ' 
         ' DayPanelControl36
         ' 
+        DayPanelControl36.DayDate = New Date(0L)
         DayPanelControl36.DayNum = 0
         DayPanelControl36.Location = New Point(1, -1)
         DayPanelControl36.Name = "DayPanelControl36"
@@ -274,6 +276,7 @@ Partial Class Form1
         ' 
         ' DayPanelControl1
         ' 
+        DayPanelControl1.DayDate = New Date(0L)
         DayPanelControl1.DayNum = 0
         DayPanelControl1.Location = New Point(4, 4)
         DayPanelControl1.Name = "DayPanelControl1"
@@ -282,6 +285,7 @@ Partial Class Form1
         ' 
         ' DayPanelControl2
         ' 
+        DayPanelControl2.DayDate = New Date(0L)
         DayPanelControl2.DayNum = 0
         DayPanelControl2.Location = New Point(64, 4)
         DayPanelControl2.Name = "DayPanelControl2"
@@ -290,6 +294,7 @@ Partial Class Form1
         ' 
         ' DayPanelControl3
         ' 
+        DayPanelControl3.DayDate = New Date(0L)
         DayPanelControl3.DayNum = 0
         DayPanelControl3.Location = New Point(124, 4)
         DayPanelControl3.Name = "DayPanelControl3"
@@ -298,6 +303,7 @@ Partial Class Form1
         ' 
         ' DayPanelControl4
         ' 
+        DayPanelControl4.DayDate = New Date(0L)
         DayPanelControl4.DayNum = 0
         DayPanelControl4.Location = New Point(184, 4)
         DayPanelControl4.Name = "DayPanelControl4"
@@ -306,6 +312,7 @@ Partial Class Form1
         ' 
         ' DayPanelControl35
         ' 
+        DayPanelControl35.DayDate = New Date(0L)
         DayPanelControl35.DayNum = 0
         DayPanelControl35.Location = New Point(364, 304)
         DayPanelControl35.Name = "DayPanelControl35"
@@ -314,6 +321,7 @@ Partial Class Form1
         ' 
         ' DayPanelControl5
         ' 
+        DayPanelControl5.DayDate = New Date(0L)
         DayPanelControl5.DayNum = 0
         DayPanelControl5.Location = New Point(244, 4)
         DayPanelControl5.Name = "DayPanelControl5"
@@ -322,6 +330,7 @@ Partial Class Form1
         ' 
         ' DayPanelControl6
         ' 
+        DayPanelControl6.DayDate = New Date(0L)
         DayPanelControl6.DayNum = 0
         DayPanelControl6.Location = New Point(304, 4)
         DayPanelControl6.Name = "DayPanelControl6"
@@ -330,6 +339,7 @@ Partial Class Form1
         ' 
         ' DayPanelControl34
         ' 
+        DayPanelControl34.DayDate = New Date(0L)
         DayPanelControl34.DayNum = 0
         DayPanelControl34.Location = New Point(304, 304)
         DayPanelControl34.Name = "DayPanelControl34"
@@ -338,6 +348,7 @@ Partial Class Form1
         ' 
         ' DayPanelControl7
         ' 
+        DayPanelControl7.DayDate = New Date(0L)
         DayPanelControl7.DayNum = 0
         DayPanelControl7.Location = New Point(364, 4)
         DayPanelControl7.Name = "DayPanelControl7"
@@ -346,6 +357,7 @@ Partial Class Form1
         ' 
         ' DayPanelControl33
         ' 
+        DayPanelControl33.DayDate = New Date(0L)
         DayPanelControl33.DayNum = 0
         DayPanelControl33.Location = New Point(244, 304)
         DayPanelControl33.Name = "DayPanelControl33"
@@ -354,6 +366,7 @@ Partial Class Form1
         ' 
         ' DayPanelControl10
         ' 
+        DayPanelControl10.DayDate = New Date(0L)
         DayPanelControl10.DayNum = 0
         DayPanelControl10.Location = New Point(124, 79)
         DayPanelControl10.Name = "DayPanelControl10"
@@ -362,6 +375,7 @@ Partial Class Form1
         ' 
         ' DayPanelControl32
         ' 
+        DayPanelControl32.DayDate = New Date(0L)
         DayPanelControl32.DayNum = 0
         DayPanelControl32.Location = New Point(184, 304)
         DayPanelControl32.Name = "DayPanelControl32"
@@ -370,6 +384,7 @@ Partial Class Form1
         ' 
         ' DayPanelControl8
         ' 
+        DayPanelControl8.DayDate = New Date(0L)
         DayPanelControl8.DayNum = 0
         DayPanelControl8.Location = New Point(4, 79)
         DayPanelControl8.Name = "DayPanelControl8"
@@ -378,6 +393,7 @@ Partial Class Form1
         ' 
         ' DayPanelControl31
         ' 
+        DayPanelControl31.DayDate = New Date(0L)
         DayPanelControl31.DayNum = 0
         DayPanelControl31.Location = New Point(124, 304)
         DayPanelControl31.Name = "DayPanelControl31"
@@ -386,6 +402,7 @@ Partial Class Form1
         ' 
         ' DayPanelControl9
         ' 
+        DayPanelControl9.DayDate = New Date(0L)
         DayPanelControl9.DayNum = 0
         DayPanelControl9.Location = New Point(64, 79)
         DayPanelControl9.Name = "DayPanelControl9"
@@ -394,6 +411,7 @@ Partial Class Form1
         ' 
         ' DayPanelControl30
         ' 
+        DayPanelControl30.DayDate = New Date(0L)
         DayPanelControl30.DayNum = 0
         DayPanelControl30.Location = New Point(64, 304)
         DayPanelControl30.Name = "DayPanelControl30"
@@ -402,6 +420,7 @@ Partial Class Form1
         ' 
         ' DayPanelControl11
         ' 
+        DayPanelControl11.DayDate = New Date(0L)
         DayPanelControl11.DayNum = 0
         DayPanelControl11.Location = New Point(184, 79)
         DayPanelControl11.Name = "DayPanelControl11"
@@ -410,6 +429,7 @@ Partial Class Form1
         ' 
         ' DayPanelControl29
         ' 
+        DayPanelControl29.DayDate = New Date(0L)
         DayPanelControl29.DayNum = 0
         DayPanelControl29.Location = New Point(4, 304)
         DayPanelControl29.Name = "DayPanelControl29"
@@ -418,6 +438,7 @@ Partial Class Form1
         ' 
         ' DayPanelControl12
         ' 
+        DayPanelControl12.DayDate = New Date(0L)
         DayPanelControl12.DayNum = 0
         DayPanelControl12.Location = New Point(244, 79)
         DayPanelControl12.Name = "DayPanelControl12"
@@ -426,6 +447,7 @@ Partial Class Form1
         ' 
         ' DayPanelControl28
         ' 
+        DayPanelControl28.DayDate = New Date(0L)
         DayPanelControl28.DayNum = 0
         DayPanelControl28.Location = New Point(364, 229)
         DayPanelControl28.Name = "DayPanelControl28"
@@ -434,6 +456,7 @@ Partial Class Form1
         ' 
         ' DayPanelControl13
         ' 
+        DayPanelControl13.DayDate = New Date(0L)
         DayPanelControl13.DayNum = 0
         DayPanelControl13.Location = New Point(304, 79)
         DayPanelControl13.Name = "DayPanelControl13"
@@ -442,6 +465,7 @@ Partial Class Form1
         ' 
         ' DayPanelControl27
         ' 
+        DayPanelControl27.DayDate = New Date(0L)
         DayPanelControl27.DayNum = 0
         DayPanelControl27.Location = New Point(304, 229)
         DayPanelControl27.Name = "DayPanelControl27"
@@ -450,6 +474,7 @@ Partial Class Form1
         ' 
         ' DayPanelControl14
         ' 
+        DayPanelControl14.DayDate = New Date(0L)
         DayPanelControl14.DayNum = 0
         DayPanelControl14.Location = New Point(364, 79)
         DayPanelControl14.Name = "DayPanelControl14"
@@ -458,6 +483,7 @@ Partial Class Form1
         ' 
         ' DayPanelControl26
         ' 
+        DayPanelControl26.DayDate = New Date(0L)
         DayPanelControl26.DayNum = 0
         DayPanelControl26.Location = New Point(244, 229)
         DayPanelControl26.Name = "DayPanelControl26"
@@ -466,6 +492,7 @@ Partial Class Form1
         ' 
         ' DayPanelControl15
         ' 
+        DayPanelControl15.DayDate = New Date(0L)
         DayPanelControl15.DayNum = 0
         DayPanelControl15.Location = New Point(4, 154)
         DayPanelControl15.Name = "DayPanelControl15"
@@ -474,6 +501,7 @@ Partial Class Form1
         ' 
         ' DayPanelControl25
         ' 
+        DayPanelControl25.DayDate = New Date(0L)
         DayPanelControl25.DayNum = 0
         DayPanelControl25.Location = New Point(184, 229)
         DayPanelControl25.Name = "DayPanelControl25"
@@ -482,6 +510,7 @@ Partial Class Form1
         ' 
         ' DayPanelControl16
         ' 
+        DayPanelControl16.DayDate = New Date(0L)
         DayPanelControl16.DayNum = 0
         DayPanelControl16.Location = New Point(64, 154)
         DayPanelControl16.Name = "DayPanelControl16"
@@ -490,6 +519,7 @@ Partial Class Form1
         ' 
         ' DayPanelControl24
         ' 
+        DayPanelControl24.DayDate = New Date(0L)
         DayPanelControl24.DayNum = 0
         DayPanelControl24.Location = New Point(124, 229)
         DayPanelControl24.Name = "DayPanelControl24"
@@ -498,6 +528,7 @@ Partial Class Form1
         ' 
         ' DayPanelControl17
         ' 
+        DayPanelControl17.DayDate = New Date(0L)
         DayPanelControl17.DayNum = 0
         DayPanelControl17.Location = New Point(124, 154)
         DayPanelControl17.Name = "DayPanelControl17"
@@ -506,6 +537,7 @@ Partial Class Form1
         ' 
         ' DayPanelControl23
         ' 
+        DayPanelControl23.DayDate = New Date(0L)
         DayPanelControl23.DayNum = 0
         DayPanelControl23.Location = New Point(64, 229)
         DayPanelControl23.Name = "DayPanelControl23"
@@ -514,6 +546,7 @@ Partial Class Form1
         ' 
         ' DayPanelControl18
         ' 
+        DayPanelControl18.DayDate = New Date(0L)
         DayPanelControl18.DayNum = 0
         DayPanelControl18.Location = New Point(184, 154)
         DayPanelControl18.Name = "DayPanelControl18"
@@ -522,6 +555,7 @@ Partial Class Form1
         ' 
         ' DayPanelControl22
         ' 
+        DayPanelControl22.DayDate = New Date(0L)
         DayPanelControl22.DayNum = 0
         DayPanelControl22.Location = New Point(4, 229)
         DayPanelControl22.Name = "DayPanelControl22"
@@ -530,6 +564,7 @@ Partial Class Form1
         ' 
         ' DayPanelControl19
         ' 
+        DayPanelControl19.DayDate = New Date(0L)
         DayPanelControl19.DayNum = 0
         DayPanelControl19.Location = New Point(244, 154)
         DayPanelControl19.Name = "DayPanelControl19"
@@ -538,6 +573,7 @@ Partial Class Form1
         ' 
         ' DayPanelControl21
         ' 
+        DayPanelControl21.DayDate = New Date(0L)
         DayPanelControl21.DayNum = 0
         DayPanelControl21.Location = New Point(364, 154)
         DayPanelControl21.Name = "DayPanelControl21"
@@ -546,6 +582,7 @@ Partial Class Form1
         ' 
         ' DayPanelControl20
         ' 
+        DayPanelControl20.DayDate = New Date(0L)
         DayPanelControl20.DayNum = 0
         DayPanelControl20.Location = New Point(304, 154)
         DayPanelControl20.Name = "DayPanelControl20"
