@@ -23,31 +23,30 @@ Partial Class DayView
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         DayDate = New Label()
-        Label1 = New Label()
+        FullDate = New Label()
         devider = New Label()
-        Chore_item_inDay1 = New Chore_item_inDay()
-        Chore_item_inDay2 = New Chore_item_inDay()
+        BackButton = New Button()
         SuspendLayout()
         ' 
         ' DayDate
         ' 
         DayDate.AutoSize = True
         DayDate.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point)
-        DayDate.Location = New Point(92, 37)
+        DayDate.Location = New Point(80, 37)
         DayDate.Name = "DayDate"
         DayDate.Size = New Size(152, 46)
         DayDate.TabIndex = 19
         DayDate.Text = "Monday"
         ' 
-        ' Label1
+        ' FullDate
         ' 
-        Label1.AutoSize = True
-        Label1.Font = New Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point)
-        Label1.Location = New Point(237, 59)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(106, 25)
-        Label1.TabIndex = 20
-        Label1.Text = "2023-11-18"
+        FullDate.AutoSize = True
+        FullDate.Font = New Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point)
+        FullDate.Location = New Point(246, 59)
+        FullDate.Name = "FullDate"
+        FullDate.Size = New Size(106, 25)
+        FullDate.TabIndex = 20
+        FullDate.Text = "2023-11-18"
         ' 
         ' devider
         ' 
@@ -58,32 +57,23 @@ Partial Class DayView
         devider.TabIndex = 21
         devider.Text = "____________________________________________________"
         ' 
-        ' Chore_item_inDay1
+        ' BackButton
         ' 
-        Chore_item_inDay1.BackColor = Color.FromArgb(CByte(224), CByte(224), CByte(224))
-        Chore_item_inDay1.BorderStyle = BorderStyle.FixedSingle
-        Chore_item_inDay1.Location = New Point(39, 114)
-        Chore_item_inDay1.Name = "Chore_item_inDay1"
-        Chore_item_inDay1.Size = New Size(356, 97)
-        Chore_item_inDay1.TabIndex = 22
-        ' 
-        ' Chore_item_inDay2
-        ' 
-        Chore_item_inDay2.BackColor = Color.FromArgb(CByte(224), CByte(224), CByte(224))
-        Chore_item_inDay2.BorderStyle = BorderStyle.FixedSingle
-        Chore_item_inDay2.Location = New Point(39, 248)
-        Chore_item_inDay2.Name = "Chore_item_inDay2"
-        Chore_item_inDay2.Size = New Size(356, 97)
-        Chore_item_inDay2.TabIndex = 23
+        BackButton.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        BackButton.Location = New Point(15, 14)
+        BackButton.Name = "BackButton"
+        BackButton.Size = New Size(42, 42)
+        BackButton.TabIndex = 23
+        BackButton.Text = "X"
+        BackButton.UseVisualStyleBackColor = True
         ' 
         ' DayView
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         AutoScroll = True
-        Controls.Add(Chore_item_inDay2)
-        Controls.Add(Chore_item_inDay1)
-        Controls.Add(Label1)
+        Controls.Add(BackButton)
+        Controls.Add(FullDate)
         Controls.Add(DayDate)
         Controls.Add(devider)
         Name = "DayView"
@@ -93,9 +83,8 @@ Partial Class DayView
     End Sub
 
     Friend WithEvents DayDate As Label
-    Friend WithEvents Label1 As Label
+    Friend WithEvents FullDate As Label
     Friend WithEvents devider As Label
-    Friend WithEvents Chore_item_inDay1 As Chore_item_inDay
-    Friend WithEvents Chore_item_inDay2 As Chore_item_inDay
+    Friend WithEvents BackButton As Button
 
 End Class
