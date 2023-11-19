@@ -18,7 +18,16 @@ Public Class Form1
     Dim dayViewPage As DayView
     Public ChoreList As New List(Of Chore)()
     Public dayPanelAssignments As New Dictionary(Of DateTime, List(Of Chore))
+    Dim choreDayItemControl As New Chore_item_inDay()
 
+    Public Sub New()
+
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+        AddHandler choreDayItemControl.EditChoreButtonClick, AddressOf ChoreDayItemControl_EditChoreButtonClick
+    End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         For i As Integer = 0 To dayPanelArray.Length - 1
@@ -322,5 +331,9 @@ Public Class Form1
 
     End Sub
 
+    Private Sub ChoreDayItemControl_EditChoreButtonClick(sender As Object, e As EventArgs)
+        Debug.Print("Clicked on edit ")
+
+    End Sub
 
 End Class

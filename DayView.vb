@@ -1,5 +1,7 @@
 ﻿Public Class DayView
     Public Event backToCalButtonClick As EventHandler
+    Dim choreDayItemControl As Chore_item_inDay
+
 
     Private Sub DayView_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim chore_L = Form1.dayPanelAssignments(Me.myDate)

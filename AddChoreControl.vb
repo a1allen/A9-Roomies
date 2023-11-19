@@ -5,21 +5,16 @@
 
     Private Sub AddChoreControl_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CustomChorePanel.Hide()
-        RepeatComboBox.SelectedIndex = 0
+        AssignedToPanel.Hide()
+        DatePanel.Hide()
+        AddChoreButton.Enabled = False
     End Sub
     Private Sub ChoreTypeComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ChoreTypeComboBox.SelectedIndexChanged
         If ChoreTypeComboBox.Text = "Add Custom Chore" Then
             CustomChorePanel.Show()
         Else
             CustomChorePanel.Hide()
-        End If
-    End Sub
-
-    Private Sub RepeatComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles RepeatComboBox.SelectedIndexChanged
-        If RepeatComboBox.Text = "Yes" Then
-            RepeatFrequencyComboBox.Show()
-        Else
-            RepeatFrequencyComboBox.Hide()
+            AssignedToPanel.Show()
         End If
     End Sub
 
@@ -31,5 +26,19 @@
         RaiseEvent CancelChoreButtonClick(Me, EventArgs.Empty)
     End Sub
 
+    Private Sub ChoreBackButton_Click(sender As Object, e As EventArgs) Handles ChoreBackButton.Click
+        RaiseEvent CancelChoreButtonClick(Me, EventArgs.Empty)
+    End Sub
 
+    Private Sub NewChoreTextBox_TextChanged(sender As Object, e As EventArgs) Handles NewChoreTextBox.TextChanged
+        If NewChoreTextBox.Text <> "" Then
+            AssignedToPanel.Show()
+        End If
+
+    End Sub
+
+    Private Sub RoomateComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles RoomateComboBox.SelectedIndexChanged
+        DatePanel.Show()
+        AddChoreButton.Enabled = True
+    End Sub
 End Class

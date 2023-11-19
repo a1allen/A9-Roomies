@@ -32,7 +32,7 @@ Partial Class DayView
         ' 
         DayDate.AutoSize = True
         DayDate.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point)
-        DayDate.Location = New Point(80, 37)
+        DayDate.Location = New Point(63, 38)
         DayDate.Name = "DayDate"
         DayDate.Size = New Size(152, 46)
         DayDate.TabIndex = 19
@@ -42,7 +42,7 @@ Partial Class DayView
         ' 
         FullDate.AutoSize = True
         FullDate.Font = New Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point)
-        FullDate.Location = New Point(246, 59)
+        FullDate.Location = New Point(272, 54)
         FullDate.Name = "FullDate"
         FullDate.Size = New Size(106, 25)
         FullDate.TabIndex = 20
@@ -72,6 +72,7 @@ Partial Class DayView
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         AutoScroll = True
+        BackColor = Color.White
         Controls.Add(BackButton)
         Controls.Add(FullDate)
         Controls.Add(DayDate)
