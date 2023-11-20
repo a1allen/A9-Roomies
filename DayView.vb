@@ -38,8 +38,6 @@ Public Class DayView
         Next
     End Sub
 
-
-
     Private Sub ChoreItem_EditChoreButtonClick(sender As Object, e As EventArgs)
         selectedChoreItem = DirectCast(sender, Chore_item_inDay)
 
