@@ -51,6 +51,16 @@ Public Class Form1
             Me.Controls.Find(controlName, True)
         Next
 
+        '######################################
+        'Hardcode instances for usability test
+        'Housemate red cleaning the bathroom
+        dayPanelAssignments.Add("2023-11-16", New List(Of Chore)())
+        dayPanelAssignments("2023-11-16").Add(New Chore("Clean Bathroom", "Roomate 1", 2))
+
+        'Housemate pruple cleans the kitchen
+
+        '######################################
+
         'Set up the calendar for November
         year = 2023
         month = 11
