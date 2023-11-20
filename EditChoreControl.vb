@@ -17,6 +17,10 @@
     End Sub
 
     Private Sub EditChoreControl_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        EditChoreDateTimePicker.MinDate = DateTime.Now.Date
+        'EditChoreDateTimePicker.MinDate = DateTime.Now.Date
+    End Sub
+
+    Private Sub EffortScore_SelectedIndexChanged(sender As Object, e As EventArgs) Handles EffortScore.SelectedIndexChanged
+
     End Sub
 End Class
