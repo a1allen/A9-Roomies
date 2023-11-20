@@ -385,6 +385,53 @@ Public Class Form1
     End Sub
 
     Private Sub SubmitChoreEditsButton_Click(sender As Object, e As EventArgs)
+        'Get the attributes needed to search through the list
+        Dim thisChoreName As String = dayViewPage.ChoreItem.TypeOfChore
+        Dim thisAssignedPerson As String = dayViewPage.ChoreItem.AssignedPerson
+        Dim thisDate As DateTime = dayViewPage.FullDate.Text
+
+        'Get the new attributes 
+        Dim newChoreName As String = editChoreControl.EditChoreTextBox.Text
+        Dim newAssignedPerson As String = editChoreControl.EditRoomateComboBox.Text
+        Dim newDate As DateTime = editChoreControl.EditChoreDateTimePicker.Value
+
+        Dim item As Chore
+
+        'Remove the chore from the dictionary
+        Dim thisChoreList As List(Of Chore) = dayPanelAssignments(thisDate)
+        If dayPanelAssignments.ContainsKey(thisDate) Then
+            For i As Integer = thisChoreList.Count - 1 To 0 Step -1
+                item = thisChoreList(i)
+                If (item.TypeOfChore = thisChoreName) And (item.AssignedPerson = thisAssignedPerson) Then
+                    'Once the chore instance has been found, delete it
+                    thisChoreList.RemoveAt(i)
+                End If
+            Next
+        End If
+
+        'Re-add the chore from the dictionary
+        Dim newChoreList As List(Of Chore) = dayPanelAssignments(newDate)
+
+        newChoreList.Add(New Chore(newChoreName, newAssignedPerson))
+        dayPanelAssignments(newDate) = newChoreList
+
+
+        'Update the daypanel view for all 4 dots
+        For Each panel As DayPanelControl In dayPanelArray
+            panel.Roomate1PictureBox.Hide()
+            panel.Roomate2PictureBox.Hide()
+            panel.Roomate3PictureBox.Hide()
+            panel.Roomate4PictureBox.Hide()
+        Next
+
+        'Update the dayview page
+        dayViewPage.DisplayChoresForDate(thisDate)
+
+        'Remove instance
+        CalendarTabPage.Controls.Remove(editChoreControl)
+
+        'Show the dayView control
+        dayViewPage.Show()
 
     End Sub
 
@@ -405,17 +452,8 @@ Public Class Form1
             Next
         End If
 
-        'Loop through the dayview controls to determine which one should be removed
-        Dim choreItem As Chore_item_inDay
-        For Each ctrl As Control In dayViewPage.Controls
-            If TypeOf ctrl Is Chore_item_inDay Then
-                choreItem = DirectCast(ctrl, Chore_item_inDay)
-                If choreItem.ChoreName.Text = thisChoreName And choreItem.AssignTo.Text = thisAssignedPerson Then
-                    dayViewPage.Controls.Remove(choreItem)
-                    Exit For
-                End If
-            End If
-        Next
+        'Update the dayview page
+        dayViewPage.DisplayChoresForDate(thisDate)
 
         'Remove instance
         CalendarTabPage.Controls.Remove(editChoreControl)

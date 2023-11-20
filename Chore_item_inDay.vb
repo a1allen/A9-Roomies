@@ -16,6 +16,9 @@
         RaiseEvent RequestVolunteerButtonClick(Me, EventArgs.Empty)
     End Sub
 
+    Private Sub Chore_item_inDay_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 
     Public Property TypeOfChore() As String
         Get
