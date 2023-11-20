@@ -6,6 +6,7 @@ Imports System.Reflection.Metadata
 Imports System.Globalization
 Imports System.Drawing.Imaging
 Imports A9.My.Resources
+Imports System.Formats.Asn1.AsnWriter
 
 Public Class Form1
 
@@ -101,6 +102,14 @@ Public Class Form1
         Roomie2_Done.Hide()
         Roomie3_Done.Hide()
         Roomie4_Done.Hide()
+        Label12.Hide()
+        Label13.Hide()
+        Label16.Hide()
+        Label17.Hide()
+        Label7.Hide()
+        Label6.Hide()
+        Label8.Hide()
+        Label9.Hide()
 
         'Create instance
         dayViewPage = New DayView()
@@ -335,6 +344,14 @@ Public Class Form1
         Roomie2_Done.Hide()
         Roomie3_Done.Hide()
         Roomie4_Done.Hide()
+        Label12.Hide()
+        Label13.Hide()
+        Label16.Hide()
+        Label17.Hide()
+        Label7.Hide()
+        Label6.Hide()
+        Label8.Hide()
+        Label9.Hide()
 
         'Create instance
         choreControl = New AddChoreControl()
@@ -422,7 +439,14 @@ Public Class Form1
         Roomie2_Done.Show()
         Roomie3_Done.Show()
         Roomie4_Done.Show()
-
+        Label12.Show()
+        Label13.Show()
+        Label16.Show()
+        Label17.Show()
+        Label7.Show()
+        Label6.Show()
+        Label8.Show()
+        Label9.Show()
     End Sub
 
     Private Sub DayView_EditChoreButtonClick(sender As Object, e As EventArgs) Handles dayViewPage.EditChoreButtonClickInDayView
@@ -475,32 +499,59 @@ Public Class Form1
         Dim thisChoreName As String = dayViewPage.ChoreItem.TypeOfChore
         Dim thisAssignedPerson As String = dayViewPage.ChoreItem.AssignedPerson
         Dim thisDate As DateTime = dayViewPage.FullDate.Text
+        Dim thisScore As String = dayViewPage.ChoreItem.EffortOfChore
+        Dim score_ind As Integer
+        If thisScore.Count = 1 Then
+            score_ind = 0
+        ElseIf thisScore.Count = 2 Then
+            score_ind = 1
+        ElseIf thisScore.Count = 3 Then
+            score_ind = 2
+        ElseIf thisScore.Count = 4 Then
+            score_ind = 3
+        ElseIf thisScore.Count = 5 Then
+            score_ind = 4
+        End If
+
 
         'Get the new attributes 
         Dim newChoreName As String = editChoreControl.EditChoreTextBox.Text
         Dim newAssignedPerson As String = editChoreControl.EditRoomateComboBox.Text
         Dim newDate As DateTime = editChoreControl.EditChoreDateTimePicker.Value
-        Dim score_ind As String = editChoreControl.EffortScore.SelectedIndex
-
-        Dim item As Chore
-
+        Dim newScore As String = editChoreControl.EffortScore.SelectedIndex
+        Dim new_item As New Chore(newChoreName, newAssignedPerson, newScore)
+        Dim item_i As Chore
         'Remove the chore from the dictionary
+
         Dim thisChoreList As List(Of Chore) = dayPanelAssignments(thisDate)
+        Debug.WriteLine(thisChoreList.Count)
+        For Each item In thisChoreList
+            Debug.WriteLine(item.TypeOfChore)
+        Next
         If dayPanelAssignments.ContainsKey(thisDate) Then
             For i As Integer = thisChoreList.Count - 1 To 0 Step -1
-                item = thisChoreList(i)
-                If (item.TypeOfChore = thisChoreName) And (item.AssignedPerson = thisAssignedPerson) Then
+                item_i = thisChoreList(i)
+                If (item_i.TypeOfChore = thisChoreName) And (item_i.AssignedPerson = thisAssignedPerson) And (item_i.EffortOfChore = thisScore) Then
                     'Once the chore instance has been found, delete it
-                    thisChoreList.RemoveAt(i)
+                    thisChoreList.Remove(item_i)
                 End If
             Next
         End If
+        Debug.WriteLine(thisChoreList.Count)
+        For Each item In thisChoreList
+            Debug.WriteLine(item.TypeOfChore)
+        Next
 
         'Re-add the chore from the dictionary
-        Dim newChoreList As List(Of Chore) = dayPanelAssignments(newDate)
+        'Dim newChoreList As List(Of Chore) = dayPanelAssignments(newDate)
 
-        newChoreList.Add(New Chore(newChoreName, newAssignedPerson, score_ind))
-        dayPanelAssignments(newDate) = newChoreList
+        thisChoreList.Add(new_item)
+        dayPanelAssignments(thisDate) = thisChoreList
+
+        Debug.WriteLine(dayPanelAssignments(thisDate).Count)
+        For Each item In thisChoreList
+            Debug.WriteLine(item.TypeOfChore)
+        Next
 
 
         'Update the daypanel view for all 4 dots
@@ -512,7 +563,8 @@ Public Class Form1
         Next
 
         'Update the dayview page
-        dayViewPage.DisplayChoresForDate(thisDate)
+        dayViewPage.RemoveChoreItems()
+        dayViewPage.DisplayChoresForDate(thisChoreList)
 
         'Remove instance
         CalendarTabPage.Controls.Remove(editChoreControl)
@@ -528,9 +580,10 @@ Public Class Form1
         Dim thisAssignedPerson As String = dayViewPage.ChoreItem.AssignedPerson
         Dim thisDate As DateTime = dayViewPage.FullDate.Text
         Dim item As Chore
+        Dim thisChoreList As List(Of Chore) = dayPanelAssignments(thisDate)
+
         If dayPanelAssignments.ContainsKey(thisDate) Then
             'Remove chore from the dictionary
-            Dim thisChoreList As List(Of Chore) = dayPanelAssignments(thisDate)
             For i As Integer = thisChoreList.Count - 1 To 0 Step -1
                 item = thisChoreList(i)
                 If (item.TypeOfChore = thisChoreName) And (item.AssignedPerson = thisAssignedPerson) Then
@@ -540,7 +593,7 @@ Public Class Form1
         End If
 
         'Update the dayview page
-        dayViewPage.DisplayChoresForDate(thisDate)
+        dayViewPage.DisplayChoresForDate(thisChoreList)
 
         'Remove instance
         CalendarTabPage.Controls.Remove(editChoreControl)
@@ -577,7 +630,7 @@ Public Class Form1
             Dim thisAssignedPerson As String = dayViewPage.ChoreItem.AssignedPerson
             Dim thisDate As DateTime = dayViewPage.FullDate.Text
             Dim score As String = dayViewPage.ChoreItem.EffortOfChore
-            Dim score_ind As String
+            Dim score_ind As String = 1
             If score.Count = 1 Then
                 score_ind = 0
             ElseIf score.Count = 2 Then
@@ -621,7 +674,7 @@ Public Class Form1
             Next
 
             'Update the dayview page
-            dayViewPage.DisplayChoresForDate(thisDate)
+            dayViewPage.DisplayChoresForDate(thisChoreList)
         End If
 
     End Sub
