@@ -161,6 +161,50 @@ Public Class DayView
         RaiseEvent backToCalButtonClick(Me, EventArgs.Empty)
     End Sub
 
+    Public Sub DisplayChoresForDate(selectedDate As DateTime)
+        'Ensure to keep certain control from the list above
+        For i = Controls.Count - 1 To 0 Step -1
+            If Not controlsToKeep.Contains(Controls(i)) Then
+                Controls.RemoveAt(i)
+            End If
+        Next
+
+        Dim choreList = Form1.dayPanelAssignments(selectedDate)
+
+        Dim mycount = 0
+        For Each chore_item In choreList
+            Dim new_item As New Chore_item_inDay()
+            new_item.ChoreName.Text = chore_item.TypeOfChore
+            new_item.AssignTo.Text = chore_item.AssignedPerson
+            new_item.EffortOfChore = chore_item.EffortOfChore
+            new_item.TheChore = chore_item
+            If chore_item.statusOfChore Then
+                new_item.choreDone.Checked = True
+                new_item.ForeColor = Color.Gray
+                new_item.ExtendChoreButton.Enabled = False
+                new_item.EditChoreButton.Enabled = False
+                new_item.RequestVolunteerButton.Enabled = False
+            End If
+            Me.Controls.Add(new_item)
+            new_item.Size = New Size(360, 112) ' Set the size (width, height)
+            If (mycount = 0) Then
+                new_item.Location = New Point(38, 108) ' Set the location (x, y)
+            Else
+                new_item.Location = New Point(38, (108 + (mycount * 118))) ' Set the location (x, y)
+            End If
+            mycount = mycount + 1
+
+            'Add button click events
+            AddHandler new_item.EditChoreButtonClick, AddressOf ChoreItem_EditChoreButtonClick
+            AddHandler new_item.ExtendChoreButtonClick, AddressOf ChoreItem_ExtendChoreButtonClick
+            AddHandler new_item.RequestVolunteerButtonClick, AddressOf ChoreItem_RequestVolunteereButtonClick
+
+            AddHandler new_item.updateChoreStatus, AddressOf choreDone_CheckedChanged
+
+
+        Next
+    End Sub
+
     Public Sub DisplayChoresForDate(chore_L As List(Of Chore))
 
         'Dim chore_L = Form1.dayPanelAssignments(Me.myDate)

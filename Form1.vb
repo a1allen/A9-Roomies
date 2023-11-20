@@ -520,38 +520,30 @@ Public Class Form1
         Dim newDate As DateTime = editChoreControl.EditChoreDateTimePicker.Value
         Dim newScore As String = editChoreControl.EffortScore.SelectedIndex
         Dim new_item As New Chore(newChoreName, newAssignedPerson, newScore)
-        Dim item_i As Chore
-        'Remove the chore from the dictionary
 
+
+        Dim item As Chore
         Dim thisChoreList As List(Of Chore) = dayPanelAssignments(thisDate)
-        Debug.WriteLine(thisChoreList.Count)
-        For Each item In thisChoreList
-            Debug.WriteLine(item.TypeOfChore)
-        Next
+
         If dayPanelAssignments.ContainsKey(thisDate) Then
+            'Remove chore from the dictionary
             For i As Integer = thisChoreList.Count - 1 To 0 Step -1
-                item_i = thisChoreList(i)
-                If (item_i.TypeOfChore = thisChoreName) And (item_i.AssignedPerson = thisAssignedPerson) And (item_i.EffortOfChore = thisScore) Then
-                    'Once the chore instance has been found, delete it
-                    thisChoreList.Remove(item_i)
+                item = thisChoreList(i)
+                If (item.TypeOfChore = thisChoreName) And (item.AssignedPerson = thisAssignedPerson) And (item.EffortOfChore = score_ind) Then
+                    thisChoreList.RemoveAt(i)
                 End If
             Next
         End If
-        Debug.WriteLine(thisChoreList.Count)
-        For Each item In thisChoreList
-            Debug.WriteLine(item.TypeOfChore)
-        Next
+
 
         'Re-add the chore from the dictionary
-        'Dim newChoreList As List(Of Chore) = dayPanelAssignments(newDate)
-
-        thisChoreList.Add(new_item)
-        dayPanelAssignments(thisDate) = thisChoreList
-
-        Debug.WriteLine(dayPanelAssignments(thisDate).Count)
-        For Each item In thisChoreList
-            Debug.WriteLine(item.TypeOfChore)
-        Next
+        If Not dayPanelAssignments.ContainsKey(newDate) Then
+            'Key does not exist for new day so add it
+            dayPanelAssignments.Add(newDate, New List(Of Chore)())
+        End If
+        Dim newChoreList As List(Of Chore) = dayPanelAssignments(newDate)
+        newChoreList.Add(New Chore(newChoreName, newAssignedPerson, newScore))
+        dayPanelAssignments(newDate) = newChoreList
 
 
         'Update the daypanel view for all 4 dots
@@ -563,8 +555,7 @@ Public Class Form1
         Next
 
         'Update the dayview page
-        dayViewPage.RemoveChoreItems()
-        dayViewPage.DisplayChoresForDate(thisChoreList)
+        dayViewPage.DisplayChoresForDate(thisDate)
 
         'Remove instance
         CalendarTabPage.Controls.Remove(editChoreControl)
@@ -579,6 +570,20 @@ Public Class Form1
         Dim thisChoreName As String = dayViewPage.ChoreItem.TypeOfChore
         Dim thisAssignedPerson As String = dayViewPage.ChoreItem.AssignedPerson
         Dim thisDate As DateTime = dayViewPage.FullDate.Text
+        Dim score As String = dayViewPage.ChoreItem.EffortOfChore
+        Dim score_ind As Integer
+        If score.Count = 1 Then
+            score_ind = 0
+        ElseIf score.Count = 2 Then
+            score_ind = 1
+        ElseIf score.Count = 3 Then
+            score_ind = 2
+        ElseIf score.Count = 4 Then
+            score_ind = 3
+        ElseIf score.Count = 5 Then
+            score_ind = 4
+        End If
+
         Dim item As Chore
         Dim thisChoreList As List(Of Chore) = dayPanelAssignments(thisDate)
 
@@ -586,14 +591,14 @@ Public Class Form1
             'Remove chore from the dictionary
             For i As Integer = thisChoreList.Count - 1 To 0 Step -1
                 item = thisChoreList(i)
-                If (item.TypeOfChore = thisChoreName) And (item.AssignedPerson = thisAssignedPerson) Then
+                If (item.TypeOfChore = thisChoreName) And (item.AssignedPerson = thisAssignedPerson) And (item.EffortOfChore = score_ind) Then
                     thisChoreList.RemoveAt(i)
                 End If
             Next
         End If
 
         'Update the dayview page
-        dayViewPage.DisplayChoresForDate(thisChoreList)
+        dayViewPage.DisplayChoresForDate(thisDate)
 
         'Remove instance
         CalendarTabPage.Controls.Remove(editChoreControl)
@@ -647,19 +652,25 @@ Public Class Form1
             Dim newDate As DateTime = thisDate.AddDays(2)
 
             Dim item As Chore
-            'Remove the chore from the dictionary
             Dim thisChoreList As List(Of Chore) = dayPanelAssignments(thisDate)
+
             If dayPanelAssignments.ContainsKey(thisDate) Then
+                'Remove chore from the dictionary
                 For i As Integer = thisChoreList.Count - 1 To 0 Step -1
                     item = thisChoreList(i)
-                    If (item.TypeOfChore = thisChoreName) And (item.AssignedPerson = thisAssignedPerson) Then
-                        'Once the chore instance has been found, delete it
+                    If (item.TypeOfChore = thisChoreName) And (item.AssignedPerson = thisAssignedPerson) And (item.EffortOfChore = score_ind) Then
                         thisChoreList.RemoveAt(i)
                     End If
                 Next
             End If
 
-            'Re-add the chore for 2 days later with newDate
+            'Re-add the chore from the dictionary
+            If Not dayPanelAssignments.ContainsKey(newDate) Then
+                'Key does not exist for new day so add it
+                dayPanelAssignments.Add(newDate, New List(Of Chore)())
+            End If
+
+            'Re-add the chore from the dictionary
             Dim newChoreList As List(Of Chore) = dayPanelAssignments(newDate)
 
             newChoreList.Add(New Chore(thisChoreName, thisAssignedPerson, score_ind))
@@ -674,7 +685,7 @@ Public Class Form1
             Next
 
             'Update the dayview page
-            dayViewPage.DisplayChoresForDate(thisChoreList)
+            dayViewPage.DisplayChoresForDate(thisDate)
         End If
 
     End Sub
