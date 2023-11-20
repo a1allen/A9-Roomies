@@ -7,6 +7,7 @@ Imports System.Globalization
 Imports System.Drawing.Imaging
 Imports A9.My.Resources
 Imports System.Formats.Asn1.AsnWriter
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement.Window
 
 Public Class Form1
 
@@ -25,6 +26,9 @@ Public Class Form1
     Public dayPanelAssignments As New Dictionary(Of DateTime, List(Of Chore))
     Private WithEvents dayViewPage As DayView
     Private overlayPanel As New Panel()
+    Dim aboutControl As ManagementAboutUsControl
+    Dim faqControl As ManagementFAQControl
+    Dim roommateProfilesControl As ManagementRoommateProfilesControl
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -82,6 +86,12 @@ Public Class Form1
         year = 2023
         month = 11
         setupCalendar()
+
+        roommateProfilesControl = New ManagementRoommateProfilesControl
+        ManagementTabPage.Controls.Add(roommateProfilesControl)
+        roommateProfilesControl.Roommate4PreferenceCheckBox.SetItemChecked(0, True)
+        roommateProfilesControl.Roommate4ExclusionCheckBox.SetItemChecked(2, True)
+        roommateProfilesControl.Hide()
 
     End Sub
     Private Sub DayPanel_Click(sender As Object, e As EventArgs)
@@ -719,6 +729,46 @@ Public Class Form1
 
     Private Sub DayView_RequestVolunteerButtonClick(sender As Object, e As EventArgs) Handles dayViewPage.RequestVolunteerButtonClick
         Debug.Print("Request volunteer button clicked")
+    End Sub
+
+    Private Sub ManagementButtons_Click(sender As Object, e As EventArgs) Handles AboutUsButton.Click, FAQButton.Click, RoomatesProfileButton.Click
+
+        ManagementTitleLabel.Hide()
+        ManagementPictureBox.Hide()
+        ManageHouseholdsButton.Hide()
+        RoomatesProfileButton.Hide()
+        FAQButton.Hide()
+        AboutUsButton.Hide()
+
+
+        'Create instance
+        If sender.Name Is "RoomatesProfileButton" Then
+            roommateProfilesControl.Show()
+        ElseIf sender.Name Is "FAQButton" Then
+            faqControl = New ManagementFAQControl()
+            ManagementTabPage.Controls.Add(faqControl)
+        ElseIf sender.Name Is "AboutUsButton" Then
+            aboutControl = New ManagementAboutUsControl()
+            ManagementTabPage.Controls.Add(aboutControl)
+        End If
+
+
+
+
+    End Sub
+
+    Public Sub showManagementTab()
+        'Remove instance 
+        ManagementTabPage.Controls.Remove(aboutControl)
+        ManagementTabPage.Controls.Remove(faqControl)
+        roommateProfilesControl.Hide()
+        'Show all other elements on the tab
+        ManagementTitleLabel.Show()
+        ManagementPictureBox.Show()
+        ManageHouseholdsButton.Show()
+        RoomatesProfileButton.Show()
+        FAQButton.Show()
+        AboutUsButton.Show()
     End Sub
 
 End Class
