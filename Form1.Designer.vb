@@ -98,6 +98,12 @@ Partial Class Form1
         PictureBox5 = New PictureBox()
         BudgetTitle = New Label()
         ManagementTabPage = New TabPage()
+        AboutUsButton = New Button()
+        ManageHouseholdsButton = New Button()
+        FAQButton = New Button()
+        RoomatesProfileButton = New Button()
+        ManagementTitleLabel = New Label()
+        ManagementPictureBox = New PictureBox()
         Label4 = New Label()
         Button2 = New Button()
         Button3 = New Button()
@@ -129,7 +135,7 @@ Partial Class Form1
         BudgetTabPage.SuspendLayout()
         CType(PictureBox5, ComponentModel.ISupportInitialize).BeginInit()
         ManagementTabPage.SuspendLayout()
-        CType(PictureBox6, ComponentModel.ISupportInitialize).BeginInit()
+        CType(ManagementPictureBox, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' BackgroundPictureBox
@@ -622,6 +628,23 @@ Partial Class Form1
         DayPanelControl20.Size = New Size(52, 68)
         DayPanelControl20.TabIndex = 17
         ' 
+        ' Roomie4PointsLabel
+        ' 
+        Roomie4PointsLabel.AutoSize = True
+        Roomie4PointsLabel.Location = New Point(376, 671)
+        Roomie4PointsLabel.Name = "Roomie4PointsLabel"
+        Roomie4PointsLabel.Size = New Size(13, 15)
+        Roomie4PointsLabel.TabIndex = 64
+        Roomie4PointsLabel.Text = "0"
+        ' 
+        ' Roomie3PointsLabel
+        ' 
+        Roomie3PointsLabel.AutoSize = True
+        Roomie3PointsLabel.Location = New Point(276, 671)
+        Roomie3PointsLabel.Name = "Roomie3PointsLabel"
+        Roomie3PointsLabel.Size = New Size(13, 15)
+        Roomie3PointsLabel.TabIndex = 63
+        Roomie3PointsLabel.Text = "0"
         ' Roomie1_Done
         ' 
         Roomie1_Done.AutoSize = True
@@ -633,6 +656,21 @@ Partial Class Form1
         ' 
         ' Roomie1_Total
         ' 
+        Roomie2PointsLabel.AutoSize = True
+        Roomie2PointsLabel.Location = New Point(176, 671)
+        Roomie2PointsLabel.Name = "Roomie2PointsLabel"
+        Roomie2PointsLabel.Size = New Size(13, 15)
+        Roomie2PointsLabel.TabIndex = 62
+        Roomie2PointsLabel.Text = "0"
+        ' 
+        ' Roomie1PointsLabel
+        ' 
+        Roomie1PointsLabel.AutoSize = True
+        Roomie1PointsLabel.Location = New Point(76, 671)
+        Roomie1PointsLabel.Name = "Roomie1PointsLabel"
+        Roomie1PointsLabel.Size = New Size(13, 15)
+        Roomie1PointsLabel.TabIndex = 61
+        Roomie1PointsLabel.Text = "0"
         Roomie1_Total.AutoSize = True
         Roomie1_Total.Location = New Point(82, 668)
         Roomie1_Total.Name = "Roomie1_Total"
@@ -669,7 +707,7 @@ Partial Class Form1
         RoomiesTitleLabel.AutoSize = True
         RoomiesTitleLabel.Location = New Point(91, 631)
         RoomiesTitleLabel.Name = "RoomiesTitleLabel"
-        RoomiesTitleLabel.Size = New Size(246, 20)
+        RoomiesTitleLabel.Size = New Size(136, 15)
         RoomiesTitleLabel.TabIndex = 58
         RoomiesTitleLabel.Text = "Roomates Contributions This Month"
         ' 
@@ -828,7 +866,7 @@ Partial Class Form1
         MonthLabel.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point)
         MonthLabel.Location = New Point(21, 24)
         MonthLabel.Name = "MonthLabel"
-        MonthLabel.Size = New Size(277, 46)
+        MonthLabel.Size = New Size(224, 37)
         MonthLabel.TabIndex = 18
         MonthLabel.Text = "November 2023"
         ' 
@@ -856,7 +894,7 @@ Partial Class Form1
         Label3.AutoSize = True
         Label3.Location = New Point(120, 450)
         Label3.Name = "Label3"
-        Label3.Size = New Size(189, 20)
+        Label3.Size = New Size(157, 15)
         Label3.TabIndex = 28
         Label3.Text = "______________________________"
         ' 
@@ -865,7 +903,7 @@ Partial Class Form1
         Label2.AutoSize = True
         Label2.Location = New Point(138, 495)
         Label2.Name = "Label2"
-        Label2.Size = New Size(152, 20)
+        Label2.Size = New Size(119, 15)
         Label2.TabIndex = 27
         Label2.Text = "Roomate2: Owed $30"
         ' 
@@ -874,7 +912,7 @@ Partial Class Form1
         Label1.AutoSize = True
         Label1.Location = New Point(140, 471)
         Label1.Name = "Label1"
-        Label1.Size = New Size(149, 20)
+        Label1.Size = New Size(117, 15)
         Label1.TabIndex = 26
         Label1.Text = "Roomate1: Owes $15"
         ' 
@@ -918,7 +956,7 @@ Partial Class Form1
         MoneyStatus.Font = New Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point)
         MoneyStatus.Location = New Point(102, 425)
         MoneyStatus.Name = "MoneyStatus"
-        MoneyStatus.Size = New Size(224, 32)
+        MoneyStatus.Size = New Size(175, 25)
         MoneyStatus.TabIndex = 21
         MoneyStatus.Text = "I owe $15 to the Jar"
         ' 
@@ -937,19 +975,20 @@ Partial Class Form1
         ' 
         BudgetTitle.AutoSize = True
         BudgetTitle.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point)
-        BudgetTitle.Location = New Point(146, 44)
+        BudgetTitle.Location = New Point(159, 44)
         BudgetTitle.Name = "BudgetTitle"
-        BudgetTitle.Size = New Size(136, 46)
+        BudgetTitle.Size = New Size(110, 37)
         BudgetTitle.TabIndex = 19
         BudgetTitle.Text = "Budget"
         ' 
         ' ManagementTabPage
         ' 
-        ManagementTabPage.Controls.Add(Label4)
-        ManagementTabPage.Controls.Add(Button2)
-        ManagementTabPage.Controls.Add(Button3)
-        ManagementTabPage.Controls.Add(Label5)
-        ManagementTabPage.Controls.Add(PictureBox6)
+        ManagementTabPage.Controls.Add(AboutUsButton)
+        ManagementTabPage.Controls.Add(ManageHouseholdsButton)
+        ManagementTabPage.Controls.Add(FAQButton)
+        ManagementTabPage.Controls.Add(RoomatesProfileButton)
+        ManagementTabPage.Controls.Add(ManagementTitleLabel)
+        ManagementTabPage.Controls.Add(ManagementPictureBox)
         ManagementTabPage.Location = New Point(4, 4)
         ManagementTabPage.Name = "ManagementTabPage"
         ManagementTabPage.Padding = New Padding(3)
@@ -958,6 +997,65 @@ Partial Class Form1
         ManagementTabPage.Text = "Management"
         ManagementTabPage.UseVisualStyleBackColor = True
         ' 
+        ' AboutUsButton
+        ' 
+        AboutUsButton.BackColor = Color.SeaShell
+        AboutUsButton.Location = New Point(94, 631)
+        AboutUsButton.Name = "AboutUsButton"
+        AboutUsButton.Size = New Size(240, 67)
+        AboutUsButton.TabIndex = 75
+        AboutUsButton.Text = "About Us"
+        AboutUsButton.UseVisualStyleBackColor = False
+        ' 
+        ' ManageHouseholdsButton
+        ' 
+        ManageHouseholdsButton.BackColor = Color.SeaShell
+        ManageHouseholdsButton.Location = New Point(94, 412)
+        ManageHouseholdsButton.Name = "ManageHouseholdsButton"
+        ManageHouseholdsButton.Size = New Size(240, 67)
+        ManageHouseholdsButton.TabIndex = 74
+        ManageHouseholdsButton.Text = "Manage Households"
+        ManageHouseholdsButton.UseVisualStyleBackColor = False
+        ' 
+        ' FAQButton
+        ' 
+        FAQButton.BackColor = Color.SeaShell
+        FAQButton.Location = New Point(94, 558)
+        FAQButton.Name = "FAQButton"
+        FAQButton.Size = New Size(240, 67)
+        FAQButton.TabIndex = 71
+        FAQButton.Text = "FAQ"
+        FAQButton.UseVisualStyleBackColor = False
+        ' 
+        ' RoomatesProfileButton
+        ' 
+        RoomatesProfileButton.BackColor = Color.SeaShell
+        RoomatesProfileButton.Location = New Point(94, 485)
+        RoomatesProfileButton.Name = "RoomatesProfileButton"
+        RoomatesProfileButton.Size = New Size(240, 67)
+        RoomatesProfileButton.TabIndex = 70
+        RoomatesProfileButton.Text = "Roommate Profiles"
+        RoomatesProfileButton.UseVisualStyleBackColor = False
+        ' 
+        ' ManagementTitleLabel
+        ' 
+        ManagementTitleLabel.AutoSize = True
+        ManagementTitleLabel.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point)
+        ManagementTitleLabel.Location = New Point(119, 25)
+        ManagementTitleLabel.Name = "ManagementTitleLabel"
+        ManagementTitleLabel.Size = New Size(188, 37)
+        ManagementTitleLabel.TabIndex = 69
+        ManagementTitleLabel.Text = "Management"
+        ' 
+        ' ManagementPictureBox
+        ' 
+        ManagementPictureBox.Image = My.Resources.myResources.istockphoto_944927622_1024x1024
+        ManagementPictureBox.Location = New Point(56, 87)
+        ManagementPictureBox.Name = "ManagementPictureBox"
+        ManagementPictureBox.Size = New Size(326, 301)
+        ManagementPictureBox.SizeMode = PictureBoxSizeMode.StretchImage
+        ManagementPictureBox.TabIndex = 0
+        ManagementPictureBox.TabStop = False
         ' Label4
         ' 
         Label4.AutoSize = True
@@ -1149,7 +1247,7 @@ Partial Class Form1
         CType(PictureBox5, ComponentModel.ISupportInitialize).EndInit()
         ManagementTabPage.ResumeLayout(False)
         ManagementTabPage.PerformLayout()
-        CType(PictureBox6, ComponentModel.ISupportInitialize).EndInit()
+        CType(ManagementPictureBox, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
@@ -1159,7 +1257,6 @@ Partial Class Form1
     Friend WithEvents BudgetTabPage As TabPage
     Friend WithEvents ManagementTabPage As TabPage
     Friend WithEvents BudgetControl1 As BudgetControl
-    Friend WithEvents PointsControl1 As ManagementControl
     Friend WithEvents AddToCalendarButton As Button
     Friend WithEvents MonthLabel As Label
     Friend WithEvents FriLabel As Label
@@ -1227,10 +1324,15 @@ Partial Class Form1
     Friend WithEvents addMoneyButton As Button
     Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents Button1 As Button
-    Friend WithEvents PictureBox6 As PictureBox
+    Friend WithEvents ManagementPictureBox As PictureBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents FAQButton As Button
+    Friend WithEvents RoomatesProfileButton As Button
+    Friend WithEvents ManagementTitleLabel As Label
+    Friend WithEvents AboutUsButton As Button
+    Friend WithEvents ManageHouseholdsButton As Button
     Friend WithEvents Label4 As Label
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button

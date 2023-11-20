@@ -22,6 +22,9 @@ Public Class Form1
     Dim editChoreControl As EditChoreControl
     'Dim dayViewPage As DayView
     Public ChoreList As New List(Of Chore)()
+    Dim aboutControl As ManagementAboutUsControl
+    Dim faqControl As ManagementFAQControl
+    Dim roommateProfilesControl As ManagementRoommateProfilesControl
     Public dayPanelAssignments As New Dictionary(Of DateTime, List(Of Chore))
     Private WithEvents dayViewPage As DayView
     Private overlayPanel As New Panel()
@@ -65,6 +68,11 @@ Public Class Form1
         year = 2023
         month = 11
         setupCalendar()
+        roommateProfilesControl = New ManagementRoommateProfilesControl
+        ManagementTabPage.Controls.Add(roommateProfilesControl)
+        roommateProfilesControl.Roommate4PreferenceCheckBox.SetItemChecked(0, True)
+        roommateProfilesControl.Roommate4ExclusionCheckBox.SetItemChecked(2, True)
+        roommateProfilesControl.Hide()
 
     End Sub
     Private Sub DayPanel_Click(sender As Object, e As EventArgs)
@@ -703,5 +711,47 @@ Public Class Form1
     Private Sub DayView_RequestVolunteerButtonClick(sender As Object, e As EventArgs) Handles dayViewPage.RequestVolunteerButtonClick
         Debug.Print("Request volunteer button clicked")
     End Sub
+
+    Private Sub ManagementButtons_Click(sender As Object, e As EventArgs) Handles AboutUsButton.Click, FAQButton.Click, RoomatesProfileButton.Click
+
+        ManagementTitleLabel.Hide()
+        ManagementPictureBox.Hide()
+        ManageHouseholdsButton.Hide()
+        RoomatesProfileButton.Hide()
+        FAQButton.Hide()
+        AboutUsButton.Hide()
+
+
+        'Create instance
+        If sender.Name Is "RoomatesProfileButton" Then
+            roommateProfilesControl.Show()
+        ElseIf sender.Name Is "FAQButton" Then
+            faqControl = New ManagementFAQControl()
+            ManagementTabPage.Controls.Add(faqControl)
+        ElseIf sender.Name Is "AboutUsButton" Then
+            aboutControl = New ManagementAboutUsControl()
+            ManagementTabPage.Controls.Add(aboutControl)
+        End If
+
+
+
+
+    End Sub
+
+    Public Sub showManagementTab()
+        'Remove instance 
+        ManagementTabPage.Controls.Remove(aboutControl)
+        ManagementTabPage.Controls.Remove(faqControl)
+        roommateProfilesControl.Hide()
+        'Show all other elements on the tab
+        ManagementTitleLabel.Show()
+        ManagementPictureBox.Show()
+        ManageHouseholdsButton.Show()
+        RoomatesProfileButton.Show()
+        FAQButton.Show()
+        AboutUsButton.Show()
+    End Sub
+
+
 
 End Class
