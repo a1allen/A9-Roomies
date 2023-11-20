@@ -73,7 +73,7 @@ Public Class Form1
 
         'Housemate pruple cleans the kitchen
         dayPanelAssignments.Add("2023-11-29", New List(Of Chore)())
-        Dim currentChore5 = New Chore("Clean Bathroom", "Roomate 1", 1)
+        Dim currentChore5 = New Chore("Clean Bathroom", "Roomate 4", 1)
 
         dayPanelAssignments("2023-11-29").Add(currentChore5)
         '######################################
