@@ -55,7 +55,6 @@ Partial Class ManagementRoommateProfilesControl
         Roommate4PictureBox = New PictureBox()
         Label16 = New Label()
         Roommate4PreferenceCheckBox = New CheckedListBox()
-        BackButton = New Button()
         SaveButton = New Button()
         Roommate1Panel.SuspendLayout()
         CType(Roommate1PictureBox, ComponentModel.ISupportInitialize).BeginInit()
@@ -356,7 +355,7 @@ Partial Class ManagementRoommateProfilesControl
         ' Roommate4ExclusionCheckBox
         ' 
         Roommate4ExclusionCheckBox.FormattingEnabled = True
-        Roommate4ExclusionCheckBox.Items.AddRange(New Object() {"Vacuum", "Wash Dishes", "Shovel Snow", "Grocery"})
+        Roommate4ExclusionCheckBox.Items.AddRange(New Object() {"Wash Dishes", "Shovel Snow", "Grocery"})
         Roommate4ExclusionCheckBox.Location = New Point(268, 35)
         Roommate4ExclusionCheckBox.Margin = New Padding(3, 2, 3, 2)
         Roommate4ExclusionCheckBox.Name = "Roommate4ExclusionCheckBox"
@@ -406,21 +405,12 @@ Partial Class ManagementRoommateProfilesControl
         ' Roommate4PreferenceCheckBox
         ' 
         Roommate4PreferenceCheckBox.FormattingEnabled = True
-        Roommate4PreferenceCheckBox.Items.AddRange(New Object() {"Vacuum", "Wash Dishes", "Shovel Snow", "Grocery"})
+        Roommate4PreferenceCheckBox.Items.AddRange(New Object() {"Vacuum", "Wash Dishes", "Shovel Snow"})
         Roommate4PreferenceCheckBox.Location = New Point(117, 35)
         Roommate4PreferenceCheckBox.Margin = New Padding(3, 2, 3, 2)
         Roommate4PreferenceCheckBox.Name = "Roommate4PreferenceCheckBox"
         Roommate4PreferenceCheckBox.Size = New Size(140, 76)
         Roommate4PreferenceCheckBox.TabIndex = 19
-        ' 
-        ' BackButton
-        ' 
-        BackButton.Location = New Point(9, 16)
-        BackButton.Name = "BackButton"
-        BackButton.Size = New Size(83, 26)
-        BackButton.TabIndex = 23
-        BackButton.Text = "Back"
-        BackButton.UseVisualStyleBackColor = True
         ' 
         ' SaveButton
         ' 
@@ -441,7 +431,6 @@ Partial Class ManagementRoommateProfilesControl
         Controls.Add(Roommate3Panel)
         Controls.Add(Roommate2Panel)
         Controls.Add(Roommate1Panel)
-        Controls.Add(BackButton)
         Controls.Add(RoommateProfilesTitleLabel)
         Name = "ManagementRoommateProfilesControl"
         Size = New Size(429, 722)
@@ -460,8 +449,6 @@ Partial Class ManagementRoommateProfilesControl
         ResumeLayout(False)
         PerformLayout()
     End Sub
-
-    Friend WithEvents BackButton As Button
     Friend WithEvents RoommateProfilesTitleLabel As Label
     Friend WithEvents Roommate1Panel As Panel
     Friend WithEvents Roommate1NameLabel As Label

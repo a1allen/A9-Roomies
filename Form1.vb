@@ -15,14 +15,6 @@ Public Class Form1
     Dim aboutControl As ManagementAboutUsControl
     Dim faqControl As ManagementFAQControl
     Dim roommateProfilesControl As ManagementRoommateProfilesControl
-    Public Roommate1Preferences As CheckedListBox.ObjectCollection
-    Public Roommate1Exclusion As CheckedListBox.ObjectCollection
-    Public Roommate2Preferences As CheckedListBox.ObjectCollection
-    Public Roommate2Exclusion As CheckedListBox.ObjectCollection
-    Public Roommate3Preferences As CheckedListBox.ObjectCollection
-    Public Roommate3Exclusion As CheckedListBox.ObjectCollection
-    Public Roommate4Preferences As CheckedListBox.ObjectCollection
-    Public Roommate4Exclusion As CheckedListBox.ObjectCollection
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         For i As Integer = 0 To dayPanelArray.Length - 1
@@ -38,6 +30,11 @@ Public Class Form1
         year = 2023
         month = 11
         setupCalendar()
+        roommateProfilesControl = New ManagementRoommateProfilesControl
+        ManagementTabPage.Controls.Add(roommateProfilesControl)
+        roommateProfilesControl.Roommate4PreferenceCheckBox.SetItemChecked(0, True)
+        roommateProfilesControl.Roommate4ExclusionCheckBox.SetItemChecked(2, True)
+        roommateProfilesControl.Hide()
     End Sub
     Private Sub setupCalendar()
         numDaysInMonth = DateTime.DaysInMonth(year, month)
@@ -223,8 +220,7 @@ Public Class Form1
 
         'Create instance
         If sender.Name Is "RoomatesProfileButton" Then
-            roommateProfilesControl = New ManagementRoommateProfilesControl
-            ManagementTabPage.Controls.Add(roommateProfilesControl)
+            roommateProfilesControl.Show()
         ElseIf sender.Name Is "FAQButton" Then
             faqControl = New ManagementFAQControl()
             ManagementTabPage.Controls.Add(faqControl)
@@ -242,7 +238,7 @@ Public Class Form1
         'Remove instance 
         ManagementTabPage.Controls.Remove(aboutControl)
         ManagementTabPage.Controls.Remove(faqControl)
-        ManagementTabPage.Controls.Remove(roommateProfilesControl)
+        roommateProfilesControl.Hide()
         'Show all other elements on the tab
         ManagementTitleLabel.Show()
         ManagementPictureBox.Show()

@@ -1,17 +1,13 @@
 ﻿Public Class ManagementRoommateProfilesControl
     Private Sub ManagementRoommateProfilesControl_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Roommate4PreferenceCheckBox.SetItemChecked(0, True)
-        Roommate4ExclusionCheckBox.SetItemChecked(3, True)
-    End Sub
-    Private Sub BackButton_Click(sender As Object, e As EventArgs) Handles BackButton.Click
-        Form1.showManagementTab()
+
     End Sub
 
     Private Sub SaveButton_Click(sender As Object, e As EventArgs) Handles SaveButton.Click
-        Form1.Roommate1Preferences = Roommate1PreferenceCheckBox.Items
+        Form1.showManagementTab()
     End Sub
 
-    Private Sub Roommate1PreferenceCheckBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Roommate1PreferenceCheckBox.MouseMove
+    Private Sub Roommate1PreferenceCheckBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Roommate1PreferenceCheckBox.SelectedValueChanged, Roommate1PreferenceCheckBox.MouseMove, Roommate1PreferenceCheckBox.MouseLeave
         For Each item In Roommate1PreferenceCheckBox.Items
 
             ' Check if the item is selected
@@ -24,7 +20,7 @@
 
     End Sub
 
-    Private Sub Roommate1ExclusionCheckBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Roommate1ExclusionCheckBox.MouseMove
+    Private Sub Roommate1ExclusionCheckBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Roommate1ExclusionCheckBox.SelectedValueChanged, Roommate1ExclusionCheckBox.MouseMove, Roommate1ExclusionCheckBox.MouseLeave
         For Each item In Roommate1ExclusionCheckBox.Items
             ' Check if the item is selected
             If Roommate1ExclusionCheckBox.CheckedItems.Contains(item) Then
@@ -35,7 +31,7 @@
         Next
     End Sub
 
-    Private Sub Roommate2PreferenceCheckBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Roommate2PreferenceCheckBox.MouseMove
+    Private Sub Roommate2PreferenceCheckBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Roommate2PreferenceCheckBox.SelectedValueChanged, Roommate2PreferenceCheckBox.MouseMove, Roommate2PreferenceCheckBox.MouseLeave
         For Each item In Roommate2PreferenceCheckBox.Items
             ' Check if the item is selected
             If Roommate2PreferenceCheckBox.CheckedItems.Contains(item) Then
@@ -46,7 +42,7 @@
         Next
     End Sub
 
-    Private Sub Roommate2ExclusionCheckBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Roommate2ExclusionCheckBox.MouseMove
+    Private Sub Roommate2ExclusionCheckBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Roommate2ExclusionCheckBox.SelectedValueChanged, Roommate2ExclusionCheckBox.MouseMove, Roommate2ExclusionCheckBox.MouseLeave
         For Each item In Roommate2ExclusionCheckBox.Items
             ' Check if the item is selected
             If Roommate2ExclusionCheckBox.CheckedItems.Contains(item) Then
@@ -57,7 +53,7 @@
         Next
     End Sub
 
-    Private Sub Roommate3PreferenceCheckBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Roommate3PreferenceCheckBox.MouseMove
+    Private Sub Roommate3PreferenceCheckBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Roommate3PreferenceCheckBox.SelectedValueChanged, Roommate3PreferenceCheckBox.MouseMove, Roommate3PreferenceCheckBox.MouseLeave
         For Each item In Roommate3PreferenceCheckBox.Items
             ' Check if the item is selected
             If Roommate3PreferenceCheckBox.CheckedItems.Contains(item) Then
@@ -68,7 +64,7 @@
         Next
     End Sub
 
-    Private Sub Roommate3ExclusionCheckBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Roommate3ExclusionCheckBox.MouseMove
+    Private Sub Roommate3ExclusionCheckBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Roommate3ExclusionCheckBox.SelectedValueChanged, Roommate3ExclusionCheckBox.MouseMove, Roommate3ExclusionCheckBox.MouseLeave
         For Each item In Roommate3ExclusionCheckBox.Items
             ' Check if the item is selected
             If Roommate3ExclusionCheckBox.CheckedItems.Contains(item) Then
@@ -79,7 +75,7 @@
         Next
     End Sub
 
-    Private Sub Roommate4PreferenceCheckBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Roommate4PreferenceCheckBox.MouseMove
+    Private Sub Roommate4PreferenceCheckBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Roommate4PreferenceCheckBox.SelectedValueChanged, Roommate4PreferenceCheckBox.MouseMove, Roommate4PreferenceCheckBox.MouseLeave
         For Each item In Roommate4PreferenceCheckBox.Items
             ' Check if the item is selected
             If Roommate4PreferenceCheckBox.CheckedItems.Contains(item) Then
@@ -90,7 +86,7 @@
         Next
     End Sub
 
-    Private Sub Roommate4ExclusionCheckBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Roommate4ExclusionCheckBox.MouseMove
+    Private Sub Roommate4ExclusionCheckBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Roommate4ExclusionCheckBox.SelectedValueChanged, Roommate4ExclusionCheckBox.MouseMove, Roommate4ExclusionCheckBox.MouseLeave
         For Each item In Roommate4ExclusionCheckBox.Items
             ' Check if the item is selected
             If Roommate4ExclusionCheckBox.CheckedItems.Contains(item) Then
