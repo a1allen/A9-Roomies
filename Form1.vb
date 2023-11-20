@@ -530,4 +530,7 @@ Public Class Form1
         Debug.Print("Request volunteer button clicked")
     End Sub
 
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles SummaryButton.Click
+
+    End Sub
 End Class

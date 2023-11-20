@@ -89,15 +89,50 @@ Partial Class Form1
         AddToCalendarButton = New Button()
         MonthLabel = New Label()
         BudgetTabPage = New TabPage()
-        Label3 = New Label()
-        Label2 = New Label()
-        Label1 = New Label()
+        SummaryButton = New Button()
+        SettleButton = New Button()
+        AddExpenseButton = New Button()
+        BudgetItem28 = New BudgetItem()
+        BudgetItem27 = New BudgetItem()
+        BudgetItem26 = New BudgetItem()
+        BudgetItem25 = New BudgetItem()
+        JanTabLabel = New Label()
+        BudgetItem24 = New BudgetItem()
+        BudgetItem23 = New BudgetItem()
+        BudgetItem22 = New BudgetItem()
+        FebTabLabel = New Label()
+        BudgetItem21 = New BudgetItem()
+        BudgetItem20 = New BudgetItem()
+        BudgetItem19 = New BudgetItem()
+        MarTabControl = New Label()
+        AprTabControl = New Label()
+        BudgetItem18 = New BudgetItem()
+        BudgetItem17 = New BudgetItem()
+        MayTabLabel = New Label()
+        BudgetItem16 = New BudgetItem()
+        BudgetItem15 = New BudgetItem()
+        JunTabLabel = New Label()
+        BudgetItem14 = New BudgetItem()
+        BudgetItem13 = New BudgetItem()
+        JulTabLabel = New Label()
+        BudgetItem12 = New BudgetItem()
+        BudgetItem11 = New BudgetItem()
+        AugTabLabel = New Label()
+        BudgetItem10 = New BudgetItem()
+        BudgetItem9 = New BudgetItem()
+        BudgetItem8 = New BudgetItem()
+        SepTabLabel = New Label()
+        BudgetItem7 = New BudgetItem()
+        BudgetItem6 = New BudgetItem()
+        BudgetItem5 = New BudgetItem()
         Button1 = New Button()
-        addMoneyButton = New Button()
-        collectButton = New Button()
-        MoneyStatus = New Label()
-        PictureBox5 = New PictureBox()
-        BudgetTitle = New Label()
+        OctTabLabel = New Label()
+        BudgetItem4 = New BudgetItem()
+        BudgetItem3 = New BudgetItem()
+        BudgetItem2 = New BudgetItem()
+        BudgetItem1 = New BudgetItem()
+        NovTabLabel = New Label()
+        AllExpensesLabel = New Label()
         ManagementTabPage = New TabPage()
         Label4 = New Label()
         Button2 = New Button()
@@ -115,7 +150,6 @@ Partial Class Form1
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         BudgetTabPage.SuspendLayout()
-        CType(PictureBox5, ComponentModel.ISupportInitialize).BeginInit()
         ManagementTabPage.SuspendLayout()
         CType(PictureBox6, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -594,7 +628,7 @@ Partial Class Form1
         Roomie4PointsLabel.AutoSize = True
         Roomie4PointsLabel.Location = New Point(376, 671)
         Roomie4PointsLabel.Name = "Roomie4PointsLabel"
-        Roomie4PointsLabel.Size = New Size(17, 20)
+        Roomie4PointsLabel.Size = New Size(13, 15)
         Roomie4PointsLabel.TabIndex = 64
         Roomie4PointsLabel.Text = "0"
         ' 
@@ -603,7 +637,7 @@ Partial Class Form1
         Roomie3PointsLabel.AutoSize = True
         Roomie3PointsLabel.Location = New Point(276, 671)
         Roomie3PointsLabel.Name = "Roomie3PointsLabel"
-        Roomie3PointsLabel.Size = New Size(17, 20)
+        Roomie3PointsLabel.Size = New Size(13, 15)
         Roomie3PointsLabel.TabIndex = 63
         Roomie3PointsLabel.Text = "0"
         ' 
@@ -612,7 +646,7 @@ Partial Class Form1
         Roomie2PointsLabel.AutoSize = True
         Roomie2PointsLabel.Location = New Point(176, 671)
         Roomie2PointsLabel.Name = "Roomie2PointsLabel"
-        Roomie2PointsLabel.Size = New Size(17, 20)
+        Roomie2PointsLabel.Size = New Size(13, 15)
         Roomie2PointsLabel.TabIndex = 62
         Roomie2PointsLabel.Text = "0"
         ' 
@@ -621,7 +655,7 @@ Partial Class Form1
         Roomie1PointsLabel.AutoSize = True
         Roomie1PointsLabel.Location = New Point(76, 671)
         Roomie1PointsLabel.Name = "Roomie1PointsLabel"
-        Roomie1PointsLabel.Size = New Size(17, 20)
+        Roomie1PointsLabel.Size = New Size(13, 15)
         Roomie1PointsLabel.TabIndex = 61
         Roomie1PointsLabel.Text = "0"
         ' 
@@ -654,7 +688,7 @@ Partial Class Form1
         RoomiesTitleLabel.AutoSize = True
         RoomiesTitleLabel.Location = New Point(91, 631)
         RoomiesTitleLabel.Name = "RoomiesTitleLabel"
-        RoomiesTitleLabel.Size = New Size(246, 20)
+        RoomiesTitleLabel.Size = New Size(199, 15)
         RoomiesTitleLabel.TabIndex = 58
         RoomiesTitleLabel.Text = "Roomates Contributions This Month"
         ' 
@@ -813,21 +847,57 @@ Partial Class Form1
         MonthLabel.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point)
         MonthLabel.Location = New Point(21, 24)
         MonthLabel.Name = "MonthLabel"
-        MonthLabel.Size = New Size(277, 46)
+        MonthLabel.Size = New Size(224, 37)
         MonthLabel.TabIndex = 18
         MonthLabel.Text = "November 2023"
         ' 
         ' BudgetTabPage
         ' 
-        BudgetTabPage.Controls.Add(Label3)
-        BudgetTabPage.Controls.Add(Label2)
-        BudgetTabPage.Controls.Add(Label1)
+        BudgetTabPage.AutoScroll = True
+        BudgetTabPage.Controls.Add(SummaryButton)
+        BudgetTabPage.Controls.Add(SettleButton)
+        BudgetTabPage.Controls.Add(AddExpenseButton)
+        BudgetTabPage.Controls.Add(BudgetItem28)
+        BudgetTabPage.Controls.Add(BudgetItem27)
+        BudgetTabPage.Controls.Add(BudgetItem26)
+        BudgetTabPage.Controls.Add(BudgetItem25)
+        BudgetTabPage.Controls.Add(JanTabLabel)
+        BudgetTabPage.Controls.Add(BudgetItem24)
+        BudgetTabPage.Controls.Add(BudgetItem23)
+        BudgetTabPage.Controls.Add(BudgetItem22)
+        BudgetTabPage.Controls.Add(FebTabLabel)
+        BudgetTabPage.Controls.Add(BudgetItem21)
+        BudgetTabPage.Controls.Add(BudgetItem20)
+        BudgetTabPage.Controls.Add(BudgetItem19)
+        BudgetTabPage.Controls.Add(MarTabControl)
+        BudgetTabPage.Controls.Add(AprTabControl)
+        BudgetTabPage.Controls.Add(BudgetItem18)
+        BudgetTabPage.Controls.Add(BudgetItem17)
+        BudgetTabPage.Controls.Add(MayTabLabel)
+        BudgetTabPage.Controls.Add(BudgetItem16)
+        BudgetTabPage.Controls.Add(BudgetItem15)
+        BudgetTabPage.Controls.Add(JunTabLabel)
+        BudgetTabPage.Controls.Add(BudgetItem14)
+        BudgetTabPage.Controls.Add(BudgetItem13)
+        BudgetTabPage.Controls.Add(JulTabLabel)
+        BudgetTabPage.Controls.Add(BudgetItem12)
+        BudgetTabPage.Controls.Add(BudgetItem11)
+        BudgetTabPage.Controls.Add(AugTabLabel)
+        BudgetTabPage.Controls.Add(BudgetItem10)
+        BudgetTabPage.Controls.Add(BudgetItem9)
+        BudgetTabPage.Controls.Add(BudgetItem8)
+        BudgetTabPage.Controls.Add(SepTabLabel)
+        BudgetTabPage.Controls.Add(BudgetItem7)
+        BudgetTabPage.Controls.Add(BudgetItem6)
+        BudgetTabPage.Controls.Add(BudgetItem5)
         BudgetTabPage.Controls.Add(Button1)
-        BudgetTabPage.Controls.Add(addMoneyButton)
-        BudgetTabPage.Controls.Add(collectButton)
-        BudgetTabPage.Controls.Add(MoneyStatus)
-        BudgetTabPage.Controls.Add(PictureBox5)
-        BudgetTabPage.Controls.Add(BudgetTitle)
+        BudgetTabPage.Controls.Add(OctTabLabel)
+        BudgetTabPage.Controls.Add(BudgetItem4)
+        BudgetTabPage.Controls.Add(BudgetItem3)
+        BudgetTabPage.Controls.Add(BudgetItem2)
+        BudgetTabPage.Controls.Add(BudgetItem1)
+        BudgetTabPage.Controls.Add(NovTabLabel)
+        BudgetTabPage.Controls.Add(AllExpensesLabel)
         BudgetTabPage.Location = New Point(4, 4)
         BudgetTabPage.Name = "BudgetTabPage"
         BudgetTabPage.Padding = New Padding(3)
@@ -836,97 +906,497 @@ Partial Class Form1
         BudgetTabPage.Text = "Budget"
         BudgetTabPage.UseVisualStyleBackColor = True
         ' 
-        ' Label3
+        ' SummaryButton
         ' 
-        Label3.AutoSize = True
-        Label3.Location = New Point(120, 450)
-        Label3.Name = "Label3"
-        Label3.Size = New Size(189, 20)
-        Label3.TabIndex = 28
-        Label3.Text = "______________________________"
+        SummaryButton.Location = New Point(187, 45)
+        SummaryButton.Name = "SummaryButton"
+        SummaryButton.Size = New Size(195, 23)
+        SummaryButton.TabIndex = 43
+        SummaryButton.Text = "Roommate Summary"
+        SummaryButton.UseVisualStyleBackColor = True
         ' 
-        ' Label2
+        ' SettleButton
         ' 
-        Label2.AutoSize = True
-        Label2.Location = New Point(138, 495)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(152, 20)
-        Label2.TabIndex = 27
-        Label2.Text = "Roomate2: Owed $30"
+        SettleButton.Location = New Point(286, 16)
+        SettleButton.Name = "SettleButton"
+        SettleButton.Size = New Size(93, 23)
+        SettleButton.TabIndex = 42
+        SettleButton.Text = "Settle Expense"
+        SettleButton.UseVisualStyleBackColor = True
         ' 
-        ' Label1
+        ' AddExpenseButton
         ' 
-        Label1.AutoSize = True
-        Label1.Location = New Point(140, 471)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(149, 20)
-        Label1.TabIndex = 26
-        Label1.Text = "Roomate1: Owes $15"
+        AddExpenseButton.Location = New Point(187, 16)
+        AddExpenseButton.Name = "AddExpenseButton"
+        AddExpenseButton.Size = New Size(93, 23)
+        AddExpenseButton.TabIndex = 41
+        AddExpenseButton.Text = "Add Expense"
+        AddExpenseButton.UseVisualStyleBackColor = True
+        ' 
+        ' BudgetItem28
+        ' 
+        BudgetItem28.BackColor = SystemColors.Window
+        BudgetItem28.DateofItem = "Jan 01"
+        BudgetItem28.ExpenseName = "Hydro"
+        BudgetItem28.Location = New Point(8, 1754)
+        BudgetItem28.Name = "BudgetItem28"
+        BudgetItem28.NameOfRoomate = 1
+        BudgetItem28.Paid = 101.35R
+        BudgetItem28.Size = New Size(400, 50)
+        BudgetItem28.TabIndex = 40
+        ' 
+        ' BudgetItem27
+        ' 
+        BudgetItem27.BackColor = SystemColors.Window
+        BudgetItem27.DateofItem = "Jan 09"
+        BudgetItem27.ExpenseName = "Wifi"
+        BudgetItem27.Location = New Point(8, 1698)
+        BudgetItem27.Name = "BudgetItem27"
+        BudgetItem27.NameOfRoomate = 2
+        BudgetItem27.Paid = 89.25R
+        BudgetItem27.Size = New Size(400, 50)
+        BudgetItem27.TabIndex = 39
+        ' 
+        ' BudgetItem26
+        ' 
+        BudgetItem26.BackColor = SystemColors.Window
+        BudgetItem26.DateofItem = "Jan 15"
+        BudgetItem26.ExpenseName = "Garbage Bags"
+        BudgetItem26.Location = New Point(8, 1642)
+        BudgetItem26.Name = "BudgetItem26"
+        BudgetItem26.NameOfRoomate = 4
+        BudgetItem26.Paid = 34.27R
+        BudgetItem26.Size = New Size(400, 50)
+        BudgetItem26.TabIndex = 38
+        ' 
+        ' BudgetItem25
+        ' 
+        BudgetItem25.BackColor = SystemColors.Window
+        BudgetItem25.DateofItem = "Jan 26"
+        BudgetItem25.ExpenseName = "Cleaning Supplies"
+        BudgetItem25.Location = New Point(8, 1586)
+        BudgetItem25.Name = "BudgetItem25"
+        BudgetItem25.NameOfRoomate = 0
+        BudgetItem25.Paid = 54.67R
+        BudgetItem25.Size = New Size(400, 50)
+        BudgetItem25.TabIndex = 37
+        ' 
+        ' JanTabLabel
+        ' 
+        JanTabLabel.BackColor = Color.Silver
+        JanTabLabel.Location = New Point(6, 1568)
+        JanTabLabel.MinimumSize = New Size(400, 15)
+        JanTabLabel.Name = "JanTabLabel"
+        JanTabLabel.Size = New Size(400, 15)
+        JanTabLabel.TabIndex = 36
+        JanTabLabel.Text = "January 2023"
+        ' 
+        ' BudgetItem24
+        ' 
+        BudgetItem24.BackColor = SystemColors.Window
+        BudgetItem24.DateofItem = "Feb 05"
+        BudgetItem24.ExpenseName = "Water Bill"
+        BudgetItem24.Location = New Point(8, 1515)
+        BudgetItem24.Name = "BudgetItem24"
+        BudgetItem24.NameOfRoomate = 1
+        BudgetItem24.Paid = 94.89R
+        BudgetItem24.Size = New Size(400, 50)
+        BudgetItem24.TabIndex = 35
+        ' 
+        ' BudgetItem23
+        ' 
+        BudgetItem23.BackColor = SystemColors.Window
+        BudgetItem23.DateofItem = "Feb 09"
+        BudgetItem23.ExpenseName = "Wifi"
+        BudgetItem23.Location = New Point(8, 1459)
+        BudgetItem23.Name = "BudgetItem23"
+        BudgetItem23.NameOfRoomate = 2
+        BudgetItem23.Paid = 89.25R
+        BudgetItem23.Size = New Size(400, 50)
+        BudgetItem23.TabIndex = 34
+        ' 
+        ' BudgetItem22
+        ' 
+        BudgetItem22.BackColor = SystemColors.Window
+        BudgetItem22.DateofItem = "Feb 24"
+        BudgetItem22.ExpenseName = "New Vacuum"
+        BudgetItem22.Location = New Point(7, 1403)
+        BudgetItem22.Name = "BudgetItem22"
+        BudgetItem22.NameOfRoomate = 3
+        BudgetItem22.Paid = 203.8R
+        BudgetItem22.Size = New Size(400, 50)
+        BudgetItem22.TabIndex = 33
+        ' 
+        ' FebTabLabel
+        ' 
+        FebTabLabel.BackColor = Color.Silver
+        FebTabLabel.Location = New Point(5, 1385)
+        FebTabLabel.MinimumSize = New Size(400, 15)
+        FebTabLabel.Name = "FebTabLabel"
+        FebTabLabel.Size = New Size(400, 15)
+        FebTabLabel.TabIndex = 32
+        FebTabLabel.Text = "February 2023"
+        ' 
+        ' BudgetItem21
+        ' 
+        BudgetItem21.BackColor = SystemColors.Window
+        BudgetItem21.DateofItem = "Mar 02"
+        BudgetItem21.ExpenseName = "Pizza Party"
+        BudgetItem21.Location = New Point(7, 1332)
+        BudgetItem21.Name = "BudgetItem21"
+        BudgetItem21.NameOfRoomate = 4
+        BudgetItem21.Paid = 58.37R
+        BudgetItem21.Size = New Size(400, 50)
+        BudgetItem21.TabIndex = 31
+        ' 
+        ' BudgetItem20
+        ' 
+        BudgetItem20.BackColor = SystemColors.Window
+        BudgetItem20.DateofItem = "Mar 09"
+        BudgetItem20.ExpenseName = "Wifi"
+        BudgetItem20.Location = New Point(7, 1276)
+        BudgetItem20.Name = "BudgetItem20"
+        BudgetItem20.NameOfRoomate = 2
+        BudgetItem20.Paid = 89.25R
+        BudgetItem20.Size = New Size(400, 50)
+        BudgetItem20.TabIndex = 30
+        ' 
+        ' BudgetItem19
+        ' 
+        BudgetItem19.BackColor = SystemColors.Window
+        BudgetItem19.DateofItem = "Mar 18"
+        BudgetItem19.ExpenseName = "New Couch"
+        BudgetItem19.Location = New Point(7, 1220)
+        BudgetItem19.Name = "BudgetItem19"
+        BudgetItem19.NameOfRoomate = 4
+        BudgetItem19.Paid = 100R
+        BudgetItem19.Size = New Size(400, 50)
+        BudgetItem19.TabIndex = 29
+        ' 
+        ' MarTabControl
+        ' 
+        MarTabControl.BackColor = Color.Silver
+        MarTabControl.Location = New Point(7, 1202)
+        MarTabControl.MinimumSize = New Size(400, 15)
+        MarTabControl.Name = "MarTabControl"
+        MarTabControl.Size = New Size(400, 15)
+        MarTabControl.TabIndex = 28
+        MarTabControl.Text = "March 2023"
+        ' 
+        ' AprTabControl
+        ' 
+        AprTabControl.BackColor = Color.Silver
+        AprTabControl.Location = New Point(7, 1131)
+        AprTabControl.MinimumSize = New Size(400, 15)
+        AprTabControl.Name = "AprTabControl"
+        AprTabControl.Size = New Size(400, 15)
+        AprTabControl.TabIndex = 27
+        AprTabControl.Text = "April 2023"
+        ' 
+        ' BudgetItem18
+        ' 
+        BudgetItem18.BackColor = SystemColors.Window
+        BudgetItem18.DateofItem = "Apr 21"
+        BudgetItem18.ExpenseName = "Shower Curtains"
+        BudgetItem18.Location = New Point(7, 1149)
+        BudgetItem18.Name = "BudgetItem18"
+        BudgetItem18.NameOfRoomate = 1
+        BudgetItem18.Paid = 23R
+        BudgetItem18.Size = New Size(400, 50)
+        BudgetItem18.TabIndex = 26
+        ' 
+        ' BudgetItem17
+        ' 
+        BudgetItem17.BackColor = SystemColors.Window
+        BudgetItem17.DateofItem = "May 09"
+        BudgetItem17.ExpenseName = "Wifi"
+        BudgetItem17.Location = New Point(7, 1078)
+        BudgetItem17.Name = "BudgetItem17"
+        BudgetItem17.NameOfRoomate = 2
+        BudgetItem17.Paid = 178.5R
+        BudgetItem17.Size = New Size(400, 50)
+        BudgetItem17.TabIndex = 25
+        ' 
+        ' MayTabLabel
+        ' 
+        MayTabLabel.BackColor = Color.Silver
+        MayTabLabel.Location = New Point(7, 1060)
+        MayTabLabel.MinimumSize = New Size(400, 15)
+        MayTabLabel.Name = "MayTabLabel"
+        MayTabLabel.Size = New Size(400, 15)
+        MayTabLabel.TabIndex = 24
+        MayTabLabel.Text = "May 2023"
+        ' 
+        ' BudgetItem16
+        ' 
+        BudgetItem16.BackColor = SystemColors.Window
+        BudgetItem16.DateofItem = "Jun 11"
+        BudgetItem16.ExpenseName = "Gas"
+        BudgetItem16.Location = New Point(7, 1007)
+        BudgetItem16.Name = "BudgetItem16"
+        BudgetItem16.NameOfRoomate = 1
+        BudgetItem16.Paid = 110.19R
+        BudgetItem16.Size = New Size(400, 50)
+        BudgetItem16.TabIndex = 23
+        ' 
+        ' BudgetItem15
+        ' 
+        BudgetItem15.BackColor = SystemColors.Window
+        BudgetItem15.DateofItem = "Jun 27"
+        BudgetItem15.ExpenseName = "Dinner"
+        BudgetItem15.Location = New Point(7, 951)
+        BudgetItem15.Name = "BudgetItem15"
+        BudgetItem15.NameOfRoomate = 4
+        BudgetItem15.Paid = 78.23R
+        BudgetItem15.Size = New Size(400, 50)
+        BudgetItem15.TabIndex = 22
+        ' 
+        ' JunTabLabel
+        ' 
+        JunTabLabel.BackColor = Color.Silver
+        JunTabLabel.Location = New Point(8, 933)
+        JunTabLabel.MinimumSize = New Size(400, 15)
+        JunTabLabel.Name = "JunTabLabel"
+        JunTabLabel.Size = New Size(400, 15)
+        JunTabLabel.TabIndex = 21
+        JunTabLabel.Text = "June 2023"
+        ' 
+        ' BudgetItem14
+        ' 
+        BudgetItem14.BackColor = SystemColors.Window
+        BudgetItem14.DateofItem = "Jul 12"
+        BudgetItem14.ExpenseName = "Wifi"
+        BudgetItem14.Location = New Point(8, 880)
+        BudgetItem14.Name = "BudgetItem14"
+        BudgetItem14.NameOfRoomate = 2
+        BudgetItem14.Paid = 89.25R
+        BudgetItem14.Size = New Size(400, 50)
+        BudgetItem14.TabIndex = 20
+        ' 
+        ' BudgetItem13
+        ' 
+        BudgetItem13.BackColor = SystemColors.Window
+        BudgetItem13.DateofItem = "Jun 28"
+        BudgetItem13.ExpenseName = "Living Room Lamp"
+        BudgetItem13.Location = New Point(8, 824)
+        BudgetItem13.Name = "BudgetItem13"
+        BudgetItem13.NameOfRoomate = 3
+        BudgetItem13.Paid = 112.9R
+        BudgetItem13.Size = New Size(400, 50)
+        BudgetItem13.TabIndex = 19
+        ' 
+        ' JulTabLabel
+        ' 
+        JulTabLabel.BackColor = Color.Silver
+        JulTabLabel.Location = New Point(6, 806)
+        JulTabLabel.MinimumSize = New Size(400, 15)
+        JulTabLabel.Name = "JulTabLabel"
+        JulTabLabel.Size = New Size(400, 15)
+        JulTabLabel.TabIndex = 18
+        JulTabLabel.Text = "July 2023"
+        ' 
+        ' BudgetItem12
+        ' 
+        BudgetItem12.BackColor = SystemColors.Window
+        BudgetItem12.DateofItem = "Aug 15"
+        BudgetItem12.ExpenseName = "Hydro + Gas"
+        BudgetItem12.Location = New Point(6, 753)
+        BudgetItem12.Name = "BudgetItem12"
+        BudgetItem12.NameOfRoomate = 1
+        BudgetItem12.Paid = 212.91R
+        BudgetItem12.Size = New Size(400, 50)
+        BudgetItem12.TabIndex = 17
+        ' 
+        ' BudgetItem11
+        ' 
+        BudgetItem11.BackColor = SystemColors.Window
+        BudgetItem11.DateofItem = "Aug 22"
+        BudgetItem11.ExpenseName = "Groceries"
+        BudgetItem11.Location = New Point(6, 697)
+        BudgetItem11.Name = "BudgetItem11"
+        BudgetItem11.NameOfRoomate = 4
+        BudgetItem11.Paid = 78.77R
+        BudgetItem11.Size = New Size(400, 50)
+        BudgetItem11.TabIndex = 16
+        ' 
+        ' AugTabLabel
+        ' 
+        AugTabLabel.BackColor = Color.Silver
+        AugTabLabel.Location = New Point(8, 679)
+        AugTabLabel.MinimumSize = New Size(400, 15)
+        AugTabLabel.Name = "AugTabLabel"
+        AugTabLabel.Size = New Size(400, 15)
+        AugTabLabel.TabIndex = 15
+        AugTabLabel.Text = "August 2023"
+        ' 
+        ' BudgetItem10
+        ' 
+        BudgetItem10.BackColor = SystemColors.Window
+        BudgetItem10.DateofItem = "Sep 09"
+        BudgetItem10.ExpenseName = "Wifi"
+        BudgetItem10.Location = New Point(6, 627)
+        BudgetItem10.Name = "BudgetItem10"
+        BudgetItem10.NameOfRoomate = 2
+        BudgetItem10.Paid = 89.25R
+        BudgetItem10.Size = New Size(400, 50)
+        BudgetItem10.TabIndex = 14
+        ' 
+        ' BudgetItem9
+        ' 
+        BudgetItem9.BackColor = SystemColors.Window
+        BudgetItem9.DateofItem = "Sep 17"
+        BudgetItem9.ExpenseName = "Dish Detergent"
+        BudgetItem9.Location = New Point(5, 571)
+        BudgetItem9.Name = "BudgetItem9"
+        BudgetItem9.NameOfRoomate = 3
+        BudgetItem9.Paid = 12.12R
+        BudgetItem9.Size = New Size(400, 50)
+        BudgetItem9.TabIndex = 13
+        ' 
+        ' BudgetItem8
+        ' 
+        BudgetItem8.BackColor = SystemColors.Window
+        BudgetItem8.DateofItem = "Sep 30"
+        BudgetItem8.ExpenseName = "Cleaning Tools"
+        BudgetItem8.Location = New Point(5, 515)
+        BudgetItem8.Name = "BudgetItem8"
+        BudgetItem8.NameOfRoomate = 4
+        BudgetItem8.Paid = 100R
+        BudgetItem8.Size = New Size(400, 50)
+        BudgetItem8.TabIndex = 12
+        ' 
+        ' SepTabLabel
+        ' 
+        SepTabLabel.BackColor = Color.Silver
+        SepTabLabel.Location = New Point(7, 497)
+        SepTabLabel.MinimumSize = New Size(400, 15)
+        SepTabLabel.Name = "SepTabLabel"
+        SepTabLabel.Size = New Size(400, 15)
+        SepTabLabel.TabIndex = 11
+        SepTabLabel.Text = "September 2023"
+        ' 
+        ' BudgetItem7
+        ' 
+        BudgetItem7.BackColor = SystemColors.Window
+        BudgetItem7.DateofItem = "Oct 08"
+        BudgetItem7.ExpenseName = "Wifi"
+        BudgetItem7.Location = New Point(5, 445)
+        BudgetItem7.Name = "BudgetItem7"
+        BudgetItem7.NameOfRoomate = 2
+        BudgetItem7.Paid = 89.25R
+        BudgetItem7.Size = New Size(400, 50)
+        BudgetItem7.TabIndex = 10
+        ' 
+        ' BudgetItem6
+        ' 
+        BudgetItem6.BackColor = SystemColors.Window
+        BudgetItem6.DateofItem = "Oct 23"
+        BudgetItem6.ExpenseName = "Hydro "
+        BudgetItem6.Location = New Point(5, 389)
+        BudgetItem6.Name = "BudgetItem6"
+        BudgetItem6.NameOfRoomate = 1
+        BudgetItem6.Paid = 109.86R
+        BudgetItem6.Size = New Size(400, 50)
+        BudgetItem6.TabIndex = 9
+        ' 
+        ' BudgetItem5
+        ' 
+        BudgetItem5.BackColor = SystemColors.Window
+        BudgetItem5.DateofItem = "Oct 29"
+        BudgetItem5.ExpenseName = "Halloween Party"
+        BudgetItem5.Location = New Point(5, 333)
+        BudgetItem5.Name = "BudgetItem5"
+        BudgetItem5.NameOfRoomate = 0
+        BudgetItem5.Paid = 150R
+        BudgetItem5.Size = New Size(400, 50)
+        BudgetItem5.TabIndex = 8
         ' 
         ' Button1
         ' 
-        Button1.BackColor = Color.DarkSeaGreen
-        Button1.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
-        Button1.Location = New Point(92, 559)
+        Button1.Location = New Point(172, 1850)
         Button1.Name = "Button1"
-        Button1.Size = New Size(244, 50)
-        Button1.TabIndex = 25
-        Button1.Text = "View Balance Sheet"
-        Button1.UseVisualStyleBackColor = False
+        Button1.Size = New Size(75, 23)
+        Button1.TabIndex = 7
+        Button1.Text = "Button1"
+        Button1.UseVisualStyleBackColor = True
         ' 
-        ' addMoneyButton
+        ' OctTabLabel
         ' 
-        addMoneyButton.BackColor = Color.DarkSeaGreen
-        addMoneyButton.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
-        addMoneyButton.Location = New Point(215, 612)
-        addMoneyButton.Name = "addMoneyButton"
-        addMoneyButton.Size = New Size(121, 50)
-        addMoneyButton.TabIndex = 24
-        addMoneyButton.Text = "Pay To The Jar"
-        addMoneyButton.UseVisualStyleBackColor = False
+        OctTabLabel.BackColor = Color.Silver
+        OctTabLabel.Location = New Point(7, 315)
+        OctTabLabel.MinimumSize = New Size(400, 15)
+        OctTabLabel.Name = "OctTabLabel"
+        OctTabLabel.Size = New Size(400, 15)
+        OctTabLabel.TabIndex = 6
+        OctTabLabel.Text = "October 2023"
         ' 
-        ' collectButton
+        ' BudgetItem4
         ' 
-        collectButton.BackColor = Color.DarkSeaGreen
-        collectButton.Enabled = False
-        collectButton.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
-        collectButton.Location = New Point(92, 612)
-        collectButton.Name = "collectButton"
-        collectButton.Size = New Size(121, 50)
-        collectButton.TabIndex = 23
-        collectButton.Text = "Take My Money From The Jar"
-        collectButton.UseVisualStyleBackColor = False
+        BudgetItem4.BackColor = SystemColors.Window
+        BudgetItem4.DateofItem = "Nov 05"
+        BudgetItem4.ExpenseName = "Wifi"
+        BudgetItem4.Location = New Point(5, 262)
+        BudgetItem4.Name = "BudgetItem4"
+        BudgetItem4.NameOfRoomate = 2
+        BudgetItem4.Paid = 89.25R
+        BudgetItem4.Size = New Size(400, 50)
+        BudgetItem4.TabIndex = 5
         ' 
-        ' MoneyStatus
+        ' BudgetItem3
         ' 
-        MoneyStatus.AutoSize = True
-        MoneyStatus.Font = New Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point)
-        MoneyStatus.Location = New Point(102, 425)
-        MoneyStatus.Name = "MoneyStatus"
-        MoneyStatus.Size = New Size(224, 32)
-        MoneyStatus.TabIndex = 21
-        MoneyStatus.Text = "I owe $15 to the Jar"
+        BudgetItem3.BackColor = SystemColors.Window
+        BudgetItem3.DateofItem = "Nov 09"
+        BudgetItem3.ExpenseName = "Water Bill"
+        BudgetItem3.Location = New Point(5, 206)
+        BudgetItem3.Name = "BudgetItem3"
+        BudgetItem3.NameOfRoomate = 1
+        BudgetItem3.Paid = 123.45R
+        BudgetItem3.Size = New Size(400, 50)
+        BudgetItem3.TabIndex = 4
         ' 
-        ' PictureBox5
+        ' BudgetItem2
         ' 
-        PictureBox5.BackgroundImageLayout = ImageLayout.Stretch
-        PictureBox5.Image = My.Resources.myResources.Jar
-        PictureBox5.Location = New Point(83, 109)
-        PictureBox5.Name = "PictureBox5"
-        PictureBox5.Size = New Size(262, 302)
-        PictureBox5.SizeMode = PictureBoxSizeMode.StretchImage
-        PictureBox5.TabIndex = 20
-        PictureBox5.TabStop = False
+        BudgetItem2.BackColor = SystemColors.Window
+        BudgetItem2.DateofItem = "Nov 09"
+        BudgetItem2.ExpenseName = "Groceries"
+        BudgetItem2.Location = New Point(5, 151)
+        BudgetItem2.Name = "BudgetItem2"
+        BudgetItem2.NameOfRoomate = 0
+        BudgetItem2.Paid = 39.42R
+        BudgetItem2.Size = New Size(400, 50)
+        BudgetItem2.TabIndex = 3
         ' 
-        ' BudgetTitle
+        ' BudgetItem1
         ' 
-        BudgetTitle.AutoSize = True
-        BudgetTitle.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point)
-        BudgetTitle.Location = New Point(146, 44)
-        BudgetTitle.Name = "BudgetTitle"
-        BudgetTitle.Size = New Size(136, 46)
-        BudgetTitle.TabIndex = 19
-        BudgetTitle.Text = "Budget"
+        BudgetItem1.BackColor = SystemColors.Window
+        BudgetItem1.DateofItem = "Nov 12"
+        BudgetItem1.ExpenseName = "New Cooking Set"
+        BudgetItem1.Location = New Point(5, 95)
+        BudgetItem1.Name = "BudgetItem1"
+        BudgetItem1.NameOfRoomate = 3
+        BudgetItem1.Paid = 65.47R
+        BudgetItem1.Size = New Size(400, 50)
+        BudgetItem1.TabIndex = 2
+        ' 
+        ' NovTabLabel
+        ' 
+        NovTabLabel.BackColor = Color.Silver
+        NovTabLabel.Location = New Point(5, 77)
+        NovTabLabel.MinimumSize = New Size(400, 15)
+        NovTabLabel.Name = "NovTabLabel"
+        NovTabLabel.Size = New Size(400, 15)
+        NovTabLabel.TabIndex = 1
+        NovTabLabel.Text = "November 2023"
+        ' 
+        ' AllExpensesLabel
+        ' 
+        AllExpensesLabel.AutoSize = True
+        AllExpensesLabel.Font = New Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point)
+        AllExpensesLabel.Location = New Point(6, 16)
+        AllExpensesLabel.Name = "AllExpensesLabel"
+        AllExpensesLabel.Size = New Size(175, 37)
+        AllExpensesLabel.TabIndex = 0
+        AllExpensesLabel.Text = "All Expenses"
         ' 
         ' ManagementTabPage
         ' 
@@ -949,7 +1419,7 @@ Partial Class Form1
         Label4.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
         Label4.Location = New Point(182, 456)
         Label4.Name = "Label4"
-        Label4.Size = New Size(61, 20)
+        Label4.Size = New Size(49, 15)
         Label4.TabIndex = 73
         Label4.Text = "Options"
         ' 
@@ -979,7 +1449,7 @@ Partial Class Form1
         Label5.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point)
         Label5.Location = New Point(94, 38)
         Label5.Name = "Label5"
-        Label5.Size = New Size(232, 46)
+        Label5.Size = New Size(188, 37)
         Label5.TabIndex = 69
         Label5.Text = "Management"
         ' 
@@ -1014,7 +1484,6 @@ Partial Class Form1
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         BudgetTabPage.ResumeLayout(False)
         BudgetTabPage.PerformLayout()
-        CType(PictureBox5, ComponentModel.ISupportInitialize).EndInit()
         ManagementTabPage.ResumeLayout(False)
         ManagementTabPage.PerformLayout()
         CType(PictureBox6, ComponentModel.ISupportInitialize).EndInit()
@@ -1091,18 +1560,53 @@ Partial Class Form1
     Friend WithEvents CalendarTableLayoutPanel As TableLayoutPanel
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents BudgetTitle As Label
-    Friend WithEvents collectButton As Button
-    Friend WithEvents MoneyStatus As Label
-    Friend WithEvents addMoneyButton As Button
-    Friend WithEvents PictureBox5 As PictureBox
-    Friend WithEvents Button1 As Button
     Friend WithEvents PictureBox6 As PictureBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label1 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
     Friend WithEvents Label5 As Label
+    Friend WithEvents NovTabLabel As Label
+    Friend WithEvents AllExpensesLabel As Label
+    Friend WithEvents Button1 As Button
+    Friend WithEvents OctTabLabel As Label
+    Friend WithEvents BudgetItem4 As BudgetItem
+    Friend WithEvents BudgetItem3 As BudgetItem
+    Friend WithEvents BudgetItem2 As BudgetItem
+    Friend WithEvents BudgetItem1 As BudgetItem
+    Friend WithEvents SepTabLabel As Label
+    Friend WithEvents BudgetItem7 As BudgetItem
+    Friend WithEvents BudgetItem6 As BudgetItem
+    Friend WithEvents BudgetItem5 As BudgetItem
+    Friend WithEvents JulTabLabel As Label
+    Friend WithEvents BudgetItem12 As BudgetItem
+    Friend WithEvents BudgetItem11 As BudgetItem
+    Friend WithEvents AugTabLabel As Label
+    Friend WithEvents BudgetItem10 As BudgetItem
+    Friend WithEvents BudgetItem9 As BudgetItem
+    Friend WithEvents BudgetItem8 As BudgetItem
+    Friend WithEvents BudgetItem14 As BudgetItem
+    Friend WithEvents BudgetItem13 As BudgetItem
+    Friend WithEvents MayTabLabel As Label
+    Friend WithEvents BudgetItem16 As BudgetItem
+    Friend WithEvents BudgetItem15 As BudgetItem
+    Friend WithEvents JunTabLabel As Label
+    Friend WithEvents BudgetItem21 As BudgetItem
+    Friend WithEvents BudgetItem20 As BudgetItem
+    Friend WithEvents BudgetItem19 As BudgetItem
+    Friend WithEvents MarTabControl As Label
+    Friend WithEvents AprTabControl As Label
+    Friend WithEvents BudgetItem18 As BudgetItem
+    Friend WithEvents BudgetItem17 As BudgetItem
+    Friend WithEvents FebTabLabel As Label
+    Friend WithEvents BudgetItem24 As BudgetItem
+    Friend WithEvents BudgetItem23 As BudgetItem
+    Friend WithEvents BudgetItem22 As BudgetItem
+    Friend WithEvents BudgetItem28 As BudgetItem
+    Friend WithEvents BudgetItem27 As BudgetItem
+    Friend WithEvents BudgetItem26 As BudgetItem
+    Friend WithEvents BudgetItem25 As BudgetItem
+    Friend WithEvents JanTabLabel As Label
+    Friend WithEvents SummaryButton As Button
+    Friend WithEvents SettleButton As Button
+    Friend WithEvents AddExpenseButton As Button
 End Class
