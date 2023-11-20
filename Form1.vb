@@ -30,6 +30,9 @@ Public Class Form1
     Dim faqControl As ManagementFAQControl
     Dim roommateProfilesControl As ManagementRoommateProfilesControl
 
+    Public budgetItemList As New List(Of BudgetItem)()
+    Public monthTabList As New List(Of Label)
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         For i As Integer = 0 To dayPanelArray.Length - 1
@@ -70,11 +73,31 @@ Public Class Form1
         month = 11
         setupCalendar()
 
+
+
+        Dim budgetItemArray() As BudgetItem = {BudgetItem1, BudgetItem2, BudgetItem3, BudgetItem4, BudgetItem5,
+                            BudgetItem6, BudgetItem7, BudgetItem9, BudgetItem10,
+                            BudgetItem11, BudgetItem12, BudgetItem13, BudgetItem14, BudgetItem15,
+                            BudgetItem16, BudgetItem17, BudgetItem18, BudgetItem19, BudgetItem20,
+                            BudgetItem21, BudgetItem22, BudgetItem23, BudgetItem24, BudgetItem25,
+                            BudgetItem26, BudgetItem27, BudgetItem28}
+
+        budgetItemList.AddRange(budgetItemArray)
+
+        Dim monthTabArray() As Label = {JanTabLabel, FebTabLabel, MarTabLabel, AprTabControl, MayTabLabel,
+                                        JunTabLabel, JulTabLabel, AugTabLabel, SepTabLabel, OctTabLabel, NovTabLabel}
+
+        monthTabList.AddRange(monthTabArray)
+
+
+
+
         roommateProfilesControl = New ManagementRoommateProfilesControl
         ManagementTabPage.Controls.Add(roommateProfilesControl)
         roommateProfilesControl.Roommate4PreferenceCheckBox.SetItemChecked(0, True)
         roommateProfilesControl.Roommate4ExclusionCheckBox.SetItemChecked(2, True)
         roommateProfilesControl.Hide()
+
 
     End Sub
     Private Sub DayPanel_Click(sender As Object, e As EventArgs)
@@ -712,6 +735,23 @@ Public Class Form1
 
     Private Sub DayView_RequestVolunteerButtonClick(sender As Object, e As EventArgs) Handles dayViewPage.RequestVolunteerButtonClick
         Debug.Print("Request volunteer button clicked")
+    End Sub
+
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles SummaryButton.Click
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+        For i As Integer = 0 To (budgetItemList.Count - 1)
+            budgetItemList.Item(i).Visible = False
+        Next
+
+        For i As Integer = 0 To (monthTabList.Count - 1)
+            monthTabList.Item(i).Visible() = False
+        Next
+
     End Sub
 
     Private Sub ManagementButtons_Click(sender As Object, e As EventArgs) Handles AboutUsButton.Click, FAQButton.Click, RoomatesProfileButton.Click
