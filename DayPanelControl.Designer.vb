@@ -54,6 +54,7 @@ Partial Class DayPanelControl
         ' 
         ' Roomate2PictureBox
         ' 
+        Roomate2PictureBox.BackColor = SystemColors.ActiveCaptionText
         Roomate2PictureBox.Image = My.Resources.myResources.green
         Roomate2PictureBox.Location = New Point(30, 26)
         Roomate2PictureBox.Name = "Roomate2PictureBox"

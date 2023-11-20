@@ -28,13 +28,16 @@ Partial Class Chore_item_inDay
         EditChoreButton = New Button()
         RequestVolunteerButton = New Button()
         ExtendChoreButton = New Button()
+        Label_eff = New Label()
+        score_label = New Label()
+        choreDone = New CheckBox()
         SuspendLayout()
         ' 
         ' ChoreName
         ' 
         ChoreName.AutoSize = True
         ChoreName.Font = New Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point)
-        ChoreName.Location = New Point(14, 17)
+        ChoreName.Location = New Point(14, 10)
         ChoreName.Name = "ChoreName"
         ChoreName.Size = New Size(138, 25)
         ChoreName.TabIndex = 0
@@ -44,17 +47,17 @@ Partial Class Chore_item_inDay
         ' 
         AssignTo.AutoSize = True
         AssignTo.Font = New Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point)
-        AssignTo.Location = New Point(99, 65)
+        AssignTo.Location = New Point(99, 54)
         AssignTo.Name = "AssignTo"
-        AssignTo.Size = New Size(127, 17)
+        AssignTo.Size = New Size(88, 17)
         AssignTo.TabIndex = 2
-        AssignTo.Text = "Name of housemate"
+        AssignTo.Text = "RoomieName"
         ' 
         ' AssignedLabel
         ' 
         AssignedLabel.AutoSize = True
         AssignedLabel.Font = New Font("Segoe UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point)
-        AssignedLabel.Location = New Point(16, 65)
+        AssignedLabel.Location = New Point(16, 54)
         AssignedLabel.Name = "AssignedLabel"
         AssignedLabel.Size = New Size(85, 17)
         AssignedLabel.TabIndex = 4
@@ -63,7 +66,7 @@ Partial Class Chore_item_inDay
         ' EditChoreButton
         ' 
         EditChoreButton.BackColor = Color.White
-        EditChoreButton.Location = New Point(190, 20)
+        EditChoreButton.Location = New Point(212, 42)
         EditChoreButton.Name = "EditChoreButton"
         EditChoreButton.Size = New Size(52, 29)
         EditChoreButton.TabIndex = 5
@@ -74,7 +77,7 @@ Partial Class Chore_item_inDay
         ' 
         RequestVolunteerButton.BackColor = Color.White
         RequestVolunteerButton.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
-        RequestVolunteerButton.Location = New Point(190, 55)
+        RequestVolunteerButton.Location = New Point(212, 73)
         RequestVolunteerButton.Name = "RequestVolunteerButton"
         RequestVolunteerButton.Size = New Size(137, 29)
         RequestVolunteerButton.TabIndex = 6
@@ -84,12 +87,46 @@ Partial Class Chore_item_inDay
         ' ExtendChoreButton
         ' 
         ExtendChoreButton.BackColor = Color.White
-        ExtendChoreButton.Location = New Point(248, 20)
+        ExtendChoreButton.Location = New Point(270, 42)
         ExtendChoreButton.Name = "ExtendChoreButton"
         ExtendChoreButton.Size = New Size(79, 29)
         ExtendChoreButton.TabIndex = 7
         ExtendChoreButton.Text = "Extend"
         ExtendChoreButton.UseVisualStyleBackColor = False
+        ' 
+        ' Label_eff
+        ' 
+        Label_eff.AutoSize = True
+        Label_eff.Font = New Font("Segoe UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point)
+        Label_eff.Location = New Point(16, 76)
+        Label_eff.Name = "Label_eff"
+        Label_eff.Size = New Size(117, 17)
+        Label_eff.TabIndex = 8
+        Label_eff.Text = "difficulty (effort):"
+        ' 
+        ' score_label
+        ' 
+        score_label.AutoSize = True
+        score_label.Font = New Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point)
+        score_label.Location = New Point(139, 76)
+        score_label.Name = "score_label"
+        score_label.Size = New Size(13, 17)
+        score_label.TabIndex = 9
+        score_label.Text = "-"
+        ' 
+        ' choreDone
+        ' 
+        choreDone.AutoSize = True
+        choreDone.BackColor = Color.Transparent
+        choreDone.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        choreDone.ForeColor = SystemColors.ActiveCaptionText
+        choreDone.Location = New Point(275, 11)
+        choreDone.Name = "choreDone"
+        choreDone.RightToLeft = RightToLeft.No
+        choreDone.Size = New Size(75, 24)
+        choreDone.TabIndex = 10
+        choreDone.Text = "Done?"
+        choreDone.UseVisualStyleBackColor = False
         ' 
         ' Chore_item_inDay
         ' 
@@ -97,6 +134,9 @@ Partial Class Chore_item_inDay
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(224), CByte(224), CByte(224))
         BorderStyle = BorderStyle.FixedSingle
+        Controls.Add(choreDone)
+        Controls.Add(score_label)
+        Controls.Add(Label_eff)
         Controls.Add(ExtendChoreButton)
         Controls.Add(RequestVolunteerButton)
         Controls.Add(EditChoreButton)
@@ -104,7 +144,7 @@ Partial Class Chore_item_inDay
         Controls.Add(AssignTo)
         Controls.Add(ChoreName)
         Name = "Chore_item_inDay"
-        Size = New Size(412, 104)
+        Size = New Size(412, 107)
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -115,4 +155,7 @@ Partial Class Chore_item_inDay
     Friend WithEvents EditChoreButton As Button
     Friend WithEvents RequestVolunteerButton As Button
     Friend WithEvents ExtendChoreButton As Button
+    Friend WithEvents Label_eff As Label
+    Friend WithEvents score_label As Label
+    Friend WithEvents choreDone As CheckBox
 End Class
