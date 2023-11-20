@@ -104,7 +104,7 @@ Partial Class Form1
         BudgetItem21 = New BudgetItem()
         BudgetItem20 = New BudgetItem()
         BudgetItem19 = New BudgetItem()
-        MarTabControl = New Label()
+        MarTabLabel = New Label()
         AprTabControl = New Label()
         BudgetItem18 = New BudgetItem()
         BudgetItem17 = New BudgetItem()
@@ -869,7 +869,7 @@ Partial Class Form1
         BudgetTabPage.Controls.Add(BudgetItem21)
         BudgetTabPage.Controls.Add(BudgetItem20)
         BudgetTabPage.Controls.Add(BudgetItem19)
-        BudgetTabPage.Controls.Add(MarTabControl)
+        BudgetTabPage.Controls.Add(MarTabLabel)
         BudgetTabPage.Controls.Add(AprTabControl)
         BudgetTabPage.Controls.Add(BudgetItem18)
         BudgetTabPage.Controls.Add(BudgetItem17)
@@ -1073,15 +1073,15 @@ Partial Class Form1
         BudgetItem19.Size = New Size(400, 50)
         BudgetItem19.TabIndex = 29
         ' 
-        ' MarTabControl
+        ' MarTabLabel
         ' 
-        MarTabControl.BackColor = Color.Silver
-        MarTabControl.Location = New Point(7, 1202)
-        MarTabControl.MinimumSize = New Size(400, 15)
-        MarTabControl.Name = "MarTabControl"
-        MarTabControl.Size = New Size(400, 15)
-        MarTabControl.TabIndex = 28
-        MarTabControl.Text = "March 2023"
+        MarTabLabel.BackColor = Color.Silver
+        MarTabLabel.Location = New Point(7, 1202)
+        MarTabLabel.MinimumSize = New Size(400, 15)
+        MarTabLabel.Name = "MarTabLabel"
+        MarTabLabel.Size = New Size(400, 15)
+        MarTabLabel.TabIndex = 28
+        MarTabLabel.Text = "March 2023"
         ' 
         ' AprTabControl
         ' 
@@ -1593,7 +1593,7 @@ Partial Class Form1
     Friend WithEvents BudgetItem21 As BudgetItem
     Friend WithEvents BudgetItem20 As BudgetItem
     Friend WithEvents BudgetItem19 As BudgetItem
-    Friend WithEvents MarTabControl As Label
+    Friend WithEvents MarTabLabel As Label
     Friend WithEvents AprTabControl As Label
     Friend WithEvents BudgetItem18 As BudgetItem
     Friend WithEvents BudgetItem17 As BudgetItem
