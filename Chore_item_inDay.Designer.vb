@@ -24,16 +24,17 @@ Partial Class Chore_item_inDay
     Private Sub InitializeComponent()
         ChoreName = New Label()
         AssignTo = New Label()
-        RepeatedEvent = New Label()
         AssignedLabel = New Label()
-        Repeated_y_or_N = New Label()
+        EditChoreButton = New Button()
+        RequestVolunteerButton = New Button()
+        ExtendChoreButton = New Button()
         SuspendLayout()
         ' 
         ' ChoreName
         ' 
         ChoreName.AutoSize = True
         ChoreName.Font = New Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point)
-        ChoreName.Location = New Point(23, 9)
+        ChoreName.Location = New Point(14, 17)
         ChoreName.Name = "ChoreName"
         ChoreName.Size = New Size(138, 25)
         ChoreName.TabIndex = 0
@@ -43,41 +44,52 @@ Partial Class Chore_item_inDay
         ' 
         AssignTo.AutoSize = True
         AssignTo.Font = New Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point)
-        AssignTo.Location = New Point(120, 75)
+        AssignTo.Location = New Point(99, 65)
         AssignTo.Name = "AssignTo"
         AssignTo.Size = New Size(127, 17)
         AssignTo.TabIndex = 2
         AssignTo.Text = "Name of housemate"
         ' 
-        ' RepeatedEvent
-        ' 
-        RepeatedEvent.AutoSize = True
-        RepeatedEvent.Font = New Font("Segoe UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point)
-        RepeatedEvent.Location = New Point(25, 57)
-        RepeatedEvent.Name = "RepeatedEvent"
-        RepeatedEvent.Size = New Size(125, 17)
-        RepeatedEvent.TabIndex = 3
-        RepeatedEvent.Text = "Repeated (yes/no):"
-        ' 
         ' AssignedLabel
         ' 
         AssignedLabel.AutoSize = True
         AssignedLabel.Font = New Font("Segoe UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point)
-        AssignedLabel.Location = New Point(25, 75)
+        AssignedLabel.Location = New Point(16, 65)
         AssignedLabel.Name = "AssignedLabel"
         AssignedLabel.Size = New Size(85, 17)
         AssignedLabel.TabIndex = 4
         AssignedLabel.Text = "Assigned to:"
         ' 
-        ' Repeated_y_or_N
+        ' EditChoreButton
         ' 
-        Repeated_y_or_N.AutoSize = True
-        Repeated_y_or_N.Font = New Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point)
-        Repeated_y_or_N.Location = New Point(156, 57)
-        Repeated_y_or_N.Name = "Repeated_y_or_N"
-        Repeated_y_or_N.Size = New Size(26, 17)
-        Repeated_y_or_N.TabIndex = 5
-        Repeated_y_or_N.Text = "No"
+        EditChoreButton.BackColor = Color.White
+        EditChoreButton.Location = New Point(190, 20)
+        EditChoreButton.Name = "EditChoreButton"
+        EditChoreButton.Size = New Size(52, 29)
+        EditChoreButton.TabIndex = 5
+        EditChoreButton.Text = "Edit"
+        EditChoreButton.UseVisualStyleBackColor = False
+        ' 
+        ' RequestVolunteerButton
+        ' 
+        RequestVolunteerButton.BackColor = Color.White
+        RequestVolunteerButton.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
+        RequestVolunteerButton.Location = New Point(190, 55)
+        RequestVolunteerButton.Name = "RequestVolunteerButton"
+        RequestVolunteerButton.Size = New Size(137, 29)
+        RequestVolunteerButton.TabIndex = 6
+        RequestVolunteerButton.Text = "Request Volunteer"
+        RequestVolunteerButton.UseVisualStyleBackColor = False
+        ' 
+        ' ExtendChoreButton
+        ' 
+        ExtendChoreButton.BackColor = Color.White
+        ExtendChoreButton.Location = New Point(248, 20)
+        ExtendChoreButton.Name = "ExtendChoreButton"
+        ExtendChoreButton.Size = New Size(79, 29)
+        ExtendChoreButton.TabIndex = 7
+        ExtendChoreButton.Text = "Extend"
+        ExtendChoreButton.UseVisualStyleBackColor = False
         ' 
         ' Chore_item_inDay
         ' 
@@ -85,9 +97,10 @@ Partial Class Chore_item_inDay
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(224), CByte(224), CByte(224))
         BorderStyle = BorderStyle.FixedSingle
-        Controls.Add(Repeated_y_or_N)
+        Controls.Add(ExtendChoreButton)
+        Controls.Add(RequestVolunteerButton)
+        Controls.Add(EditChoreButton)
         Controls.Add(AssignedLabel)
-        Controls.Add(RepeatedEvent)
         Controls.Add(AssignTo)
         Controls.Add(ChoreName)
         Name = "Chore_item_inDay"
@@ -98,8 +111,8 @@ Partial Class Chore_item_inDay
 
     Friend WithEvents ChoreName As Label
     Friend WithEvents AssignTo As Label
-    Friend WithEvents RepeatedEvent As Label
     Friend WithEvents AssignedLabel As Label
-    Friend WithEvents Repeated_y_or_N As Label
-
+    Friend WithEvents EditChoreButton As Button
+    Friend WithEvents RequestVolunteerButton As Button
+    Friend WithEvents ExtendChoreButton As Button
 End Class

@@ -652,11 +652,11 @@ Partial Class Form1
         ' RoomiesTitleLabel
         ' 
         RoomiesTitleLabel.AutoSize = True
-        RoomiesTitleLabel.Location = New Point(129, 631)
+        RoomiesTitleLabel.Location = New Point(91, 631)
         RoomiesTitleLabel.Name = "RoomiesTitleLabel"
-        RoomiesTitleLabel.Size = New Size(169, 20)
+        RoomiesTitleLabel.Size = New Size(246, 20)
         RoomiesTitleLabel.TabIndex = 58
-        RoomiesTitleLabel.Text = "Roomates Contributions"
+        RoomiesTitleLabel.Text = "Roomates Contributions This Month"
         ' 
         ' PictureBox4
         ' 

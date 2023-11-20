@@ -3,6 +3,7 @@ Imports Microsoft.VisualBasic.Devices
 Imports System.Xml
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement.Header
 Imports System.Reflection.Metadata
+Imports System.Globalization
 
 Public Class Form1
 
@@ -15,9 +16,11 @@ Public Class Form1
     Dim startDayOfWeek As Integer
     Dim count As Integer
     Dim choreControl As AddChoreControl
-    Dim dayViewPage As DayView
+    Dim editChoreControl As EditChoreControl
+    'Dim dayViewPage As DayView
     Public ChoreList As New List(Of Chore)()
     Public dayPanelAssignments As New Dictionary(Of DateTime, List(Of Chore))
+    Private WithEvents dayViewPage As DayView
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -30,6 +33,10 @@ Public Class Form1
             dayPanelArray(i).Roomate3PictureBox.Hide()
             dayPanelArray(i).Roomate4PictureBox.Hide()
             AddHandler dayPanelArray(i).Click, AddressOf DayPanel_Click
+            AddHandler dayPanelArray(i).Roomate1PictureBox.Click, AddressOf DayPanel_Click
+            AddHandler dayPanelArray(i).Roomate2PictureBox.Click, AddressOf DayPanel_Click
+            AddHandler dayPanelArray(i).Roomate3PictureBox.Click, AddressOf DayPanel_Click
+            AddHandler dayPanelArray(i).Roomate4PictureBox.Click, AddressOf DayPanel_Click
             Me.Controls.Find(controlName, True)
         Next
 
@@ -42,8 +49,19 @@ Public Class Form1
     Private Sub DayPanel_Click(sender As Object, e As EventArgs)
 
         ' Handle the click event for the panels
-        Dim clickedPanel As DayPanelControl = DirectCast(sender, A9.DayPanelControl)
+        Dim clickedPanel As DayPanelControl
+        If TypeOf sender Is DayPanelControl Then
+            ' Handle the click event for the panels
+            clickedPanel = DirectCast(sender, DayPanelControl)
+            ' ... Your existing logic for panels
+        Else
+            ' Handle the click event for picture boxes
+            Dim clickedPictureBox As PictureBox = DirectCast(sender, PictureBox)
 
+            ' Retrieve the associated DayPanel from the Tag property
+            clickedPanel = DirectCast(clickedPictureBox.Tag, DayPanelControl)
+            ' ... Your logic for picture boxes and associated DayPanel
+        End If
         ' Find the index of the clicked panel in the array
         Dim index As Integer = Array.IndexOf(dayPanelArray, clickedPanel)
 
@@ -96,6 +114,10 @@ Public Class Form1
         numDaysInMonth = DateTime.DaysInMonth(year, month)
         currentDate = New DateTime(year, month, 1)
         startDayOfWeek = (currentDate.DayOfWeek)
+        Dim R1_contribution = 0
+        Dim R2_contribution = 0
+        Dim R3_contribution = 0
+        Dim R4_contribution = 0
 
         count = 0
         For i As Integer = 0 To dayPanelArray.Length - 1
@@ -125,16 +147,24 @@ Public Class Form1
                             Dim person = chore_item.AssignedPerson
                             If person = "Roomate 1" Then
                                 dayPanelArray(i).Roomate1PictureBox.Show()
+                                R1_contribution = R1_contribution + 1
                             ElseIf person = "Roomate 2" Then
                                 dayPanelArray(i).Roomate2PictureBox.Show()
+                                R2_contribution = R2_contribution + 1
                             ElseIf person = "Roomate 3" Then
+                                R3_contribution = R3_contribution + 1
                                 dayPanelArray(i).Roomate3PictureBox.Show()
                             ElseIf person = "Roomate 4" Then
+                                R4_contribution = R4_contribution + 1
                                 dayPanelArray(i).Roomate4PictureBox.Show()
                             End If
                         Next
                     End If
                 End If
+                Roomie1PointsLabel.Text = R1_contribution
+                Roomie2PointsLabel.Text = R2_contribution
+                Roomie3PointsLabel.Text = R3_contribution
+                Roomie4PointsLabel.Text = R4_contribution
                 dayPanelArray(i).Show()
 
                 'Check if extra panels were used
@@ -322,5 +352,182 @@ Public Class Form1
 
     End Sub
 
+    Private Sub DayView_EditChoreButtonClick(sender As Object, e As EventArgs) Handles dayViewPage.EditChoreButtonClickInDayView
+        'Hide the dayView control
+        dayViewPage.Hide()
+
+        'Create instance
+        editChoreControl = New EditChoreControl()
+        CalendarTabPage.Controls.Add(editChoreControl)
+
+        'Fill in the fields with the information from the chore that was clicked
+        Dim thisChoreName As String = dayViewPage.ChoreItem.TypeOfChore
+        Dim thisAssignedPerson As String = dayViewPage.ChoreItem.AssignedPerson
+        Dim thisDate As DateTime = dayViewPage.FullDate.Text
+        'Fill in fields
+        editChoreControl.EditChoreTextBox.Text = thisChoreName
+        If thisAssignedPerson = "Roomate 1" Then
+            editChoreControl.EditRoomateComboBox.SelectedIndex = 0
+        ElseIf thisAssignedPerson = "Roomate 2" Then
+            editChoreControl.EditRoomateComboBox.SelectedIndex = 1
+        ElseIf thisAssignedPerson = "Roomate 3" Then
+            editChoreControl.EditRoomateComboBox.SelectedIndex = 2
+        ElseIf thisAssignedPerson = "Roomate 4" Then
+            editChoreControl.EditRoomateComboBox.SelectedIndex = 3
+        End If
+        editChoreControl.EditChoreDateTimePicker.Value = DateTime.ParseExact(thisDate, "yyyy-MM-dd", CultureInfo.InvariantCulture)
+
+
+        AddHandler editChoreControl.SubmitChoreEditsButtonClick, AddressOf SubmitChoreEditsButton_Click
+        AddHandler editChoreControl.DeleteChoreButtonClick, AddressOf DeleteChoreButton_Click
+        AddHandler editChoreControl.CancelEditChoreButtonClick, AddressOf CancelEditChoreButton_Click
+
+    End Sub
+
+    Private Sub SubmitChoreEditsButton_Click(sender As Object, e As EventArgs)
+        'Get the attributes needed to search through the list
+        Dim thisChoreName As String = dayViewPage.ChoreItem.TypeOfChore
+        Dim thisAssignedPerson As String = dayViewPage.ChoreItem.AssignedPerson
+        Dim thisDate As DateTime = dayViewPage.FullDate.Text
+
+        'Get the new attributes 
+        Dim newChoreName As String = editChoreControl.EditChoreTextBox.Text
+        Dim newAssignedPerson As String = editChoreControl.EditRoomateComboBox.Text
+        Dim newDate As DateTime = editChoreControl.EditChoreDateTimePicker.Value
+
+        Dim item As Chore
+
+        'Remove the chore from the dictionary
+        Dim thisChoreList As List(Of Chore) = dayPanelAssignments(thisDate)
+        If dayPanelAssignments.ContainsKey(thisDate) Then
+            For i As Integer = thisChoreList.Count - 1 To 0 Step -1
+                item = thisChoreList(i)
+                If (item.TypeOfChore = thisChoreName) And (item.AssignedPerson = thisAssignedPerson) Then
+                    'Once the chore instance has been found, delete it
+                    thisChoreList.RemoveAt(i)
+                End If
+            Next
+        End If
+
+        'Re-add the chore from the dictionary
+        Dim newChoreList As List(Of Chore) = dayPanelAssignments(newDate)
+
+        newChoreList.Add(New Chore(newChoreName, newAssignedPerson))
+        dayPanelAssignments(newDate) = newChoreList
+
+
+        'Update the daypanel view for all 4 dots
+        For Each panel As DayPanelControl In dayPanelArray
+            panel.Roomate1PictureBox.Hide()
+            panel.Roomate2PictureBox.Hide()
+            panel.Roomate3PictureBox.Hide()
+            panel.Roomate4PictureBox.Hide()
+        Next
+
+        'Update the dayview page
+        dayViewPage.DisplayChoresForDate(thisDate)
+
+        'Remove instance
+        CalendarTabPage.Controls.Remove(editChoreControl)
+
+        'Show the dayView control
+        dayViewPage.Show()
+
+    End Sub
+
+    Private Sub DeleteChoreButton_Click(sender As Object, e As EventArgs)
+        'Get the attributes needed to search through the list
+        Dim thisChoreName As String = dayViewPage.ChoreItem.TypeOfChore
+        Dim thisAssignedPerson As String = dayViewPage.ChoreItem.AssignedPerson
+        Dim thisDate As DateTime = dayViewPage.FullDate.Text
+        Dim item As Chore
+        If dayPanelAssignments.ContainsKey(thisDate) Then
+            'Remove chore from the dictionary
+            Dim thisChoreList As List(Of Chore) = dayPanelAssignments(thisDate)
+            For i As Integer = thisChoreList.Count - 1 To 0 Step -1
+                item = thisChoreList(i)
+                If (item.TypeOfChore = thisChoreName) And (item.AssignedPerson = thisAssignedPerson) Then
+                    thisChoreList.RemoveAt(i)
+                End If
+            Next
+        End If
+
+        'Update the dayview page
+        dayViewPage.DisplayChoresForDate(thisDate)
+
+        'Remove instance
+        CalendarTabPage.Controls.Remove(editChoreControl)
+
+        'Show the dayView control
+        dayViewPage.Show()
+
+    End Sub
+
+    Private Sub CancelEditChoreButton_Click(sender As Object, e As EventArgs)
+        'Remove instance
+        CalendarTabPage.Controls.Remove(editChoreControl)
+
+        'Show the dayView control
+        dayViewPage.Show()
+    End Sub
+
+    Private Sub DayView_ExtendChoreButtonClick(sender As Object, e As EventArgs) Handles dayViewPage.ExtendChoreButtonClickInDayView
+        'Disable main control
+        Me.Enabled = False
+
+        'Show the confirmation form to ask user if they want to extend chore 
+        Dim askUserForm As New AskExtendForm()
+        askUserForm.StartPosition = FormStartPosition.CenterParent
+        askUserForm.ShowDialog(Me)
+
+        'Enable main control once response is given
+        Me.Enabled = True
+
+        'Get the result and more the chore 2 days down if user says yes
+        If askUserForm.Result Then
+            'Get the attributes needed to search through the list
+            Dim thisChoreName As String = dayViewPage.ChoreItem.TypeOfChore
+            Dim thisAssignedPerson As String = dayViewPage.ChoreItem.AssignedPerson
+            Dim thisDate As DateTime = dayViewPage.FullDate.Text
+
+            'Get the exact same date 2 days later
+            Dim newDate As DateTime = thisDate.AddDays(2)
+
+            Dim item As Chore
+            'Remove the chore from the dictionary
+            Dim thisChoreList As List(Of Chore) = dayPanelAssignments(thisDate)
+            If dayPanelAssignments.ContainsKey(thisDate) Then
+                For i As Integer = thisChoreList.Count - 1 To 0 Step -1
+                    item = thisChoreList(i)
+                    If (item.TypeOfChore = thisChoreName) And (item.AssignedPerson = thisAssignedPerson) Then
+                        'Once the chore instance has been found, delete it
+                        thisChoreList.RemoveAt(i)
+                    End If
+                Next
+            End If
+
+            'Re-add the chore for 2 days later with newDate
+            Dim newChoreList As List(Of Chore) = dayPanelAssignments(newDate)
+
+            newChoreList.Add(New Chore(thisChoreName, thisAssignedPerson))
+            dayPanelAssignments(newDate) = newChoreList
+
+            'Update the daypanel view for all 4 dots
+            For Each panel As DayPanelControl In dayPanelArray
+                panel.Roomate1PictureBox.Hide()
+                panel.Roomate2PictureBox.Hide()
+                panel.Roomate3PictureBox.Hide()
+                panel.Roomate4PictureBox.Hide()
+            Next
+
+            'Update the dayview page
+            dayViewPage.DisplayChoresForDate(thisDate)
+        End If
+
+    End Sub
+
+    Private Sub DayView_RequestVolunteerButtonClick(sender As Object, e As EventArgs) Handles dayViewPage.RequestVolunteerButtonClick
+        Debug.Print("Request volunteer button clicked")
+    End Sub
 
 End Class
