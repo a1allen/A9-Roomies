@@ -33,19 +33,20 @@ Partial Class ManagementAboutUsControl
         ' 
         AboutUsTitleLabel.AutoSize = True
         AboutUsTitleLabel.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point)
-        AboutUsTitleLabel.Location = New Point(119, 28)
+        AboutUsTitleLabel.Location = New Point(102, 40)
         AboutUsTitleLabel.Name = "AboutUsTitleLabel"
-        AboutUsTitleLabel.Size = New Size(190, 32)
+        AboutUsTitleLabel.Size = New Size(234, 41)
         AboutUsTitleLabel.TabIndex = 15
         AboutUsTitleLabel.Text = "About Roomies"
         ' 
         ' TestimonialsLabel
         ' 
         TestimonialsLabel.AutoSize = True
+        TestimonialsLabel.BorderStyle = BorderStyle.FixedSingle
         TestimonialsLabel.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        TestimonialsLabel.Location = New Point(44, 628)
+        TestimonialsLabel.Location = New Point(3, 590)
         TestimonialsLabel.Name = "TestimonialsLabel"
-        TestimonialsLabel.Size = New Size(340, 75)
+        TestimonialsLabel.Size = New Size(428, 102)
         TestimonialsLabel.TabIndex = 17
         TestimonialsLabel.Text = "★★★★★ - Forbes Magazine" & vbCrLf & vbCrLf & """A9 Team: Geniuses of the Year - 2023"" - People Magazine" & vbCrLf & vbCrLf & """Roomies is the Best Thing Since Sliced Bread"" - Bloomberg"
         TestimonialsLabel.TextAlign = ContentAlignment.TopCenter
@@ -53,33 +54,37 @@ Partial Class ManagementAboutUsControl
         ' AboutUsRichTextBox
         ' 
         AboutUsRichTextBox.BackColor = Color.WhiteSmoke
-        AboutUsRichTextBox.Location = New Point(6, 65)
+        AboutUsRichTextBox.Location = New Point(11, 87)
+        AboutUsRichTextBox.Margin = New Padding(3, 4, 3, 4)
         AboutUsRichTextBox.Name = "AboutUsRichTextBox"
         AboutUsRichTextBox.ReadOnly = True
         AboutUsRichTextBox.ScrollBars = RichTextBoxScrollBars.Vertical
-        AboutUsRichTextBox.Size = New Size(417, 544)
+        AboutUsRichTextBox.Size = New Size(412, 485)
         AboutUsRichTextBox.TabIndex = 18
         AboutUsRichTextBox.Text = resources.GetString("AboutUsRichTextBox.Text")
         ' 
         ' BackButton
         ' 
-        BackButton.Location = New Point(9, 12)
+        BackButton.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        BackButton.Location = New Point(16, 15)
         BackButton.Name = "BackButton"
-        BackButton.Size = New Size(75, 23)
-        BackButton.TabIndex = 19
-        BackButton.Text = "Back"
+        BackButton.Size = New Size(42, 42)
+        BackButton.TabIndex = 67
+        BackButton.Text = "X"
         BackButton.UseVisualStyleBackColor = True
         ' 
         ' ManagementAboutUsControl
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
+        BackColor = Color.White
         Controls.Add(BackButton)
         Controls.Add(AboutUsRichTextBox)
         Controls.Add(TestimonialsLabel)
         Controls.Add(AboutUsTitleLabel)
+        Margin = New Padding(3, 4, 3, 4)
         Name = "ManagementAboutUsControl"
-        Size = New Size(429, 722)
+        Size = New Size(434, 711)
         ResumeLayout(False)
         PerformLayout()
     End Sub

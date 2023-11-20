@@ -56,13 +56,30 @@ Public Class Form1
         Next
 
         '######################################
+        'Dim currentChore1 As Chore
+
         'Hardcode instances for usability test
         'Housemate red cleaning the bathroom
-        dayPanelAssignments.Add("2023-11-16", New List(Of Chore)())
-        dayPanelAssignments("2023-11-16").Add(New Chore("Clean Bathroom", "Roomate 1", 2))
+        dayPanelAssignments.Add("2023-11-11", New List(Of Chore)())
+        Dim currentChore1 = New Chore("Clean Bathroom", "Roomate 1", 1)
+        currentChore1.statusOfChore = True
+        dayPanelAssignments("2023-11-11").Add(currentChore1)
+        dayPanelAssignments.Add("2023-11-18", New List(Of Chore)())
+        Dim currentChore2 = New Chore("Clean Bathroom", "Roomate 1", 1)
+        currentChore2.statusOfChore = True
+        dayPanelAssignments("2023-11-18").Add(currentChore2)
+        dayPanelAssignments.Add("2023-11-25", New List(Of Chore)())
+        Dim currentChore3 = New Chore("Clean Bathroom", "Roomate 1", 1)
+        dayPanelAssignments("2023-11-25").Add(currentChore3)
+        dayPanelAssignments.Add("2023-12-2", New List(Of Chore)())
+        Dim currentChore4 = New Chore("Clean Bathroom", "Roomate 1", 1)
+        dayPanelAssignments("2023-12-2").Add(currentChore4)
 
         'Housemate pruple cleans the kitchen
+        dayPanelAssignments.Add("2023-11-29", New List(Of Chore)())
+        Dim currentChore5 = New Chore("Clean Bathroom", "Roomate 4", 1)
 
+        dayPanelAssignments("2023-11-29").Add(currentChore5)
         '######################################
 
         'Set up the calendar for November
