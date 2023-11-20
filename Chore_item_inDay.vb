@@ -23,7 +23,9 @@
 
     End Sub
 
+    Private Sub score_label_Click(sender As Object, e As EventArgs) Handles score_label.Click
 
+    End Sub
 
     Public Property TypeOfChore() As String
         Get

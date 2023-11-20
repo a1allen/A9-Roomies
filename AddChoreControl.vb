@@ -67,4 +67,8 @@ Public Class AddChoreControl
         DatePanel.Show()
         AddChoreButton.Enabled = True
     End Sub
+
+    Private Sub EffortPanel_Paint(sender As Object, e As PaintEventArgs) Handles EffortPanel.Paint
+
+    End Sub
 End Class

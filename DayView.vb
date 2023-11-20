@@ -32,6 +32,9 @@ Public Class DayView
             If chore_item.statusOfChore Then
                 new_item.choreDone.Checked = True
                 new_item.ForeColor = Color.Gray
+                new_item.ExtendChoreButton.Enabled = False
+                new_item.EditChoreButton.Enabled = False
+                new_item.RequestVolunteerButton.Enabled = False
             End If
             Me.Controls.Add(new_item)
             new_item.Size = New Size(360, 112) ' Set the size (width, height)
@@ -83,17 +86,26 @@ Public Class DayView
                     'choreDone.Checked = True
                     this_chore.statusOfChore = True
                     this_chore_item.ForeColor = Color.Gray
+                    this_chore_item.ExtendChoreButton.Enabled = False
+                    this_chore_item.EditChoreButton.Enabled = False
+                    this_chore_item.RequestVolunteerButton.Enabled = False
                 Else
                     ' User canceled, uncheck the checkbox
                     this_chore_item.choreDone.Checked = False
                     'Console.WriteLine("User canceled.")
                     this_chore.statusOfChore = False
                     this_chore_item.ForeColor = Color.Black
+                    this_chore_item.ExtendChoreButton.Enabled = True
+                    this_chore_item.EditChoreButton.Enabled = True
+                    this_chore_item.RequestVolunteerButton.Enabled = True
                 End If
             End Using
 
         Else
             this_chore_item.choreDone.Checked = False
+            this_chore_item.ExtendChoreButton.Enabled = True
+            this_chore_item.EditChoreButton.Enabled = True
+            this_chore_item.RequestVolunteerButton.Enabled = True
             'Console.WriteLine("User canceled.")
             this_chore.statusOfChore = False
             this_chore_item.ForeColor = Color.Black

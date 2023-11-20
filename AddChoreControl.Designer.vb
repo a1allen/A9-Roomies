@@ -41,8 +41,8 @@ Partial Class AddChoreControl
         ChoreBackButton = New Button()
         devider = New Label()
         EffortPanel = New Panel()
-        Label2 = New Label()
         EffortScore = New ComboBox()
+        Label2 = New Label()
         CustomChorePanel.SuspendLayout()
         AssignedToPanel.SuspendLayout()
         DatePanel.SuspendLayout()
@@ -253,16 +253,6 @@ Partial Class AddChoreControl
         EffortPanel.Size = New Size(351, 48)
         EffortPanel.TabIndex = 67
         ' 
-        ' Label2
-        ' 
-        Label2.AutoSize = True
-        Label2.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        Label2.Location = New Point(9, 14)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(177, 20)
-        Label2.TabIndex = 65
-        Label2.Text = "Difficulty Of The Chore?"
-        ' 
         ' EffortScore
         ' 
         EffortScore.DropDownStyle = ComboBoxStyle.DropDownList
@@ -272,6 +262,16 @@ Partial Class AddChoreControl
         EffortScore.Name = "EffortScore"
         EffortScore.Size = New Size(101, 28)
         EffortScore.TabIndex = 67
+        ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        Label2.Location = New Point(9, 14)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(177, 20)
+        Label2.TabIndex = 65
+        Label2.Text = "Difficulty Of The Chore?"
         ' 
         ' AddChoreControl
         ' 

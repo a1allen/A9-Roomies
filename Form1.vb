@@ -437,6 +437,19 @@ Public Class Form1
         Dim thisChoreName As String = dayViewPage.ChoreItem.TypeOfChore
         Dim thisAssignedPerson As String = dayViewPage.ChoreItem.AssignedPerson
         Dim thisDate As DateTime = dayViewPage.FullDate.Text
+        Dim score As String = dayViewPage.ChoreItem.EffortOfChore
+        Dim score_ind As Integer
+        If score.Count = 1 Then
+            score_ind = 0
+        ElseIf score.Count = 2 Then
+            score_ind = 1
+        ElseIf score.Count = 3 Then
+            score_ind = 2
+        ElseIf score.Count = 4 Then
+            score_ind = 3
+        ElseIf score.Count = 5 Then
+            score_ind = 4
+        End If
         'Fill in fields
         editChoreControl.EditChoreTextBox.Text = thisChoreName
         If thisAssignedPerson = "Roomate 1" Then
@@ -449,7 +462,7 @@ Public Class Form1
             editChoreControl.EditRoomateComboBox.SelectedIndex = 3
         End If
         editChoreControl.EditChoreDateTimePicker.Value = DateTime.ParseExact(thisDate, "yyyy-MM-dd", CultureInfo.InvariantCulture)
-
+        editChoreControl.EffortScore.SelectedIndex = score_ind
 
         AddHandler editChoreControl.SubmitChoreEditsButtonClick, AddressOf SubmitChoreEditsButton_Click
         AddHandler editChoreControl.DeleteChoreButtonClick, AddressOf DeleteChoreButton_Click
@@ -467,6 +480,7 @@ Public Class Form1
         Dim newChoreName As String = editChoreControl.EditChoreTextBox.Text
         Dim newAssignedPerson As String = editChoreControl.EditRoomateComboBox.Text
         Dim newDate As DateTime = editChoreControl.EditChoreDateTimePicker.Value
+        Dim score_ind As String = editChoreControl.EffortScore.SelectedIndex
 
         Dim item As Chore
 
@@ -485,7 +499,7 @@ Public Class Form1
         'Re-add the chore from the dictionary
         Dim newChoreList As List(Of Chore) = dayPanelAssignments(newDate)
 
-        newChoreList.Add(New Chore(newChoreName, newAssignedPerson))
+        newChoreList.Add(New Chore(newChoreName, newAssignedPerson, score_ind))
         dayPanelAssignments(newDate) = newChoreList
 
 
@@ -562,6 +576,19 @@ Public Class Form1
             Dim thisChoreName As String = dayViewPage.ChoreItem.TypeOfChore
             Dim thisAssignedPerson As String = dayViewPage.ChoreItem.AssignedPerson
             Dim thisDate As DateTime = dayViewPage.FullDate.Text
+            Dim score As String = dayViewPage.ChoreItem.EffortOfChore
+            Dim score_ind As String
+            If score.Count = 1 Then
+                score_ind = 0
+            ElseIf score.Count = 2 Then
+                score_ind = 1
+            ElseIf score.Count = 3 Then
+                score_ind = 2
+            ElseIf score.Count = 4 Then
+                score_ind = 3
+            ElseIf score.Count = 5 Then
+                score_ind = 4
+            End If
 
             'Get the exact same date 2 days later
             Dim newDate As DateTime = thisDate.AddDays(2)
@@ -582,7 +609,7 @@ Public Class Form1
             'Re-add the chore for 2 days later with newDate
             Dim newChoreList As List(Of Chore) = dayPanelAssignments(newDate)
 
-            newChoreList.Add(New Chore(thisChoreName, thisAssignedPerson))
+            newChoreList.Add(New Chore(thisChoreName, thisAssignedPerson, score_ind))
             dayPanelAssignments(newDate) = newChoreList
 
             'Update the daypanel view for all 4 dots
