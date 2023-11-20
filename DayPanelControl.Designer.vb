@@ -50,18 +50,15 @@ Partial Class DayPanelControl
         Roomate1PictureBox.Size = New Size(17, 17)
         Roomate1PictureBox.TabIndex = 1
         Roomate1PictureBox.TabStop = False
-        Roomate1PictureBox.Tag = Me
         ' 
         ' Roomate2PictureBox
         ' 
-        Roomate2PictureBox.BackColor = SystemColors.ActiveCaptionText
         Roomate2PictureBox.Image = My.Resources.myResources.green
         Roomate2PictureBox.Location = New Point(30, 26)
         Roomate2PictureBox.Name = "Roomate2PictureBox"
         Roomate2PictureBox.Size = New Size(17, 17)
         Roomate2PictureBox.TabIndex = 2
         Roomate2PictureBox.TabStop = False
-        Roomate2PictureBox.Tag = Me
         ' 
         ' Roomate3PictureBox
         ' 
@@ -71,7 +68,6 @@ Partial Class DayPanelControl
         Roomate3PictureBox.Size = New Size(17, 17)
         Roomate3PictureBox.TabIndex = 3
         Roomate3PictureBox.TabStop = False
-        Roomate3PictureBox.Tag = Me
         ' 
         ' Roomate4PictureBox
         ' 
@@ -81,7 +77,6 @@ Partial Class DayPanelControl
         Roomate4PictureBox.Size = New Size(17, 17)
         Roomate4PictureBox.TabIndex = 4
         Roomate4PictureBox.TabStop = False
-        Roomate4PictureBox.Tag = Me
         ' 
         ' DayPanelControl
         ' 
