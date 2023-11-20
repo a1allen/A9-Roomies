@@ -36,9 +36,13 @@ Partial Class EditChoreControl
         EditDateLabel = New Label()
         SubmitChangesChoreButton = New Button()
         DeleteButton = New Button()
+        EffortPanel = New Panel()
+        EffortScore = New ComboBox()
+        Label2 = New Label()
         EditChorePanel.SuspendLayout()
         EditAssignedToPanel.SuspendLayout()
         EditDatePanel.SuspendLayout()
+        EffortPanel.SuspendLayout()
         SuspendLayout()
         ' 
         ' EditChoreTitleLabel
@@ -74,7 +78,7 @@ Partial Class EditChoreControl
         ' 
         EditChorePanel.Controls.Add(EditChoreTextBox)
         EditChorePanel.Controls.Add(EditChoreLabel)
-        EditChorePanel.Location = New Point(42, 195)
+        EditChorePanel.Location = New Point(42, 155)
         EditChorePanel.Name = "EditChorePanel"
         EditChorePanel.Size = New Size(351, 48)
         EditChorePanel.TabIndex = 71
@@ -100,7 +104,7 @@ Partial Class EditChoreControl
         ' 
         EditAssignedToPanel.Controls.Add(EditRoomateComboBox)
         EditAssignedToPanel.Controls.Add(EditAssignedToLabel)
-        EditAssignedToPanel.Location = New Point(42, 258)
+        EditAssignedToPanel.Location = New Point(42, 212)
         EditAssignedToPanel.Name = "EditAssignedToPanel"
         EditAssignedToPanel.Size = New Size(351, 48)
         EditAssignedToPanel.TabIndex = 72
@@ -129,7 +133,7 @@ Partial Class EditChoreControl
         ' 
         EditDatePanel.Controls.Add(EditChoreDateTimePicker)
         EditDatePanel.Controls.Add(EditDateLabel)
-        EditDatePanel.Location = New Point(42, 321)
+        EditDatePanel.Location = New Point(42, 325)
         EditDatePanel.Name = "EditDatePanel"
         EditDatePanel.Size = New Size(351, 48)
         EditDatePanel.TabIndex = 73
@@ -171,11 +175,41 @@ Partial Class EditChoreControl
         DeleteButton.Text = "Delete Chore"
         DeleteButton.UseVisualStyleBackColor = False
         ' 
+        ' EffortPanel
+        ' 
+        EffortPanel.Controls.Add(EffortScore)
+        EffortPanel.Controls.Add(Label2)
+        EffortPanel.Location = New Point(42, 268)
+        EffortPanel.Name = "EffortPanel"
+        EffortPanel.Size = New Size(351, 48)
+        EffortPanel.TabIndex = 76
+        ' 
+        ' EffortScore
+        ' 
+        EffortScore.DropDownStyle = ComboBoxStyle.DropDownList
+        EffortScore.FormattingEnabled = True
+        EffortScore.Items.AddRange(New Object() {"1 ★", "2 ★★", "3 ★★★", "4 ★★★★", "5 ★★★★★"})
+        EffortScore.Location = New Point(241, 11)
+        EffortScore.Name = "EffortScore"
+        EffortScore.Size = New Size(101, 28)
+        EffortScore.TabIndex = 67
+        ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        Label2.Location = New Point(9, 14)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(177, 20)
+        Label2.TabIndex = 65
+        Label2.Text = "Difficulty Of The Chore?"
+        ' 
         ' EditChoreControl
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
+        Controls.Add(EffortPanel)
         Controls.Add(SubmitChangesChoreButton)
         Controls.Add(DeleteButton)
         Controls.Add(EditDatePanel)
@@ -192,6 +226,8 @@ Partial Class EditChoreControl
         EditAssignedToPanel.PerformLayout()
         EditDatePanel.ResumeLayout(False)
         EditDatePanel.PerformLayout()
+        EffortPanel.ResumeLayout(False)
+        EffortPanel.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -210,4 +246,7 @@ Partial Class EditChoreControl
     Friend WithEvents EditDateLabel As Label
     Friend WithEvents SubmitChangesChoreButton As Button
     Friend WithEvents DeleteButton As Button
+    Friend WithEvents EffortPanel As Panel
+    Friend WithEvents EffortScore As ComboBox
+    Friend WithEvents Label2 As Label
 End Class

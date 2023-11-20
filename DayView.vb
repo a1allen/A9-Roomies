@@ -32,6 +32,9 @@ Public Class DayView
             If chore_item.statusOfChore Then
                 new_item.choreDone.Checked = True
                 new_item.ForeColor = Color.Gray
+                new_item.ExtendChoreButton.Enabled = False
+                new_item.EditChoreButton.Enabled = False
+                new_item.RequestVolunteerButton.Enabled = False
             End If
             Me.Controls.Add(new_item)
             new_item.Size = New Size(360, 112) ' Set the size (width, height)
@@ -50,6 +53,15 @@ Public Class DayView
             AddHandler new_item.updateChoreStatus, AddressOf choreDone_CheckedChanged
 
 
+        Next
+    End Sub
+
+    Public Sub RemoveChoreItems()
+        For Each ctrl As Control In Me.Controls
+            If TypeOf ctrl Is Chore_item_inDay Then
+                Me.Controls.Remove(ctrl)
+                ctrl.Dispose() ' Dispose of the control to release resources
+            End If
         Next
     End Sub
 
@@ -83,17 +95,26 @@ Public Class DayView
                     'choreDone.Checked = True
                     this_chore.statusOfChore = True
                     this_chore_item.ForeColor = Color.Gray
+                    this_chore_item.ExtendChoreButton.Enabled = False
+                    this_chore_item.EditChoreButton.Enabled = False
+                    this_chore_item.RequestVolunteerButton.Enabled = False
                 Else
                     ' User canceled, uncheck the checkbox
                     this_chore_item.choreDone.Checked = False
                     'Console.WriteLine("User canceled.")
                     this_chore.statusOfChore = False
                     this_chore_item.ForeColor = Color.Black
+                    this_chore_item.ExtendChoreButton.Enabled = True
+                    this_chore_item.EditChoreButton.Enabled = True
+                    this_chore_item.RequestVolunteerButton.Enabled = True
                 End If
             End Using
 
         Else
             this_chore_item.choreDone.Checked = False
+            this_chore_item.ExtendChoreButton.Enabled = True
+            this_chore_item.EditChoreButton.Enabled = True
+            this_chore_item.RequestVolunteerButton.Enabled = True
             'Console.WriteLine("User canceled.")
             this_chore.statusOfChore = False
             this_chore_item.ForeColor = Color.Black
@@ -140,35 +161,44 @@ Public Class DayView
         RaiseEvent backToCalButtonClick(Me, EventArgs.Empty)
     End Sub
 
-    Public Sub DisplayChoresForDate(selectedDate As DateTime)
-        'Ensure to keep certain control from the list above
-        For i = Controls.Count - 1 To 0 Step -1
-            If Not controlsToKeep.Contains(Controls(i)) Then
-                Controls.RemoveAt(i)
-            End If
-        Next
+    Public Sub DisplayChoresForDate(chore_L As List(Of Chore))
 
-        Dim choreList = Form1.dayPanelAssignments(selectedDate)
-
+        'Dim chore_L = Form1.dayPanelAssignments(Me.myDate)
+        'Dim mycount As New Integer
         Dim mycount = 0
-        For Each chore_item In choreList
+        'MsgBox("List of Document Names:" & chore_L.Count)
+
+
+        For Each chore_item In chore_L
             Dim new_item As New Chore_item_inDay()
             new_item.ChoreName.Text = chore_item.TypeOfChore
             new_item.AssignTo.Text = chore_item.AssignedPerson
-            Controls.Add(new_item)
-            new_item.Size = New Size(353, 112) ' Set the size (width, height)
-
-            If (mycount = 0) Then
-                new_item.Location = New Point(41, 108) ' Set the location (x, y)
-            Else
-                new_item.Location = New Point(41, (108 + (mycount * 118))) ' Set the location (x, y)
+            new_item.EffortOfChore = chore_item.EffortOfChore
+            new_item.TheChore = chore_item
+            If chore_item.statusOfChore Then
+                new_item.choreDone.Checked = True
+                new_item.ForeColor = Color.Gray
+                new_item.ExtendChoreButton.Enabled = False
+                new_item.EditChoreButton.Enabled = False
+                new_item.RequestVolunteerButton.Enabled = False
             End If
+            Me.Controls.Add(new_item)
+            new_item.Size = New Size(360, 112) ' Set the size (width, height)
+            If (mycount = 0) Then
+                new_item.Location = New Point(38, 108) ' Set the location (x, y)
+            Else
+                new_item.Location = New Point(38, (108 + (mycount * 118))) ' Set the location (x, y)
+            End If
+            mycount = mycount + 1
 
-            mycount += 1
-
+            'Add button click events
             AddHandler new_item.EditChoreButtonClick, AddressOf ChoreItem_EditChoreButtonClick
             AddHandler new_item.ExtendChoreButtonClick, AddressOf ChoreItem_ExtendChoreButtonClick
             AddHandler new_item.RequestVolunteerButtonClick, AddressOf ChoreItem_RequestVolunteereButtonClick
+
+            AddHandler new_item.updateChoreStatus, AddressOf choreDone_CheckedChanged
+
+
         Next
     End Sub
 
