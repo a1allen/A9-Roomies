@@ -23,55 +23,57 @@ Partial Class ManagementFAQControl
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(ManagementFAQControl))
-        BackButton = New Button()
         FAQRichTextBox = New RichTextBox()
         FAQTitleLabel = New Label()
+        BackButton = New Button()
         SuspendLayout()
-        ' 
-        ' BackButton
-        ' 
-        BackButton.Location = New Point(9, 16)
-        BackButton.Name = "BackButton"
-        BackButton.Size = New Size(75, 23)
-        BackButton.TabIndex = 23
-        BackButton.Text = "Back"
-        BackButton.UseVisualStyleBackColor = True
         ' 
         ' FAQRichTextBox
         ' 
         FAQRichTextBox.BackColor = Color.WhiteSmoke
-        FAQRichTextBox.Location = New Point(12, 85)
+        FAQRichTextBox.Location = New Point(19, 145)
+        FAQRichTextBox.Margin = New Padding(3, 4, 3, 4)
         FAQRichTextBox.Name = "FAQRichTextBox"
         FAQRichTextBox.ReadOnly = True
         FAQRichTextBox.ScrollBars = RichTextBoxScrollBars.Vertical
-        FAQRichTextBox.Size = New Size(404, 623)
+        FAQRichTextBox.Size = New Size(396, 527)
         FAQRichTextBox.TabIndex = 22
         FAQRichTextBox.Text = resources.GetString("FAQRichTextBox.Text")
         ' 
         ' FAQTitleLabel
         ' 
-        FAQTitleLabel.AutoSize = True
         FAQTitleLabel.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point)
-        FAQTitleLabel.Location = New Point(9, 45)
+        FAQTitleLabel.Location = New Point(15, 45)
         FAQTitleLabel.Name = "FAQTitleLabel"
-        FAQTitleLabel.Size = New Size(404, 32)
+        FAQTitleLabel.Size = New Size(404, 96)
         FAQTitleLabel.TabIndex = 20
         FAQTitleLabel.Text = "Frequently Asked Questions (FAQ)"
+        FAQTitleLabel.TextAlign = ContentAlignment.MiddleCenter
         ' 
-        ' FAQControl
+        ' BackButton
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        BackButton.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        BackButton.Location = New Point(19, 16)
+        BackButton.Name = "BackButton"
+        BackButton.Size = New Size(42, 42)
+        BackButton.TabIndex = 67
+        BackButton.Text = "X"
+        BackButton.UseVisualStyleBackColor = True
+        ' 
+        ' ManagementFAQControl
+        ' 
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
+        BackColor = Color.White
         Controls.Add(BackButton)
         Controls.Add(FAQRichTextBox)
         Controls.Add(FAQTitleLabel)
-        Name = "FAQControl"
-        Size = New Size(429, 722)
+        Margin = New Padding(3, 4, 3, 4)
+        Name = "ManagementFAQControl"
+        Size = New Size(434, 690)
         ResumeLayout(False)
-        PerformLayout()
     End Sub
-
-    Friend WithEvents BackButton As Button
     Friend WithEvents FAQRichTextBox As RichTextBox
     Friend WithEvents FAQTitleLabel As Label
+    Friend WithEvents BackButton As Button
 End Class
