@@ -1,4 +1,6 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement.Window
+
+<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form1
     Inherits System.Windows.Forms.Form
 
@@ -25,6 +27,19 @@ Partial Class Form1
         BackgroundPictureBox = New PictureBox()
         TabControl1 = New TabControl()
         CalendarTabPage = New TabPage()
+        Label16 = New Label()
+        Label17 = New Label()
+        Roomie4_Done = New Label()
+        Roomie4_Total = New Label()
+        Label12 = New Label()
+        Label13 = New Label()
+        Roomie3_Done = New Label()
+        Roomie3_Total = New Label()
+        Label8 = New Label()
+        Label9 = New Label()
+        Roomie2_Done = New Label()
+        Roomie2_Total = New Label()
+        Label7 = New Label()
         Label6 = New Label()
         Panel2 = New Panel()
         DayPanelControl37 = New DayPanelControl()
@@ -98,24 +113,16 @@ Partial Class Form1
         PictureBox5 = New PictureBox()
         BudgetTitle = New Label()
         ManagementTabPage = New TabPage()
-        Label4 = New Label()
+        AboutUsButton = New Button()
+        FAQButton = New Button()
+        ManageHouseholdsButton = New Button()
+        RoomatesProfileButton = New Button()
+        ManagementTitleLabel = New Label()
+        ManagementPictureBox = New PictureBox()
         Button2 = New Button()
         Button3 = New Button()
         Label5 = New Label()
         PictureBox6 = New PictureBox()
-        Label7 = New Label()
-        Label8 = New Label()
-        Label9 = New Label()
-        Roomie2_Done = New Label()
-        Roomie2_Total = New Label()
-        Label12 = New Label()
-        Label13 = New Label()
-        Roomie3_Done = New Label()
-        Roomie3_Total = New Label()
-        Label16 = New Label()
-        Label17 = New Label()
-        Roomie4_Done = New Label()
-        Roomie4_Total = New Label()
         CType(BackgroundPictureBox, ComponentModel.ISupportInitialize).BeginInit()
         TabControl1.SuspendLayout()
         CalendarTabPage.SuspendLayout()
@@ -130,6 +137,8 @@ Partial Class Form1
         CType(PictureBox5, ComponentModel.ISupportInitialize).BeginInit()
         ManagementTabPage.SuspendLayout()
         CType(PictureBox6, ComponentModel.ISupportInitialize).BeginInit()
+        SuspendLayout()
+        CType(ManagementPictureBox, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' BackgroundPictureBox
@@ -204,12 +213,129 @@ Partial Class Form1
         CalendarTabPage.TabIndex = 0
         CalendarTabPage.Text = "Calendar"
         ' 
+        ' Label16
+        ' 
+        Label16.AutoSize = True
+        Label16.Location = New Point(353, 687)
+        Label16.Name = "Label16"
+        Label16.Size = New Size(38, 15)
+        Label16.TabIndex = 81
+        Label16.Text = "Done:"
+        ' 
+        ' Label17
+        ' 
+        Label17.AutoSize = True
+        Label17.Location = New Point(355, 668)
+        Label17.Name = "Label17"
+        Label17.Size = New Size(35, 15)
+        Label17.TabIndex = 80
+        Label17.Text = "Total:"
+        ' 
+        ' Roomie4_Done
+        ' 
+        Roomie4_Done.AutoSize = True
+        Roomie4_Done.Location = New Point(405, 687)
+        Roomie4_Done.Name = "Roomie4_Done"
+        Roomie4_Done.Size = New Size(13, 15)
+        Roomie4_Done.TabIndex = 79
+        Roomie4_Done.Text = "0"
+        ' 
+        ' Roomie4_Total
+        ' 
+        Roomie4_Total.AutoSize = True
+        Roomie4_Total.Location = New Point(405, 668)
+        Roomie4_Total.Name = "Roomie4_Total"
+        Roomie4_Total.Size = New Size(13, 15)
+        Roomie4_Total.TabIndex = 78
+        Roomie4_Total.Text = "0"
+        ' 
+        ' Label12
+        ' 
+        Label12.AutoSize = True
+        Label12.Location = New Point(246, 687)
+        Label12.Name = "Label12"
+        Label12.Size = New Size(38, 15)
+        Label12.TabIndex = 77
+        Label12.Text = "Done:"
+        ' 
+        ' Label13
+        ' 
+        Label13.AutoSize = True
+        Label13.Location = New Point(248, 668)
+        Label13.Name = "Label13"
+        Label13.Size = New Size(35, 15)
+        Label13.TabIndex = 76
+        Label13.Text = "Total:"
+        ' 
+        ' Roomie3_Done
+        ' 
+        Roomie3_Done.AutoSize = True
+        Roomie3_Done.Location = New Point(298, 687)
+        Roomie3_Done.Name = "Roomie3_Done"
+        Roomie3_Done.Size = New Size(13, 15)
+        Roomie3_Done.TabIndex = 75
+        Roomie3_Done.Text = "0"
+        ' 
+        ' Roomie3_Total
+        ' 
+        Roomie3_Total.AutoSize = True
+        Roomie3_Total.Location = New Point(298, 668)
+        Roomie3_Total.Name = "Roomie3_Total"
+        Roomie3_Total.Size = New Size(13, 15)
+        Roomie3_Total.TabIndex = 74
+        Roomie3_Total.Text = "0"
+        ' 
+        ' Label8
+        ' 
+        Label8.AutoSize = True
+        Label8.Location = New Point(136, 687)
+        Label8.Name = "Label8"
+        Label8.Size = New Size(38, 15)
+        Label8.TabIndex = 73
+        Label8.Text = "Done:"
+        ' 
+        ' Label9
+        ' 
+        Label9.AutoSize = True
+        Label9.Location = New Point(138, 668)
+        Label9.Name = "Label9"
+        Label9.Size = New Size(35, 15)
+        Label9.TabIndex = 72
+        Label9.Text = "Total:"
+        ' 
+        ' Roomie2_Done
+        ' 
+        Roomie2_Done.AutoSize = True
+        Roomie2_Done.Location = New Point(188, 687)
+        Roomie2_Done.Name = "Roomie2_Done"
+        Roomie2_Done.Size = New Size(13, 15)
+        Roomie2_Done.TabIndex = 71
+        Roomie2_Done.Text = "0"
+        ' 
+        ' Roomie2_Total
+        ' 
+        Roomie2_Total.AutoSize = True
+        Roomie2_Total.Location = New Point(188, 668)
+        Roomie2_Total.Name = "Roomie2_Total"
+        Roomie2_Total.Size = New Size(13, 15)
+        Roomie2_Total.TabIndex = 70
+        Roomie2_Total.Text = "0"
+        ' 
+        ' Label7
+        ' 
+        Label7.AutoSize = True
+        Label7.Location = New Point(30, 687)
+        Label7.Name = "Label7"
+        Label7.Size = New Size(38, 15)
+        Label7.TabIndex = 69
+        Label7.Text = "Done:"
+        ' 
         ' Label6
         ' 
         Label6.AutoSize = True
         Label6.Location = New Point(32, 668)
         Label6.Name = "Label6"
-        Label6.Size = New Size(45, 20)
+        Label6.Size = New Size(35, 15)
         Label6.TabIndex = 68
         Label6.Text = "Total:"
         ' 
@@ -228,6 +354,10 @@ Partial Class Form1
         DayPanelControl37.DayNum = 0
         DayPanelControl37.Location = New Point(2, -1)
         DayPanelControl37.Name = "DayPanelControl37"
+        DayPanelControl37.R1_done_stat = False
+        DayPanelControl37.R2_done_stat = False
+        DayPanelControl37.R3_done_stat = False
+        DayPanelControl37.R4_done_stat = False
         DayPanelControl37.Size = New Size(58, 74)
         DayPanelControl37.TabIndex = 34
         ' 
@@ -246,6 +376,10 @@ Partial Class Form1
         DayPanelControl36.DayNum = 0
         DayPanelControl36.Location = New Point(1, -1)
         DayPanelControl36.Name = "DayPanelControl36"
+        DayPanelControl36.R1_done_stat = False
+        DayPanelControl36.R2_done_stat = False
+        DayPanelControl36.R3_done_stat = False
+        DayPanelControl36.R4_done_stat = False
         DayPanelControl36.Size = New Size(58, 74)
         DayPanelControl36.TabIndex = 33
         ' 
@@ -313,6 +447,10 @@ Partial Class Form1
         DayPanelControl1.DayNum = 0
         DayPanelControl1.Location = New Point(4, 4)
         DayPanelControl1.Name = "DayPanelControl1"
+        DayPanelControl1.R1_done_stat = False
+        DayPanelControl1.R2_done_stat = False
+        DayPanelControl1.R3_done_stat = False
+        DayPanelControl1.R4_done_stat = False
         DayPanelControl1.Size = New Size(52, 68)
         DayPanelControl1.TabIndex = 1
         ' 
@@ -322,6 +460,10 @@ Partial Class Form1
         DayPanelControl2.DayNum = 0
         DayPanelControl2.Location = New Point(64, 4)
         DayPanelControl2.Name = "DayPanelControl2"
+        DayPanelControl2.R1_done_stat = False
+        DayPanelControl2.R2_done_stat = False
+        DayPanelControl2.R3_done_stat = False
+        DayPanelControl2.R4_done_stat = False
         DayPanelControl2.Size = New Size(52, 68)
         DayPanelControl2.TabIndex = 1
         ' 
@@ -331,6 +473,10 @@ Partial Class Form1
         DayPanelControl3.DayNum = 0
         DayPanelControl3.Location = New Point(124, 4)
         DayPanelControl3.Name = "DayPanelControl3"
+        DayPanelControl3.R1_done_stat = False
+        DayPanelControl3.R2_done_stat = False
+        DayPanelControl3.R3_done_stat = False
+        DayPanelControl3.R4_done_stat = False
         DayPanelControl3.Size = New Size(52, 68)
         DayPanelControl3.TabIndex = 0
         ' 
@@ -340,6 +486,10 @@ Partial Class Form1
         DayPanelControl4.DayNum = 0
         DayPanelControl4.Location = New Point(184, 4)
         DayPanelControl4.Name = "DayPanelControl4"
+        DayPanelControl4.R1_done_stat = False
+        DayPanelControl4.R2_done_stat = False
+        DayPanelControl4.R3_done_stat = False
+        DayPanelControl4.R4_done_stat = False
         DayPanelControl4.Size = New Size(52, 68)
         DayPanelControl4.TabIndex = 1
         ' 
@@ -349,6 +499,10 @@ Partial Class Form1
         DayPanelControl35.DayNum = 0
         DayPanelControl35.Location = New Point(364, 304)
         DayPanelControl35.Name = "DayPanelControl35"
+        DayPanelControl35.R1_done_stat = False
+        DayPanelControl35.R2_done_stat = False
+        DayPanelControl35.R3_done_stat = False
+        DayPanelControl35.R4_done_stat = False
         DayPanelControl35.Size = New Size(54, 71)
         DayPanelControl35.TabIndex = 32
         ' 
@@ -358,6 +512,10 @@ Partial Class Form1
         DayPanelControl5.DayNum = 0
         DayPanelControl5.Location = New Point(244, 4)
         DayPanelControl5.Name = "DayPanelControl5"
+        DayPanelControl5.R1_done_stat = False
+        DayPanelControl5.R2_done_stat = False
+        DayPanelControl5.R3_done_stat = False
+        DayPanelControl5.R4_done_stat = False
         DayPanelControl5.Size = New Size(52, 68)
         DayPanelControl5.TabIndex = 2
         ' 
@@ -367,6 +525,10 @@ Partial Class Form1
         DayPanelControl6.DayNum = 0
         DayPanelControl6.Location = New Point(304, 4)
         DayPanelControl6.Name = "DayPanelControl6"
+        DayPanelControl6.R1_done_stat = False
+        DayPanelControl6.R2_done_stat = False
+        DayPanelControl6.R3_done_stat = False
+        DayPanelControl6.R4_done_stat = False
         DayPanelControl6.Size = New Size(52, 68)
         DayPanelControl6.TabIndex = 3
         ' 
@@ -376,6 +538,10 @@ Partial Class Form1
         DayPanelControl34.DayNum = 0
         DayPanelControl34.Location = New Point(304, 304)
         DayPanelControl34.Name = "DayPanelControl34"
+        DayPanelControl34.R1_done_stat = False
+        DayPanelControl34.R2_done_stat = False
+        DayPanelControl34.R3_done_stat = False
+        DayPanelControl34.R4_done_stat = False
         DayPanelControl34.Size = New Size(52, 71)
         DayPanelControl34.TabIndex = 31
         ' 
@@ -385,6 +551,10 @@ Partial Class Form1
         DayPanelControl7.DayNum = 0
         DayPanelControl7.Location = New Point(364, 4)
         DayPanelControl7.Name = "DayPanelControl7"
+        DayPanelControl7.R1_done_stat = False
+        DayPanelControl7.R2_done_stat = False
+        DayPanelControl7.R3_done_stat = False
+        DayPanelControl7.R4_done_stat = False
         DayPanelControl7.Size = New Size(54, 68)
         DayPanelControl7.TabIndex = 4
         ' 
@@ -394,6 +564,10 @@ Partial Class Form1
         DayPanelControl33.DayNum = 0
         DayPanelControl33.Location = New Point(244, 304)
         DayPanelControl33.Name = "DayPanelControl33"
+        DayPanelControl33.R1_done_stat = False
+        DayPanelControl33.R2_done_stat = False
+        DayPanelControl33.R3_done_stat = False
+        DayPanelControl33.R4_done_stat = False
         DayPanelControl33.Size = New Size(52, 71)
         DayPanelControl33.TabIndex = 30
         ' 
@@ -403,6 +577,10 @@ Partial Class Form1
         DayPanelControl10.DayNum = 0
         DayPanelControl10.Location = New Point(124, 79)
         DayPanelControl10.Name = "DayPanelControl10"
+        DayPanelControl10.R1_done_stat = False
+        DayPanelControl10.R2_done_stat = False
+        DayPanelControl10.R3_done_stat = False
+        DayPanelControl10.R4_done_stat = False
         DayPanelControl10.Size = New Size(52, 68)
         DayPanelControl10.TabIndex = 7
         ' 
@@ -412,6 +590,10 @@ Partial Class Form1
         DayPanelControl32.DayNum = 0
         DayPanelControl32.Location = New Point(184, 304)
         DayPanelControl32.Name = "DayPanelControl32"
+        DayPanelControl32.R1_done_stat = False
+        DayPanelControl32.R2_done_stat = False
+        DayPanelControl32.R3_done_stat = False
+        DayPanelControl32.R4_done_stat = False
         DayPanelControl32.Size = New Size(52, 71)
         DayPanelControl32.TabIndex = 29
         ' 
@@ -421,6 +603,10 @@ Partial Class Form1
         DayPanelControl8.DayNum = 0
         DayPanelControl8.Location = New Point(4, 79)
         DayPanelControl8.Name = "DayPanelControl8"
+        DayPanelControl8.R1_done_stat = False
+        DayPanelControl8.R2_done_stat = False
+        DayPanelControl8.R3_done_stat = False
+        DayPanelControl8.R4_done_stat = False
         DayPanelControl8.Size = New Size(52, 68)
         DayPanelControl8.TabIndex = 5
         ' 
@@ -430,6 +616,10 @@ Partial Class Form1
         DayPanelControl31.DayNum = 0
         DayPanelControl31.Location = New Point(124, 304)
         DayPanelControl31.Name = "DayPanelControl31"
+        DayPanelControl31.R1_done_stat = False
+        DayPanelControl31.R2_done_stat = False
+        DayPanelControl31.R3_done_stat = False
+        DayPanelControl31.R4_done_stat = False
         DayPanelControl31.Size = New Size(52, 71)
         DayPanelControl31.TabIndex = 28
         ' 
@@ -439,6 +629,10 @@ Partial Class Form1
         DayPanelControl9.DayNum = 0
         DayPanelControl9.Location = New Point(64, 79)
         DayPanelControl9.Name = "DayPanelControl9"
+        DayPanelControl9.R1_done_stat = False
+        DayPanelControl9.R2_done_stat = False
+        DayPanelControl9.R3_done_stat = False
+        DayPanelControl9.R4_done_stat = False
         DayPanelControl9.Size = New Size(52, 68)
         DayPanelControl9.TabIndex = 6
         ' 
@@ -448,6 +642,10 @@ Partial Class Form1
         DayPanelControl30.DayNum = 0
         DayPanelControl30.Location = New Point(64, 304)
         DayPanelControl30.Name = "DayPanelControl30"
+        DayPanelControl30.R1_done_stat = False
+        DayPanelControl30.R2_done_stat = False
+        DayPanelControl30.R3_done_stat = False
+        DayPanelControl30.R4_done_stat = False
         DayPanelControl30.Size = New Size(52, 71)
         DayPanelControl30.TabIndex = 27
         ' 
@@ -457,6 +655,10 @@ Partial Class Form1
         DayPanelControl11.DayNum = 0
         DayPanelControl11.Location = New Point(184, 79)
         DayPanelControl11.Name = "DayPanelControl11"
+        DayPanelControl11.R1_done_stat = False
+        DayPanelControl11.R2_done_stat = False
+        DayPanelControl11.R3_done_stat = False
+        DayPanelControl11.R4_done_stat = False
         DayPanelControl11.Size = New Size(52, 68)
         DayPanelControl11.TabIndex = 8
         ' 
@@ -466,6 +668,10 @@ Partial Class Form1
         DayPanelControl29.DayNum = 0
         DayPanelControl29.Location = New Point(4, 304)
         DayPanelControl29.Name = "DayPanelControl29"
+        DayPanelControl29.R1_done_stat = False
+        DayPanelControl29.R2_done_stat = False
+        DayPanelControl29.R3_done_stat = False
+        DayPanelControl29.R4_done_stat = False
         DayPanelControl29.Size = New Size(52, 71)
         DayPanelControl29.TabIndex = 26
         ' 
@@ -475,6 +681,10 @@ Partial Class Form1
         DayPanelControl12.DayNum = 0
         DayPanelControl12.Location = New Point(244, 79)
         DayPanelControl12.Name = "DayPanelControl12"
+        DayPanelControl12.R1_done_stat = False
+        DayPanelControl12.R2_done_stat = False
+        DayPanelControl12.R3_done_stat = False
+        DayPanelControl12.R4_done_stat = False
         DayPanelControl12.Size = New Size(52, 68)
         DayPanelControl12.TabIndex = 9
         ' 
@@ -484,6 +694,10 @@ Partial Class Form1
         DayPanelControl28.DayNum = 0
         DayPanelControl28.Location = New Point(364, 229)
         DayPanelControl28.Name = "DayPanelControl28"
+        DayPanelControl28.R1_done_stat = False
+        DayPanelControl28.R2_done_stat = False
+        DayPanelControl28.R3_done_stat = False
+        DayPanelControl28.R4_done_stat = False
         DayPanelControl28.Size = New Size(54, 68)
         DayPanelControl28.TabIndex = 25
         ' 
@@ -493,6 +707,10 @@ Partial Class Form1
         DayPanelControl13.DayNum = 0
         DayPanelControl13.Location = New Point(304, 79)
         DayPanelControl13.Name = "DayPanelControl13"
+        DayPanelControl13.R1_done_stat = False
+        DayPanelControl13.R2_done_stat = False
+        DayPanelControl13.R3_done_stat = False
+        DayPanelControl13.R4_done_stat = False
         DayPanelControl13.Size = New Size(52, 68)
         DayPanelControl13.TabIndex = 10
         ' 
@@ -502,6 +720,10 @@ Partial Class Form1
         DayPanelControl27.DayNum = 0
         DayPanelControl27.Location = New Point(304, 229)
         DayPanelControl27.Name = "DayPanelControl27"
+        DayPanelControl27.R1_done_stat = False
+        DayPanelControl27.R2_done_stat = False
+        DayPanelControl27.R3_done_stat = False
+        DayPanelControl27.R4_done_stat = False
         DayPanelControl27.Size = New Size(52, 68)
         DayPanelControl27.TabIndex = 24
         ' 
@@ -511,6 +733,10 @@ Partial Class Form1
         DayPanelControl14.DayNum = 0
         DayPanelControl14.Location = New Point(364, 79)
         DayPanelControl14.Name = "DayPanelControl14"
+        DayPanelControl14.R1_done_stat = False
+        DayPanelControl14.R2_done_stat = False
+        DayPanelControl14.R3_done_stat = False
+        DayPanelControl14.R4_done_stat = False
         DayPanelControl14.Size = New Size(54, 68)
         DayPanelControl14.TabIndex = 11
         ' 
@@ -520,6 +746,10 @@ Partial Class Form1
         DayPanelControl26.DayNum = 0
         DayPanelControl26.Location = New Point(244, 229)
         DayPanelControl26.Name = "DayPanelControl26"
+        DayPanelControl26.R1_done_stat = False
+        DayPanelControl26.R2_done_stat = False
+        DayPanelControl26.R3_done_stat = False
+        DayPanelControl26.R4_done_stat = False
         DayPanelControl26.Size = New Size(52, 68)
         DayPanelControl26.TabIndex = 23
         ' 
@@ -529,6 +759,10 @@ Partial Class Form1
         DayPanelControl15.DayNum = 0
         DayPanelControl15.Location = New Point(4, 154)
         DayPanelControl15.Name = "DayPanelControl15"
+        DayPanelControl15.R1_done_stat = False
+        DayPanelControl15.R2_done_stat = False
+        DayPanelControl15.R3_done_stat = False
+        DayPanelControl15.R4_done_stat = False
         DayPanelControl15.Size = New Size(52, 68)
         DayPanelControl15.TabIndex = 12
         ' 
@@ -538,6 +772,10 @@ Partial Class Form1
         DayPanelControl25.DayNum = 0
         DayPanelControl25.Location = New Point(184, 229)
         DayPanelControl25.Name = "DayPanelControl25"
+        DayPanelControl25.R1_done_stat = False
+        DayPanelControl25.R2_done_stat = False
+        DayPanelControl25.R3_done_stat = False
+        DayPanelControl25.R4_done_stat = False
         DayPanelControl25.Size = New Size(52, 68)
         DayPanelControl25.TabIndex = 22
         ' 
@@ -547,6 +785,10 @@ Partial Class Form1
         DayPanelControl16.DayNum = 0
         DayPanelControl16.Location = New Point(64, 154)
         DayPanelControl16.Name = "DayPanelControl16"
+        DayPanelControl16.R1_done_stat = False
+        DayPanelControl16.R2_done_stat = False
+        DayPanelControl16.R3_done_stat = False
+        DayPanelControl16.R4_done_stat = False
         DayPanelControl16.Size = New Size(52, 68)
         DayPanelControl16.TabIndex = 13
         ' 
@@ -556,6 +798,10 @@ Partial Class Form1
         DayPanelControl24.DayNum = 0
         DayPanelControl24.Location = New Point(124, 229)
         DayPanelControl24.Name = "DayPanelControl24"
+        DayPanelControl24.R1_done_stat = False
+        DayPanelControl24.R2_done_stat = False
+        DayPanelControl24.R3_done_stat = False
+        DayPanelControl24.R4_done_stat = False
         DayPanelControl24.Size = New Size(52, 68)
         DayPanelControl24.TabIndex = 21
         ' 
@@ -565,6 +811,10 @@ Partial Class Form1
         DayPanelControl17.DayNum = 0
         DayPanelControl17.Location = New Point(124, 154)
         DayPanelControl17.Name = "DayPanelControl17"
+        DayPanelControl17.R1_done_stat = False
+        DayPanelControl17.R2_done_stat = False
+        DayPanelControl17.R3_done_stat = False
+        DayPanelControl17.R4_done_stat = False
         DayPanelControl17.Size = New Size(52, 68)
         DayPanelControl17.TabIndex = 14
         ' 
@@ -574,6 +824,10 @@ Partial Class Form1
         DayPanelControl23.DayNum = 0
         DayPanelControl23.Location = New Point(64, 229)
         DayPanelControl23.Name = "DayPanelControl23"
+        DayPanelControl23.R1_done_stat = False
+        DayPanelControl23.R2_done_stat = False
+        DayPanelControl23.R3_done_stat = False
+        DayPanelControl23.R4_done_stat = False
         DayPanelControl23.Size = New Size(52, 68)
         DayPanelControl23.TabIndex = 20
         ' 
@@ -583,6 +837,10 @@ Partial Class Form1
         DayPanelControl18.DayNum = 0
         DayPanelControl18.Location = New Point(184, 154)
         DayPanelControl18.Name = "DayPanelControl18"
+        DayPanelControl18.R1_done_stat = False
+        DayPanelControl18.R2_done_stat = False
+        DayPanelControl18.R3_done_stat = False
+        DayPanelControl18.R4_done_stat = False
         DayPanelControl18.Size = New Size(52, 68)
         DayPanelControl18.TabIndex = 15
         ' 
@@ -592,6 +850,10 @@ Partial Class Form1
         DayPanelControl22.DayNum = 0
         DayPanelControl22.Location = New Point(4, 229)
         DayPanelControl22.Name = "DayPanelControl22"
+        DayPanelControl22.R1_done_stat = False
+        DayPanelControl22.R2_done_stat = False
+        DayPanelControl22.R3_done_stat = False
+        DayPanelControl22.R4_done_stat = False
         DayPanelControl22.Size = New Size(52, 68)
         DayPanelControl22.TabIndex = 19
         ' 
@@ -601,6 +863,10 @@ Partial Class Form1
         DayPanelControl19.DayNum = 0
         DayPanelControl19.Location = New Point(244, 154)
         DayPanelControl19.Name = "DayPanelControl19"
+        DayPanelControl19.R1_done_stat = False
+        DayPanelControl19.R2_done_stat = False
+        DayPanelControl19.R3_done_stat = False
+        DayPanelControl19.R4_done_stat = False
         DayPanelControl19.Size = New Size(52, 68)
         DayPanelControl19.TabIndex = 16
         ' 
@@ -610,6 +876,10 @@ Partial Class Form1
         DayPanelControl21.DayNum = 0
         DayPanelControl21.Location = New Point(364, 154)
         DayPanelControl21.Name = "DayPanelControl21"
+        DayPanelControl21.R1_done_stat = False
+        DayPanelControl21.R2_done_stat = False
+        DayPanelControl21.R3_done_stat = False
+        DayPanelControl21.R4_done_stat = False
         DayPanelControl21.Size = New Size(54, 68)
         DayPanelControl21.TabIndex = 18
         ' 
@@ -619,6 +889,10 @@ Partial Class Form1
         DayPanelControl20.DayNum = 0
         DayPanelControl20.Location = New Point(304, 154)
         DayPanelControl20.Name = "DayPanelControl20"
+        DayPanelControl20.R1_done_stat = False
+        DayPanelControl20.R2_done_stat = False
+        DayPanelControl20.R3_done_stat = False
+        DayPanelControl20.R4_done_stat = False
         DayPanelControl20.Size = New Size(52, 68)
         DayPanelControl20.TabIndex = 17
         ' 
@@ -627,7 +901,7 @@ Partial Class Form1
         Roomie1_Done.AutoSize = True
         Roomie1_Done.Location = New Point(82, 687)
         Roomie1_Done.Name = "Roomie1_Done"
-        Roomie1_Done.Size = New Size(17, 20)
+        Roomie1_Done.Size = New Size(13, 15)
         Roomie1_Done.TabIndex = 62
         Roomie1_Done.Text = "0"
         ' 
@@ -636,7 +910,7 @@ Partial Class Form1
         Roomie1_Total.AutoSize = True
         Roomie1_Total.Location = New Point(82, 668)
         Roomie1_Total.Name = "Roomie1_Total"
-        Roomie1_Total.Size = New Size(17, 20)
+        Roomie1_Total.Size = New Size(13, 15)
         Roomie1_Total.TabIndex = 61
         Roomie1_Total.Text = "0"
         ' 
@@ -669,7 +943,7 @@ Partial Class Form1
         RoomiesTitleLabel.AutoSize = True
         RoomiesTitleLabel.Location = New Point(91, 631)
         RoomiesTitleLabel.Name = "RoomiesTitleLabel"
-        RoomiesTitleLabel.Size = New Size(246, 20)
+        RoomiesTitleLabel.Size = New Size(199, 15)
         RoomiesTitleLabel.TabIndex = 58
         RoomiesTitleLabel.Text = "Roomates Contributions This Month"
         ' 
@@ -828,7 +1102,7 @@ Partial Class Form1
         MonthLabel.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point)
         MonthLabel.Location = New Point(21, 24)
         MonthLabel.Name = "MonthLabel"
-        MonthLabel.Size = New Size(277, 46)
+        MonthLabel.Size = New Size(224, 37)
         MonthLabel.TabIndex = 18
         MonthLabel.Text = "November 2023"
         ' 
@@ -856,7 +1130,7 @@ Partial Class Form1
         Label3.AutoSize = True
         Label3.Location = New Point(120, 450)
         Label3.Name = "Label3"
-        Label3.Size = New Size(189, 20)
+        Label3.Size = New Size(157, 15)
         Label3.TabIndex = 28
         Label3.Text = "______________________________"
         ' 
@@ -865,7 +1139,7 @@ Partial Class Form1
         Label2.AutoSize = True
         Label2.Location = New Point(138, 495)
         Label2.Name = "Label2"
-        Label2.Size = New Size(152, 20)
+        Label2.Size = New Size(119, 15)
         Label2.TabIndex = 27
         Label2.Text = "Roomate2: Owed $30"
         ' 
@@ -874,7 +1148,7 @@ Partial Class Form1
         Label1.AutoSize = True
         Label1.Location = New Point(140, 471)
         Label1.Name = "Label1"
-        Label1.Size = New Size(149, 20)
+        Label1.Size = New Size(117, 15)
         Label1.TabIndex = 26
         Label1.Text = "Roomate1: Owes $15"
         ' 
@@ -918,7 +1192,7 @@ Partial Class Form1
         MoneyStatus.Font = New Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point)
         MoneyStatus.Location = New Point(102, 425)
         MoneyStatus.Name = "MoneyStatus"
-        MoneyStatus.Size = New Size(224, 32)
+        MoneyStatus.Size = New Size(175, 25)
         MoneyStatus.TabIndex = 21
         MoneyStatus.Text = "I owe $15 to the Jar"
         ' 
@@ -939,17 +1213,18 @@ Partial Class Form1
         BudgetTitle.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point)
         BudgetTitle.Location = New Point(146, 44)
         BudgetTitle.Name = "BudgetTitle"
-        BudgetTitle.Size = New Size(136, 46)
+        BudgetTitle.Size = New Size(110, 37)
         BudgetTitle.TabIndex = 19
         BudgetTitle.Text = "Budget"
         ' 
         ' ManagementTabPage
         ' 
-        ManagementTabPage.Controls.Add(Label4)
-        ManagementTabPage.Controls.Add(Button2)
-        ManagementTabPage.Controls.Add(Button3)
-        ManagementTabPage.Controls.Add(Label5)
-        ManagementTabPage.Controls.Add(PictureBox6)
+        ManagementTabPage.Controls.Add(AboutUsButton)
+        ManagementTabPage.Controls.Add(ManageHouseholdsButton)
+        ManagementTabPage.Controls.Add(FAQButton)
+        ManagementTabPage.Controls.Add(RoomatesProfileButton)
+        ManagementTabPage.Controls.Add(ManagementTitleLabel)
+        ManagementTabPage.Controls.Add(ManagementPictureBox)
         ManagementTabPage.Location = New Point(4, 4)
         ManagementTabPage.Name = "ManagementTabPage"
         ManagementTabPage.Padding = New Padding(3)
@@ -958,15 +1233,65 @@ Partial Class Form1
         ManagementTabPage.Text = "Management"
         ManagementTabPage.UseVisualStyleBackColor = True
         ' 
-        ' Label4
+        ' AboutUsButton
         ' 
-        Label4.AutoSize = True
-        Label4.Font = New Font("Segoe UI", 9.0F, FontStyle.Regular, GraphicsUnit.Point)
-        Label4.Location = New Point(182, 456)
-        Label4.Name = "Label4"
-        Label4.Size = New Size(61, 20)
-        Label4.TabIndex = 73
-        Label4.Text = "Options"
+        AboutUsButton.BackColor = Color.SeaShell
+        AboutUsButton.Location = New Point(94, 631)
+        AboutUsButton.Name = "AboutUsButton"
+        AboutUsButton.Size = New Size(240, 67)
+        AboutUsButton.TabIndex = 75
+        AboutUsButton.Text = "About Us"
+        AboutUsButton.UseVisualStyleBackColor = False
+        ' 
+        ' ManageHouseholdsButton
+        ' 
+        ManageHouseholdsButton.BackColor = Color.SeaShell
+        ManageHouseholdsButton.Location = New Point(94, 412)
+        ManageHouseholdsButton.Name = "ManageHouseholdsButton"
+        ManageHouseholdsButton.Size = New Size(240, 67)
+        ManageHouseholdsButton.TabIndex = 74
+        ManageHouseholdsButton.Text = "Manage Households"
+        ManageHouseholdsButton.UseVisualStyleBackColor = False
+        ' 
+        ' FAQButton
+        ' 
+        FAQButton.BackColor = Color.SeaShell
+        FAQButton.Location = New Point(94, 558)
+        FAQButton.Name = "FAQButton"
+        FAQButton.Size = New Size(240, 67)
+        FAQButton.TabIndex = 71
+        FAQButton.Text = "FAQ"
+        FAQButton.UseVisualStyleBackColor = False
+        ' 
+        ' RoomatesProfileButton
+        ' 
+        RoomatesProfileButton.BackColor = Color.SeaShell
+        RoomatesProfileButton.Location = New Point(94, 485)
+        RoomatesProfileButton.Name = "RoomatesProfileButton"
+        RoomatesProfileButton.Size = New Size(240, 67)
+        RoomatesProfileButton.TabIndex = 70
+        RoomatesProfileButton.Text = "Roommate Profiles"
+        RoomatesProfileButton.UseVisualStyleBackColor = False
+        ' 
+        ' ManagementTitleLabel
+        ' 
+        ManagementTitleLabel.AutoSize = True
+        ManagementTitleLabel.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point)
+        ManagementTitleLabel.Location = New Point(119, 25)
+        ManagementTitleLabel.Name = "ManagementTitleLabel"
+        ManagementTitleLabel.Size = New Size(188, 37)
+        ManagementTitleLabel.TabIndex = 69
+        ManagementTitleLabel.Text = "Management"
+        ' 
+        ' ManagementPictureBox
+        ' 
+        ManagementPictureBox.Image = My.Resources.myResources.istockphoto_944927622_1024x1024
+        ManagementPictureBox.Location = New Point(56, 87)
+        ManagementPictureBox.Name = "ManagementPictureBox"
+        ManagementPictureBox.Size = New Size(326, 301)
+        ManagementPictureBox.SizeMode = PictureBoxSizeMode.StretchImage
+        ManagementPictureBox.TabIndex = 0
+        ManagementPictureBox.TabStop = False
         ' 
         ' Button2
         ' 
@@ -994,7 +1319,7 @@ Partial Class Form1
         Label5.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point)
         Label5.Location = New Point(94, 38)
         Label5.Name = "Label5"
-        Label5.Size = New Size(232, 46)
+        Label5.Size = New Size(188, 37)
         Label5.TabIndex = 69
         Label5.Text = "Management"
         ' 
@@ -1007,123 +1332,6 @@ Partial Class Form1
         PictureBox6.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox6.TabIndex = 0
         PictureBox6.TabStop = False
-        ' 
-        ' Label7
-        ' 
-        Label7.AutoSize = True
-        Label7.Location = New Point(30, 687)
-        Label7.Name = "Label7"
-        Label7.Size = New Size(48, 20)
-        Label7.TabIndex = 69
-        Label7.Text = "Done:"
-        ' 
-        ' Label8
-        ' 
-        Label8.AutoSize = True
-        Label8.Location = New Point(136, 687)
-        Label8.Name = "Label8"
-        Label8.Size = New Size(48, 20)
-        Label8.TabIndex = 73
-        Label8.Text = "Done:"
-        ' 
-        ' Label9
-        ' 
-        Label9.AutoSize = True
-        Label9.Location = New Point(138, 668)
-        Label9.Name = "Label9"
-        Label9.Size = New Size(45, 20)
-        Label9.TabIndex = 72
-        Label9.Text = "Total:"
-        ' 
-        ' Roomie2_Done
-        ' 
-        Roomie2_Done.AutoSize = True
-        Roomie2_Done.Location = New Point(188, 687)
-        Roomie2_Done.Name = "Roomie2_Done"
-        Roomie2_Done.Size = New Size(17, 20)
-        Roomie2_Done.TabIndex = 71
-        Roomie2_Done.Text = "0"
-        ' 
-        ' Roomie2_Total
-        ' 
-        Roomie2_Total.AutoSize = True
-        Roomie2_Total.Location = New Point(188, 668)
-        Roomie2_Total.Name = "Roomie2_Total"
-        Roomie2_Total.Size = New Size(17, 20)
-        Roomie2_Total.TabIndex = 70
-        Roomie2_Total.Text = "0"
-        ' 
-        ' Label12
-        ' 
-        Label12.AutoSize = True
-        Label12.Location = New Point(246, 687)
-        Label12.Name = "Label12"
-        Label12.Size = New Size(48, 20)
-        Label12.TabIndex = 77
-        Label12.Text = "Done:"
-        ' 
-        ' Label13
-        ' 
-        Label13.AutoSize = True
-        Label13.Location = New Point(248, 668)
-        Label13.Name = "Label13"
-        Label13.Size = New Size(45, 20)
-        Label13.TabIndex = 76
-        Label13.Text = "Total:"
-        ' 
-        ' Roomie3_Done
-        ' 
-        Roomie3_Done.AutoSize = True
-        Roomie3_Done.Location = New Point(298, 687)
-        Roomie3_Done.Name = "Roomie3_Done"
-        Roomie3_Done.Size = New Size(17, 20)
-        Roomie3_Done.TabIndex = 75
-        Roomie3_Done.Text = "0"
-        ' 
-        ' Roomie3_Total
-        ' 
-        Roomie3_Total.AutoSize = True
-        Roomie3_Total.Location = New Point(298, 668)
-        Roomie3_Total.Name = "Roomie3_Total"
-        Roomie3_Total.Size = New Size(17, 20)
-        Roomie3_Total.TabIndex = 74
-        Roomie3_Total.Text = "0"
-        ' 
-        ' Label16
-        ' 
-        Label16.AutoSize = True
-        Label16.Location = New Point(353, 687)
-        Label16.Name = "Label16"
-        Label16.Size = New Size(48, 20)
-        Label16.TabIndex = 81
-        Label16.Text = "Done:"
-        ' 
-        ' Label17
-        ' 
-        Label17.AutoSize = True
-        Label17.Location = New Point(355, 668)
-        Label17.Name = "Label17"
-        Label17.Size = New Size(45, 20)
-        Label17.TabIndex = 80
-        Label17.Text = "Total:"
-        ' 
-        ' Roomie4_Done
-        ' 
-        Roomie4_Done.AutoSize = True
-        Roomie4_Done.Location = New Point(405, 687)
-        Roomie4_Done.Name = "Roomie4_Done"
-        Roomie4_Done.Size = New Size(17, 20)
-        Roomie4_Done.TabIndex = 79
-        Roomie4_Done.Text = "0"
-        ' 
-        ' Roomie4_Total
-        ' 
-        Roomie4_Total.AutoSize = True
-        Roomie4_Total.Location = New Point(405, 668)
-        Roomie4_Total.Name = "Roomie4_Total"
-        Roomie4_Total.Size = New Size(17, 20)
-        Roomie4_Total.TabIndex = 78
-        Roomie4_Total.Text = "0"
         ' 
         ' Form1
         ' 
@@ -1159,7 +1367,6 @@ Partial Class Form1
     Friend WithEvents BudgetTabPage As TabPage
     Friend WithEvents ManagementTabPage As TabPage
     Friend WithEvents BudgetControl1 As BudgetControl
-    Friend WithEvents PointsControl1 As ManagementControl
     Friend WithEvents AddToCalendarButton As Button
     Friend WithEvents MonthLabel As Label
     Friend WithEvents FriLabel As Label
@@ -1231,7 +1438,6 @@ Partial Class Form1
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents Label4 As Label
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
     Friend WithEvents Label5 As Label
@@ -1249,4 +1455,10 @@ Partial Class Form1
     Friend WithEvents Roomie2_Done As Label
     Friend WithEvents Roomie2_Total As Label
     Friend WithEvents Label7 As Label
+    Friend WithEvents FAQButton As Button
+    Friend WithEvents RoomatesProfileButton As Button
+    Friend WithEvents ManagementTitleLabel As Label
+    Friend WithEvents AboutUsButton As Button
+    Friend WithEvents ManageHouseholdsButton As Button
+    Friend WithEvents ManagementPictureBox As PictureBox
 End Class
