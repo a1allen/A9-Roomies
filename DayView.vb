@@ -50,6 +50,8 @@ Public Class DayView
         RaiseEvent EditChoreButtonClickInDayView(sender, e)
     End Sub
     Private Sub ChoreItem_ExtendChoreButtonClick(sender As Object, e As EventArgs)
+        selectedChoreItem = DirectCast(sender, Chore_item_inDay)
+
         RaiseEvent ExtendChoreButtonClickInDayView(sender, e)
     End Sub
     Private Sub ChoreItem_RequestVolunteereButtonClick(sender As Object, e As EventArgs)
