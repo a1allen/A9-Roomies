@@ -40,9 +40,13 @@ Partial Class AddChoreControl
         DateLabel = New Label()
         ChoreBackButton = New Button()
         devider = New Label()
+        EffortPanel = New Panel()
+        Label2 = New Label()
+        EffortScore = New ComboBox()
         CustomChorePanel.SuspendLayout()
         AssignedToPanel.SuspendLayout()
         DatePanel.SuspendLayout()
+        EffortPanel.SuspendLayout()
         SuspendLayout()
         ' 
         ' TableLayoutPanel1
@@ -91,7 +95,7 @@ Partial Class AddChoreControl
         ' 
         AddChoreTitleLabel.AutoSize = True
         AddChoreTitleLabel.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point)
-        AddChoreTitleLabel.Location = New Point(133, 93)
+        AddChoreTitleLabel.Location = New Point(133, 78)
         AddChoreTitleLabel.Name = "AddChoreTitleLabel"
         AddChoreTitleLabel.Size = New Size(168, 41)
         AddChoreTitleLabel.TabIndex = 14
@@ -110,7 +114,7 @@ Partial Class AddChoreControl
         ' AddChoreButton
         ' 
         AddChoreButton.BackColor = Color.WhiteSmoke
-        AddChoreButton.Location = New Point(170, 478)
+        AddChoreButton.Location = New Point(170, 484)
         AddChoreButton.Name = "AddChoreButton"
         AddChoreButton.Size = New Size(94, 30)
         AddChoreButton.TabIndex = 54
@@ -121,7 +125,7 @@ Partial Class AddChoreControl
         ' 
         ChoreTypeLabel.AutoSize = True
         ChoreTypeLabel.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        ChoreTypeLabel.Location = New Point(45, 194)
+        ChoreTypeLabel.Location = New Point(45, 162)
         ChoreTypeLabel.Name = "ChoreTypeLabel"
         ChoreTypeLabel.Size = New Size(91, 20)
         ChoreTypeLabel.TabIndex = 55
@@ -132,7 +136,7 @@ Partial Class AddChoreControl
         ChoreTypeComboBox.DropDownStyle = ComboBoxStyle.DropDownList
         ChoreTypeComboBox.FormattingEnabled = True
         ChoreTypeComboBox.Items.AddRange(New Object() {"Vacuum", "Wash Dishes", "Shovel Snow", "Grocery", "Laundry", "Add Custom Chore"})
-        ChoreTypeComboBox.Location = New Point(189, 191)
+        ChoreTypeComboBox.Location = New Point(189, 159)
         ChoreTypeComboBox.Name = "ChoreTypeComboBox"
         ChoreTypeComboBox.Size = New Size(188, 28)
         ChoreTypeComboBox.TabIndex = 56
@@ -151,7 +155,7 @@ Partial Class AddChoreControl
         ' 
         CustomChorePanel.Controls.Add(NewChoreTextBox)
         CustomChorePanel.Controls.Add(NewChoreLabel)
-        CustomChorePanel.Location = New Point(36, 223)
+        CustomChorePanel.Location = New Point(36, 188)
         CustomChorePanel.Name = "CustomChorePanel"
         CustomChorePanel.Size = New Size(351, 48)
         CustomChorePanel.TabIndex = 58
@@ -168,7 +172,7 @@ Partial Class AddChoreControl
         ' 
         AssignedToPanel.Controls.Add(RoomateComboBox)
         AssignedToPanel.Controls.Add(AssignedToLabel)
-        AssignedToPanel.Location = New Point(36, 298)
+        AssignedToPanel.Location = New Point(36, 255)
         AssignedToPanel.Name = "AssignedToPanel"
         AssignedToPanel.Size = New Size(351, 48)
         AssignedToPanel.TabIndex = 60
@@ -198,7 +202,7 @@ Partial Class AddChoreControl
         ' 
         DatePanel.Controls.Add(AddChoreDateTimePicker)
         DatePanel.Controls.Add(DateLabel)
-        DatePanel.Location = New Point(36, 374)
+        DatePanel.Location = New Point(36, 397)
         DatePanel.Name = "DatePanel"
         DatePanel.Size = New Size(351, 48)
         DatePanel.TabIndex = 63
@@ -234,17 +238,47 @@ Partial Class AddChoreControl
         ' devider
         ' 
         devider.AutoSize = True
-        devider.Location = New Point(57, 123)
+        devider.Location = New Point(57, 108)
         devider.Name = "devider"
         devider.Size = New Size(321, 20)
         devider.TabIndex = 66
         devider.Text = "____________________________________________________"
+        ' 
+        ' EffortPanel
+        ' 
+        EffortPanel.Controls.Add(EffortScore)
+        EffortPanel.Controls.Add(Label2)
+        EffortPanel.Location = New Point(36, 327)
+        EffortPanel.Name = "EffortPanel"
+        EffortPanel.Size = New Size(351, 48)
+        EffortPanel.TabIndex = 67
+        ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        Label2.Location = New Point(9, 14)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(177, 20)
+        Label2.TabIndex = 65
+        Label2.Text = "Difficulty Of The Chore?"
+        ' 
+        ' EffortScore
+        ' 
+        EffortScore.DropDownStyle = ComboBoxStyle.DropDownList
+        EffortScore.FormattingEnabled = True
+        EffortScore.Items.AddRange(New Object() {"1 ★", "2 ★★", "3 ★★★", "4 ★★★★", "5 ★★★★★"})
+        EffortScore.Location = New Point(241, 11)
+        EffortScore.Name = "EffortScore"
+        EffortScore.Size = New Size(101, 28)
+        EffortScore.TabIndex = 67
         ' 
         ' AddChoreControl
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
+        Controls.Add(EffortPanel)
         Controls.Add(ChoreBackButton)
         Controls.Add(DatePanel)
         Controls.Add(AssignedToPanel)
@@ -263,6 +297,8 @@ Partial Class AddChoreControl
         AssignedToPanel.PerformLayout()
         DatePanel.ResumeLayout(False)
         DatePanel.PerformLayout()
+        EffortPanel.ResumeLayout(False)
+        EffortPanel.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -316,4 +352,6 @@ Partial Class AddChoreControl
     Friend WithEvents DateLabel As Label
     Friend WithEvents ChoreBackButton As Button
     Friend WithEvents devider As Label
+    Friend WithEvents EffortPanel As Panel
+    Friend WithEvents EffortScore As ComboBox
 End Class

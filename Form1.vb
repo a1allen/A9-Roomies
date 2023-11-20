@@ -4,6 +4,8 @@ Imports System.Xml
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement.Header
 Imports System.Reflection.Metadata
 Imports System.Globalization
+Imports System.Drawing.Imaging
+Imports A9.My.Resources
 
 Public Class Form1
 
@@ -21,12 +23,20 @@ Public Class Form1
     Public ChoreList As New List(Of Chore)()
     Public dayPanelAssignments As New Dictionary(Of DateTime, List(Of Chore))
     Private WithEvents dayViewPage As DayView
+    Private overlayPanel As New Panel()
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         For i As Integer = 0 To dayPanelArray.Length - 1
             controlName = "DayPanelControl" & (i.ToString() + 1)
             dayPanelArray(i) = Me.Controls.Find(controlName, True).FirstOrDefault()
+
+            overlayPanel.BackColor = Color.FromArgb(5, 255, 255, 255) ' Adjust the alpha value for transparency
+            overlayPanel.Dock = DockStyle.Fill
+            overlayPanel.Visible = True ' Initially, the overlay panel is hidden
+
+            ' Add the overlayPanel to the MainForm controls
+            Me.Controls.Add(overlayPanel)
             'Hide the 4 dots
             dayPanelArray(i).Roomate1PictureBox.Hide()
             dayPanelArray(i).Roomate2PictureBox.Hide()
@@ -53,20 +63,13 @@ Public Class Form1
         If TypeOf sender Is DayPanelControl Then
             ' Handle the click event for the panels
             clickedPanel = DirectCast(sender, DayPanelControl)
-            ' ... Your existing logic for panels
         Else
             ' Handle the click event for picture boxes
             Dim clickedPictureBox As PictureBox = DirectCast(sender, PictureBox)
-
             ' Retrieve the associated DayPanel from the Tag property
             clickedPanel = DirectCast(clickedPictureBox.Tag, DayPanelControl)
-            ' ... Your logic for picture boxes and associated DayPanel
         End If
-        ' Find the index of the clicked panel in the array
-        Dim index As Integer = Array.IndexOf(dayPanelArray, clickedPanel)
 
-        ' Do something with the index
-        'MessageBox.Show($"Clicked panel at index {clickedPanel.DayNum}, {clickedPanel.DayDate}, ")
         'Hide all other elements on the tab
         MonthLabel.Hide()
         AddToCalendarButton.Hide()
@@ -90,10 +93,14 @@ Public Class Form1
         PictureBox2.Hide()
         PictureBox3.Hide()
         PictureBox4.Hide()
-        Roomie1PointsLabel.Hide()
-        Roomie2PointsLabel.Hide()
-        Roomie3PointsLabel.Hide()
-        Roomie4PointsLabel.Hide()
+        Roomie1_Total.Hide()
+        Roomie2_Total.Hide()
+        Roomie3_Total.Hide()
+        Roomie4_Total.Hide()
+        Roomie1_Done.Hide()
+        Roomie2_Done.Hide()
+        Roomie3_Done.Hide()
+        Roomie4_Done.Hide()
 
         'Create instance
         dayViewPage = New DayView()
@@ -114,13 +121,27 @@ Public Class Form1
         numDaysInMonth = DateTime.DaysInMonth(year, month)
         currentDate = New DateTime(year, month, 1)
         startDayOfWeek = (currentDate.DayOfWeek)
+        ' to keep track of the chores of each roomie in each month
         Dim R1_contribution = 0
         Dim R2_contribution = 0
         Dim R3_contribution = 0
         Dim R4_contribution = 0
+        Dim R1_done_num = 0
+        Dim R2_done_num = 0
+        Dim R3_done_num = 0
+        Dim R4_done_num = 0
 
         count = 0
         For i As Integer = 0 To dayPanelArray.Length - 1
+            ' to keep track of chores of each day for each roomie
+            Dim local_R1_contribution = 0
+            Dim local_R2_contribution = 0
+            Dim local_R3_contribution = 0
+            Dim local_R4_contribution = 0
+            Dim local_R1_done_num = 0
+            Dim local_R2_done_num = 0
+            Dim local_R3_done_num = 0
+            Dim local_R4_done_num = 0
             If (i >= startDayOfWeek) And (count <= numDaysInMonth - 1) Then
 
                 count += 1
@@ -147,24 +168,47 @@ Public Class Form1
                             Dim person = chore_item.AssignedPerson
                             If person = "Roomate 1" Then
                                 dayPanelArray(i).Roomate1PictureBox.Show()
-                                R1_contribution = R1_contribution + 1
+                                Dim intValue As Integer = Integer.Parse(chore_item.EffortOfChore)
+                                R1_contribution = R1_contribution + (intValue + 1)
+                                local_R1_contribution = local_R1_contribution + (intValue + 1)
+                                If chore_item.statusOfChore Then
+                                    R1_done_num = R1_done_num + (intValue + 1)
+                                    local_R1_done_num = local_R1_done_num + (intValue + 1)
+                                End If
                             ElseIf person = "Roomate 2" Then
+                                Dim intValue As Integer = Integer.Parse(chore_item.EffortOfChore)
                                 dayPanelArray(i).Roomate2PictureBox.Show()
-                                R2_contribution = R2_contribution + 1
+                                R2_contribution = R2_contribution + (intValue + 1)
+                                local_R2_contribution = local_R2_contribution + (intValue + 1)
+                                If chore_item.statusOfChore Then
+                                    R2_done_num = R2_done_num + (intValue + 1)
+                                    local_R2_done_num = local_R2_done_num + (intValue + 1)
+                                End If
                             ElseIf person = "Roomate 3" Then
-                                R3_contribution = R3_contribution + 1
+                                Dim intValue As Integer = Integer.Parse(chore_item.EffortOfChore)
+                                R3_contribution = R3_contribution + (intValue + 1)
+                                local_R3_contribution = local_R3_contribution + (intValue + 1)
                                 dayPanelArray(i).Roomate3PictureBox.Show()
+                                If chore_item.statusOfChore Then
+                                    R3_done_num = R3_done_num + (intValue + 1)
+                                    local_R3_done_num = local_R3_done_num + (intValue + 1)
+                                End If
                             ElseIf person = "Roomate 4" Then
-                                R4_contribution = R4_contribution + 1
+                                Dim intValue As Integer = Integer.Parse(chore_item.EffortOfChore)
+                                R4_contribution = R4_contribution + (intValue + 1)
+                                local_R4_contribution = local_R4_contribution + (intValue + 1)
                                 dayPanelArray(i).Roomate4PictureBox.Show()
+                                If chore_item.statusOfChore Then
+                                    R4_done_num = R4_done_num + (intValue + 1)
+                                    local_R4_done_num = local_R4_done_num + (intValue + 1)
+                                End If
                             End If
+
                         Next
                     End If
                 End If
-                Roomie1PointsLabel.Text = R1_contribution
-                Roomie2PointsLabel.Text = R2_contribution
-                Roomie3PointsLabel.Text = R3_contribution
-                Roomie4PointsLabel.Text = R4_contribution
+
+
                 dayPanelArray(i).Show()
 
                 'Check if extra panels were used
@@ -173,6 +217,35 @@ Public Class Form1
                 ElseIf i = 36 Then
                     Panel2.Show()
                 End If
+
+
+                ' If the chores of each roomie is done for that day, change the colored dot to a less 
+                ' transparent dot
+                If (local_R1_contribution <> 0 And local_R1_contribution = local_R1_done_num) Then
+                    dayPanelArray(i).Roomate1PictureBox.Image = myResources.pink_done
+                Else
+                    dayPanelArray(i).Roomate1PictureBox.Image = myResources.pink
+                End If
+
+                If (local_R2_contribution <> 0 And local_R2_contribution = local_R2_done_num) Then
+                    dayPanelArray(i).Roomate2PictureBox.Image = myResources.green_done
+                Else
+                    dayPanelArray(i).Roomate2PictureBox.Image = myResources.green
+                End If
+
+                If (local_R3_contribution <> 0 And local_R3_contribution = local_R3_done_num) Then
+                    dayPanelArray(i).Roomate3PictureBox.Image = myResources.blue_done
+                Else
+                    dayPanelArray(i).Roomate3PictureBox.Image = myResources.blue
+
+                End If
+
+                If (local_R4_contribution <> 0 And local_R4_contribution = local_R4_done_num) Then
+                    dayPanelArray(i).Roomate4PictureBox.Image = myResources.purple_done
+                Else
+                    dayPanelArray(i).Roomate4PictureBox.Image = myResources.purple
+                End If
+
 
                 currentDate = currentDate.AddDays(1)
 
@@ -187,6 +260,14 @@ Public Class Form1
                 End If
             End If
         Next
+        Roomie1_Total.Text = R1_contribution
+        Roomie2_Total.Text = R2_contribution
+        Roomie3_Total.Text = R3_contribution
+        Roomie4_Total.Text = R4_contribution
+        Roomie1_Done.Text = R1_done_num
+        Roomie2_Done.Text = R2_done_num
+        Roomie3_Done.Text = R3_done_num
+        Roomie4_Done.Text = R4_done_num
     End Sub
 
     Private Sub NextButton_Click(sender As Object, e As EventArgs) Handles NextButton.Click
@@ -204,6 +285,7 @@ Public Class Form1
         setupCalendar()
 
     End Sub
+
 
     Private Sub PreviousButton_Click(sender As Object, e As EventArgs) Handles PreviousButton.Click
 
@@ -245,10 +327,14 @@ Public Class Form1
         PictureBox2.Hide()
         PictureBox3.Hide()
         PictureBox4.Hide()
-        Roomie1PointsLabel.Hide()
-        Roomie2PointsLabel.Hide()
-        Roomie3PointsLabel.Hide()
-        Roomie4PointsLabel.Hide()
+        Roomie1_Total.Hide()
+        Roomie2_Total.Hide()
+        Roomie3_Total.Hide()
+        Roomie4_Total.Hide()
+        Roomie1_Done.Hide()
+        Roomie2_Done.Hide()
+        Roomie3_Done.Hide()
+        Roomie4_Done.Hide()
 
         'Create instance
         choreControl = New AddChoreControl()
@@ -267,10 +353,10 @@ Public Class Form1
             'Add new default chore if added by user
             If choreControl.ChoreTypeComboBox.Text = "Add Custom Chore" Then
                 'Add chore to ChoreList
-                currentChoreL.Add(New Chore(choreControl.NewChoreTextBox.Text, choreControl.RoomateComboBox.Text))
+                currentChoreL.Add(New Chore(choreControl.NewChoreTextBox.Text, choreControl.RoomateComboBox.Text, choreControl.EffortScore.SelectedIndex))
             Else
                 'Add chore to ChoreList
-                currentChoreL.Add(New Chore(choreControl.ChoreTypeComboBox.Text, choreControl.RoomateComboBox.Text))
+                currentChoreL.Add(New Chore(choreControl.ChoreTypeComboBox.Text, choreControl.RoomateComboBox.Text, choreControl.EffortScore.SelectedIndex))
             End If
             ' Key does not exist, so add the key-value pair
             dayPanelAssignments.Add(choreControl.AddChoreDateTimePicker.Value.Date, currentChoreL)
@@ -279,35 +365,18 @@ Public Class Form1
             'Add new default chore if added by user
             If choreControl.ChoreTypeComboBox.Text = "Add Custom Chore" Then
                 'Add chore to ChoreList
-                currentChoreL.Add(New Chore(choreControl.NewChoreTextBox.Text, choreControl.RoomateComboBox.Text))
+                currentChoreL.Add(New Chore(choreControl.NewChoreTextBox.Text, choreControl.RoomateComboBox.Text, choreControl.EffortScore.SelectedIndex))
             Else
                 'Add chore to ChoreList
-                currentChoreL.Add(New Chore(choreControl.ChoreTypeComboBox.Text, choreControl.RoomateComboBox.Text))
+                currentChoreL.Add(New Chore(choreControl.ChoreTypeComboBox.Text, choreControl.RoomateComboBox.Text, choreControl.EffortScore.SelectedIndex))
             End If
             dayPanelAssignments(choreControl.AddChoreDateTimePicker.Value.Date) = currentChoreL
         End If
 
 
-
-
-        'Add the chore to the Day class
-        'Dim dayChores As New Day(choreControl.AddChoreDateTimePicker.Value.Date, ChoreList)
-        'MessageBox.Show($"Clicked panel at index {choreControl.AddChoreDateTimePicker.Value.Date}, {currentChoreL}, ")
-
-        ' Alternatively, concatenate the names into a single string
-        'Dim documentNames As String = String.Join(", ", currentChoreL.Select(Function(d) d.TypeOfChore))
-
-        ' Display the concatenated names in a MsgBox
-        'MsgBox("List of Document Names:" & Environment.NewLine & documentNames, MsgBoxStyle.Information, "Document Names")
-
-
-
-
-        'updateCalendar(choreControl.AddChoreDateTimePicker.Value.Date, choreControl.RoomateComboBox.SelectedIndex)
+        'update calendar
         setupCalendar()
         showCalendarTab()
-
-        'Update the weights at the bottom of the page
 
     End Sub
 
@@ -345,10 +414,14 @@ Public Class Form1
         PictureBox2.Show()
         PictureBox3.Show()
         PictureBox4.Show()
-        Roomie1PointsLabel.Show()
-        Roomie2PointsLabel.Show()
-        Roomie3PointsLabel.Show()
-        Roomie4PointsLabel.Show()
+        Roomie1_Total.Show()
+        Roomie2_Total.Show()
+        Roomie3_Total.Show()
+        Roomie4_Total.Show()
+        Roomie1_Done.Show()
+        Roomie2_Done.Show()
+        Roomie3_Done.Show()
+        Roomie4_Done.Show()
 
     End Sub
 

@@ -22,50 +22,50 @@ Partial Class DayView
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        DayDate = New Label()
-        FullDate = New Label()
-        devider = New Label()
         BackButton = New Button()
+        FullDate = New Label()
+        DayDate = New Label()
+        devider = New Label()
         SuspendLayout()
         ' 
-        ' DayDate
+        ' BackButton
         ' 
-        DayDate.AutoSize = True
-        DayDate.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point)
-        DayDate.Location = New Point(63, 38)
-        DayDate.Name = "DayDate"
-        DayDate.Size = New Size(152, 46)
-        DayDate.TabIndex = 19
-        DayDate.Text = "Monday"
+        BackButton.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        BackButton.Location = New Point(25, 21)
+        BackButton.Name = "BackButton"
+        BackButton.Size = New Size(42, 42)
+        BackButton.TabIndex = 27
+        BackButton.Text = "X"
+        BackButton.UseVisualStyleBackColor = True
         ' 
         ' FullDate
         ' 
         FullDate.AutoSize = True
         FullDate.Font = New Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point)
-        FullDate.Location = New Point(272, 54)
+        FullDate.Location = New Point(282, 61)
         FullDate.Name = "FullDate"
         FullDate.Size = New Size(106, 25)
-        FullDate.TabIndex = 20
+        FullDate.TabIndex = 25
         FullDate.Text = "2023-11-18"
+        ' 
+        ' DayDate
+        ' 
+        DayDate.AutoSize = True
+        DayDate.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point)
+        DayDate.Location = New Point(73, 45)
+        DayDate.Name = "DayDate"
+        DayDate.Size = New Size(152, 46)
+        DayDate.TabIndex = 24
+        DayDate.Text = "Monday"
         ' 
         ' devider
         ' 
         devider.AutoSize = True
-        devider.Location = New Point(57, 69)
+        devider.Location = New Point(67, 76)
         devider.Name = "devider"
         devider.Size = New Size(321, 20)
-        devider.TabIndex = 21
+        devider.TabIndex = 26
         devider.Text = "____________________________________________________"
-        ' 
-        ' BackButton
-        ' 
-        BackButton.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        BackButton.Location = New Point(15, 14)
-        BackButton.Name = "BackButton"
-        BackButton.Size = New Size(42, 42)
-        BackButton.TabIndex = 23
-        BackButton.Text = "X"
-        BackButton.UseVisualStyleBackColor = True
         ' 
         ' DayView
         ' 
@@ -83,9 +83,9 @@ Partial Class DayView
         PerformLayout()
     End Sub
 
-    Friend WithEvents DayDate As Label
-    Friend WithEvents FullDate As Label
-    Friend WithEvents devider As Label
     Friend WithEvents BackButton As Button
+    Friend WithEvents FullDate As Label
+    Friend WithEvents DayDate As Label
+    Friend WithEvents devider As Label
 
 End Class
