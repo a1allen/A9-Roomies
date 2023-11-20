@@ -351,9 +351,13 @@ Public Class Form1
         editChoreControl.EditChoreDateTimePicker.Value = DateTime.ParseExact(thisDate, "yyyy-MM-dd", CultureInfo.InvariantCulture)
 
 
-        'AddHandler editChoreControl.SubmitChoreEditsButtonClick, AddressOf SubmitChoreEditsButton_Click
+        AddHandler editChoreControl.SubmitChoreEditsButtonClick, AddressOf SubmitChoreEditsButton_Click
         AddHandler editChoreControl.DeleteChoreButtonClick, AddressOf DeleteChoreButton_Click
         AddHandler editChoreControl.CancelEditChoreButtonClick, AddressOf CancelEditChoreButton_Click
+
+    End Sub
+
+    Private Sub SubmitChoreEditsButton_Click(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -362,8 +366,35 @@ Public Class Form1
         Dim thisChoreName As String = dayViewPage.ChoreItem.TypeOfChore
         Dim thisAssignedPerson As String = dayViewPage.ChoreItem.AssignedPerson
         Dim thisDate As DateTime = dayViewPage.FullDate.Text
+        Dim item As Chore
+        If dayPanelAssignments.ContainsKey(thisDate) Then
+            'Remove chore from the dictionary
+            Dim thisChoreList As List(Of Chore) = dayPanelAssignments(thisDate)
+            For i As Integer = thisChoreList.Count - 1 To 0 Step -1
+                item = thisChoreList(i)
+                If (item.TypeOfChore = thisChoreName) And (item.AssignedPerson = thisAssignedPerson) Then
+                    thisChoreList.RemoveAt(i)
+                End If
+            Next
+        End If
 
+        'Loop through the dayview controls to determine which one should be removed
+        Dim choreItem As Chore_item_inDay
+        For Each ctrl As Control In dayViewPage.Controls
+            If TypeOf ctrl Is Chore_item_inDay Then
+                choreItem = DirectCast(ctrl, Chore_item_inDay)
+                If choreItem.ChoreName.Text = thisChoreName And choreItem.AssignTo.Text = thisAssignedPerson Then
+                    dayViewPage.Controls.Remove(choreItem)
+                    Exit For
+                End If
+            End If
+        Next
 
+        'Remove instance
+        CalendarTabPage.Controls.Remove(editChoreControl)
+
+        'Show the dayView control
+        dayViewPage.Show()
 
     End Sub
 
