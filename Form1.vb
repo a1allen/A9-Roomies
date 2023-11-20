@@ -15,6 +15,14 @@ Public Class Form1
     Dim aboutControl As ManagementAboutUsControl
     Dim faqControl As ManagementFAQControl
     Dim roommateProfilesControl As ManagementRoommateProfilesControl
+    Public Roommate1Preferences As CheckedListBox.ObjectCollection
+    Public Roommate1Exclusion As CheckedListBox.ObjectCollection
+    Public Roommate2Preferences As CheckedListBox.ObjectCollection
+    Public Roommate2Exclusion As CheckedListBox.ObjectCollection
+    Public Roommate3Preferences As CheckedListBox.ObjectCollection
+    Public Roommate3Exclusion As CheckedListBox.ObjectCollection
+    Public Roommate4Preferences As CheckedListBox.ObjectCollection
+    Public Roommate4Exclusion As CheckedListBox.ObjectCollection
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         For i As Integer = 0 To dayPanelArray.Length - 1
