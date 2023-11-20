@@ -78,7 +78,6 @@ Partial Class EditChoreControl
         EditChorePanel.Name = "EditChorePanel"
         EditChorePanel.Size = New Size(351, 48)
         EditChorePanel.TabIndex = 71
-        EditChorePanel.Visible = False
         ' 
         ' EditChoreTextBox
         ' 
@@ -105,7 +104,6 @@ Partial Class EditChoreControl
         EditAssignedToPanel.Name = "EditAssignedToPanel"
         EditAssignedToPanel.Size = New Size(351, 48)
         EditAssignedToPanel.TabIndex = 72
-        EditAssignedToPanel.Visible = False
         ' 
         ' EditRoomateComboBox
         ' 
@@ -135,7 +133,6 @@ Partial Class EditChoreControl
         EditDatePanel.Name = "EditDatePanel"
         EditDatePanel.Size = New Size(351, 48)
         EditDatePanel.TabIndex = 73
-        EditDatePanel.Visible = False
         ' 
         ' EditChoreDateTimePicker
         ' 
