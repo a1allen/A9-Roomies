@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class BudgetControl
+Partial Class ManagementRoommateProfilesControl
     Inherits System.Windows.Forms.UserControl
 
     'UserControl overrides dispose to clean up the component list.
@@ -22,7 +22,8 @@ Partial Class BudgetControl
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        BudgetLabel = New Label()
+        BackButton = New Button()
+        RoommateProfilesTitleLabel = New Label()
         Panel4 = New Panel()
         PictureBox7 = New PictureBox()
         Label7 = New Label()
@@ -61,15 +62,24 @@ Partial Class BudgetControl
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
-        ' BudgetLabel
+        ' BackButton
         ' 
-        BudgetLabel.AutoSize = True
-        BudgetLabel.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point)
-        BudgetLabel.Location = New Point(95, 28)
-        BudgetLabel.Name = "BudgetLabel"
-        BudgetLabel.Size = New Size(175, 32)
-        BudgetLabel.TabIndex = 15
-        BudgetLabel.Text = "House Budget"
+        BackButton.Location = New Point(9, 16)
+        BackButton.Name = "BackButton"
+        BackButton.Size = New Size(75, 23)
+        BackButton.TabIndex = 23
+        BackButton.Text = "Back"
+        BackButton.UseVisualStyleBackColor = True
+        ' 
+        ' RoommateProfilesTitleLabel
+        ' 
+        RoommateProfilesTitleLabel.AutoSize = True
+        RoommateProfilesTitleLabel.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point)
+        RoommateProfilesTitleLabel.Location = New Point(98, 32)
+        RoommateProfilesTitleLabel.Name = "RoommateProfilesTitleLabel"
+        RoommateProfilesTitleLabel.Size = New Size(232, 32)
+        RoommateProfilesTitleLabel.TabIndex = 20
+        RoommateProfilesTitleLabel.Text = "Roommate Profiles"
         ' 
         ' Panel4
         ' 
@@ -78,11 +88,11 @@ Partial Class BudgetControl
         Panel4.Controls.Add(PictureBox8)
         Panel4.Controls.Add(Label8)
         Panel4.Controls.Add(CheckedListBox4)
-        Panel4.Location = New Point(15, 18)
+        Panel4.Location = New Point(39, 113)
         Panel4.Margin = New Padding(3, 2, 3, 2)
         Panel4.Name = "Panel4"
         Panel4.Size = New Size(350, 121)
-        Panel4.TabIndex = 30
+        Panel4.TabIndex = 34
         ' 
         ' PictureBox7
         ' 
@@ -137,11 +147,11 @@ Partial Class BudgetControl
         Panel3.Controls.Add(PictureBox6)
         Panel3.Controls.Add(Label6)
         Panel3.Controls.Add(CheckedListBox3)
-        Panel3.Location = New Point(15, 144)
+        Panel3.Location = New Point(39, 239)
         Panel3.Margin = New Padding(3, 2, 3, 2)
         Panel3.Name = "Panel3"
         Panel3.Size = New Size(350, 121)
-        Panel3.TabIndex = 29
+        Panel3.TabIndex = 33
         ' 
         ' PictureBox5
         ' 
@@ -196,11 +206,11 @@ Partial Class BudgetControl
         Panel2.Controls.Add(PictureBox4)
         Panel2.Controls.Add(Label4)
         Panel2.Controls.Add(CheckedListBox2)
-        Panel2.Location = New Point(15, 269)
+        Panel2.Location = New Point(39, 364)
         Panel2.Margin = New Padding(3, 2, 3, 2)
         Panel2.Name = "Panel2"
         Panel2.Size = New Size(350, 121)
-        Panel2.TabIndex = 28
+        Panel2.TabIndex = 32
         ' 
         ' PictureBox3
         ' 
@@ -255,11 +265,11 @@ Partial Class BudgetControl
         Panel1.Controls.Add(PictureBox1)
         Panel1.Controls.Add(Label1)
         Panel1.Controls.Add(CheckedListBox1)
-        Panel1.Location = New Point(15, 394)
+        Panel1.Location = New Point(39, 489)
         Panel1.Margin = New Padding(3, 2, 3, 2)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(350, 121)
-        Panel1.TabIndex = 27
+        Panel1.TabIndex = 31
         ' 
         ' PictureBox2
         ' 
@@ -307,7 +317,7 @@ Partial Class BudgetControl
         CheckedListBox1.Size = New Size(132, 40)
         CheckedListBox1.TabIndex = 19
         ' 
-        ' BudgetControl
+        ' ManagementRoommateProfiles
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
@@ -315,10 +325,10 @@ Partial Class BudgetControl
         Controls.Add(Panel3)
         Controls.Add(Panel2)
         Controls.Add(Panel1)
-        Controls.Add(BudgetLabel)
-        Margin = New Padding(3, 2, 3, 2)
-        Name = "BudgetControl"
-        Size = New Size(380, 533)
+        Controls.Add(BackButton)
+        Controls.Add(RoommateProfilesTitleLabel)
+        Name = "ManagementRoommateProfiles"
+        Size = New Size(429, 722)
         Panel4.ResumeLayout(False)
         Panel4.PerformLayout()
         CType(PictureBox7, ComponentModel.ISupportInitialize).EndInit()
@@ -339,7 +349,8 @@ Partial Class BudgetControl
         PerformLayout()
     End Sub
 
-    Friend WithEvents BudgetLabel As Label
+    Friend WithEvents BackButton As Button
+    Friend WithEvents RoommateProfilesTitleLabel As Label
     Friend WithEvents Panel4 As Panel
     Friend WithEvents PictureBox7 As PictureBox
     Friend WithEvents Label7 As Label

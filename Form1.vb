@@ -12,6 +12,9 @@ Public Class Form1
     Dim count As Integer
     Dim choreControl As AddChoreControl
     Public ChoreList As New List(Of Chore)()
+    Dim aboutControl As ManagementAboutUsControl
+    Dim faqControl As ManagementFAQControl
+    Dim roommateProfilesControl As ManagementRoommateProfilesControl
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         For i As Integer = 0 To dayPanelArray.Length - 1
@@ -199,5 +202,48 @@ Public Class Form1
         Roomie3PointsLabel.Show()
         Roomie4PointsLabel.Show()
     End Sub
+
+    Private Sub ManagementButtons_Click(sender As Object, e As EventArgs) Handles AboutUsButton.Click, FAQButton.Click, RoomatesProfileButton.Click
+
+        ManagementTitleLabel.Hide()
+        ManagementPictureBox.Hide()
+        ManageHouseholdsButton.Hide()
+        RoomatesProfileButton.Hide()
+        FAQButton.Hide()
+        AboutUsButton.Hide()
+
+
+        'Create instance
+        If sender.Name Is "RoomatesProfileButton" Then
+            roommateProfilesControl = New ManagementRoommateProfilesControl
+            ManagementTabPage.Controls.Add(roommateProfilesControl)
+        ElseIf sender.Name Is "FAQButton" Then
+            faqControl = New ManagementFAQControl()
+            ManagementTabPage.Controls.Add(faqControl)
+        ElseIf sender.Name Is "AboutUsButton" Then
+            aboutControl = New ManagementAboutUsControl()
+            ManagementTabPage.Controls.Add(aboutControl)
+        End If
+
+
+
+
+    End Sub
+
+    Public Sub showManagementTab()
+        'Remove instance 
+        ManagementTabPage.Controls.Remove(aboutControl)
+        ManagementTabPage.Controls.Remove(faqControl)
+        ManagementTabPage.Controls.Remove(roommateProfilesControl)
+        'Show all other elements on the tab
+        ManagementTitleLabel.Show()
+        ManagementPictureBox.Show()
+        ManageHouseholdsButton.Show()
+        RoomatesProfileButton.Show()
+        FAQButton.Show()
+        AboutUsButton.Show()
+    End Sub
+
+
 
 End Class
