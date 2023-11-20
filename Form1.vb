@@ -33,6 +33,10 @@ Public Class Form1
             dayPanelArray(i).Roomate3PictureBox.Hide()
             dayPanelArray(i).Roomate4PictureBox.Hide()
             AddHandler dayPanelArray(i).Click, AddressOf DayPanel_Click
+            AddHandler dayPanelArray(i).Roomate1PictureBox.Click, AddressOf DayPanel_Click
+            AddHandler dayPanelArray(i).Roomate2PictureBox.Click, AddressOf DayPanel_Click
+            AddHandler dayPanelArray(i).Roomate3PictureBox.Click, AddressOf DayPanel_Click
+            AddHandler dayPanelArray(i).Roomate4PictureBox.Click, AddressOf DayPanel_Click
             Me.Controls.Find(controlName, True)
         Next
 
@@ -45,8 +49,19 @@ Public Class Form1
     Private Sub DayPanel_Click(sender As Object, e As EventArgs)
 
         ' Handle the click event for the panels
-        Dim clickedPanel As DayPanelControl = DirectCast(sender, A9.DayPanelControl)
+        Dim clickedPanel As DayPanelControl
+        If TypeOf sender Is DayPanelControl Then
+            ' Handle the click event for the panels
+            clickedPanel = DirectCast(sender, DayPanelControl)
+            ' ... Your existing logic for panels
+        Else
+            ' Handle the click event for picture boxes
+            Dim clickedPictureBox As PictureBox = DirectCast(sender, PictureBox)
 
+            ' Retrieve the associated DayPanel from the Tag property
+            clickedPanel = DirectCast(clickedPictureBox.Tag, DayPanelControl)
+            ' ... Your logic for picture boxes and associated DayPanel
+        End If
         ' Find the index of the clicked panel in the array
         Dim index As Integer = Array.IndexOf(dayPanelArray, clickedPanel)
 
@@ -99,6 +114,10 @@ Public Class Form1
         numDaysInMonth = DateTime.DaysInMonth(year, month)
         currentDate = New DateTime(year, month, 1)
         startDayOfWeek = (currentDate.DayOfWeek)
+        Dim R1_contribution = 0
+        Dim R2_contribution = 0
+        Dim R3_contribution = 0
+        Dim R4_contribution = 0
 
         count = 0
         For i As Integer = 0 To dayPanelArray.Length - 1
@@ -128,16 +147,24 @@ Public Class Form1
                             Dim person = chore_item.AssignedPerson
                             If person = "Roomate 1" Then
                                 dayPanelArray(i).Roomate1PictureBox.Show()
+                                R1_contribution = R1_contribution + 1
                             ElseIf person = "Roomate 2" Then
                                 dayPanelArray(i).Roomate2PictureBox.Show()
+                                R2_contribution = R2_contribution + 1
                             ElseIf person = "Roomate 3" Then
+                                R3_contribution = R3_contribution + 1
                                 dayPanelArray(i).Roomate3PictureBox.Show()
                             ElseIf person = "Roomate 4" Then
+                                R4_contribution = R4_contribution + 1
                                 dayPanelArray(i).Roomate4PictureBox.Show()
                             End If
                         Next
                     End If
                 End If
+                Roomie1PointsLabel.Text = R1_contribution
+                Roomie2PointsLabel.Text = R2_contribution
+                Roomie3PointsLabel.Text = R3_contribution
+                Roomie4PointsLabel.Text = R4_contribution
                 dayPanelArray(i).Show()
 
                 'Check if extra panels were used
@@ -381,5 +408,6 @@ Public Class Form1
     Private Sub DayView_RequestVolunteerButtonClick(sender As Object, e As EventArgs) Handles dayViewPage.RequestVolunteerButtonClick
         Debug.Print("Request volunteer button clicked")
     End Sub
+
 
 End Class
