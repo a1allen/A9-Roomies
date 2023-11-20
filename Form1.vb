@@ -3,6 +3,7 @@ Imports Microsoft.VisualBasic.Devices
 Imports System.Xml
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement.Header
 Imports System.Reflection.Metadata
+Imports System.Globalization
 
 Public Class Form1
 
@@ -15,19 +16,12 @@ Public Class Form1
     Dim startDayOfWeek As Integer
     Dim count As Integer
     Dim choreControl As AddChoreControl
-    Dim dayViewPage As DayView
+    Dim editChoreControl As EditChoreControl
+    'Dim dayViewPage As DayView
     Public ChoreList As New List(Of Chore)()
     Public dayPanelAssignments As New Dictionary(Of DateTime, List(Of Chore))
-    Dim choreDayItemControl As New Chore_item_inDay()
+    Private WithEvents dayViewPage As DayView
 
-    Public Sub New()
-
-        ' This call is required by the designer.
-        InitializeComponent()
-
-        ' Add any initialization after the InitializeComponent() call.
-        AddHandler choreDayItemControl.EditChoreButtonClick, AddressOf ChoreDayItemControl_EditChoreButtonClick
-    End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         For i As Integer = 0 To dayPanelArray.Length - 1
@@ -331,9 +325,61 @@ Public Class Form1
 
     End Sub
 
-    Private Sub ChoreDayItemControl_EditChoreButtonClick(sender As Object, e As EventArgs)
-        Debug.Print("Clicked on edit ")
+    Private Sub DayView_EditChoreButtonClick(sender As Object, e As EventArgs) Handles dayViewPage.EditChoreButtonClickInDayView
+        'Hide the dayView control
+        dayViewPage.Hide()
 
+        'Create instance
+        editChoreControl = New EditChoreControl()
+        CalendarTabPage.Controls.Add(editChoreControl)
+
+        'Fill in the fields with the information from the chore that was clicked
+        Dim thisChoreName As String = dayViewPage.ChoreItem.TypeOfChore
+        Dim thisAssignedPerson As String = dayViewPage.ChoreItem.AssignedPerson
+        Dim thisDate As DateTime = dayViewPage.FullDate.Text
+        'Fill in fields
+        editChoreControl.EditChoreTextBox.Text = thisChoreName
+        If thisAssignedPerson = "Roomate 1" Then
+            editChoreControl.EditRoomateComboBox.SelectedIndex = 0
+        ElseIf thisAssignedPerson = "Roomate 2" Then
+            editChoreControl.EditRoomateComboBox.SelectedIndex = 1
+        ElseIf thisAssignedPerson = "Roomate 3" Then
+            editChoreControl.EditRoomateComboBox.SelectedIndex = 2
+        ElseIf thisAssignedPerson = "Roomate 4" Then
+            editChoreControl.EditRoomateComboBox.SelectedIndex = 3
+        End If
+        editChoreControl.EditChoreDateTimePicker.Value = DateTime.ParseExact(thisDate, "yyyy-MM-dd", CultureInfo.InvariantCulture)
+
+
+        'AddHandler editChoreControl.SubmitChoreEditsButtonClick, AddressOf SubmitChoreEditsButton_Click
+        AddHandler editChoreControl.DeleteChoreButtonClick, AddressOf DeleteChoreButton_Click
+        AddHandler editChoreControl.CancelEditChoreButtonClick, AddressOf CancelEditChoreButton_Click
+
+    End Sub
+
+    Private Sub DeleteChoreButton_Click(sender As Object, e As EventArgs)
+        'Get the attributes needed to search through the list
+        Dim thisChoreName As String = dayViewPage.ChoreItem.TypeOfChore
+        Dim thisAssignedPerson As String = dayViewPage.ChoreItem.AssignedPerson
+        Dim thisDate As DateTime = dayViewPage.FullDate.Text
+
+
+
+    End Sub
+
+    Private Sub CancelEditChoreButton_Click(sender As Object, e As EventArgs)
+        'Remove instance
+        CalendarTabPage.Controls.Remove(editChoreControl)
+
+        'Show the dayView control
+        dayViewPage.Show()
+    End Sub
+
+    Private Sub DayView_ExtendChoreButtonClick(sender As Object, e As EventArgs) Handles dayViewPage.ExtendChoreButtonClickInDayView
+        Debug.Print("Extend button clicked")
+    End Sub
+    Private Sub DayView_RequestVolunteerButtonClick(sender As Object, e As EventArgs) Handles dayViewPage.RequestVolunteerButtonClick
+        Debug.Print("Request volunteer button clicked")
     End Sub
 
 End Class

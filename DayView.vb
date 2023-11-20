@@ -1,6 +1,13 @@
-﻿Public Class DayView
+﻿Imports System.Security.Cryptography.X509Certificates
+
+Public Class DayView
     Public Event backToCalButtonClick As EventHandler
-    Dim choreDayItemControl As Chore_item_inDay
+    Public Event EditChoreButtonClickInDayView As EventHandler
+    Public Event ExtendChoreButtonClickInDayView As EventHandler
+    Public Event RequestVolunteerButtonClick As EventHandler
+    Dim choreName As String
+    Dim assignedPerson As String
+    Dim selectedChoreItem As Chore_item_inDay
 
 
     Private Sub DayView_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -22,7 +29,27 @@
                 new_item.Location = New Point(41, (108 + (mycount * 118))) ' Set the location (x, y)
             End If
             mycount = mycount + 1
+
+            'Add button click events
+            AddHandler new_item.EditChoreButtonClick, AddressOf ChoreItem_EditChoreButtonClick
+            AddHandler new_item.ExtendChoreButtonClick, AddressOf ChoreItem_ExtendChoreButtonClick
+            AddHandler new_item.RequestVolunteerButtonClick, AddressOf ChoreItem_RequestVolunteereButtonClick
+
         Next
+    End Sub
+
+
+
+    Private Sub ChoreItem_EditChoreButtonClick(sender As Object, e As EventArgs)
+        selectedChoreItem = DirectCast(sender, Chore_item_inDay)
+
+        RaiseEvent EditChoreButtonClickInDayView(sender, e)
+    End Sub
+    Private Sub ChoreItem_ExtendChoreButtonClick(sender As Object, e As EventArgs)
+        RaiseEvent ExtendChoreButtonClickInDayView(sender, e)
+    End Sub
+    Private Sub ChoreItem_RequestVolunteereButtonClick(sender As Object, e As EventArgs)
+        RaiseEvent RequestVolunteerButtonClick(sender, e)
     End Sub
 
     Private myDate As Date
@@ -39,7 +66,14 @@
         End Set
     End Property
 
+    Public ReadOnly Property ChoreItem As Chore_item_inDay
+        Get
+            Return selectedChoreItem
+        End Get
+    End Property
+
     Private Sub BackToCalButton_Click(sender As Object, e As EventArgs) Handles BackButton.Click
         RaiseEvent backToCalButtonClick(Me, EventArgs.Empty)
     End Sub
+
 End Class
