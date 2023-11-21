@@ -436,12 +436,12 @@ Partial Class Form1
         CalendarTableLayoutPanel.Location = New Point(1, 137)
         CalendarTableLayoutPanel.Name = "CalendarTableLayoutPanel"
         CalendarTableLayoutPanel.RowCount = 5
-        CalendarTableLayoutPanel.RowStyles.Add(New RowStyle(SizeType.Percent, 20.0F))
-        CalendarTableLayoutPanel.RowStyles.Add(New RowStyle(SizeType.Percent, 20.0F))
-        CalendarTableLayoutPanel.RowStyles.Add(New RowStyle(SizeType.Percent, 20.0F))
-        CalendarTableLayoutPanel.RowStyles.Add(New RowStyle(SizeType.Percent, 20.0F))
-        CalendarTableLayoutPanel.RowStyles.Add(New RowStyle(SizeType.Percent, 20.0F))
-        CalendarTableLayoutPanel.RowStyles.Add(New RowStyle(SizeType.Absolute, 20.0F))
+        CalendarTableLayoutPanel.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
+        CalendarTableLayoutPanel.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
+        CalendarTableLayoutPanel.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
+        CalendarTableLayoutPanel.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
+        CalendarTableLayoutPanel.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
+        CalendarTableLayoutPanel.RowStyles.Add(New RowStyle(SizeType.Absolute, 20F))
         CalendarTableLayoutPanel.Size = New Size(424, 379)
         CalendarTableLayoutPanel.TabIndex = 65
         ' 
@@ -945,11 +945,12 @@ Partial Class Form1
         ' RoomiesTitleLabel
         ' 
         RoomiesTitleLabel.AutoSize = True
-        RoomiesTitleLabel.Location = New Point(91, 631)
+        RoomiesTitleLabel.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point)
+        RoomiesTitleLabel.Location = New Point(65, 631)
         RoomiesTitleLabel.Name = "RoomiesTitleLabel"
-        RoomiesTitleLabel.Size = New Size(246, 20)
+        RoomiesTitleLabel.Size = New Size(304, 23)
         RoomiesTitleLabel.TabIndex = 58
-        RoomiesTitleLabel.Text = "Roomates Contributions This Month"
+        RoomiesTitleLabel.Text = "Roomates Contributions This Month:"
         ' 
         ' PictureBox4
         ' 
@@ -1091,7 +1092,7 @@ Partial Class Form1
         ' AddToCalendarButton
         ' 
         AddToCalendarButton.BackColor = SystemColors.Control
-        AddToCalendarButton.Font = New Font("Segoe UI", 12.0F, FontStyle.Regular, GraphicsUnit.Point)
+        AddToCalendarButton.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
         AddToCalendarButton.ForeColor = Color.Black
         AddToCalendarButton.Location = New Point(329, 8)
         AddToCalendarButton.Name = "AddToCalendarButton"
@@ -1146,9 +1147,9 @@ Partial Class Form1
         Roomate4AmountLabel.ForeColor = Color.DarkViolet
         Roomate4AmountLabel.Location = New Point(153, 106)
         Roomate4AmountLabel.Name = "Roomate4AmountLabel"
-        Roomate4AmountLabel.Size = New Size(44, 20)
+        Roomate4AmountLabel.Size = New Size(52, 20)
         Roomate4AmountLabel.TabIndex = 37
-        Roomate4AmountLabel.Text = "$0.00"
+        Roomate4AmountLabel.Text = "$30.00"
         ' 
         ' Roomate3AmountLabel
         ' 
@@ -1156,9 +1157,9 @@ Partial Class Form1
         Roomate3AmountLabel.ForeColor = Color.DodgerBlue
         Roomate3AmountLabel.Location = New Point(153, 72)
         Roomate3AmountLabel.Name = "Roomate3AmountLabel"
-        Roomate3AmountLabel.Size = New Size(44, 20)
+        Roomate3AmountLabel.Size = New Size(52, 20)
         Roomate3AmountLabel.TabIndex = 36
-        Roomate3AmountLabel.Text = "$0.00"
+        Roomate3AmountLabel.Text = "$30.00"
         ' 
         ' Roomate2AmountLabel
         ' 
@@ -1166,9 +1167,9 @@ Partial Class Form1
         Roomate2AmountLabel.ForeColor = Color.LimeGreen
         Roomate2AmountLabel.Location = New Point(153, 38)
         Roomate2AmountLabel.Name = "Roomate2AmountLabel"
-        Roomate2AmountLabel.Size = New Size(44, 20)
+        Roomate2AmountLabel.Size = New Size(58, 20)
         Roomate2AmountLabel.TabIndex = 35
-        Roomate2AmountLabel.Text = "$0.00"
+        Roomate2AmountLabel.Text = "$-60.00"
         ' 
         ' Roomate1AmountLabel
         ' 
@@ -1223,7 +1224,7 @@ Partial Class Form1
         ' ViewBalanceSheetButton
         ' 
         ViewBalanceSheetButton.BackColor = Color.DarkSeaGreen
-        ViewBalanceSheetButton.Font = New Font("Segoe UI", 9.0F, FontStyle.Regular, GraphicsUnit.Point)
+        ViewBalanceSheetButton.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
         ViewBalanceSheetButton.Location = New Point(92, 620)
         ViewBalanceSheetButton.Name = "ViewBalanceSheetButton"
         ViewBalanceSheetButton.Size = New Size(244, 50)
@@ -1234,7 +1235,7 @@ Partial Class Form1
         ' RecordExpenseButton
         ' 
         RecordExpenseButton.BackColor = Color.DarkSeaGreen
-        RecordExpenseButton.Font = New Font("Segoe UI", 9.0F, FontStyle.Regular, GraphicsUnit.Point)
+        RecordExpenseButton.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
         RecordExpenseButton.Location = New Point(92, 564)
         RecordExpenseButton.Name = "RecordExpenseButton"
         RecordExpenseButton.Size = New Size(244, 50)

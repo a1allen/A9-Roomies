@@ -31,14 +31,17 @@ Public Class Form1
     Dim roommateProfilesControl As ManagementRoommateProfilesControl
     Public Expenses As New Dictionary(Of String, Double) From {
         {"Roommate 1", 0.0},
-        {"Roommate 2", 0.0},
-        {"Roommate 3", 0.0},
-        {"Roommate 4", 0.0}
+        {"Roommate 2", -60.0},
+        {"Roommate 3", 30.0},
+        {"Roommate 4", 30.0}
     }
     Dim expenseControl As RecordExpenseControl
     Dim budgetHistoryControl As Budget_HistoryControl
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        budgetHistoryControl = New Budget_HistoryControl()
+        budgetHistoryControl.Size = New Size(434, 707)
+        BudgetTabPage.Controls.Add(budgetHistoryControl)
+        budgetHistoryControl.Hide()
         For i As Integer = 0 To dayPanelArray.Length - 1
             controlName = "DayPanelControl" & (i.ToString() + 1)
             dayPanelArray(i) = Me.Controls.Find(controlName, True).FirstOrDefault()
@@ -84,7 +87,8 @@ Public Class Form1
 
         'Housemate pruple cleans the kitchen
         dayPanelAssignments.Add("2023-11-29", New List(Of Chore)())
-        Dim currentChore5 = New Chore("Clean Kitchen", "Roomate 4", 1)
+        Dim currentChore5 = New Chore("Clean Kitchen", "Roomate 2", 1)
+
 
         dayPanelAssignments("2023-11-29").Add(currentChore5)
         '######################################
@@ -645,6 +649,14 @@ Public Class Form1
             Next
         End If
 
+        'Update the daypanel view for all 4 dots
+        For Each panel As DayPanelControl In dayPanelArray
+            panel.Roomate1PictureBox.Hide()
+            panel.Roomate2PictureBox.Hide()
+            panel.Roomate3PictureBox.Hide()
+            panel.Roomate4PictureBox.Hide()
+        Next
+
         'Update the dayview page
         dayViewPage.DisplayChoresForDate(thisDate)
 
@@ -802,7 +814,18 @@ Public Class Form1
     Private Sub AddExpenseButton_Click(sender As Object, e As EventArgs)
         Dim amount As Double = Double.Parse(expenseControl.ExpenseAmountTextBox.Text)
         Dim payer_name As String = expenseControl.whoPaidCombo.SelectedIndex
+        Dim label_name_record As String = expenseControl.label_of_record.Text
         'Dim otherToPay As Integer()
+        budgetHistoryControl.BudgetItem2.ExpenseName = "bought New vacuum"
+        budgetHistoryControl.BudgetItem2.DateofItem = "Nov 12"
+        budgetHistoryControl.BudgetItem2.NameOfRoomate = 2
+        budgetHistoryControl.BudgetItem2.Paid = 90
+
+        budgetHistoryControl.BudgetItem1.ExpenseName = label_name_record
+        budgetHistoryControl.BudgetItem1.DateofItem = "Nov 21"
+        budgetHistoryControl.BudgetItem1.NameOfRoomate = 3
+        budgetHistoryControl.BudgetItem1.Paid = amount
+
         If payer_name = 0 Then
             If expenseControl.R_check.Checked Then
                 Dim amount_for_each = amount / 4
@@ -1041,7 +1064,7 @@ Public Class Form1
     Private Sub CancelExpenseButton_Click(sender As Object, e As EventArgs)
         'Remove control
         BudgetTabPage.Controls.Remove(expenseControl)
-        BudgetTabPage.Controls.Remove(budgetHistoryControl)
+        budgetHistoryControl.Hide()
 
         'Show budget page controls
         BudgetTitle.Show()
@@ -1052,8 +1075,7 @@ Public Class Form1
     End Sub
 
     Private Sub ViewBalanceSheetButton_Click(sender As Object, e As EventArgs) Handles ViewBalanceSheetButton.Click
-        budgetHistoryControl = New Budget_HistoryControl()
-        BudgetTabPage.Controls.Add(budgetHistoryControl)
+
         budgetHistoryControl.Show()
         AddHandler budgetHistoryControl.CancelExpenseButtonClick, AddressOf CancelExpenseButton_Click
 

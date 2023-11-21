@@ -99,7 +99,7 @@ Partial Class Budget_HistoryControl
         BudgetItem26.Location = New Point(7, 1630)
         BudgetItem26.Margin = New Padding(3, 4, 3, 4)
         BudgetItem26.Name = "BudgetItem26"
-        BudgetItem26.NameOfRoomate = 4
+        BudgetItem26.NameOfRoomate = 2
         BudgetItem26.Paid = 34.27R
         BudgetItem26.Size = New Size(400, 50)
         BudgetItem26.TabIndex = 81
@@ -161,7 +161,7 @@ Partial Class Budget_HistoryControl
         BudgetItem22.Location = New Point(7, 1395)
         BudgetItem22.Margin = New Padding(3, 4, 3, 4)
         BudgetItem22.Name = "BudgetItem22"
-        BudgetItem22.NameOfRoomate = 3
+        BudgetItem22.NameOfRoomate = 1
         BudgetItem22.Paid = 203.8R
         BudgetItem22.Size = New Size(400, 50)
         BudgetItem22.TabIndex = 76
@@ -184,7 +184,7 @@ Partial Class Budget_HistoryControl
         BudgetItem21.Location = New Point(7, 1322)
         BudgetItem21.Margin = New Padding(3, 4, 3, 4)
         BudgetItem21.Name = "BudgetItem21"
-        BudgetItem21.NameOfRoomate = 4
+        BudgetItem21.NameOfRoomate = 2
         BudgetItem21.Paid = 58.37R
         BudgetItem21.Size = New Size(400, 50)
         BudgetItem21.TabIndex = 74
@@ -210,7 +210,7 @@ Partial Class Budget_HistoryControl
         BudgetItem19.Location = New Point(7, 1214)
         BudgetItem19.Margin = New Padding(3, 4, 3, 4)
         BudgetItem19.Name = "BudgetItem19"
-        BudgetItem19.NameOfRoomate = 4
+        BudgetItem19.NameOfRoomate = 1
         BudgetItem19.Paid = 100R
         BudgetItem19.Size = New Size(400, 50)
         BudgetItem19.TabIndex = 72
@@ -292,7 +292,7 @@ Partial Class Budget_HistoryControl
         BudgetItem15.Location = New Point(7, 941)
         BudgetItem15.Margin = New Padding(3, 4, 3, 4)
         BudgetItem15.Name = "BudgetItem15"
-        BudgetItem15.NameOfRoomate = 4
+        BudgetItem15.NameOfRoomate = 2
         BudgetItem15.Paid = 78.23R
         BudgetItem15.Size = New Size(400, 50)
         BudgetItem15.TabIndex = 65
@@ -328,7 +328,7 @@ Partial Class Budget_HistoryControl
         BudgetItem13.Location = New Point(7, 814)
         BudgetItem13.Margin = New Padding(3, 4, 3, 4)
         BudgetItem13.Name = "BudgetItem13"
-        BudgetItem13.NameOfRoomate = 3
+        BudgetItem13.NameOfRoomate = 1
         BudgetItem13.Paid = 112.9R
         BudgetItem13.Size = New Size(400, 50)
         BudgetItem13.TabIndex = 62
@@ -364,7 +364,7 @@ Partial Class Budget_HistoryControl
         BudgetItem11.Location = New Point(7, 687)
         BudgetItem11.Margin = New Padding(3, 4, 3, 4)
         BudgetItem11.Name = "BudgetItem11"
-        BudgetItem11.NameOfRoomate = 4
+        BudgetItem11.NameOfRoomate = 2
         BudgetItem11.Paid = 78.77R
         BudgetItem11.Size = New Size(400, 50)
         BudgetItem11.TabIndex = 59
@@ -400,7 +400,7 @@ Partial Class Budget_HistoryControl
         BudgetItem9.Location = New Point(7, 560)
         BudgetItem9.Margin = New Padding(3, 4, 3, 4)
         BudgetItem9.Name = "BudgetItem9"
-        BudgetItem9.NameOfRoomate = 3
+        BudgetItem9.NameOfRoomate = 1
         BudgetItem9.Paid = 12.12R
         BudgetItem9.Size = New Size(400, 50)
         BudgetItem9.TabIndex = 56
@@ -413,7 +413,7 @@ Partial Class Budget_HistoryControl
         BudgetItem8.Location = New Point(7, 506)
         BudgetItem8.Margin = New Padding(3, 4, 3, 4)
         BudgetItem8.Name = "BudgetItem8"
-        BudgetItem8.NameOfRoomate = 4
+        BudgetItem8.NameOfRoomate = 2
         BudgetItem8.Paid = 100R
         BudgetItem8.Size = New Size(400, 50)
         BudgetItem8.TabIndex = 55
@@ -462,7 +462,7 @@ Partial Class Budget_HistoryControl
         BudgetItem5.Location = New Point(7, 325)
         BudgetItem5.Margin = New Padding(3, 4, 3, 4)
         BudgetItem5.Name = "BudgetItem5"
-        BudgetItem5.NameOfRoomate = 0
+        BudgetItem5.NameOfRoomate = 2
         BudgetItem5.Paid = 150R
         BudgetItem5.Size = New Size(400, 50)
         BudgetItem5.TabIndex = 51
@@ -511,7 +511,7 @@ Partial Class Budget_HistoryControl
         BudgetItem2.Location = New Point(7, 144)
         BudgetItem2.Margin = New Padding(3, 4, 3, 4)
         BudgetItem2.Name = "BudgetItem2"
-        BudgetItem2.NameOfRoomate = 0
+        BudgetItem2.NameOfRoomate = 1
         BudgetItem2.Paid = 39.42R
         BudgetItem2.Size = New Size(400, 50)
         BudgetItem2.TabIndex = 47
@@ -520,12 +520,12 @@ Partial Class Budget_HistoryControl
         ' 
         BudgetItem1.BackColor = SystemColors.Window
         BudgetItem1.DateofItem = "Nov 12"
-        BudgetItem1.ExpenseName = "New Cooking Set"
+        BudgetItem1.ExpenseName = "bought new vacuum"
         BudgetItem1.Location = New Point(7, 90)
         BudgetItem1.Margin = New Padding(3, 4, 3, 4)
         BudgetItem1.Name = "BudgetItem1"
-        BudgetItem1.NameOfRoomate = 3
-        BudgetItem1.Paid = 65.47R
+        BudgetItem1.NameOfRoomate = 2
+        BudgetItem1.Paid = 90R
         BudgetItem1.Size = New Size(400, 50)
         BudgetItem1.TabIndex = 46
         ' 
@@ -606,7 +606,7 @@ Partial Class Budget_HistoryControl
         Controls.Add(Budget_NovTabLabel)
         Controls.Add(Budget_TitleLabel)
         Name = "Budget_HistoryControl"
-        Size = New Size(413, 749)
+        Size = New Size(392, 707)
         ResumeLayout(False)
         PerformLayout()
     End Sub
