@@ -191,9 +191,9 @@ Partial Class RecordExpenseControl
         Label2.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         Label2.Location = New Point(69, 129)
         Label2.Name = "Label2"
-        Label2.Size = New Size(50, 20)
+        Label2.Size = New Size(116, 20)
         Label2.TabIndex = 86
-        Label2.Text = "Label:"
+        Label2.Text = "Expense Name:"
         ' 
         ' label_of_record
         ' 
