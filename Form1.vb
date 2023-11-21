@@ -29,6 +29,13 @@ Public Class Form1
     Dim aboutControl As ManagementAboutUsControl
     Dim faqControl As ManagementFAQControl
     Dim roommateProfilesControl As ManagementRoommateProfilesControl
+    Public Expenses As New Dictionary(Of String, Double) From {
+        {"Roommate 1", 0.0},
+        {"Roommate 2", 0.0},
+        {"Roommate 3", 0.0},
+        {"Roommate 4", 0.0}
+    }
+    Dim expenseControl As RecordExpenseControl
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -771,4 +778,89 @@ Public Class Form1
         AboutUsButton.Show()
     End Sub
 
+    Private Sub RecordExpenseButton_Click(sender As Object, e As EventArgs) Handles RecordExpenseButton.Click
+        'Remove budget page controls
+        BudgetTitle.Hide()
+        BudgetPictureBox.Hide()
+        BudgetPanel.Hide()
+        RecordExpenseButton.Hide()
+        ViewBalanceSheetButton.Hide()
+
+        'Create instance
+        expenseControl = New RecordExpenseControl()
+        BudgetTabPage.Controls.Add(expenseControl)
+
+        AddHandler expenseControl.AddExpenseButtonClick, AddressOf AddExpenseButton_Click
+        AddHandler expenseControl.CancelExpenseButtonClick, AddressOf CancelExpenseButton_Click
+    End Sub
+
+    Private Sub AddExpenseButton_Click(sender As Object, e As EventArgs)
+        Dim amount As Double = Double.Parse(expenseControl.ExpenseAmountTextBox.Text)
+        Dim expenseType As String = expenseControl.ExpenseDecisionComboBox.Text
+
+        'Get a list of roomates to apply the expense type to
+        Dim selectedRoommates As New List(Of String)
+        For Each item As Object In expenseControl.ExpenseCheckBox.CheckedItems
+            selectedRoommates.Add(item.ToString())
+        Next
+
+        If expenseType = "Add" Then
+            For Each roomate In selectedRoommates
+                If roomate = "Roommate1" Then
+                    Expenses("Roommate 1") += amount
+                ElseIf roomate = "Roommate2" Then
+                    Expenses("Roommate 2") += amount
+                ElseIf roomate = "Roommate3" Then
+                    Expenses("Roommate 3") += amount
+                ElseIf roomate = "Roommate4" Then
+                    Expenses("Roommate 4") += amount
+                End If
+            Next
+        Else
+            For Each roomate In selectedRoommates
+                If roomate = "Roommate1" Then
+                    Expenses("Roommate 1") -= amount
+                ElseIf roomate = "Roommate2" Then
+                    Expenses("Roommate 2") -= amount
+                ElseIf roomate = "Roommate3" Then
+                    Expenses("Roommate 3") -= amount
+                ElseIf roomate = "Roommate4" Then
+                    Expenses("Roommate 4") -= amount
+                End If
+            Next
+        End If
+
+        'Update balances on main screen
+        Roomate1AmountLabel.Text = $"${Expenses("Roommate 1"):F2}"
+        Roomate2AmountLabel.Text = $"${Expenses("Roommate 2"):F2}"
+        Roomate3AmountLabel.Text = $"${Expenses("Roommate 3"):F2}"
+        Roomate4AmountLabel.Text = $"${Expenses("Roommate 4"):F2}"
+
+        'Remove control
+        BudgetTabPage.Controls.Remove(expenseControl)
+
+        'Show budget page controls
+        BudgetTitle.Show()
+        BudgetPictureBox.Show()
+        BudgetPanel.Show()
+        RecordExpenseButton.Show()
+        ViewBalanceSheetButton.Show()
+
+    End Sub
+
+    Private Sub CancelExpenseButton_Click(sender As Object, e As EventArgs)
+        'Remove control
+        BudgetTabPage.Controls.Remove(expenseControl)
+
+        'Show budget page controls
+        BudgetTitle.Show()
+        BudgetPictureBox.Show()
+        BudgetPanel.Show()
+        RecordExpenseButton.Show()
+        ViewBalanceSheetButton.Show()
+    End Sub
+
+    Private Sub ViewBalanceSheetButton_Click(sender As Object, e As EventArgs) Handles ViewBalanceSheetButton.Click
+
+    End Sub
 End Class
