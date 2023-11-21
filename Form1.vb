@@ -36,7 +36,7 @@ Public Class Form1
         {"Roommate 4", 0.0}
     }
     Dim expenseControl As RecordExpenseControl
-
+    Dim budgetHistoryControl As Budget_HistoryControl
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         For i As Integer = 0 To dayPanelArray.Length - 1
@@ -851,6 +851,7 @@ Public Class Form1
     Private Sub CancelExpenseButton_Click(sender As Object, e As EventArgs)
         'Remove control
         BudgetTabPage.Controls.Remove(expenseControl)
+        BudgetTabPage.Controls.Remove(budgetHistoryControl)
 
         'Show budget page controls
         BudgetTitle.Show()
@@ -861,6 +862,16 @@ Public Class Form1
     End Sub
 
     Private Sub ViewBalanceSheetButton_Click(sender As Object, e As EventArgs) Handles ViewBalanceSheetButton.Click
+        budgetHistoryControl = New Budget_HistoryControl()
+        BudgetTabPage.Controls.Add(budgetHistoryControl)
+        budgetHistoryControl.Show()
+        AddHandler budgetHistoryControl.CancelExpenseButtonClick, AddressOf CancelExpenseButton_Click
 
+        BudgetTitle.Hide()
+        BudgetPictureBox.Hide()
+        BudgetPanel.Hide()
+        RecordExpenseButton.Hide()
+        ViewBalanceSheetButton.Hide()
     End Sub
+
 End Class
