@@ -28,10 +28,15 @@ Partial Class RecordExpenseControl
         AddExpenseButton = New Button()
         ExpenseAmountTextBox = New TextBox()
         ExpenseAmountTitleLabel = New Label()
-        ExpenseCheckBox = New CheckedListBox()
         AssignExpenseToTitleLabel = New Label()
+        whoPaidCombo = New ComboBox()
+        whoPaidLabel = New Label()
+        R_check = New CheckBox()
+        R1_check = New CheckBox()
+        R4_check = New CheckBox()
+        R3_check = New CheckBox()
+        R2_check = New CheckBox()
         Label1 = New Label()
-        ExpenseDecisionComboBox = New ComboBox()
         SuspendLayout()
         ' 
         ' RecordExpenseTitleLabel
@@ -74,7 +79,7 @@ Partial Class RecordExpenseControl
         ' 
         ' ExpenseAmountTextBox
         ' 
-        ExpenseAmountTextBox.Location = New Point(57, 166)
+        ExpenseAmountTextBox.Location = New Point(57, 151)
         ExpenseAmountTextBox.Name = "ExpenseAmountTextBox"
         ExpenseAmountTextBox.Size = New Size(299, 27)
         ExpenseAmountTextBox.TabIndex = 71
@@ -83,66 +88,121 @@ Partial Class RecordExpenseControl
         ' 
         ExpenseAmountTitleLabel.AutoSize = True
         ExpenseAmountTitleLabel.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        ExpenseAmountTitleLabel.Location = New Point(57, 143)
+        ExpenseAmountTitleLabel.Location = New Point(57, 128)
         ExpenseAmountTitleLabel.Name = "ExpenseAmountTitleLabel"
-        ExpenseAmountTitleLabel.Size = New Size(132, 20)
+        ExpenseAmountTitleLabel.Size = New Size(71, 20)
         ExpenseAmountTitleLabel.TabIndex = 72
-        ExpenseAmountTitleLabel.Text = "Expense Amount:"
-        ' 
-        ' ExpenseCheckBox
-        ' 
-        ExpenseCheckBox.FormattingEnabled = True
-        ExpenseCheckBox.Items.AddRange(New Object() {"Roommate1", "Roommate2", "Roommate3", "Roommate4"})
-        ExpenseCheckBox.Location = New Point(57, 348)
-        ExpenseCheckBox.Name = "ExpenseCheckBox"
-        ExpenseCheckBox.Size = New Size(299, 92)
-        ExpenseCheckBox.TabIndex = 73
+        ExpenseAmountTitleLabel.Text = "Amount:"
         ' 
         ' AssignExpenseToTitleLabel
         ' 
         AssignExpenseToTitleLabel.AutoSize = True
         AssignExpenseToTitleLabel.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        AssignExpenseToTitleLabel.Location = New Point(57, 325)
+        AssignExpenseToTitleLabel.Location = New Point(57, 267)
         AssignExpenseToTitleLabel.Name = "AssignExpenseToTitleLabel"
-        AssignExpenseToTitleLabel.Size = New Size(109, 20)
+        AssignExpenseToTitleLabel.Size = New Size(152, 20)
         AssignExpenseToTitleLabel.TabIndex = 74
-        AssignExpenseToTitleLabel.Text = "Distrubute To:"
+        AssignExpenseToTitleLabel.Text = "Distrubute between:"
+        ' 
+        ' whoPaidCombo
+        ' 
+        whoPaidCombo.DropDownStyle = ComboBoxStyle.DropDownList
+        whoPaidCombo.FormattingEnabled = True
+        whoPaidCombo.Items.AddRange(New Object() {"No one yet", "Roommate1", "Roommate2", "Roommate3", "Roommate4"})
+        whoPaidCombo.Location = New Point(57, 219)
+        whoPaidCombo.Name = "whoPaidCombo"
+        whoPaidCombo.Size = New Size(299, 28)
+        whoPaidCombo.TabIndex = 78
+        ' 
+        ' whoPaidLabel
+        ' 
+        whoPaidLabel.AutoSize = True
+        whoPaidLabel.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        whoPaidLabel.Location = New Point(57, 196)
+        whoPaidLabel.Name = "whoPaidLabel"
+        whoPaidLabel.Size = New Size(184, 20)
+        whoPaidLabel.TabIndex = 77
+        whoPaidLabel.Text = "Who made the payment?"
+        ' 
+        ' R_check
+        ' 
+        R_check.AutoSize = True
+        R_check.Location = New Point(57, 304)
+        R_check.Name = "R_check"
+        R_check.Size = New Size(91, 24)
+        R_check.TabIndex = 79
+        R_check.Text = "Everyone"
+        R_check.UseVisualStyleBackColor = True
+        ' 
+        ' R1_check
+        ' 
+        R1_check.AutoSize = True
+        R1_check.Location = New Point(57, 342)
+        R1_check.Name = "R1_check"
+        R1_check.Size = New Size(113, 24)
+        R1_check.TabIndex = 80
+        R1_check.Text = "Roommate1"
+        R1_check.UseVisualStyleBackColor = True
+        ' 
+        ' R4_check
+        ' 
+        R4_check.AutoSize = True
+        R4_check.Location = New Point(192, 374)
+        R4_check.Name = "R4_check"
+        R4_check.Size = New Size(113, 24)
+        R4_check.TabIndex = 81
+        R4_check.Text = "Roommate4"
+        R4_check.UseVisualStyleBackColor = True
+        ' 
+        ' R3_check
+        ' 
+        R3_check.AutoSize = True
+        R3_check.Location = New Point(57, 372)
+        R3_check.Name = "R3_check"
+        R3_check.Size = New Size(113, 24)
+        R3_check.TabIndex = 82
+        R3_check.Text = "Roommate3"
+        R3_check.UseVisualStyleBackColor = True
+        ' 
+        ' R2_check
+        ' 
+        R2_check.AutoSize = True
+        R2_check.Location = New Point(192, 342)
+        R2_check.Name = "R2_check"
+        R2_check.Size = New Size(113, 24)
+        R2_check.TabIndex = 83
+        R2_check.Text = "Roommate2"
+        R2_check.UseVisualStyleBackColor = True
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        Label1.Location = New Point(57, 232)
+        Label1.Location = New Point(55, 316)
         Label1.Name = "Label1"
-        Label1.Size = New Size(291, 20)
-        Label1.TabIndex = 75
-        Label1.Text = "Should expense be added or subtracted?"
-        ' 
-        ' ExpenseDecisionComboBox
-        ' 
-        ExpenseDecisionComboBox.DropDownStyle = ComboBoxStyle.DropDownList
-        ExpenseDecisionComboBox.FormattingEnabled = True
-        ExpenseDecisionComboBox.Items.AddRange(New Object() {"Add", "Subtract"})
-        ExpenseDecisionComboBox.Location = New Point(57, 255)
-        ExpenseDecisionComboBox.Name = "ExpenseDecisionComboBox"
-        ExpenseDecisionComboBox.Size = New Size(299, 28)
-        ExpenseDecisionComboBox.TabIndex = 76
+        Label1.Size = New Size(129, 20)
+        Label1.TabIndex = 84
+        Label1.Text = "____________________"
         ' 
         ' RecordExpenseControl
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
-        Controls.Add(ExpenseDecisionComboBox)
-        Controls.Add(Label1)
+        Controls.Add(R2_check)
+        Controls.Add(R3_check)
+        Controls.Add(R4_check)
+        Controls.Add(R1_check)
+        Controls.Add(R_check)
+        Controls.Add(whoPaidCombo)
+        Controls.Add(whoPaidLabel)
         Controls.Add(AssignExpenseToTitleLabel)
-        Controls.Add(ExpenseCheckBox)
         Controls.Add(ExpenseAmountTitleLabel)
         Controls.Add(ExpenseAmountTextBox)
         Controls.Add(AddExpenseButton)
         Controls.Add(BudgetExpenseBackButton)
         Controls.Add(RecordExpenseTitleLabel)
         Controls.Add(devider2)
+        Controls.Add(Label1)
         Name = "RecordExpenseControl"
         Size = New Size(434, 690)
         ResumeLayout(False)
@@ -155,8 +215,13 @@ Partial Class RecordExpenseControl
     Friend WithEvents AddExpenseButton As Button
     Friend WithEvents ExpenseAmountTextBox As TextBox
     Friend WithEvents ExpenseAmountTitleLabel As Label
-    Friend WithEvents ExpenseCheckBox As CheckedListBox
     Friend WithEvents AssignExpenseToTitleLabel As Label
+    Friend WithEvents whoPaidCombo As ComboBox
+    Friend WithEvents whoPaidLabel As Label
+    Friend WithEvents R_check As CheckBox
+    Friend WithEvents R1_check As CheckBox
+    Friend WithEvents R4_check As CheckBox
+    Friend WithEvents R3_check As CheckBox
+    Friend WithEvents R2_check As CheckBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents ExpenseDecisionComboBox As ComboBox
 End Class
