@@ -26,6 +26,7 @@ Partial Class DayView
         FullDate = New Label()
         DayDate = New Label()
         devider = New Label()
+        DayViewAddChoreButton = New Button()
         SuspendLayout()
         ' 
         ' BackButton
@@ -67,12 +68,23 @@ Partial Class DayView
         devider.TabIndex = 26
         devider.Text = "____________________________________________________"
         ' 
+        ' DayViewAddChoreButton
+        ' 
+        DayViewAddChoreButton.Font = New Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point)
+        DayViewAddChoreButton.Location = New Point(282, 21)
+        DayViewAddChoreButton.Name = "DayViewAddChoreButton"
+        DayViewAddChoreButton.Size = New Size(106, 29)
+        DayViewAddChoreButton.TabIndex = 28
+        DayViewAddChoreButton.Text = "Add Chore"
+        DayViewAddChoreButton.UseVisualStyleBackColor = True
+        ' 
         ' DayView
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         AutoScroll = True
         BackColor = Color.White
+        Controls.Add(DayViewAddChoreButton)
         Controls.Add(BackButton)
         Controls.Add(FullDate)
         Controls.Add(DayDate)
@@ -87,5 +99,5 @@ Partial Class DayView
     Friend WithEvents FullDate As Label
     Friend WithEvents DayDate As Label
     Friend WithEvents devider As Label
-
+    Friend WithEvents DayViewAddChoreButton As Button
 End Class
