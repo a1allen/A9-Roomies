@@ -1164,7 +1164,7 @@ Partial Class Form1
         ' Roomate2AmountLabel
         ' 
         Roomate2AmountLabel.AutoSize = True
-        Roomate2AmountLabel.ForeColor = Color.LimeGreen
+        Roomate2AmountLabel.ForeColor = Color.ForestGreen
         Roomate2AmountLabel.Location = New Point(153, 38)
         Roomate2AmountLabel.Name = "Roomate2AmountLabel"
         Roomate2AmountLabel.Size = New Size(58, 20)

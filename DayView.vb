@@ -5,6 +5,7 @@ Public Class DayView
     Public Event EditChoreButtonClickInDayView As EventHandler
     Public Event ExtendChoreButtonClickInDayView As EventHandler
     Public Event RequestVolunteerButtonClick As EventHandler
+    Public Event AddChoreDayViewButtonClick As EventHandler
     Dim choreName As String
     Dim assignedPerson As String
     Dim selectedChoreItem As Chore_item_inDay
@@ -246,4 +247,7 @@ Public Class DayView
         Next
     End Sub
 
+    Private Sub DayViewAddChoreButton_Click(sender As Object, e As EventArgs) Handles DayViewAddChoreButton.Click
+        RaiseEvent AddChoreDayViewButtonClick(sender, e)
+    End Sub
 End Class

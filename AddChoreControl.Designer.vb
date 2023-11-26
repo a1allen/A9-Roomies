@@ -135,7 +135,7 @@ Partial Class AddChoreControl
         ' 
         ChoreTypeComboBox.DropDownStyle = ComboBoxStyle.DropDownList
         ChoreTypeComboBox.FormattingEnabled = True
-        ChoreTypeComboBox.Items.AddRange(New Object() {"Vacuum", "Wash Dishes", "Grocery", "Laundry", "Add Custom Chore"})
+        ChoreTypeComboBox.Items.AddRange(New Object() {"----- Custom Chore -----", "Vacuum", "Wash Dishes", "Grocery", "Laundry"})
         ChoreTypeComboBox.Location = New Point(189, 159)
         ChoreTypeComboBox.Name = "ChoreTypeComboBox"
         ChoreTypeComboBox.Size = New Size(188, 28)

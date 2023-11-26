@@ -12,10 +12,9 @@ Public Class AddChoreControl
         DatePanel.Hide()
 
         AddChoreButton.Enabled = False
-        AddChoreDateTimePicker.MinDate = DateTime.Now.Date
     End Sub
     Private Sub ChoreTypeComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ChoreTypeComboBox.SelectedIndexChanged
-        If ChoreTypeComboBox.Text = "Add Custom Chore" Then
+        If ChoreTypeComboBox.SelectedIndex = 0 Then
             AssignedToPanel.Hide()
             DatePanel.Hide()
             CustomChorePanel.Show()
