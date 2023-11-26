@@ -117,34 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="FAQRichTextBox.Text" xml:space="preserve">
-    <value>1. What is Roomies?
-Roomies is a collaborative app designed to streamline communication and organization among housemates. It helps in managing household chores, tracking expenses, and fostering a fair and harmonious living environment.
-
-2. How does Roomies work?
-Roomies allows housemates to create a shared space where they can define household chores, allocate responsibilities, manage budgets, and communicate effectively. The app's intuitive interface makes it easy to track activities and ensure everyone is on the same page.
-
-3. Is Roomies free to use?
-Yes, Roomies is a free app available for download on both iOS and Android platforms. Simply visit the app store on your smartphone, search for "Roomies," and start enjoying the benefits of collaborative living.
-
-4. How do I get started with Roomies?
-To get started, one housemate can create a household and invite others to join. Once everyone is connected, you can begin defining chores, managing budgets, and enjoying a more organized living space.
-
-5. Can I customize the chores and budget items in Roomies?
-Absolutely! Roomies allows you to customize chores and budget items to suit the specific needs of your household. Add, modify, or remove items based on your preferences.
-
-6. What if someone in my household doesn't want to use Roomies?
-Roomies is most effective when all housemates participate, but it's not mandatory. Those who choose not to use the app can still benefit from its features through communication from others in the household.
-
-7. How does Roomies handle privacy and security?
-Roomies prioritizes the privacy and security of your data. Personal information is securely handled, and the app ensures that only relevant information is shared among housemates. You can trust Roomies to keep your shared data confidential.
-
-8. Can I use Roomies for both chores and expenses?
-Yes, Roomies is a comprehensive app that covers both household chores and expenses. You can manage chore distribution, track completion, and allocate budgets all within one app.
-
-9. How often should we use Roomies?
-The frequency of Roomies usage is flexible and depends on the preferences of your household. Some may use it daily, while others may check in sporadically. Roomies is designed to adapt to your unique living situation.
-
-Still have questions? Feel free to reach out to our support team through the in-app help feature. We're here to assist you in making the most of your Roomies experience!</value>
-  </data>
 </root>

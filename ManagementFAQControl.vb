@@ -4,4 +4,7 @@
         Form1.showManagementTab()
     End Sub
 
+    Private Sub FAQRichTextBox_TextChanged(sender As Object, e As EventArgs) Handles FAQRichTextBox.TextChanged
+
+    End Sub
 End Class

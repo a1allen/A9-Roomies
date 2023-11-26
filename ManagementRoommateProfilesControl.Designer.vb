@@ -35,7 +35,6 @@ Partial Class ManagementRoommateProfilesControl
         BackManagementProfileButton = New Button()
         Panel1 = New Panel()
         Label1 = New Label()
-        Roommate2ExclusionCheckBox = New CheckedListBox()
         Label3 = New Label()
         Label4 = New Label()
         PictureBox1 = New PictureBox()
@@ -57,6 +56,7 @@ Partial Class ManagementRoommateProfilesControl
         PictureBox3 = New PictureBox()
         Label14 = New Label()
         Roommate4PreferenceCheckBox = New CheckedListBox()
+        Roommate2ExclusionCheckBox = New CheckedListBox()
         Roommate1Panel.SuspendLayout()
         CType(Roommate1PictureBox, ComponentModel.ISupportInitialize).BeginInit()
         Panel1.SuspendLayout()
@@ -96,7 +96,7 @@ Partial Class ManagementRoommateProfilesControl
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(277, 7)
+        Label2.Location = New Point(277, 3)
         Label2.Name = "Label2"
         Label2.Size = New Size(131, 20)
         Label2.TabIndex = 25
@@ -105,10 +105,10 @@ Partial Class ManagementRoommateProfilesControl
         ' Roommate1ExclusionCheckBox
         ' 
         Roommate1ExclusionCheckBox.FormattingEnabled = True
-        Roommate1ExclusionCheckBox.Items.AddRange(New Object() {"Vacuum", "Wash Dishes", "Shovel Snow", "Grocery", "Laundry"})
-        Roommate1ExclusionCheckBox.Location = New Point(279, 31)
+        Roommate1ExclusionCheckBox.Items.AddRange(New Object() {"Vacuum", "Wash Dishes", "Grocery", "Laundry"})
+        Roommate1ExclusionCheckBox.Location = New Point(279, 25)
         Roommate1ExclusionCheckBox.Name = "Roommate1ExclusionCheckBox"
-        Roommate1ExclusionCheckBox.Size = New Size(129, 70)
+        Roommate1ExclusionCheckBox.Size = New Size(129, 92)
         Roommate1ExclusionCheckBox.TabIndex = 24
         ' 
         ' Roommate1Rating
@@ -144,7 +144,7 @@ Partial Class ManagementRoommateProfilesControl
         ' Label8
         ' 
         Label8.AutoSize = True
-        Label8.Location = New Point(117, 7)
+        Label8.Location = New Point(117, 2)
         Label8.Name = "Label8"
         Label8.Size = New Size(131, 20)
         Label8.TabIndex = 20
@@ -153,10 +153,10 @@ Partial Class ManagementRoommateProfilesControl
         ' Roommate1PreferenceCheckBox
         ' 
         Roommate1PreferenceCheckBox.FormattingEnabled = True
-        Roommate1PreferenceCheckBox.Items.AddRange(New Object() {"Vacuum", "Wash Dishes", "Shovel Snow", "Grocery", "Laundry"})
-        Roommate1PreferenceCheckBox.Location = New Point(120, 31)
+        Roommate1PreferenceCheckBox.Items.AddRange(New Object() {"Vacuum", "Wash Dishes", "Grocery", "Laundry"})
+        Roommate1PreferenceCheckBox.Location = New Point(120, 25)
         Roommate1PreferenceCheckBox.Name = "Roommate1PreferenceCheckBox"
-        Roommate1PreferenceCheckBox.Size = New Size(128, 70)
+        Roommate1PreferenceCheckBox.Size = New Size(128, 92)
         Roommate1PreferenceCheckBox.TabIndex = 19
         ' 
         ' SaveButton
@@ -199,20 +199,11 @@ Partial Class ManagementRoommateProfilesControl
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(277, 7)
+        Label1.Location = New Point(277, 3)
         Label1.Name = "Label1"
         Label1.Size = New Size(131, 20)
         Label1.TabIndex = 25
         Label1.Text = "Be Excluded From:"
-        ' 
-        ' Roommate2ExclusionCheckBox
-        ' 
-        Roommate2ExclusionCheckBox.FormattingEnabled = True
-        Roommate2ExclusionCheckBox.Items.AddRange(New Object() {"Vacuum", "Wash Dishes", "Shovel Snow", "Grocery", "Laundry"})
-        Roommate2ExclusionCheckBox.Location = New Point(279, 31)
-        Roommate2ExclusionCheckBox.Name = "Roommate2ExclusionCheckBox"
-        Roommate2ExclusionCheckBox.Size = New Size(129, 70)
-        Roommate2ExclusionCheckBox.TabIndex = 24
         ' 
         ' Label3
         ' 
@@ -247,7 +238,7 @@ Partial Class ManagementRoommateProfilesControl
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Location = New Point(117, 7)
+        Label5.Location = New Point(117, 3)
         Label5.Name = "Label5"
         Label5.Size = New Size(131, 20)
         Label5.TabIndex = 20
@@ -256,10 +247,10 @@ Partial Class ManagementRoommateProfilesControl
         ' Roommate2PreferenceCheckBox
         ' 
         Roommate2PreferenceCheckBox.FormattingEnabled = True
-        Roommate2PreferenceCheckBox.Items.AddRange(New Object() {"Vacuum", "Wash Dishes", "Shovel Snow", "Grocery", "Laundry"})
-        Roommate2PreferenceCheckBox.Location = New Point(120, 31)
+        Roommate2PreferenceCheckBox.Items.AddRange(New Object() {"Vacuum", "Wash Dishes", "Grocery", "Laundry"})
+        Roommate2PreferenceCheckBox.Location = New Point(120, 25)
         Roommate2PreferenceCheckBox.Name = "Roommate2PreferenceCheckBox"
-        Roommate2PreferenceCheckBox.Size = New Size(128, 70)
+        Roommate2PreferenceCheckBox.Size = New Size(128, 92)
         Roommate2PreferenceCheckBox.TabIndex = 19
         ' 
         ' Panel2
@@ -281,7 +272,7 @@ Partial Class ManagementRoommateProfilesControl
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Location = New Point(277, 7)
+        Label6.Location = New Point(277, 3)
         Label6.Name = "Label6"
         Label6.Size = New Size(131, 20)
         Label6.TabIndex = 25
@@ -290,10 +281,10 @@ Partial Class ManagementRoommateProfilesControl
         ' Roommate3ExclusionCheckBox
         ' 
         Roommate3ExclusionCheckBox.FormattingEnabled = True
-        Roommate3ExclusionCheckBox.Items.AddRange(New Object() {"Vacuum", "Wash Dishes", "Shovel Snow", "Grocery", "Laundry"})
-        Roommate3ExclusionCheckBox.Location = New Point(279, 31)
+        Roommate3ExclusionCheckBox.Items.AddRange(New Object() {"Vacuum", "Wash Dishes", "Grocery", "Laundry"})
+        Roommate3ExclusionCheckBox.Location = New Point(279, 25)
         Roommate3ExclusionCheckBox.Name = "Roommate3ExclusionCheckBox"
-        Roommate3ExclusionCheckBox.Size = New Size(129, 70)
+        Roommate3ExclusionCheckBox.Size = New Size(129, 92)
         Roommate3ExclusionCheckBox.TabIndex = 24
         ' 
         ' Label7
@@ -329,7 +320,7 @@ Partial Class ManagementRoommateProfilesControl
         ' Label10
         ' 
         Label10.AutoSize = True
-        Label10.Location = New Point(117, 7)
+        Label10.Location = New Point(117, 3)
         Label10.Name = "Label10"
         Label10.Size = New Size(131, 20)
         Label10.TabIndex = 20
@@ -338,10 +329,10 @@ Partial Class ManagementRoommateProfilesControl
         ' Roommate3PreferenceCheckBox
         ' 
         Roommate3PreferenceCheckBox.FormattingEnabled = True
-        Roommate3PreferenceCheckBox.Items.AddRange(New Object() {"Vacuum", "Wash Dishes", "Shovel Snow", "Grocery", "Laundry"})
-        Roommate3PreferenceCheckBox.Location = New Point(120, 31)
+        Roommate3PreferenceCheckBox.Items.AddRange(New Object() {"Vacuum", "Wash Dishes", "Grocery", "Laundry"})
+        Roommate3PreferenceCheckBox.Location = New Point(120, 25)
         Roommate3PreferenceCheckBox.Name = "Roommate3PreferenceCheckBox"
-        Roommate3PreferenceCheckBox.Size = New Size(128, 70)
+        Roommate3PreferenceCheckBox.Size = New Size(128, 92)
         Roommate3PreferenceCheckBox.TabIndex = 19
         ' 
         ' Panel3
@@ -363,7 +354,7 @@ Partial Class ManagementRoommateProfilesControl
         ' Label11
         ' 
         Label11.AutoSize = True
-        Label11.Location = New Point(277, 7)
+        Label11.Location = New Point(277, 3)
         Label11.Name = "Label11"
         Label11.Size = New Size(131, 20)
         Label11.TabIndex = 25
@@ -372,10 +363,10 @@ Partial Class ManagementRoommateProfilesControl
         ' Roommate4ExclusionCheckBox
         ' 
         Roommate4ExclusionCheckBox.FormattingEnabled = True
-        Roommate4ExclusionCheckBox.Items.AddRange(New Object() {"Vacuum", "Wash Dishes", "Shovel Snow", "Grocery", "Laundry"})
-        Roommate4ExclusionCheckBox.Location = New Point(279, 31)
+        Roommate4ExclusionCheckBox.Items.AddRange(New Object() {"Vacuum", "Wash Dishes", "Grocery", "Laundry"})
+        Roommate4ExclusionCheckBox.Location = New Point(279, 25)
         Roommate4ExclusionCheckBox.Name = "Roommate4ExclusionCheckBox"
-        Roommate4ExclusionCheckBox.Size = New Size(129, 70)
+        Roommate4ExclusionCheckBox.Size = New Size(129, 92)
         Roommate4ExclusionCheckBox.TabIndex = 24
         ' 
         ' Label12
@@ -411,7 +402,7 @@ Partial Class ManagementRoommateProfilesControl
         ' Label14
         ' 
         Label14.AutoSize = True
-        Label14.Location = New Point(117, 7)
+        Label14.Location = New Point(117, 3)
         Label14.Name = "Label14"
         Label14.Size = New Size(131, 20)
         Label14.TabIndex = 20
@@ -420,11 +411,20 @@ Partial Class ManagementRoommateProfilesControl
         ' Roommate4PreferenceCheckBox
         ' 
         Roommate4PreferenceCheckBox.FormattingEnabled = True
-        Roommate4PreferenceCheckBox.Items.AddRange(New Object() {"Vacuum", "Wash Dishes", "Shovel Snow", "Grocery", "Laundry"})
-        Roommate4PreferenceCheckBox.Location = New Point(120, 31)
+        Roommate4PreferenceCheckBox.Items.AddRange(New Object() {"Vacuum", "Wash Dishes", "Grocery", "Laundry"})
+        Roommate4PreferenceCheckBox.Location = New Point(120, 25)
         Roommate4PreferenceCheckBox.Name = "Roommate4PreferenceCheckBox"
-        Roommate4PreferenceCheckBox.Size = New Size(128, 70)
+        Roommate4PreferenceCheckBox.Size = New Size(128, 92)
         Roommate4PreferenceCheckBox.TabIndex = 19
+        ' 
+        ' Roommate2ExclusionCheckBox
+        ' 
+        Roommate2ExclusionCheckBox.FormattingEnabled = True
+        Roommate2ExclusionCheckBox.Items.AddRange(New Object() {"Vacuum", "Wash Dishes", "Grocery", "Laundry"})
+        Roommate2ExclusionCheckBox.Location = New Point(279, 25)
+        Roommate2ExclusionCheckBox.Name = "Roommate2ExclusionCheckBox"
+        Roommate2ExclusionCheckBox.Size = New Size(129, 92)
+        Roommate2ExclusionCheckBox.TabIndex = 24
         ' 
         ' ManagementRoommateProfilesControl
         ' 
@@ -469,7 +469,6 @@ Partial Class ManagementRoommateProfilesControl
     Friend WithEvents BackManagementProfileButton As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label1 As Label
-    Friend WithEvents Roommate2ExclusionCheckBox As CheckedListBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents PictureBox1 As PictureBox
@@ -491,4 +490,5 @@ Partial Class ManagementRoommateProfilesControl
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents Label14 As Label
     Friend WithEvents Roommate4PreferenceCheckBox As CheckedListBox
+    Friend WithEvents Roommate2ExclusionCheckBox As CheckedListBox
 End Class

@@ -31,14 +31,17 @@ Public Class Form1
     Dim roommateProfilesControl As ManagementRoommateProfilesControl
     Public Expenses As New Dictionary(Of String, Double) From {
         {"Roommate 1", 0.0},
-        {"Roommate 2", 0.0},
-        {"Roommate 3", 0.0},
-        {"Roommate 4", 0.0}
+        {"Roommate 2", -60.0},
+        {"Roommate 3", 30.0},
+        {"Roommate 4", 30.0}
     }
     Dim expenseControl As RecordExpenseControl
-
+    Dim budgetHistoryControl As Budget_HistoryControl
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        budgetHistoryControl = New Budget_HistoryControl()
+        budgetHistoryControl.Size = New Size(434, 707)
+        BudgetTabPage.Controls.Add(budgetHistoryControl)
+        budgetHistoryControl.Hide()
         For i As Integer = 0 To dayPanelArray.Length - 1
             controlName = "DayPanelControl" & (i.ToString() + 1)
             dayPanelArray(i) = Me.Controls.Find(controlName, True).FirstOrDefault()
@@ -84,9 +87,13 @@ Public Class Form1
 
         'Housemate pruple cleans the kitchen
         dayPanelAssignments.Add("2023-11-29", New List(Of Chore)())
-        Dim currentChore5 = New Chore("Clean Bathroom", "Roomate 4", 1)
-
+        Dim currentChore5 = New Chore("Clean Kitchen", "Roomate 2", 1)
         dayPanelAssignments("2023-11-29").Add(currentChore5)
+        dayPanelAssignments.Add("2023-11-21", New List(Of Chore)())
+        Dim currentChore6 = New Chore("Take out trash", "Roomate 2", 1)
+        dayPanelAssignments("2023-11-21").Add(currentChore6)
+
+
         '######################################
 
         'Set up the calendar for November
@@ -170,6 +177,7 @@ Public Class Form1
         showCalendarTab()
     End Sub
     Private Sub setupCalendar()
+        Dim todays_date As DateTime = DateTime.Now
 
         numDaysInMonth = DateTime.DaysInMonth(year, month)
         currentDate = New DateTime(year, month, 1)
@@ -200,110 +208,118 @@ Public Class Form1
                 count += 1
                 dayPanelArray(i).DayNum = count
                 dayPanelArray(i).DayDate = currentDate
-                If Not dayPanelAssignments.ContainsKey(currentDate) Then
-                    ' Key does not exist, so add the key-value pair
-                    dayPanelAssignments.Add(currentDate, New List(Of Chore)())
-                    dayPanelArray(i).Roomate1PictureBox.Hide()
-                    dayPanelArray(i).Roomate2PictureBox.Hide()
-                    dayPanelArray(i).Roomate3PictureBox.Hide()
-                    dayPanelArray(i).Roomate4PictureBox.Hide()
+                If dayPanelArray(i).DayDate = todays_date.Date Then
+                    dayPanelArray(i).DayNumberLabel.Font = New Font(dayPanelArray(i).DayNumberLabel.Font, FontStyle.Bold)
+                    dayPanelArray(i).DayNumberLabel.ForeColor = Color.DarkRed
                 Else
+                    dayPanelArray(i).DayNumberLabel.Font = New Font(dayPanelArray(i).DayNumberLabel.Font, FontStyle.Regular)
+                    dayPanelArray(i).DayNumberLabel.ForeColor = Color.Black
 
-                    Dim Chores = dayPanelAssignments(currentDate)
-                    If (Chores.Count = 0) Then
+                End If
+                If Not dayPanelAssignments.ContainsKey(currentDate) Then
+                        ' Key does not exist, so add the key-value pair
+                        dayPanelAssignments.Add(currentDate, New List(Of Chore)())
                         dayPanelArray(i).Roomate1PictureBox.Hide()
                         dayPanelArray(i).Roomate2PictureBox.Hide()
                         dayPanelArray(i).Roomate3PictureBox.Hide()
                         dayPanelArray(i).Roomate4PictureBox.Hide()
                     Else
 
-                        For Each chore_item As Chore In Chores
-                            Dim person = chore_item.AssignedPerson
-                            If person = "Roomate 1" Then
-                                dayPanelArray(i).Roomate1PictureBox.Show()
-                                Dim intValue As Integer = Integer.Parse(chore_item.EffortOfChore)
-                                R1_contribution = R1_contribution + (intValue + 1)
-                                local_R1_contribution = local_R1_contribution + (intValue + 1)
-                                If chore_item.statusOfChore Then
-                                    R1_done_num = R1_done_num + (intValue + 1)
-                                    local_R1_done_num = local_R1_done_num + (intValue + 1)
-                                End If
-                            ElseIf person = "Roomate 2" Then
-                                Dim intValue As Integer = Integer.Parse(chore_item.EffortOfChore)
-                                dayPanelArray(i).Roomate2PictureBox.Show()
-                                R2_contribution = R2_contribution + (intValue + 1)
-                                local_R2_contribution = local_R2_contribution + (intValue + 1)
-                                If chore_item.statusOfChore Then
-                                    R2_done_num = R2_done_num + (intValue + 1)
-                                    local_R2_done_num = local_R2_done_num + (intValue + 1)
-                                End If
-                            ElseIf person = "Roomate 3" Then
-                                Dim intValue As Integer = Integer.Parse(chore_item.EffortOfChore)
-                                R3_contribution = R3_contribution + (intValue + 1)
-                                local_R3_contribution = local_R3_contribution + (intValue + 1)
-                                dayPanelArray(i).Roomate3PictureBox.Show()
-                                If chore_item.statusOfChore Then
-                                    R3_done_num = R3_done_num + (intValue + 1)
-                                    local_R3_done_num = local_R3_done_num + (intValue + 1)
-                                End If
-                            ElseIf person = "Roomate 4" Then
-                                Dim intValue As Integer = Integer.Parse(chore_item.EffortOfChore)
-                                R4_contribution = R4_contribution + (intValue + 1)
-                                local_R4_contribution = local_R4_contribution + (intValue + 1)
-                                dayPanelArray(i).Roomate4PictureBox.Show()
-                                If chore_item.statusOfChore Then
-                                    R4_done_num = R4_done_num + (intValue + 1)
-                                    local_R4_done_num = local_R4_done_num + (intValue + 1)
-                                End If
-                            End If
+                        Dim Chores = dayPanelAssignments(currentDate)
+                        If (Chores.Count = 0) Then
+                            dayPanelArray(i).Roomate1PictureBox.Hide()
+                            dayPanelArray(i).Roomate2PictureBox.Hide()
+                            dayPanelArray(i).Roomate3PictureBox.Hide()
+                            dayPanelArray(i).Roomate4PictureBox.Hide()
+                        Else
 
-                        Next
+                            For Each chore_item As Chore In Chores
+                                Dim person = chore_item.AssignedPerson
+                                If person = "Roomate 1" Then
+                                    dayPanelArray(i).Roomate1PictureBox.Show()
+                                    Dim intValue As Integer = Integer.Parse(chore_item.EffortOfChore)
+                                    R1_contribution = R1_contribution + (intValue + 1)
+                                    local_R1_contribution = local_R1_contribution + (intValue + 1)
+                                    If chore_item.statusOfChore Then
+                                        R1_done_num = R1_done_num + (intValue + 1)
+                                        local_R1_done_num = local_R1_done_num + (intValue + 1)
+                                    End If
+                                ElseIf person = "Roomate 2" Then
+                                    Dim intValue As Integer = Integer.Parse(chore_item.EffortOfChore)
+                                    dayPanelArray(i).Roomate2PictureBox.Show()
+                                    R2_contribution = R2_contribution + (intValue + 1)
+                                    local_R2_contribution = local_R2_contribution + (intValue + 1)
+                                    If chore_item.statusOfChore Then
+                                        R2_done_num = R2_done_num + (intValue + 1)
+                                        local_R2_done_num = local_R2_done_num + (intValue + 1)
+                                    End If
+                                ElseIf person = "Roomate 3" Then
+                                    Dim intValue As Integer = Integer.Parse(chore_item.EffortOfChore)
+                                    R3_contribution = R3_contribution + (intValue + 1)
+                                    local_R3_contribution = local_R3_contribution + (intValue + 1)
+                                    dayPanelArray(i).Roomate3PictureBox.Show()
+                                    If chore_item.statusOfChore Then
+                                        R3_done_num = R3_done_num + (intValue + 1)
+                                        local_R3_done_num = local_R3_done_num + (intValue + 1)
+                                    End If
+                                ElseIf person = "Roomate 4" Then
+                                    Dim intValue As Integer = Integer.Parse(chore_item.EffortOfChore)
+                                    R4_contribution = R4_contribution + (intValue + 1)
+                                    local_R4_contribution = local_R4_contribution + (intValue + 1)
+                                    dayPanelArray(i).Roomate4PictureBox.Show()
+                                    If chore_item.statusOfChore Then
+                                        R4_done_num = R4_done_num + (intValue + 1)
+                                        local_R4_done_num = local_R4_done_num + (intValue + 1)
+                                    End If
+                                End If
+
+                            Next
+                        End If
                     End If
-                End If
 
 
-                dayPanelArray(i).Show()
+                    dayPanelArray(i).Show()
 
-                'Check if extra panels were used
-                If i = 35 Then
-                    Panel1.Show()
-                ElseIf i = 36 Then
-                    Panel2.Show()
-                End If
+                    'Check if extra panels were used
+                    If i = 35 Then
+                        Panel1.Show()
+                    ElseIf i = 36 Then
+                        Panel2.Show()
+                    End If
 
 
-                ' If the chores of each roomie is done for that day, change the colored dot to a less 
-                ' transparent dot
-                If (local_R1_contribution <> 0 And local_R1_contribution = local_R1_done_num) Then
-                    dayPanelArray(i).Roomate1PictureBox.Image = myResources.pink_done
+                    ' If the chores of each roomie is done for that day, change the colored dot to a less 
+                    ' transparent dot
+                    If (local_R1_contribution <> 0 And local_R1_contribution = local_R1_done_num) Then
+                        dayPanelArray(i).Roomate1PictureBox.Image = myResources.pink_done
+                    Else
+                        dayPanelArray(i).Roomate1PictureBox.Image = myResources.pink
+                    End If
+
+                    If (local_R2_contribution <> 0 And local_R2_contribution = local_R2_done_num) Then
+                        dayPanelArray(i).Roomate2PictureBox.Image = myResources.green_done
+                    Else
+                        dayPanelArray(i).Roomate2PictureBox.Image = myResources.green
+                    End If
+
+                    If (local_R3_contribution <> 0 And local_R3_contribution = local_R3_done_num) Then
+                        dayPanelArray(i).Roomate3PictureBox.Image = myResources.blue_done
+                    Else
+                        dayPanelArray(i).Roomate3PictureBox.Image = myResources.blue
+
+                    End If
+
+                    If (local_R4_contribution <> 0 And local_R4_contribution = local_R4_done_num) Then
+                        dayPanelArray(i).Roomate4PictureBox.Image = myResources.purple_done
+                    Else
+                        dayPanelArray(i).Roomate4PictureBox.Image = myResources.purple
+                    End If
+
+
+                    currentDate = currentDate.AddDays(1)
+
                 Else
-                    dayPanelArray(i).Roomate1PictureBox.Image = myResources.pink
-                End If
-
-                If (local_R2_contribution <> 0 And local_R2_contribution = local_R2_done_num) Then
-                    dayPanelArray(i).Roomate2PictureBox.Image = myResources.green_done
-                Else
-                    dayPanelArray(i).Roomate2PictureBox.Image = myResources.green
-                End If
-
-                If (local_R3_contribution <> 0 And local_R3_contribution = local_R3_done_num) Then
-                    dayPanelArray(i).Roomate3PictureBox.Image = myResources.blue_done
-                Else
-                    dayPanelArray(i).Roomate3PictureBox.Image = myResources.blue
-
-                End If
-
-                If (local_R4_contribution <> 0 And local_R4_contribution = local_R4_done_num) Then
-                    dayPanelArray(i).Roomate4PictureBox.Image = myResources.purple_done
-                Else
-                    dayPanelArray(i).Roomate4PictureBox.Image = myResources.purple
-                End If
-
-
-                currentDate = currentDate.AddDays(1)
-
-            Else
-                dayPanelArray(i).Hide()
+                    dayPanelArray(i).Hide()
 
                 'Hide extra panels if they are not being used
                 If i = 35 Then
@@ -641,6 +657,14 @@ Public Class Form1
             Next
         End If
 
+        'Update the daypanel view for all 4 dots
+        For Each panel As DayPanelControl In dayPanelArray
+            panel.Roomate1PictureBox.Hide()
+            panel.Roomate2PictureBox.Hide()
+            panel.Roomate3PictureBox.Hide()
+            panel.Roomate4PictureBox.Hide()
+        Next
+
         'Update the dayview page
         dayViewPage.DisplayChoresForDate(thisDate)
 
@@ -789,6 +813,7 @@ Public Class Form1
         'Create instance
         expenseControl = New RecordExpenseControl()
         BudgetTabPage.Controls.Add(expenseControl)
+        'expenseControl.ExpenseCheckBox.SetItemChecked(0, True)
 
         AddHandler expenseControl.AddExpenseButtonClick, AddressOf AddExpenseButton_Click
         AddHandler expenseControl.CancelExpenseButtonClick, AddressOf CancelExpenseButton_Click
@@ -796,39 +821,235 @@ Public Class Form1
 
     Private Sub AddExpenseButton_Click(sender As Object, e As EventArgs)
         Dim amount As Double = Double.Parse(expenseControl.ExpenseAmountTextBox.Text)
-        Dim expenseType As String = expenseControl.ExpenseDecisionComboBox.Text
+        Dim payer_name As String = expenseControl.whoPaidCombo.SelectedIndex
+        Dim label_name_record As String = expenseControl.label_of_record.Text
+        'Dim otherToPay As Integer()
+        budgetHistoryControl.BudgetItem2.ExpenseName = "bought New vacuum"
+        budgetHistoryControl.BudgetItem2.DateofItem = "Nov 12"
+        budgetHistoryControl.BudgetItem2.NameOfRoomate = 2
+        budgetHistoryControl.BudgetItem2.Paid = 90
+
+        budgetHistoryControl.BudgetItem1.ExpenseName = label_name_record
+        budgetHistoryControl.BudgetItem1.DateofItem = "Nov 21"
+        budgetHistoryControl.BudgetItem1.NameOfRoomate = 3
+        budgetHistoryControl.BudgetItem1.Paid = amount
+
+        If payer_name = 0 Then
+            If expenseControl.R_check.Checked Then
+                Dim amount_for_each = amount / 4
+                Expenses("Roommate 1") += amount_for_each
+                Expenses("Roommate 2") += amount_for_each
+                Expenses("Roommate 3") += amount_for_each
+                Expenses("Roommate 4") += amount_for_each
+            Else
+                Dim counting = 0
+                If expenseControl.R1_check.Checked Then
+                    counting += 1
+                End If
+
+                If expenseControl.R2_check.Checked Then
+                    counting += 1
+                End If
+
+                If expenseControl.R3_check.Checked Then
+                    counting += 1
+                End If
+
+                If expenseControl.R4_check.Checked Then
+                    counting += 1
+                End If
+
+                Dim amount_for_each = amount / counting
+                If expenseControl.R1_check.Checked Then
+                    Expenses("Roommate 1") += amount_for_each
+
+                End If
+
+                If expenseControl.R2_check.Checked Then
+                    Expenses("Roommate 2") += amount_for_each
+
+                End If
+
+                If expenseControl.R3_check.Checked Then
+                    Expenses("Roommate 3") += amount_for_each
+                End If
+
+                If expenseControl.R4_check.Checked Then
+                    Expenses("Roommate 4") += amount_for_each
+                End If
+
+            End If
+        ElseIf payer_name = 1 Then
+            If expenseControl.R_check.Checked Then
+                Dim amount_for_each = amount / 3
+                Expenses("Roommate 1") -= amount
+                Expenses("Roommate 2") += amount_for_each
+                Expenses("Roommate 3") += amount_for_each
+                Expenses("Roommate 4") += amount_for_each
+            Else
+                Dim counting = 0
+
+                If expenseControl.R2_check.Checked Then
+                    counting += 1
+                End If
+
+                If expenseControl.R3_check.Checked Then
+                    counting += 1
+                End If
+
+                If expenseControl.R4_check.Checked Then
+                    counting += 1
+                End If
+
+                Dim amount_for_each = amount / counting
+
+                Expenses("Roommate 1") -= amount
+
+
+                If expenseControl.R2_check.Checked Then
+                    Expenses("Roommate 2") += amount_for_each
+                End If
+
+                If expenseControl.R3_check.Checked Then
+                    Expenses("Roommate 3") += amount_for_each
+                End If
+
+                If expenseControl.R4_check.Checked Then
+                    Expenses("Roommate 4") += amount_for_each
+                End If
+
+            End If
+        ElseIf payer_name = 2 Then
+            If expenseControl.R_check.Checked Then
+                Dim amount_for_each = amount / 3
+                Expenses("Roommate 1") += amount_for_each
+                Expenses("Roommate 2") -= amount
+                Expenses("Roommate 3") += amount_for_each
+                Expenses("Roommate 4") += amount_for_each
+            Else
+                Dim counting = 0
+                If expenseControl.R1_check.Checked Then
+                    counting += 1
+                End If
+
+
+                If expenseControl.R3_check.Checked Then
+                    counting += 1
+                End If
+
+                If expenseControl.R4_check.Checked Then
+                    counting += 1
+                End If
+
+                Dim amount_for_each = amount / counting
+                If expenseControl.R1_check.Checked Then
+                    Expenses("Roommate 1") += amount_for_each
+
+                End If
+
+
+                Expenses("Roommate 2") -= amount
+
+
+                If expenseControl.R3_check.Checked Then
+                    Expenses("Roommate 3") += amount_for_each
+                End If
+
+                If expenseControl.R4_check.Checked Then
+                    Expenses("Roommate 4") += amount_for_each
+                End If
+
+            End If
+        ElseIf payer_name = 2 Then
+            If expenseControl.R_check.Checked Then
+                Dim amount_for_each = amount / 3
+                Expenses("Roommate 1") += amount_for_each
+                Expenses("Roommate 2") += amount_for_each
+                Expenses("Roommate 3") -= amount
+                Expenses("Roommate 4") += amount_for_each
+            Else
+                Dim counting = 0
+                If expenseControl.R1_check.Checked Then
+                    counting += 1
+                End If
+
+                If expenseControl.R2_check.Checked Then
+                    counting += 1
+                End If
+
+                If expenseControl.R4_check.Checked Then
+                    counting += 1
+                End If
+
+                Dim amount_for_each = amount / counting
+                If expenseControl.R1_check.Checked Then
+                    Expenses("Roommate 1") += amount_for_each
+
+                End If
+
+                If expenseControl.R2_check.Checked Then
+                    Expenses("Roommate 2") += amount_for_each
+
+                End If
+
+
+                Expenses("Roommate 3") -= amount
+
+
+                If expenseControl.R4_check.Checked Then
+                    Expenses("Roommate 4") += amount_for_each
+                End If
+
+            End If
+        ElseIf payer_name = 3 Then
+            If expenseControl.R_check.Checked Then
+                Dim amount_for_each = amount / 3
+                Expenses("Roommate 1") += amount_for_each
+                Expenses("Roommate 2") += amount_for_each
+                Expenses("Roommate 3") += amount_for_each
+                Expenses("Roommate 4") -= amount
+            Else
+                Dim counting = 0
+                If expenseControl.R1_check.Checked Then
+                    counting += 1
+                End If
+
+                If expenseControl.R2_check.Checked Then
+                    counting += 1
+                End If
+
+                If expenseControl.R3_check.Checked Then
+                    counting += 1
+                End If
+
+
+                Dim amount_for_each = amount / counting
+                If expenseControl.R1_check.Checked Then
+                    Expenses("Roommate 1") += amount_for_each
+
+                End If
+
+                If expenseControl.R2_check.Checked Then
+                    Expenses("Roommate 2") += amount_for_each
+
+                End If
+
+                If expenseControl.R3_check.Checked Then
+                    Expenses("Roommate 3") += amount_for_each
+                End If
+
+
+                Expenses("Roommate 4") -= amount
+
+
+            End If
+        End If
+        'Dim expenseType As String = expenseControl.ExpenseDecisionComboBox.Text
 
         'Get a list of roomates to apply the expense type to
         Dim selectedRoommates As New List(Of String)
-        For Each item As Object In expenseControl.ExpenseCheckBox.CheckedItems
-            selectedRoommates.Add(item.ToString())
-        Next
 
-        If expenseType = "Add" Then
-            For Each roomate In selectedRoommates
-                If roomate = "Roommate1" Then
-                    Expenses("Roommate 1") += amount
-                ElseIf roomate = "Roommate2" Then
-                    Expenses("Roommate 2") += amount
-                ElseIf roomate = "Roommate3" Then
-                    Expenses("Roommate 3") += amount
-                ElseIf roomate = "Roommate4" Then
-                    Expenses("Roommate 4") += amount
-                End If
-            Next
-        Else
-            For Each roomate In selectedRoommates
-                If roomate = "Roommate1" Then
-                    Expenses("Roommate 1") -= amount
-                ElseIf roomate = "Roommate2" Then
-                    Expenses("Roommate 2") -= amount
-                ElseIf roomate = "Roommate3" Then
-                    Expenses("Roommate 3") -= amount
-                ElseIf roomate = "Roommate4" Then
-                    Expenses("Roommate 4") -= amount
-                End If
-            Next
-        End If
+
 
         'Update balances on main screen
         Roomate1AmountLabel.Text = $"${Expenses("Roommate 1"):F2}"
@@ -851,6 +1072,7 @@ Public Class Form1
     Private Sub CancelExpenseButton_Click(sender As Object, e As EventArgs)
         'Remove control
         BudgetTabPage.Controls.Remove(expenseControl)
+        budgetHistoryControl.Hide()
 
         'Show budget page controls
         BudgetTitle.Show()
@@ -862,5 +1084,14 @@ Public Class Form1
 
     Private Sub ViewBalanceSheetButton_Click(sender As Object, e As EventArgs) Handles ViewBalanceSheetButton.Click
 
+        budgetHistoryControl.Show()
+        AddHandler budgetHistoryControl.CancelExpenseButtonClick, AddressOf CancelExpenseButton_Click
+
+        BudgetTitle.Hide()
+        BudgetPictureBox.Hide()
+        BudgetPanel.Hide()
+        RecordExpenseButton.Hide()
+        ViewBalanceSheetButton.Hide()
     End Sub
+
 End Class

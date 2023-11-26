@@ -22,7 +22,7 @@ Partial Class ManagementFAQControl
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(ManagementFAQControl))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ManagementFAQControl))
         FAQRichTextBox = New RichTextBox()
         FAQTitleLabel = New Label()
         BackButton = New Button()

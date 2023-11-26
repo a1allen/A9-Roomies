@@ -168,6 +168,7 @@ Partial Class EditChoreControl
         ' DeleteButton
         ' 
         DeleteButton.BackColor = Color.WhiteSmoke
+        DeleteButton.ForeColor = Color.Red
         DeleteButton.Location = New Point(150, 476)
         DeleteButton.Name = "DeleteButton"
         DeleteButton.Size = New Size(135, 30)
