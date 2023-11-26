@@ -1158,7 +1158,10 @@ Public Class Form1
         End If
 
         'Update the dayview page
-        dayViewPage.DisplayChoresForDate(choreControl.AddChoreDateTimePicker.Value.Date)
+        If dayViewPage.FullDate.Text = choreControl.AddChoreDateTimePicker.Value.Date Then
+            dayViewPage.DisplayChoresForDate(choreControl.AddChoreDateTimePicker.Value.Date)
+        End If
+
 
         'Show the dayView control
         dayViewPage.Show()
