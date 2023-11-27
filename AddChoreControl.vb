@@ -12,6 +12,56 @@ Public Class AddChoreControl
         DatePanel.Hide()
 
         AddChoreButton.Enabled = False
+        RoomateComboBox.Items.Add("Roommate 1")
+        RoomateComboBox.Items.Add("Roommate 2")
+        RoomateComboBox.Items.Add("Roommate 3")
+        RoomateComboBox.Items.Add("Roommate 4")
+
+        ' Set the DrawMode property to OwnerDrawFixed
+        RoomateComboBox.DrawMode = DrawMode.OwnerDrawFixed
+    End Sub
+    Private Sub ComboBox1_DrawItem(sender As Object, e As DrawItemEventArgs) Handles RoomateComboBox.DrawItem
+        If e.Index >= 0 Then
+            ' Get the ComboBox
+            'Dim comboBox As ComboBox = DirectCast(sender, ComboBox)
+
+            ' Get the item text
+            Dim itemText As String = RoomateComboBox.GetItemText(RoomateComboBox.Items(e.Index))
+
+            ' Set the default text color
+            Dim textColor As Color = If((e.State And DrawItemState.Selected) = DrawItemState.Selected, Color.White, Color.Black)
+
+            ' Set the background color based on the item
+            Dim backgroundColor As Color
+            Select Case itemText
+                Case "Roommate 1"
+                    backgroundColor = Color.FromArgb(209, 40, 85)
+                Case "Roommate 2"
+                    backgroundColor = Color.FromArgb(96, 240, 108)
+                Case "Roommate 3"
+                    backgroundColor = Color.FromArgb(99, 206, 224)
+                Case "Roommate 4"
+                    backgroundColor = Color.FromArgb(158, 102, 227)
+                Case Else
+                    backgroundColor = Color.White
+            End Select
+
+            ' Create a brush for the text color
+            Dim textBrush As New SolidBrush(textColor)
+
+            ' Create a brush for the background color
+            Dim backgroundBrush As New SolidBrush(backgroundColor)
+
+            ' Fill the background
+            e.Graphics.FillRectangle(backgroundBrush, e.Bounds)
+
+            ' Draw the item text
+            e.Graphics.DrawString(itemText, e.Font, textBrush, e.Bounds)
+
+            ' Clean up brushes
+            textBrush.Dispose()
+            backgroundBrush.Dispose()
+        End If
     End Sub
     Private Sub ChoreTypeComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ChoreTypeComboBox.SelectedIndexChanged
         If ChoreTypeComboBox.SelectedIndex = 0 Then

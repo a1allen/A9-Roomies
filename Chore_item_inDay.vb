@@ -27,6 +27,22 @@
 
     End Sub
 
+    Private Sub AssignTo_Click(sender As Object, e As EventArgs) Handles AssignTo.Click
+
+    End Sub
+
+    Private Sub Chore_item_inDay_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If AssignTo.Text = "Roommate 1" Then
+            AssignTo.ForeColor = Color.FromArgb(209, 40, 85)
+        ElseIf AssignTo.Text = "Roommate 2" Then
+            AssignTo.ForeColor = Color.FromArgb(70, 153, 61)
+        ElseIf AssignTo.Text = "Roommate 3" Then
+            AssignTo.ForeColor = Color.FromArgb(50, 122, 140)
+        ElseIf AssignTo.Text = "Roommate 4" Then
+            AssignTo.ForeColor = Color.FromArgb(158, 102, 227)
+        End If
+    End Sub
+
     Public Property TypeOfChore() As String
         Get
             Return ChoreName.Text
@@ -70,6 +86,15 @@
         End Get
         Set(ByVal value As String)
             AssignTo.Text = value
+            If AssignTo.Text = "Roommate 1" Then
+                AssignTo.ForeColor = Color.FromArgb(209, 40, 85)
+            ElseIf AssignTo.Text = "Roommate 2" Then
+                AssignTo.ForeColor = Color.FromArgb(70, 153, 61)
+            ElseIf AssignTo.Text = "Roommate 3" Then
+                AssignTo.ForeColor = Color.FromArgb(50, 122, 140)
+            ElseIf AssignTo.Text = "Roommate 4" Then
+                AssignTo.ForeColor = Color.FromArgb(158, 102, 227)
+            End If
         End Set
     End Property
 End Class

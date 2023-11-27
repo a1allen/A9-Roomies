@@ -27,9 +27,64 @@
         AssignExpenseToTitleLabel.Visible = False
         whoPaidCombo.Visible = False
         whoPaidLabel.Visible = False
+        whoPaidCombo.Items.Add("No One Yet")
+        whoPaidCombo.Items.Add("Roommate 1")
+        whoPaidCombo.Items.Add("Roommate 2")
+        whoPaidCombo.Items.Add("Roommate 3")
+        whoPaidCombo.Items.Add("Roommate 4")
         whoPaidCombo.SelectedIndex = 0
-    End Sub
+        R1_check.ForeColor = Color.FromArgb(209, 40, 85)
+        R2_check.ForeColor = Color.FromArgb(70, 153, 61)
+        R3_check.ForeColor = Color.FromArgb(50, 122, 140)
+        R4_check.ForeColor = Color.FromArgb(158, 102, 227)
 
+
+        ' Set the DrawMode property to OwnerDrawFixed
+        whoPaidCombo.DrawMode = DrawMode.OwnerDrawFixed
+    End Sub
+    Private Sub ComboBox1_DrawItem(sender As Object, e As DrawItemEventArgs) Handles whoPaidCombo.DrawItem
+        If e.Index >= 0 Then
+            ' Get the ComboBox
+            'Dim comboBox As ComboBox = DirectCast(sender, ComboBox)
+
+            ' Get the item text
+            Dim itemText As String = whoPaidCombo.GetItemText(whoPaidCombo.Items(e.Index))
+
+            ' Set the default text color
+            Dim textColor As Color = If((e.State And DrawItemState.Selected) = DrawItemState.Selected, Color.White, Color.Black)
+
+            ' Set the background color based on the item
+            Dim backgroundColor As Color
+            Select Case itemText
+                Case "Roommate 1"
+                    backgroundColor = Color.FromArgb(209, 40, 85)
+                Case "Roommate 2"
+                    backgroundColor = Color.FromArgb(96, 240, 108)
+                Case "Roommate 3"
+                    backgroundColor = Color.FromArgb(99, 206, 224)
+                Case "Roommate 4"
+                    backgroundColor = Color.FromArgb(158, 102, 227)
+                Case Else
+                    backgroundColor = Color.LightGray
+            End Select
+
+            ' Create a brush for the text color
+            Dim textBrush As New SolidBrush(textColor)
+
+            ' Create a brush for the background color
+            Dim backgroundBrush As New SolidBrush(backgroundColor)
+
+            ' Fill the background
+            e.Graphics.FillRectangle(backgroundBrush, e.Bounds)
+
+            ' Draw the item text
+            e.Graphics.DrawString(itemText, e.Font, textBrush, e.Bounds)
+
+            ' Clean up brushes
+            textBrush.Dispose()
+            backgroundBrush.Dispose()
+        End If
+    End Sub
     Private Sub ExpenseAmountTextBox_TextChanged(sender As Object, e As EventArgs) Handles ExpenseAmountTextBox.TextChanged
         If ExpenseAmountTextBox.Text <> "" Then
             whoPaidCombo.Visible = True

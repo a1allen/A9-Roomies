@@ -71,26 +71,26 @@ Public Class Form1
         'Hardcode instances for usability test
         'Housemate red cleaning the bathroom
         dayPanelAssignments.Add("2023-11-11", New List(Of Chore)())
-        Dim currentChore1 = New Chore("Clean Bathroom", "Roomate 1", 1)
+        Dim currentChore1 = New Chore("Clean Bathroom", "Roommate 1", 1)
         currentChore1.statusOfChore = True
         dayPanelAssignments("2023-11-11").Add(currentChore1)
         dayPanelAssignments.Add("2023-11-18", New List(Of Chore)())
-        Dim currentChore2 = New Chore("Clean Bathroom", "Roomate 1", 1)
+        Dim currentChore2 = New Chore("Clean Bathroom", "Roommate 1", 1)
         currentChore2.statusOfChore = True
         dayPanelAssignments("2023-11-18").Add(currentChore2)
         dayPanelAssignments.Add("2023-11-25", New List(Of Chore)())
-        Dim currentChore3 = New Chore("Clean Bathroom", "Roomate 1", 1)
+        Dim currentChore3 = New Chore("Clean Bathroom", "Roommate 1", 1)
         dayPanelAssignments("2023-11-25").Add(currentChore3)
         dayPanelAssignments.Add("2023-12-2", New List(Of Chore)())
-        Dim currentChore4 = New Chore("Clean Bathroom", "Roomate 1", 1)
+        Dim currentChore4 = New Chore("Clean Bathroom", "Roommate 1", 1)
         dayPanelAssignments("2023-12-2").Add(currentChore4)
 
         'Housemate pruple cleans the kitchen
         dayPanelAssignments.Add("2023-11-29", New List(Of Chore)())
-        Dim currentChore5 = New Chore("Clean Kitchen", "Roomate 2", 1)
+        Dim currentChore5 = New Chore("Clean Kitchen", "Roommate 2", 1)
         dayPanelAssignments("2023-11-29").Add(currentChore5)
         dayPanelAssignments.Add("2023-11-21", New List(Of Chore)())
-        Dim currentChore6 = New Chore("Take out trash", "Roomate 2", 1)
+        Dim currentChore6 = New Chore("Take out trash", "Roommate 2", 1)
         dayPanelAssignments("2023-11-21").Add(currentChore6)
 
 
@@ -153,14 +153,28 @@ Public Class Form1
         Roomie2_Done.Hide()
         Roomie3_Done.Hide()
         Roomie4_Done.Hide()
-        Label12.Hide()
-        Label13.Hide()
-        Label16.Hide()
-        Label17.Hide()
+        star4.Hide()
+        star3.Hide()
+        star8.Hide()
+        star7.Hide()
         Label7.Hide()
         Label6.Hide()
         Label8.Hide()
         Label9.Hide()
+
+        Label2.Hide()
+        Label3.Hide()
+        Label4.Hide()
+        Label8.Hide()
+        line_label.Hide()
+        star1.Hide()
+        star2.Hide()
+        star3.Hide()
+        star4.Hide()
+        star5.Hide()
+        star6.Hide()
+        star7.Hide()
+        star8.Hide()
 
         'Create instance
         dayViewPage = New DayView()
@@ -235,7 +249,7 @@ Public Class Form1
 
                         For Each chore_item As Chore In Chores
                             Dim person = chore_item.AssignedPerson
-                            If person = "Roomate 1" Then
+                            If person = "Roommate 1" Then
                                 dayPanelArray(i).Roomate1PictureBox.Show()
                                 Dim intValue As Integer = Integer.Parse(chore_item.EffortOfChore)
                                 R1_contribution = R1_contribution + (intValue + 1)
@@ -244,7 +258,7 @@ Public Class Form1
                                     R1_done_num = R1_done_num + (intValue + 1)
                                     local_R1_done_num = local_R1_done_num + (intValue + 1)
                                 End If
-                            ElseIf person = "Roomate 2" Then
+                            ElseIf person = "Roommate 2" Then
                                 Dim intValue As Integer = Integer.Parse(chore_item.EffortOfChore)
                                 dayPanelArray(i).Roomate2PictureBox.Show()
                                 R2_contribution = R2_contribution + (intValue + 1)
@@ -253,7 +267,7 @@ Public Class Form1
                                     R2_done_num = R2_done_num + (intValue + 1)
                                     local_R2_done_num = local_R2_done_num + (intValue + 1)
                                 End If
-                            ElseIf person = "Roomate 3" Then
+                            ElseIf person = "Roommate 3" Then
                                 Dim intValue As Integer = Integer.Parse(chore_item.EffortOfChore)
                                 R3_contribution = R3_contribution + (intValue + 1)
                                 local_R3_contribution = local_R3_contribution + (intValue + 1)
@@ -262,7 +276,7 @@ Public Class Form1
                                     R3_done_num = R3_done_num + (intValue + 1)
                                     local_R3_done_num = local_R3_done_num + (intValue + 1)
                                 End If
-                            ElseIf person = "Roomate 4" Then
+                            ElseIf person = "Roommate 4" Then
                                 Dim intValue As Integer = Integer.Parse(chore_item.EffortOfChore)
                                 R4_contribution = R4_contribution + (intValue + 1)
                                 local_R4_contribution = local_R4_contribution + (intValue + 1)
@@ -404,14 +418,27 @@ Public Class Form1
         Roomie2_Done.Hide()
         Roomie3_Done.Hide()
         Roomie4_Done.Hide()
-        Label12.Hide()
-        Label13.Hide()
-        Label16.Hide()
-        Label17.Hide()
+        star4.Hide()
+        star3.Hide()
+        star8.Hide()
+        star7.Hide()
         Label7.Hide()
         Label6.Hide()
         Label8.Hide()
         Label9.Hide()
+        Label2.Hide()
+        Label3.Hide()
+        Label4.Hide()
+        Label8.Hide()
+        line_label.Hide()
+        star1.Hide()
+        star2.Hide()
+        star3.Hide()
+        star4.Hide()
+        star5.Hide()
+        star6.Hide()
+        star7.Hide()
+        star8.Hide()
 
         'Create instance
         choreControl = New AddChoreControl()
@@ -427,13 +454,13 @@ Public Class Form1
         Dim selectedRoomie As String
 
         If choreControl.RoomateComboBox.SelectedIndex = 0 Then
-            selectedRoomie = "Roomate 1"
+            selectedRoomie = "Roommate 1"
         ElseIf choreControl.RoomateComboBox.SelectedIndex = 1 Then
-            selectedRoomie = "Roomate 2"
+            selectedRoomie = "Roommate 2"
         ElseIf choreControl.RoomateComboBox.SelectedIndex = 2 Then
-            selectedRoomie = "Roomate 3"
+            selectedRoomie = "Roommate 3"
         ElseIf choreControl.RoomateComboBox.SelectedIndex = 3 Then
-            selectedRoomie = "Roomate 4"
+            selectedRoomie = "Roommate 4"
         End If
 
 
@@ -510,14 +537,27 @@ Public Class Form1
         Roomie2_Done.Show()
         Roomie3_Done.Show()
         Roomie4_Done.Show()
-        Label12.Show()
-        Label13.Show()
-        Label16.Show()
-        Label17.Show()
+        star4.Show()
+        star3.Show()
+        star8.Show()
+        star7.Show()
         Label7.Show()
         Label6.Show()
         Label8.Show()
         Label9.Show()
+        Label2.Show()
+        Label3.Show()
+        Label4.Show()
+        Label8.Show()
+        line_label.Show()
+        star1.Show()
+        star2.Show()
+        star3.Show()
+        star4.Show()
+        star5.Show()
+        star6.Show()
+        star7.Show()
+        star8.Show()
     End Sub
 
     Private Sub DayView_EditChoreButtonClick(sender As Object, e As EventArgs) Handles dayViewPage.EditChoreButtonClickInDayView
@@ -547,13 +587,13 @@ Public Class Form1
         End If
         'Fill in fields
         editChoreControl.EditChoreTextBox.Text = thisChoreName
-        If thisAssignedPerson = "Roomate 1" Then
+        If thisAssignedPerson = "Roommate 1" Then
             editChoreControl.EditRoomateComboBox.SelectedIndex = 0
-        ElseIf thisAssignedPerson = "Roomate 2" Then
+        ElseIf thisAssignedPerson = "Roommate 2" Then
             editChoreControl.EditRoomateComboBox.SelectedIndex = 1
-        ElseIf thisAssignedPerson = "Roomate 3" Then
+        ElseIf thisAssignedPerson = "Roommate 3" Then
             editChoreControl.EditRoomateComboBox.SelectedIndex = 2
-        ElseIf thisAssignedPerson = "Roomate 4" Then
+        ElseIf thisAssignedPerson = "Roommate 4" Then
             editChoreControl.EditRoomateComboBox.SelectedIndex = 3
         End If
         editChoreControl.EditChoreDateTimePicker.Value = DateTime.ParseExact(thisDate, "yyyy-MM-dd", CultureInfo.InvariantCulture)
@@ -784,7 +824,7 @@ Public Class Form1
 
 
         'Create instance
-        If sender.Name Is "RoomatesProfileButton" Then
+        If sender.Name Is "RoommatesProfileButton" Then
             roommateProfilesControl.Show()
         ElseIf sender.Name Is "FAQButton" Then
             faqControl = New ManagementFAQControl()
@@ -1123,13 +1163,13 @@ Public Class Form1
         Dim selectedRoomie As String
 
         If choreControl.RoomateComboBox.SelectedIndex = 0 Then
-            selectedRoomie = "Roomate 1"
+            selectedRoomie = "Roommate 1"
         ElseIf choreControl.RoomateComboBox.SelectedIndex = 1 Then
-            selectedRoomie = "Roomate 2"
+            selectedRoomie = "Roommate 2"
         ElseIf choreControl.RoomateComboBox.SelectedIndex = 2 Then
-            selectedRoomie = "Roomate 3"
+            selectedRoomie = "Roommate 3"
         ElseIf choreControl.RoomateComboBox.SelectedIndex = 3 Then
-            selectedRoomie = "Roomate 4"
+            selectedRoomie = "Roommate 4"
         End If
 
 
@@ -1171,4 +1211,7 @@ Public Class Form1
         dayViewPage.Show()
     End Sub
 
+    Private Sub CalendarTabPage_Click(sender As Object, e As EventArgs) Handles CalendarTabPage.Click
+
+    End Sub
 End Class

@@ -110,7 +110,6 @@ Partial Class RecordExpenseControl
         ' 
         whoPaidCombo.DropDownStyle = ComboBoxStyle.DropDownList
         whoPaidCombo.FormattingEnabled = True
-        whoPaidCombo.Items.AddRange(New Object() {"No one yet", "Roommate1", "Roommate2", "Roommate3", "Roommate4"})
         whoPaidCombo.Location = New Point(69, 288)
         whoPaidCombo.Name = "whoPaidCombo"
         whoPaidCombo.Size = New Size(299, 28)
@@ -139,41 +138,45 @@ Partial Class RecordExpenseControl
         ' R1_check
         ' 
         R1_check.AutoSize = True
+        R1_check.ForeColor = Color.Red
         R1_check.Location = New Point(69, 411)
         R1_check.Name = "R1_check"
-        R1_check.Size = New Size(113, 24)
+        R1_check.Size = New Size(117, 24)
         R1_check.TabIndex = 80
-        R1_check.Text = "Roommate1"
+        R1_check.Text = "Roommate 1"
         R1_check.UseVisualStyleBackColor = True
         ' 
         ' R4_check
         ' 
         R4_check.AutoSize = True
+        R4_check.ForeColor = Color.FromArgb(CByte(64), CByte(0), CByte(64))
         R4_check.Location = New Point(204, 443)
         R4_check.Name = "R4_check"
-        R4_check.Size = New Size(113, 24)
+        R4_check.Size = New Size(117, 24)
         R4_check.TabIndex = 81
-        R4_check.Text = "Roommate4"
+        R4_check.Text = "Roommate 4"
         R4_check.UseVisualStyleBackColor = True
         ' 
         ' R3_check
         ' 
         R3_check.AutoSize = True
+        R3_check.ForeColor = Color.Teal
         R3_check.Location = New Point(69, 441)
         R3_check.Name = "R3_check"
-        R3_check.Size = New Size(113, 24)
+        R3_check.Size = New Size(117, 24)
         R3_check.TabIndex = 82
-        R3_check.Text = "Roommate3"
+        R3_check.Text = "Roommate 3"
         R3_check.UseVisualStyleBackColor = True
         ' 
         ' R2_check
         ' 
         R2_check.AutoSize = True
+        R2_check.ForeColor = Color.FromArgb(CByte(0), CByte(64), CByte(0))
         R2_check.Location = New Point(204, 411)
         R2_check.Name = "R2_check"
-        R2_check.Size = New Size(113, 24)
+        R2_check.Size = New Size(117, 24)
         R2_check.TabIndex = 83
-        R2_check.Text = "Roommate2"
+        R2_check.Text = "Roommate 2"
         R2_check.UseVisualStyleBackColor = True
         ' 
         ' Label1

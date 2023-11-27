@@ -29,6 +29,15 @@ Public Class DayView
             new_item.ChoreName.Text = chore_item.TypeOfChore
             new_item.AssignTo.Text = chore_item.AssignedPerson
             new_item.EffortOfChore = chore_item.EffortOfChore
+            If new_item.AssignTo.Text = "Roommate 1" Then
+                new_item.AssignTo.ForeColor = Color.FromArgb(209, 40, 85)
+            ElseIf new_item.AssignTo.Text = "Roommate 2" Then
+                new_item.AssignTo.ForeColor = Color.FromArgb(70, 153, 61)
+            ElseIf new_item.AssignTo.Text = "Roommate 3" Then
+                new_item.AssignTo.ForeColor = Color.FromArgb(50, 122, 140)
+            ElseIf new_item.AssignTo.Text = "Roommate 4" Then
+                new_item.AssignTo.ForeColor = Color.FromArgb(158, 102, 227)
+            End If
             new_item.TheChore = chore_item
             If chore_item.statusOfChore Then
                 new_item.choreDone.Checked = True

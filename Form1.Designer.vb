@@ -27,19 +27,26 @@ Partial Class Form1
         BackgroundPictureBox = New PictureBox()
         TabControl1 = New TabControl()
         CalendarTabPage = New TabPage()
-        Label16 = New Label()
-        Label17 = New Label()
+        star8 = New Label()
+        star7 = New Label()
+        star6 = New Label()
+        star5 = New Label()
+        star4 = New Label()
+        star3 = New Label()
+        star2 = New Label()
+        star1 = New Label()
         Roomie4_Done = New Label()
-        Roomie4_Total = New Label()
-        Label12 = New Label()
-        Label13 = New Label()
         Roomie3_Done = New Label()
-        Roomie3_Total = New Label()
-        Label8 = New Label()
-        Label9 = New Label()
         Roomie2_Done = New Label()
-        Roomie2_Total = New Label()
         Label7 = New Label()
+        Roomie1_Done = New Label()
+        Label8 = New Label()
+        Label4 = New Label()
+        Label3 = New Label()
+        Label2 = New Label()
+        Roomie4_Total = New Label()
+        Roomie3_Total = New Label()
+        Roomie2_Total = New Label()
         Label6 = New Label()
         Panel2 = New Panel()
         DayPanelControl37 = New DayPanelControl()
@@ -81,7 +88,6 @@ Partial Class Form1
         DayPanelControl19 = New DayPanelControl()
         DayPanelControl21 = New DayPanelControl()
         DayPanelControl20 = New DayPanelControl()
-        Roomie1_Done = New Label()
         Roomie1_Total = New Label()
         DecorationPanel1 = New Panel()
         DecorationPanel3 = New Panel()
@@ -102,6 +108,8 @@ Partial Class Form1
         SunLabel = New Label()
         AddToCalendarButton = New Button()
         MonthLabel = New Label()
+        line_label = New Label()
+        Label9 = New Label()
         BudgetTabPage = New TabPage()
         BudgetPanel = New Panel()
         Roomate4AmountLabel = New Label()
@@ -172,24 +180,30 @@ Partial Class Form1
         ' CalendarTabPage
         ' 
         CalendarTabPage.BackColor = Color.White
-        CalendarTabPage.Controls.Add(Label16)
-        CalendarTabPage.Controls.Add(Label17)
+        CalendarTabPage.Controls.Add(star8)
+        CalendarTabPage.Controls.Add(star7)
+        CalendarTabPage.Controls.Add(star6)
+        CalendarTabPage.Controls.Add(star5)
+        CalendarTabPage.Controls.Add(star4)
+        CalendarTabPage.Controls.Add(star3)
+        CalendarTabPage.Controls.Add(star2)
+        CalendarTabPage.Controls.Add(star1)
         CalendarTabPage.Controls.Add(Roomie4_Done)
-        CalendarTabPage.Controls.Add(Roomie4_Total)
-        CalendarTabPage.Controls.Add(Label12)
-        CalendarTabPage.Controls.Add(Label13)
         CalendarTabPage.Controls.Add(Roomie3_Done)
-        CalendarTabPage.Controls.Add(Roomie3_Total)
-        CalendarTabPage.Controls.Add(Label8)
-        CalendarTabPage.Controls.Add(Label9)
         CalendarTabPage.Controls.Add(Roomie2_Done)
-        CalendarTabPage.Controls.Add(Roomie2_Total)
         CalendarTabPage.Controls.Add(Label7)
+        CalendarTabPage.Controls.Add(Roomie1_Done)
+        CalendarTabPage.Controls.Add(Label8)
+        CalendarTabPage.Controls.Add(Label4)
+        CalendarTabPage.Controls.Add(Label3)
+        CalendarTabPage.Controls.Add(Label2)
+        CalendarTabPage.Controls.Add(Roomie4_Total)
+        CalendarTabPage.Controls.Add(Roomie3_Total)
+        CalendarTabPage.Controls.Add(Roomie2_Total)
         CalendarTabPage.Controls.Add(Label6)
         CalendarTabPage.Controls.Add(Panel2)
         CalendarTabPage.Controls.Add(Panel1)
         CalendarTabPage.Controls.Add(CalendarTableLayoutPanel)
-        CalendarTabPage.Controls.Add(Roomie1_Done)
         CalendarTabPage.Controls.Add(Roomie1_Total)
         CalendarTabPage.Controls.Add(DecorationPanel1)
         CalendarTabPage.Controls.Add(DecorationPanel3)
@@ -210,6 +224,8 @@ Partial Class Form1
         CalendarTabPage.Controls.Add(SunLabel)
         CalendarTabPage.Controls.Add(AddToCalendarButton)
         CalendarTabPage.Controls.Add(MonthLabel)
+        CalendarTabPage.Controls.Add(line_label)
+        CalendarTabPage.Controls.Add(Label9)
         CalendarTabPage.Location = New Point(4, 4)
         CalendarTabPage.Name = "CalendarTabPage"
         CalendarTabPage.Padding = New Padding(3)
@@ -217,137 +233,206 @@ Partial Class Form1
         CalendarTabPage.TabIndex = 0
         CalendarTabPage.Text = "Calendar"
         ' 
-        ' Label16
+        ' star8
         ' 
-        Label16.AutoSize = True
-        Label16.Location = New Point(353, 687)
-        Label16.Name = "Label16"
-        Label16.Size = New Size(48, 20)
-        Label16.TabIndex = 81
-        Label16.Text = "Done:"
+        star8.AutoSize = True
+        star8.Location = New Point(396, 689)
+        star8.Name = "star8"
+        star8.Size = New Size(22, 20)
+        star8.TabIndex = 100
+        star8.Text = "★"
         ' 
-        ' Label17
+        ' star7
         ' 
-        Label17.AutoSize = True
-        Label17.Location = New Point(355, 668)
-        Label17.Name = "Label17"
-        Label17.Size = New Size(45, 20)
-        Label17.TabIndex = 80
-        Label17.Text = "Total:"
+        star7.AutoSize = True
+        star7.Location = New Point(396, 667)
+        star7.Name = "star7"
+        star7.Size = New Size(22, 20)
+        star7.TabIndex = 99
+        star7.Text = "★"
+        ' 
+        ' star6
+        ' 
+        star6.AutoSize = True
+        star6.Location = New Point(315, 690)
+        star6.Name = "star6"
+        star6.Size = New Size(22, 20)
+        star6.TabIndex = 98
+        star6.Text = "★"
+        ' 
+        ' star5
+        ' 
+        star5.AutoSize = True
+        star5.Location = New Point(315, 667)
+        star5.Name = "star5"
+        star5.Size = New Size(22, 20)
+        star5.TabIndex = 97
+        star5.Text = "★"
+        ' 
+        ' star4
+        ' 
+        star4.AutoSize = True
+        star4.Location = New Point(225, 690)
+        star4.Name = "star4"
+        star4.Size = New Size(22, 20)
+        star4.TabIndex = 96
+        star4.Text = "★"
+        ' 
+        ' star3
+        ' 
+        star3.AutoSize = True
+        star3.Location = New Point(225, 667)
+        star3.Name = "star3"
+        star3.Size = New Size(22, 20)
+        star3.TabIndex = 95
+        star3.Text = "★"
+        ' 
+        ' star2
+        ' 
+        star2.AutoSize = True
+        star2.Location = New Point(135, 690)
+        star2.Name = "star2"
+        star2.Size = New Size(22, 20)
+        star2.TabIndex = 94
+        star2.Text = "★"
+        ' 
+        ' star1
+        ' 
+        star1.AutoSize = True
+        star1.Location = New Point(135, 667)
+        star1.Name = "star1"
+        star1.Size = New Size(22, 20)
+        star1.TabIndex = 93
+        star1.Text = "★"
         ' 
         ' Roomie4_Done
         ' 
         Roomie4_Done.AutoSize = True
-        Roomie4_Done.Location = New Point(405, 687)
+        Roomie4_Done.Location = New Point(381, 667)
         Roomie4_Done.Name = "Roomie4_Done"
         Roomie4_Done.Size = New Size(17, 20)
-        Roomie4_Done.TabIndex = 79
+        Roomie4_Done.TabIndex = 91
         Roomie4_Done.Text = "0"
+        ' 
+        ' Roomie3_Done
+        ' 
+        Roomie3_Done.AutoSize = True
+        Roomie3_Done.Location = New Point(298, 667)
+        Roomie3_Done.Name = "Roomie3_Done"
+        Roomie3_Done.Size = New Size(17, 20)
+        Roomie3_Done.TabIndex = 90
+        Roomie3_Done.Text = "0"
+        ' 
+        ' Roomie2_Done
+        ' 
+        Roomie2_Done.AutoSize = True
+        Roomie2_Done.Location = New Point(209, 667)
+        Roomie2_Done.Name = "Roomie2_Done"
+        Roomie2_Done.Size = New Size(17, 20)
+        Roomie2_Done.TabIndex = 89
+        Roomie2_Done.Text = "0"
+        ' 
+        ' Label7
+        ' 
+        Label7.AutoSize = True
+        Label7.Font = New Font("Microsoft Sans Serif", 7.20000029F, FontStyle.Regular, GraphicsUnit.Point)
+        Label7.Location = New Point(6, 668)
+        Label7.Name = "Label7"
+        Label7.Size = New Size(107, 16)
+        Label7.TabIndex = 88
+        Label7.Text = "Finished Chores:"
+        ' 
+        ' Roomie1_Done
+        ' 
+        Roomie1_Done.AutoSize = True
+        Roomie1_Done.Location = New Point(122, 666)
+        Roomie1_Done.Name = "Roomie1_Done"
+        Roomie1_Done.Size = New Size(17, 20)
+        Roomie1_Done.TabIndex = 87
+        Roomie1_Done.Text = "0"
+        ' 
+        ' Label8
+        ' 
+        Label8.AutoSize = True
+        Label8.Font = New Font("Segoe UI", 7.20000029F, FontStyle.Regular, GraphicsUnit.Point)
+        Label8.Location = New Point(356, 648)
+        Label8.Name = "Label8"
+        Label8.Size = New Size(60, 17)
+        Label8.TabIndex = 86
+        Label8.Text = "Roomie1"
+        ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.Font = New Font("Segoe UI", 7.20000029F, FontStyle.Regular, GraphicsUnit.Point)
+        Label4.Location = New Point(277, 648)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(60, 17)
+        Label4.TabIndex = 85
+        Label4.Text = "Roomie1"
+        ' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.Font = New Font("Segoe UI", 7.20000029F, FontStyle.Regular, GraphicsUnit.Point)
+        Label3.Location = New Point(188, 648)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(60, 17)
+        Label3.TabIndex = 84
+        Label3.Text = "Roomie1"
+        ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.Font = New Font("Segoe UI", 7.20000029F, FontStyle.Regular, GraphicsUnit.Point)
+        Label2.Location = New Point(105, 648)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(60, 17)
+        Label2.TabIndex = 83
+        Label2.Text = "Roomie1"
         ' 
         ' Roomie4_Total
         ' 
         Roomie4_Total.AutoSize = True
-        Roomie4_Total.Location = New Point(405, 668)
+        Roomie4_Total.Location = New Point(381, 689)
         Roomie4_Total.Name = "Roomie4_Total"
         Roomie4_Total.Size = New Size(17, 20)
         Roomie4_Total.TabIndex = 78
         Roomie4_Total.Text = "0"
         ' 
-        ' Label12
-        ' 
-        Label12.AutoSize = True
-        Label12.Location = New Point(246, 687)
-        Label12.Name = "Label12"
-        Label12.Size = New Size(48, 20)
-        Label12.TabIndex = 77
-        Label12.Text = "Done:"
-        ' 
-        ' Label13
-        ' 
-        Label13.AutoSize = True
-        Label13.Location = New Point(248, 668)
-        Label13.Name = "Label13"
-        Label13.Size = New Size(45, 20)
-        Label13.TabIndex = 76
-        Label13.Text = "Total:"
-        ' 
-        ' Roomie3_Done
-        ' 
-        Roomie3_Done.AutoSize = True
-        Roomie3_Done.Location = New Point(298, 687)
-        Roomie3_Done.Name = "Roomie3_Done"
-        Roomie3_Done.Size = New Size(17, 20)
-        Roomie3_Done.TabIndex = 75
-        Roomie3_Done.Text = "0"
-        ' 
         ' Roomie3_Total
         ' 
         Roomie3_Total.AutoSize = True
-        Roomie3_Total.Location = New Point(298, 668)
+        Roomie3_Total.Location = New Point(298, 689)
         Roomie3_Total.Name = "Roomie3_Total"
         Roomie3_Total.Size = New Size(17, 20)
         Roomie3_Total.TabIndex = 74
         Roomie3_Total.Text = "0"
         ' 
-        ' Label8
-        ' 
-        Label8.AutoSize = True
-        Label8.Location = New Point(136, 687)
-        Label8.Name = "Label8"
-        Label8.Size = New Size(48, 20)
-        Label8.TabIndex = 73
-        Label8.Text = "Done:"
-        ' 
-        ' Label9
-        ' 
-        Label9.AutoSize = True
-        Label9.Location = New Point(138, 668)
-        Label9.Name = "Label9"
-        Label9.Size = New Size(45, 20)
-        Label9.TabIndex = 72
-        Label9.Text = "Total:"
-        ' 
-        ' Roomie2_Done
-        ' 
-        Roomie2_Done.AutoSize = True
-        Roomie2_Done.Location = New Point(188, 687)
-        Roomie2_Done.Name = "Roomie2_Done"
-        Roomie2_Done.Size = New Size(17, 20)
-        Roomie2_Done.TabIndex = 71
-        Roomie2_Done.Text = "0"
-        ' 
         ' Roomie2_Total
         ' 
         Roomie2_Total.AutoSize = True
-        Roomie2_Total.Location = New Point(188, 668)
+        Roomie2_Total.Location = New Point(208, 689)
         Roomie2_Total.Name = "Roomie2_Total"
         Roomie2_Total.Size = New Size(17, 20)
         Roomie2_Total.TabIndex = 70
         Roomie2_Total.Text = "0"
         ' 
-        ' Label7
-        ' 
-        Label7.AutoSize = True
-        Label7.Location = New Point(30, 687)
-        Label7.Name = "Label7"
-        Label7.Size = New Size(48, 20)
-        Label7.TabIndex = 69
-        Label7.Text = "Done:"
-        ' 
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Location = New Point(32, 668)
+        Label6.Font = New Font("Segoe UI", 7.20000029F, FontStyle.Regular, GraphicsUnit.Point)
+        Label6.Location = New Point(6, 688)
         Label6.Name = "Label6"
-        Label6.Size = New Size(45, 20)
+        Label6.Size = New Size(96, 17)
         Label6.TabIndex = 68
-        Label6.Text = "Total:"
+        Label6.Text = "Total Assigned:"
         ' 
         ' Panel2
         ' 
         Panel2.BorderStyle = BorderStyle.FixedSingle
         Panel2.Controls.Add(DayPanelControl37)
-        Panel2.Location = New Point(61, 515)
+        Panel2.Location = New Point(61, 511)
         Panel2.Name = "Panel2"
         Panel2.Size = New Size(61, 75)
         Panel2.TabIndex = 67
@@ -369,7 +454,7 @@ Partial Class Form1
         ' 
         Panel1.BorderStyle = BorderStyle.FixedSingle
         Panel1.Controls.Add(DayPanelControl36)
-        Panel1.Location = New Point(1, 515)
+        Panel1.Location = New Point(1, 511)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(61, 75)
         Panel1.TabIndex = 66
@@ -433,7 +518,7 @@ Partial Class Form1
         CalendarTableLayoutPanel.Controls.Add(DayPanelControl19, 4, 2)
         CalendarTableLayoutPanel.Controls.Add(DayPanelControl21, 6, 2)
         CalendarTableLayoutPanel.Controls.Add(DayPanelControl20, 5, 2)
-        CalendarTableLayoutPanel.Location = New Point(1, 137)
+        CalendarTableLayoutPanel.Location = New Point(1, 133)
         CalendarTableLayoutPanel.Name = "CalendarTableLayoutPanel"
         CalendarTableLayoutPanel.RowCount = 5
         CalendarTableLayoutPanel.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
@@ -900,19 +985,10 @@ Partial Class Form1
         DayPanelControl20.Size = New Size(52, 68)
         DayPanelControl20.TabIndex = 17
         ' 
-        ' Roomie1_Done
-        ' 
-        Roomie1_Done.AutoSize = True
-        Roomie1_Done.Location = New Point(82, 687)
-        Roomie1_Done.Name = "Roomie1_Done"
-        Roomie1_Done.Size = New Size(17, 20)
-        Roomie1_Done.TabIndex = 62
-        Roomie1_Done.Text = "0"
-        ' 
         ' Roomie1_Total
         ' 
         Roomie1_Total.AutoSize = True
-        Roomie1_Total.Location = New Point(82, 668)
+        Roomie1_Total.Location = New Point(122, 689)
         Roomie1_Total.Name = "Roomie1_Total"
         Roomie1_Total.Size = New Size(17, 20)
         Roomie1_Total.TabIndex = 61
@@ -921,7 +997,7 @@ Partial Class Form1
         ' DecorationPanel1
         ' 
         DecorationPanel1.BackColor = Color.Gainsboro
-        DecorationPanel1.Location = New Point(9, 90)
+        DecorationPanel1.Location = New Point(9, 86)
         DecorationPanel1.Name = "DecorationPanel1"
         DecorationPanel1.Size = New Size(408, 5)
         DecorationPanel1.TabIndex = 60
@@ -937,7 +1013,7 @@ Partial Class Form1
         ' DecorationPanel2
         ' 
         DecorationPanel2.BackColor = Color.Gainsboro
-        DecorationPanel2.Location = New Point(9, 623)
+        DecorationPanel2.Location = New Point(9, 591)
         DecorationPanel2.Name = "DecorationPanel2"
         DecorationPanel2.Size = New Size(408, 5)
         DecorationPanel2.TabIndex = 59
@@ -946,7 +1022,7 @@ Partial Class Form1
         ' 
         RoomiesTitleLabel.AutoSize = True
         RoomiesTitleLabel.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point)
-        RoomiesTitleLabel.Location = New Point(65, 631)
+        RoomiesTitleLabel.Location = New Point(61, 598)
         RoomiesTitleLabel.Name = "RoomiesTitleLabel"
         RoomiesTitleLabel.Size = New Size(304, 23)
         RoomiesTitleLabel.TabIndex = 58
@@ -956,7 +1032,7 @@ Partial Class Form1
         ' 
         PictureBox4.BackgroundImage = My.Resources.myResources.purple
         PictureBox4.BackgroundImageLayout = ImageLayout.Center
-        PictureBox4.Location = New Point(334, 655)
+        PictureBox4.Location = New Point(356, 629)
         PictureBox4.Name = "PictureBox4"
         PictureBox4.Size = New Size(20, 20)
         PictureBox4.TabIndex = 57
@@ -966,7 +1042,7 @@ Partial Class Form1
         ' 
         PictureBox3.BackgroundImage = My.Resources.myResources.blue
         PictureBox3.BackgroundImageLayout = ImageLayout.Center
-        PictureBox3.Location = New Point(224, 655)
+        PictureBox3.Location = New Point(276, 629)
         PictureBox3.Name = "PictureBox3"
         PictureBox3.Size = New Size(20, 20)
         PictureBox3.TabIndex = 56
@@ -976,7 +1052,7 @@ Partial Class Form1
         ' 
         PictureBox2.BackgroundImage = My.Resources.myResources.green
         PictureBox2.BackgroundImageLayout = ImageLayout.Center
-        PictureBox2.Location = New Point(116, 655)
+        PictureBox2.Location = New Point(189, 629)
         PictureBox2.Name = "PictureBox2"
         PictureBox2.Size = New Size(20, 20)
         PictureBox2.TabIndex = 55
@@ -986,7 +1062,7 @@ Partial Class Form1
         ' 
         PictureBox1.BackgroundImage = My.Resources.myResources.pink
         PictureBox1.BackgroundImageLayout = ImageLayout.Center
-        PictureBox1.Location = New Point(11, 655)
+        PictureBox1.Location = New Point(104, 629)
         PictureBox1.Name = "PictureBox1"
         PictureBox1.Size = New Size(20, 20)
         PictureBox1.TabIndex = 54
@@ -994,29 +1070,35 @@ Partial Class Form1
         ' 
         ' NextButton
         ' 
-        NextButton.BackColor = Color.WhiteSmoke
-        NextButton.Location = New Point(166, 576)
+        NextButton.BackColor = Color.White
+        NextButton.FlatAppearance.BorderSize = 0
+        NextButton.FlatStyle = FlatStyle.Flat
+        NextButton.Font = New Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point)
+        NextButton.Location = New Point(278, 21)
         NextButton.Name = "NextButton"
-        NextButton.Size = New Size(94, 30)
+        NextButton.Size = New Size(42, 39)
         NextButton.TabIndex = 53
-        NextButton.Text = "Next >"
+        NextButton.Text = ">"
         NextButton.UseVisualStyleBackColor = False
         ' 
         ' PreviousButton
         ' 
-        PreviousButton.BackColor = Color.WhiteSmoke
-        PreviousButton.Location = New Point(166, 540)
+        PreviousButton.BackColor = Color.White
+        PreviousButton.FlatAppearance.BorderSize = 0
+        PreviousButton.FlatStyle = FlatStyle.Flat
+        PreviousButton.Font = New Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point)
+        PreviousButton.Location = New Point(9, 20)
         PreviousButton.Name = "PreviousButton"
-        PreviousButton.Size = New Size(94, 30)
+        PreviousButton.Size = New Size(42, 39)
         PreviousButton.TabIndex = 52
-        PreviousButton.Text = "< Previous"
+        PreviousButton.Text = "<"
         PreviousButton.UseVisualStyleBackColor = False
         ' 
         ' FriLabel
         ' 
         FriLabel.BackColor = SystemColors.ButtonHighlight
         FriLabel.Font = New Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point)
-        FriLabel.Location = New Point(306, 90)
+        FriLabel.Location = New Point(306, 86)
         FriLabel.Name = "FriLabel"
         FriLabel.Size = New Size(59, 54)
         FriLabel.TabIndex = 13
@@ -1027,7 +1109,7 @@ Partial Class Form1
         ' 
         SatLabel.BackColor = SystemColors.ButtonHighlight
         SatLabel.Font = New Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point)
-        SatLabel.Location = New Point(367, 90)
+        SatLabel.Location = New Point(367, 86)
         SatLabel.Name = "SatLabel"
         SatLabel.Size = New Size(59, 54)
         SatLabel.TabIndex = 12
@@ -1038,7 +1120,7 @@ Partial Class Form1
         ' 
         ThursLabel.BackColor = SystemColors.ButtonHighlight
         ThursLabel.Font = New Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point)
-        ThursLabel.Location = New Point(245, 90)
+        ThursLabel.Location = New Point(245, 86)
         ThursLabel.Name = "ThursLabel"
         ThursLabel.Size = New Size(59, 54)
         ThursLabel.TabIndex = 11
@@ -1049,7 +1131,7 @@ Partial Class Form1
         ' 
         WedLabel.BackColor = SystemColors.ButtonHighlight
         WedLabel.Font = New Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point)
-        WedLabel.Location = New Point(184, 90)
+        WedLabel.Location = New Point(184, 86)
         WedLabel.Name = "WedLabel"
         WedLabel.Size = New Size(59, 54)
         WedLabel.TabIndex = 10
@@ -1060,7 +1142,7 @@ Partial Class Form1
         ' 
         TuesLabel.BackColor = SystemColors.ButtonHighlight
         TuesLabel.Font = New Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point)
-        TuesLabel.Location = New Point(123, 90)
+        TuesLabel.Location = New Point(123, 86)
         TuesLabel.Name = "TuesLabel"
         TuesLabel.Size = New Size(59, 54)
         TuesLabel.TabIndex = 9
@@ -1071,7 +1153,7 @@ Partial Class Form1
         ' 
         MonLabel.BackColor = SystemColors.ButtonHighlight
         MonLabel.Font = New Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point)
-        MonLabel.Location = New Point(62, 90)
+        MonLabel.Location = New Point(62, 86)
         MonLabel.Name = "MonLabel"
         MonLabel.Size = New Size(59, 54)
         MonLabel.TabIndex = 8
@@ -1082,7 +1164,7 @@ Partial Class Form1
         ' 
         SunLabel.BackColor = SystemColors.ButtonHighlight
         SunLabel.Font = New Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point)
-        SunLabel.Location = New Point(1, 90)
+        SunLabel.Location = New Point(1, 86)
         SunLabel.Name = "SunLabel"
         SunLabel.Size = New Size(59, 54)
         SunLabel.TabIndex = 7
@@ -1094,7 +1176,7 @@ Partial Class Form1
         AddToCalendarButton.BackColor = SystemColors.Control
         AddToCalendarButton.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
         AddToCalendarButton.ForeColor = Color.Black
-        AddToCalendarButton.Location = New Point(329, 8)
+        AddToCalendarButton.Location = New Point(340, 8)
         AddToCalendarButton.Name = "AddToCalendarButton"
         AddToCalendarButton.Size = New Size(74, 73)
         AddToCalendarButton.TabIndex = 20
@@ -1104,12 +1186,30 @@ Partial Class Form1
         ' MonthLabel
         ' 
         MonthLabel.AutoSize = True
-        MonthLabel.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point)
-        MonthLabel.Location = New Point(21, 24)
+        MonthLabel.Font = New Font("Segoe UI", 16.8000011F, FontStyle.Bold, GraphicsUnit.Point)
+        MonthLabel.Location = New Point(44, 23)
         MonthLabel.Name = "MonthLabel"
-        MonthLabel.Size = New Size(277, 46)
+        MonthLabel.Size = New Size(239, 40)
         MonthLabel.TabIndex = 18
         MonthLabel.Text = "November 2023"
+        ' 
+        ' line_label
+        ' 
+        line_label.AutoSize = True
+        line_label.Location = New Point(5, 670)
+        line_label.Name = "line_label"
+        line_label.Size = New Size(411, 20)
+        line_label.TabIndex = 82
+        line_label.Text = "___________________________________________________________________"
+        ' 
+        ' Label9
+        ' 
+        Label9.AutoSize = True
+        Label9.Location = New Point(261, 604)
+        Label9.Name = "Label9"
+        Label9.Size = New Size(99, 20)
+        Label9.TabIndex = 92
+        Label9.Text = "_______________"
         ' 
         ' BudgetTabPage
         ' 
@@ -1229,7 +1329,7 @@ Partial Class Form1
         ViewBalanceSheetButton.Name = "ViewBalanceSheetButton"
         ViewBalanceSheetButton.Size = New Size(244, 50)
         ViewBalanceSheetButton.TabIndex = 25
-        ViewBalanceSheetButton.Text = "View Balance Sheet"
+        ViewBalanceSheetButton.Text = "History"
         ViewBalanceSheetButton.UseVisualStyleBackColor = False
         ' 
         ' RecordExpenseButton
@@ -1240,7 +1340,7 @@ Partial Class Form1
         RecordExpenseButton.Name = "RecordExpenseButton"
         RecordExpenseButton.Size = New Size(244, 50)
         RecordExpenseButton.TabIndex = 23
-        RecordExpenseButton.Text = "Record Expense"
+        RecordExpenseButton.Text = "Add Expense"
         RecordExpenseButton.UseVisualStyleBackColor = False
         ' 
         ' BudgetPictureBox
@@ -1436,7 +1536,6 @@ Partial Class Form1
     Friend WithEvents DecorationPanel2 As Panel
     Friend WithEvents RoomiesTitleLabel As Label
     Friend WithEvents DecorationPanel1 As Panel
-    Friend WithEvents Roomie1_Done As Label
     Friend WithEvents Roomie1_Total As Label
     Friend WithEvents DayPanelControl3 As DayPanelControl
     Friend WithEvents DayPanelControl5 As DayPanelControl
@@ -1486,19 +1585,9 @@ Partial Class Form1
     Friend WithEvents Button3 As Button
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents Label16 As Label
-    Friend WithEvents Label17 As Label
-    Friend WithEvents Roomie4_Done As Label
     Friend WithEvents Roomie4_Total As Label
-    Friend WithEvents Label12 As Label
-    Friend WithEvents Label13 As Label
-    Friend WithEvents Roomie3_Done As Label
     Friend WithEvents Roomie3_Total As Label
-    Friend WithEvents Label8 As Label
-    Friend WithEvents Label9 As Label
-    Friend WithEvents Roomie2_Done As Label
     Friend WithEvents Roomie2_Total As Label
-    Friend WithEvents Label7 As Label
     Friend WithEvents FAQButton As Button
     Friend WithEvents RoomatesProfileButton As Button
     Friend WithEvents ManagementTitleLabel As Label
@@ -1514,4 +1603,23 @@ Partial Class Form1
     Friend WithEvents Roomate3AmountLabel As Label
     Friend WithEvents Roomate2AmountLabel As Label
     Friend WithEvents Roomate1AmountLabel As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents line_label As Label
+    Friend WithEvents Roomie4_Done As Label
+    Friend WithEvents Roomie3_Done As Label
+    Friend WithEvents Roomie2_Done As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Roomie1_Done As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents star8 As Label
+    Friend WithEvents star7 As Label
+    Friend WithEvents star6 As Label
+    Friend WithEvents star5 As Label
+    Friend WithEvents star4 As Label
+    Friend WithEvents star3 As Label
+    Friend WithEvents star2 As Label
+    Friend WithEvents star1 As Label
+    Friend WithEvents Label9 As Label
 End Class

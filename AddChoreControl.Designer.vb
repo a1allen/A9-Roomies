@@ -182,7 +182,6 @@ Partial Class AddChoreControl
         ' 
         RoomateComboBox.DropDownStyle = ComboBoxStyle.DropDownList
         RoomateComboBox.FormattingEnabled = True
-        RoomateComboBox.Items.AddRange(New Object() {"Roomate 1", "Roomate 2", "Roomate 3", "Roomate 4"})
         RoomateComboBox.Location = New Point(153, 10)
         RoomateComboBox.Name = "RoomateComboBox"
         RoomateComboBox.Size = New Size(188, 28)
