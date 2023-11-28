@@ -31,13 +31,13 @@
         If monthsLabelList(0).Text <> labelDate Then
             addNewMonthLabel(d, labelDate)
         End If
-        moveHistoryDown(40)
+        moveHistoryDown(48)
 
         Dim currDate As String = getDate(d, False)
 
         Dim newBudgetItem As New BudgetItem()
         Me.Controls.Add(newBudgetItem)
-        newBudgetItem.Location = New Point(1, 88)
+        newBudgetItem.Location = New Point(-2, 103)
 
         newBudgetItem.enterDate(currDate)
         newBudgetItem.enterPaid(e)
@@ -107,9 +107,9 @@
         Dim newMonthYearLabel As New Label
         Me.Controls.Add(newMonthYearLabel)
         newMonthYearLabel.BackColor = Color.Silver
-        newMonthYearLabel.Location = New Point(1, 73)
-        newMonthYearLabel.MinimumSize = New Size(350, 11)
-        newMonthYearLabel.Size = New Size(407, 15)
+        newMonthYearLabel.Location = New Point(-2, 73)
+        newMonthYearLabel.MinimumSize = New Size(350, 20)
+        newMonthYearLabel.Size = New Size(407, 26)
 
 
         newMonthYearLabel.Text = s
@@ -118,4 +118,16 @@
 
     End Sub
 
+    Private Sub BudgetItem25_Load(sender As Object, e As EventArgs) Handles BudgetItem25.Load
+
+    End Sub
+
+    Private Sub BudgetItem27_Load(sender As Object, e As EventArgs) Handles BudgetItem27.Load
+    End Sub
+
+    Private Sub BudgetItem26_Load(sender As Object, e As EventArgs) Handles BudgetItem26.Load
+    End Sub
+
+    Private Sub BudgetItem28_Load(sender As Object, e As EventArgs) Handles BudgetItem28.Load
+    End Sub
 End Class
