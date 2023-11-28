@@ -34,7 +34,7 @@ Partial Class RoommateOweButton
         RoommateNameOwes.ImageAlign = ContentAlignment.MiddleLeft
         RoommateNameOwes.Location = New Point(0, 15)
         RoommateNameOwes.Name = "RoommateNameOwes"
-        RoommateNameOwes.Size = New Size(206, 30)
+        RoommateNameOwes.Size = New Size(260, 37)
         RoommateNameOwes.TabIndex = 0
         RoommateNameOwes.Text = "Roommate 0 Owes: "
         RoommateNameOwes.TextAlign = ContentAlignment.MiddleLeft
@@ -46,7 +46,7 @@ Partial Class RoommateOweButton
         RoommateNameMoney.Font = New Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point)
         RoommateNameMoney.Location = New Point(276, 15)
         RoommateNameMoney.Name = "RoommateNameMoney"
-        RoommateNameMoney.Size = New Size(37, 30)
+        RoommateNameMoney.Size = New Size(47, 37)
         RoommateNameMoney.TabIndex = 1
         RoommateNameMoney.Text = "$0"
         RoommateNameMoney.TextAlign = ContentAlignment.MiddleLeft

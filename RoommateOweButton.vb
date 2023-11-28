@@ -110,7 +110,7 @@
     End Sub
 
     Public Event RoommateOweButtonClick As EventHandler
-    Private Sub RoommateOweButton_Click(sender As Object, e As EventArgs) Handles Me.Click, RoommateNameMoney.Click, RoommateNameOwes.Click
+    Private Sub RoommateOweButton_Click(sender As Object, e As EventArgs) Handles RoommateNameMoney.Click, RoommateNameOwes.Click, MyBase.Click
         simulateButtonClick()
         RaiseEvent RoommateOweButtonClick(Me, EventArgs.Empty)
     End Sub
