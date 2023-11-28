@@ -85,8 +85,8 @@ Partial Class Form1
         DayPanelControl23 = New DayPanelControl()
         DayPanelControl18 = New DayPanelControl()
         DayPanelControl22 = New DayPanelControl()
-        DayPanelControl19 = New DayPanelControl()
         DayPanelControl21 = New DayPanelControl()
+        DayPanelControl19 = New DayPanelControl()
         DayPanelControl20 = New DayPanelControl()
         Roomie1_Total = New Label()
         DecorationPanel1 = New Panel()
@@ -345,7 +345,7 @@ Partial Class Form1
         Label8.Name = "Label8"
         Label8.Size = New Size(44, 12)
         Label8.TabIndex = 86
-        Label8.Text = "Roomie1"
+        Label8.Text = "Roomie4"
         ' 
         ' Label4
         ' 
@@ -355,7 +355,7 @@ Partial Class Form1
         Label4.Name = "Label4"
         Label4.Size = New Size(44, 12)
         Label4.TabIndex = 85
-        Label4.Text = "Roomie1"
+        Label4.Text = "Roomie3"
         ' 
         ' Label3
         ' 
@@ -365,7 +365,7 @@ Partial Class Form1
         Label3.Name = "Label3"
         Label3.Size = New Size(44, 12)
         Label3.TabIndex = 84
-        Label3.Text = "Roomie1"
+        Label3.Text = "Roomie2"
         ' 
         ' Label2
         ' 
@@ -932,19 +932,6 @@ Partial Class Form1
         DayPanelControl22.Size = New Size(52, 68)
         DayPanelControl22.TabIndex = 19
         ' 
-        ' DayPanelControl19
-        ' 
-        DayPanelControl19.DayDate = New Date(0L)
-        DayPanelControl19.DayNum = 0
-        DayPanelControl19.Location = New Point(304, 154)
-        DayPanelControl19.Name = "DayPanelControl19"
-        DayPanelControl19.R1_done_stat = False
-        DayPanelControl19.R2_done_stat = False
-        DayPanelControl19.R3_done_stat = False
-        DayPanelControl19.R4_done_stat = False
-        DayPanelControl19.Size = New Size(52, 68)
-        DayPanelControl19.TabIndex = 16
-        ' 
         ' DayPanelControl21
         ' 
         DayPanelControl21.DayDate = New Date(0L)
@@ -957,6 +944,19 @@ Partial Class Form1
         DayPanelControl21.R4_done_stat = False
         DayPanelControl21.Size = New Size(54, 68)
         DayPanelControl21.TabIndex = 18
+        ' 
+        ' DayPanelControl19
+        ' 
+        DayPanelControl19.DayDate = New Date(0L)
+        DayPanelControl19.DayNum = 0
+        DayPanelControl19.Location = New Point(304, 154)
+        DayPanelControl19.Name = "DayPanelControl19"
+        DayPanelControl19.R1_done_stat = False
+        DayPanelControl19.R2_done_stat = False
+        DayPanelControl19.R3_done_stat = False
+        DayPanelControl19.R4_done_stat = False
+        DayPanelControl19.Size = New Size(52, 68)
+        DayPanelControl19.TabIndex = 16
         ' 
         ' DayPanelControl20
         ' 
