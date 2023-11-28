@@ -111,19 +111,7 @@ Partial Class Form1
         line_label = New Label()
         Label9 = New Label()
         BudgetTabPage = New TabPage()
-        BudgetPanel = New Panel()
-        Roomate4AmountLabel = New Label()
-        Roomate3AmountLabel = New Label()
-        Roomate2AmountLabel = New Label()
-        Roomate1AmountLabel = New Label()
-        Roomate4OweLabel = New Label()
-        Roomate3OweLabel = New Label()
-        Roomate2OweLabel = New Label()
-        Roomate1OweLabel = New Label()
-        ViewBalanceSheetButton = New Button()
-        RecordExpenseButton = New Button()
-        BudgetPictureBox = New PictureBox()
-        BudgetTitle = New Label()
+        BudgetTabMainPage1 = New BudgetTabMainPage()
         ManagementTabPage = New TabPage()
         AboutUsButton = New Button()
         ManageHouseholdsButton = New Button()
@@ -146,8 +134,6 @@ Partial Class Form1
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         BudgetTabPage.SuspendLayout()
-        BudgetPanel.SuspendLayout()
-        CType(BudgetPictureBox, ComponentModel.ISupportInitialize).BeginInit()
         ManagementTabPage.SuspendLayout()
         CType(ManagementPictureBox, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox6, ComponentModel.ISupportInitialize).BeginInit()
@@ -238,7 +224,7 @@ Partial Class Form1
         star8.AutoSize = True
         star8.Location = New Point(396, 689)
         star8.Name = "star8"
-        star8.Size = New Size(22, 20)
+        star8.Size = New Size(17, 15)
         star8.TabIndex = 100
         star8.Text = "★"
         ' 
@@ -247,7 +233,7 @@ Partial Class Form1
         star7.AutoSize = True
         star7.Location = New Point(396, 667)
         star7.Name = "star7"
-        star7.Size = New Size(22, 20)
+        star7.Size = New Size(17, 15)
         star7.TabIndex = 99
         star7.Text = "★"
         ' 
@@ -256,7 +242,7 @@ Partial Class Form1
         star6.AutoSize = True
         star6.Location = New Point(315, 690)
         star6.Name = "star6"
-        star6.Size = New Size(22, 20)
+        star6.Size = New Size(17, 15)
         star6.TabIndex = 98
         star6.Text = "★"
         ' 
@@ -265,7 +251,7 @@ Partial Class Form1
         star5.AutoSize = True
         star5.Location = New Point(315, 667)
         star5.Name = "star5"
-        star5.Size = New Size(22, 20)
+        star5.Size = New Size(17, 15)
         star5.TabIndex = 97
         star5.Text = "★"
         ' 
@@ -274,7 +260,7 @@ Partial Class Form1
         star4.AutoSize = True
         star4.Location = New Point(225, 690)
         star4.Name = "star4"
-        star4.Size = New Size(22, 20)
+        star4.Size = New Size(17, 15)
         star4.TabIndex = 96
         star4.Text = "★"
         ' 
@@ -283,7 +269,7 @@ Partial Class Form1
         star3.AutoSize = True
         star3.Location = New Point(225, 667)
         star3.Name = "star3"
-        star3.Size = New Size(22, 20)
+        star3.Size = New Size(17, 15)
         star3.TabIndex = 95
         star3.Text = "★"
         ' 
@@ -292,7 +278,7 @@ Partial Class Form1
         star2.AutoSize = True
         star2.Location = New Point(135, 690)
         star2.Name = "star2"
-        star2.Size = New Size(22, 20)
+        star2.Size = New Size(17, 15)
         star2.TabIndex = 94
         star2.Text = "★"
         ' 
@@ -301,7 +287,7 @@ Partial Class Form1
         star1.AutoSize = True
         star1.Location = New Point(135, 667)
         star1.Name = "star1"
-        star1.Size = New Size(22, 20)
+        star1.Size = New Size(17, 15)
         star1.TabIndex = 93
         star1.Text = "★"
         ' 
@@ -310,7 +296,7 @@ Partial Class Form1
         Roomie4_Done.AutoSize = True
         Roomie4_Done.Location = New Point(381, 667)
         Roomie4_Done.Name = "Roomie4_Done"
-        Roomie4_Done.Size = New Size(17, 20)
+        Roomie4_Done.Size = New Size(13, 15)
         Roomie4_Done.TabIndex = 91
         Roomie4_Done.Text = "0"
         ' 
@@ -319,7 +305,7 @@ Partial Class Form1
         Roomie3_Done.AutoSize = True
         Roomie3_Done.Location = New Point(298, 667)
         Roomie3_Done.Name = "Roomie3_Done"
-        Roomie3_Done.Size = New Size(17, 20)
+        Roomie3_Done.Size = New Size(13, 15)
         Roomie3_Done.TabIndex = 90
         Roomie3_Done.Text = "0"
         ' 
@@ -328,7 +314,7 @@ Partial Class Form1
         Roomie2_Done.AutoSize = True
         Roomie2_Done.Location = New Point(209, 667)
         Roomie2_Done.Name = "Roomie2_Done"
-        Roomie2_Done.Size = New Size(17, 20)
+        Roomie2_Done.Size = New Size(13, 15)
         Roomie2_Done.TabIndex = 89
         Roomie2_Done.Text = "0"
         ' 
@@ -338,7 +324,7 @@ Partial Class Form1
         Label7.Font = New Font("Microsoft Sans Serif", 7.20000029F, FontStyle.Regular, GraphicsUnit.Point)
         Label7.Location = New Point(6, 668)
         Label7.Name = "Label7"
-        Label7.Size = New Size(107, 16)
+        Label7.Size = New Size(85, 13)
         Label7.TabIndex = 88
         Label7.Text = "Finished Chores:"
         ' 
@@ -347,7 +333,7 @@ Partial Class Form1
         Roomie1_Done.AutoSize = True
         Roomie1_Done.Location = New Point(122, 666)
         Roomie1_Done.Name = "Roomie1_Done"
-        Roomie1_Done.Size = New Size(17, 20)
+        Roomie1_Done.Size = New Size(13, 15)
         Roomie1_Done.TabIndex = 87
         Roomie1_Done.Text = "0"
         ' 
@@ -357,7 +343,7 @@ Partial Class Form1
         Label8.Font = New Font("Segoe UI", 7.20000029F, FontStyle.Regular, GraphicsUnit.Point)
         Label8.Location = New Point(356, 648)
         Label8.Name = "Label8"
-        Label8.Size = New Size(60, 17)
+        Label8.Size = New Size(44, 12)
         Label8.TabIndex = 86
         Label8.Text = "Roomie1"
         ' 
@@ -367,7 +353,7 @@ Partial Class Form1
         Label4.Font = New Font("Segoe UI", 7.20000029F, FontStyle.Regular, GraphicsUnit.Point)
         Label4.Location = New Point(277, 648)
         Label4.Name = "Label4"
-        Label4.Size = New Size(60, 17)
+        Label4.Size = New Size(44, 12)
         Label4.TabIndex = 85
         Label4.Text = "Roomie1"
         ' 
@@ -377,7 +363,7 @@ Partial Class Form1
         Label3.Font = New Font("Segoe UI", 7.20000029F, FontStyle.Regular, GraphicsUnit.Point)
         Label3.Location = New Point(188, 648)
         Label3.Name = "Label3"
-        Label3.Size = New Size(60, 17)
+        Label3.Size = New Size(44, 12)
         Label3.TabIndex = 84
         Label3.Text = "Roomie1"
         ' 
@@ -387,7 +373,7 @@ Partial Class Form1
         Label2.Font = New Font("Segoe UI", 7.20000029F, FontStyle.Regular, GraphicsUnit.Point)
         Label2.Location = New Point(105, 648)
         Label2.Name = "Label2"
-        Label2.Size = New Size(60, 17)
+        Label2.Size = New Size(44, 12)
         Label2.TabIndex = 83
         Label2.Text = "Roomie1"
         ' 
@@ -396,7 +382,7 @@ Partial Class Form1
         Roomie4_Total.AutoSize = True
         Roomie4_Total.Location = New Point(381, 689)
         Roomie4_Total.Name = "Roomie4_Total"
-        Roomie4_Total.Size = New Size(17, 20)
+        Roomie4_Total.Size = New Size(13, 15)
         Roomie4_Total.TabIndex = 78
         Roomie4_Total.Text = "0"
         ' 
@@ -405,7 +391,7 @@ Partial Class Form1
         Roomie3_Total.AutoSize = True
         Roomie3_Total.Location = New Point(298, 689)
         Roomie3_Total.Name = "Roomie3_Total"
-        Roomie3_Total.Size = New Size(17, 20)
+        Roomie3_Total.Size = New Size(13, 15)
         Roomie3_Total.TabIndex = 74
         Roomie3_Total.Text = "0"
         ' 
@@ -414,7 +400,7 @@ Partial Class Form1
         Roomie2_Total.AutoSize = True
         Roomie2_Total.Location = New Point(208, 689)
         Roomie2_Total.Name = "Roomie2_Total"
-        Roomie2_Total.Size = New Size(17, 20)
+        Roomie2_Total.Size = New Size(13, 15)
         Roomie2_Total.TabIndex = 70
         Roomie2_Total.Text = "0"
         ' 
@@ -424,7 +410,7 @@ Partial Class Form1
         Label6.Font = New Font("Segoe UI", 7.20000029F, FontStyle.Regular, GraphicsUnit.Point)
         Label6.Location = New Point(6, 688)
         Label6.Name = "Label6"
-        Label6.Size = New Size(96, 17)
+        Label6.Size = New Size(69, 12)
         Label6.TabIndex = 68
         Label6.Text = "Total Assigned:"
         ' 
@@ -515,9 +501,9 @@ Partial Class Form1
         CalendarTableLayoutPanel.Controls.Add(DayPanelControl23, 1, 3)
         CalendarTableLayoutPanel.Controls.Add(DayPanelControl18, 3, 2)
         CalendarTableLayoutPanel.Controls.Add(DayPanelControl22, 0, 3)
-        CalendarTableLayoutPanel.Controls.Add(DayPanelControl19, 4, 2)
         CalendarTableLayoutPanel.Controls.Add(DayPanelControl21, 6, 2)
-        CalendarTableLayoutPanel.Controls.Add(DayPanelControl20, 5, 2)
+        CalendarTableLayoutPanel.Controls.Add(DayPanelControl19, 5, 2)
+        CalendarTableLayoutPanel.Controls.Add(DayPanelControl20, 4, 2)
         CalendarTableLayoutPanel.Location = New Point(1, 133)
         CalendarTableLayoutPanel.Name = "CalendarTableLayoutPanel"
         CalendarTableLayoutPanel.RowCount = 5
@@ -950,7 +936,7 @@ Partial Class Form1
         ' 
         DayPanelControl19.DayDate = New Date(0L)
         DayPanelControl19.DayNum = 0
-        DayPanelControl19.Location = New Point(244, 154)
+        DayPanelControl19.Location = New Point(304, 154)
         DayPanelControl19.Name = "DayPanelControl19"
         DayPanelControl19.R1_done_stat = False
         DayPanelControl19.R2_done_stat = False
@@ -976,7 +962,7 @@ Partial Class Form1
         ' 
         DayPanelControl20.DayDate = New Date(0L)
         DayPanelControl20.DayNum = 0
-        DayPanelControl20.Location = New Point(304, 154)
+        DayPanelControl20.Location = New Point(244, 154)
         DayPanelControl20.Name = "DayPanelControl20"
         DayPanelControl20.R1_done_stat = False
         DayPanelControl20.R2_done_stat = False
@@ -990,7 +976,7 @@ Partial Class Form1
         Roomie1_Total.AutoSize = True
         Roomie1_Total.Location = New Point(122, 689)
         Roomie1_Total.Name = "Roomie1_Total"
-        Roomie1_Total.Size = New Size(17, 20)
+        Roomie1_Total.Size = New Size(13, 15)
         Roomie1_Total.TabIndex = 61
         Roomie1_Total.Text = "0"
         ' 
@@ -1024,7 +1010,7 @@ Partial Class Form1
         RoomiesTitleLabel.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point)
         RoomiesTitleLabel.Location = New Point(61, 598)
         RoomiesTitleLabel.Name = "RoomiesTitleLabel"
-        RoomiesTitleLabel.Size = New Size(304, 23)
+        RoomiesTitleLabel.Size = New Size(251, 19)
         RoomiesTitleLabel.TabIndex = 58
         RoomiesTitleLabel.Text = "Roomates Contributions This Month:"
         ' 
@@ -1189,7 +1175,7 @@ Partial Class Form1
         MonthLabel.Font = New Font("Segoe UI", 16.8000011F, FontStyle.Bold, GraphicsUnit.Point)
         MonthLabel.Location = New Point(44, 23)
         MonthLabel.Name = "MonthLabel"
-        MonthLabel.Size = New Size(239, 40)
+        MonthLabel.Size = New Size(184, 31)
         MonthLabel.TabIndex = 18
         MonthLabel.Text = "November 2023"
         ' 
@@ -1198,7 +1184,7 @@ Partial Class Form1
         line_label.AutoSize = True
         line_label.Location = New Point(5, 670)
         line_label.Name = "line_label"
-        line_label.Size = New Size(411, 20)
+        line_label.Size = New Size(342, 15)
         line_label.TabIndex = 82
         line_label.Text = "___________________________________________________________________"
         ' 
@@ -1207,17 +1193,13 @@ Partial Class Form1
         Label9.AutoSize = True
         Label9.Location = New Point(261, 604)
         Label9.Name = "Label9"
-        Label9.Size = New Size(99, 20)
+        Label9.Size = New Size(82, 15)
         Label9.TabIndex = 92
         Label9.Text = "_______________"
         ' 
         ' BudgetTabPage
         ' 
-        BudgetTabPage.Controls.Add(BudgetPanel)
-        BudgetTabPage.Controls.Add(ViewBalanceSheetButton)
-        BudgetTabPage.Controls.Add(RecordExpenseButton)
-        BudgetTabPage.Controls.Add(BudgetPictureBox)
-        BudgetTabPage.Controls.Add(BudgetTitle)
+        BudgetTabPage.Controls.Add(BudgetTabMainPage1)
         BudgetTabPage.Location = New Point(4, 4)
         BudgetTabPage.Name = "BudgetTabPage"
         BudgetTabPage.Padding = New Padding(3)
@@ -1226,143 +1208,12 @@ Partial Class Form1
         BudgetTabPage.Text = "Budget"
         BudgetTabPage.UseVisualStyleBackColor = True
         ' 
-        ' BudgetPanel
+        ' BudgetTabMainPage1
         ' 
-        BudgetPanel.Controls.Add(Roomate4AmountLabel)
-        BudgetPanel.Controls.Add(Roomate3AmountLabel)
-        BudgetPanel.Controls.Add(Roomate2AmountLabel)
-        BudgetPanel.Controls.Add(Roomate1AmountLabel)
-        BudgetPanel.Controls.Add(Roomate4OweLabel)
-        BudgetPanel.Controls.Add(Roomate3OweLabel)
-        BudgetPanel.Controls.Add(Roomate2OweLabel)
-        BudgetPanel.Controls.Add(Roomate1OweLabel)
-        BudgetPanel.Location = New Point(92, 407)
-        BudgetPanel.Name = "BudgetPanel"
-        BudgetPanel.Size = New Size(250, 128)
-        BudgetPanel.TabIndex = 28
-        ' 
-        ' Roomate4AmountLabel
-        ' 
-        Roomate4AmountLabel.AutoSize = True
-        Roomate4AmountLabel.ForeColor = Color.DarkViolet
-        Roomate4AmountLabel.Location = New Point(153, 106)
-        Roomate4AmountLabel.Name = "Roomate4AmountLabel"
-        Roomate4AmountLabel.Size = New Size(52, 20)
-        Roomate4AmountLabel.TabIndex = 37
-        Roomate4AmountLabel.Text = "$30.00"
-        ' 
-        ' Roomate3AmountLabel
-        ' 
-        Roomate3AmountLabel.AutoSize = True
-        Roomate3AmountLabel.ForeColor = Color.DodgerBlue
-        Roomate3AmountLabel.Location = New Point(153, 72)
-        Roomate3AmountLabel.Name = "Roomate3AmountLabel"
-        Roomate3AmountLabel.Size = New Size(52, 20)
-        Roomate3AmountLabel.TabIndex = 36
-        Roomate3AmountLabel.Text = "$30.00"
-        ' 
-        ' Roomate2AmountLabel
-        ' 
-        Roomate2AmountLabel.AutoSize = True
-        Roomate2AmountLabel.ForeColor = Color.ForestGreen
-        Roomate2AmountLabel.Location = New Point(153, 38)
-        Roomate2AmountLabel.Name = "Roomate2AmountLabel"
-        Roomate2AmountLabel.Size = New Size(58, 20)
-        Roomate2AmountLabel.TabIndex = 35
-        Roomate2AmountLabel.Text = "$-60.00"
-        ' 
-        ' Roomate1AmountLabel
-        ' 
-        Roomate1AmountLabel.AutoSize = True
-        Roomate1AmountLabel.ForeColor = Color.Crimson
-        Roomate1AmountLabel.Location = New Point(153, 4)
-        Roomate1AmountLabel.Name = "Roomate1AmountLabel"
-        Roomate1AmountLabel.Size = New Size(44, 20)
-        Roomate1AmountLabel.TabIndex = 34
-        Roomate1AmountLabel.Text = "$0.00"
-        ' 
-        ' Roomate4OweLabel
-        ' 
-        Roomate4OweLabel.AutoSize = True
-        Roomate4OweLabel.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point)
-        Roomate4OweLabel.Location = New Point(3, 104)
-        Roomate4OweLabel.Name = "Roomate4OweLabel"
-        Roomate4OweLabel.Size = New Size(155, 23)
-        Roomate4OweLabel.TabIndex = 33
-        Roomate4OweLabel.Text = "Roomate 4 Owes: "
-        ' 
-        ' Roomate3OweLabel
-        ' 
-        Roomate3OweLabel.AutoSize = True
-        Roomate3OweLabel.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point)
-        Roomate3OweLabel.Location = New Point(3, 70)
-        Roomate3OweLabel.Name = "Roomate3OweLabel"
-        Roomate3OweLabel.Size = New Size(155, 23)
-        Roomate3OweLabel.TabIndex = 32
-        Roomate3OweLabel.Text = "Roomate 3 Owes: "
-        ' 
-        ' Roomate2OweLabel
-        ' 
-        Roomate2OweLabel.AutoSize = True
-        Roomate2OweLabel.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point)
-        Roomate2OweLabel.Location = New Point(3, 36)
-        Roomate2OweLabel.Name = "Roomate2OweLabel"
-        Roomate2OweLabel.Size = New Size(155, 23)
-        Roomate2OweLabel.TabIndex = 31
-        Roomate2OweLabel.Text = "Roomate 2 Owes: "
-        ' 
-        ' Roomate1OweLabel
-        ' 
-        Roomate1OweLabel.AutoSize = True
-        Roomate1OweLabel.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point)
-        Roomate1OweLabel.Location = New Point(3, 2)
-        Roomate1OweLabel.Name = "Roomate1OweLabel"
-        Roomate1OweLabel.Size = New Size(155, 23)
-        Roomate1OweLabel.TabIndex = 30
-        Roomate1OweLabel.Text = "Roomate 1 Owes: "
-        ' 
-        ' ViewBalanceSheetButton
-        ' 
-        ViewBalanceSheetButton.BackColor = Color.DarkSeaGreen
-        ViewBalanceSheetButton.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
-        ViewBalanceSheetButton.Location = New Point(92, 620)
-        ViewBalanceSheetButton.Name = "ViewBalanceSheetButton"
-        ViewBalanceSheetButton.Size = New Size(244, 50)
-        ViewBalanceSheetButton.TabIndex = 25
-        ViewBalanceSheetButton.Text = "History"
-        ViewBalanceSheetButton.UseVisualStyleBackColor = False
-        ' 
-        ' RecordExpenseButton
-        ' 
-        RecordExpenseButton.BackColor = Color.DarkSeaGreen
-        RecordExpenseButton.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
-        RecordExpenseButton.Location = New Point(92, 564)
-        RecordExpenseButton.Name = "RecordExpenseButton"
-        RecordExpenseButton.Size = New Size(244, 50)
-        RecordExpenseButton.TabIndex = 23
-        RecordExpenseButton.Text = "Add Expense"
-        RecordExpenseButton.UseVisualStyleBackColor = False
-        ' 
-        ' BudgetPictureBox
-        ' 
-        BudgetPictureBox.BackgroundImageLayout = ImageLayout.Stretch
-        BudgetPictureBox.Image = My.Resources.myResources.Jar
-        BudgetPictureBox.Location = New Point(80, 80)
-        BudgetPictureBox.Name = "BudgetPictureBox"
-        BudgetPictureBox.Size = New Size(262, 302)
-        BudgetPictureBox.SizeMode = PictureBoxSizeMode.StretchImage
-        BudgetPictureBox.TabIndex = 20
-        BudgetPictureBox.TabStop = False
-        ' 
-        ' BudgetTitle
-        ' 
-        BudgetTitle.AutoSize = True
-        BudgetTitle.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point)
-        BudgetTitle.Location = New Point(149, 26)
-        BudgetTitle.Name = "BudgetTitle"
-        BudgetTitle.Size = New Size(136, 46)
-        BudgetTitle.TabIndex = 19
-        BudgetTitle.Text = "Budget"
+        BudgetTabMainPage1.Location = New Point(0, 0)
+        BudgetTabMainPage1.Name = "BudgetTabMainPage1"
+        BudgetTabMainPage1.Size = New Size(429, 722)
+        BudgetTabMainPage1.TabIndex = 0
         ' 
         ' ManagementTabPage
         ' 
@@ -1426,7 +1277,7 @@ Partial Class Form1
         ManagementTitleLabel.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point)
         ManagementTitleLabel.Location = New Point(119, 25)
         ManagementTitleLabel.Name = "ManagementTitleLabel"
-        ManagementTitleLabel.Size = New Size(232, 46)
+        ManagementTitleLabel.Size = New Size(188, 37)
         ManagementTitleLabel.TabIndex = 69
         ManagementTitleLabel.Text = "Management"
         ' 
@@ -1500,10 +1351,6 @@ Partial Class Form1
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         BudgetTabPage.ResumeLayout(False)
-        BudgetTabPage.PerformLayout()
-        BudgetPanel.ResumeLayout(False)
-        BudgetPanel.PerformLayout()
-        CType(BudgetPictureBox, ComponentModel.ISupportInitialize).EndInit()
         ManagementTabPage.ResumeLayout(False)
         ManagementTabPage.PerformLayout()
         CType(ManagementPictureBox, ComponentModel.ISupportInitialize).EndInit()
@@ -1576,10 +1423,6 @@ Partial Class Form1
     Friend WithEvents CalendarTableLayoutPanel As TableLayoutPanel
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents BudgetTitle As Label
-    Friend WithEvents RecordExpenseButton As Button
-    Friend WithEvents BudgetPictureBox As PictureBox
-    Friend WithEvents ViewBalanceSheetButton As Button
     Friend WithEvents PictureBox6 As PictureBox
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
@@ -1594,15 +1437,6 @@ Partial Class Form1
     Friend WithEvents AboutUsButton As Button
     Friend WithEvents ManageHouseholdsButton As Button
     Friend WithEvents ManagementPictureBox As PictureBox
-    Friend WithEvents BudgetPanel As Panel
-    Friend WithEvents Roomate4OweLabel As Label
-    Friend WithEvents Roomate3OweLabel As Label
-    Friend WithEvents Roomate2OweLabel As Label
-    Friend WithEvents Roomate1OweLabel As Label
-    Friend WithEvents Roomate4AmountLabel As Label
-    Friend WithEvents Roomate3AmountLabel As Label
-    Friend WithEvents Roomate2AmountLabel As Label
-    Friend WithEvents Roomate1AmountLabel As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents line_label As Label
     Friend WithEvents Roomie4_Done As Label
@@ -1622,4 +1456,5 @@ Partial Class Form1
     Friend WithEvents star2 As Label
     Friend WithEvents star1 As Label
     Friend WithEvents Label9 As Label
+    Friend WithEvents BudgetTabMainPage1 As BudgetTabMainPage
 End Class

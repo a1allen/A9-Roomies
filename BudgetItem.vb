@@ -17,7 +17,7 @@ Public Class BudgetItem
         Set(value As String)
             itemDate = value
 
-            BudgetItem_DateLabel.Text = itemDate
+            enterDate(itemDate)
 
         End Set
     End Property
@@ -30,7 +30,7 @@ Public Class BudgetItem
         Set(value As String)
             itemName = value
 
-            BudgetItem_ExpenseNameLabel.Text = itemName
+            enterExpenseName(itemName)
 
         End Set
     End Property
@@ -43,11 +43,7 @@ Public Class BudgetItem
         Set(value As Integer)
             roommateName = value
 
-            BudgetItem_RoommateNamePaid.Text = "Roommate " + roommateName.ToString() + " Paid"
-
-            BudgetItem_MoneyPaidLabel.Left = BudgetItem_RoommateNamePaid.Left + BudgetItem_RoommateNamePaid.Width - BudgetItem_MoneyPaidLabel.Width + 5
-
-
+            enterRoomate(roommateName)
 
         End Set
     End Property
@@ -60,29 +56,45 @@ Public Class BudgetItem
         Set(value As Double)
             moneyPaid = value
 
-            BudgetItem_MoneyPaidLabel.Text = "$" + moneyPaid.ToString()
-            BudgetItem_MoneyPaidLabel.Left = BudgetItem_RoommateNamePaid.Left + BudgetItem_RoommateNamePaid.Width - BudgetItem_MoneyPaidLabel.Width + 5
-
-
-
-
-
-
+            enterPaid(moneyPaid)
 
         End Set
     End Property
 
 
+    Public Sub enterRoomate(r As Integer)
+        If r <= 0 Then
+            BudgetItem_RoommateNamePaid.Text = "No one has paid: "
+        Else
+            BudgetItem_RoommateNamePaid.Text = "Roommate " + r.ToString() + " Paid"
 
-    Private Sub BudgetItem_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        End If
 
+        BudgetItem_MoneyPaidLabel.Left = BudgetItem_RoommateNamePaid.Left + BudgetItem_RoommateNamePaid.Width - BudgetItem_MoneyPaidLabel.Width + 5
+
+        roommateName = r
     End Sub
 
-    Private Sub DateLabel_Click(sender As Object, e As EventArgs) Handles BudgetItem_DateLabel.Click
+    Public Sub enterPaid(p As Double)
 
+        BudgetItem_MoneyPaidLabel.Text = "$" + moneyPaid.ToString()
+        BudgetItem_MoneyPaidLabel.Left = BudgetItem_RoommateNamePaid.Left + BudgetItem_RoommateNamePaid.Width - BudgetItem_MoneyPaidLabel.Width + 5
+
+        moneyPaid = p
     End Sub
 
-    Private Sub RoomateName_Click(sender As Object, e As EventArgs) Handles BudgetItem_RoommateNamePaid.Click
-
+    Public Sub enterDate(d As String)
+        BudgetItem_DateLabel.Text = d
+        itemDate = d
     End Sub
+
+    Public Sub enterExpenseName(e As String)
+        If e <> "" Then
+            BudgetItem_ExpenseNameLabel.Text = e
+        Else
+            BudgetItem_ExpenseNameLabel.Text = "Unnamed Expense"
+        End If
+        itemName = e
+    End Sub
+
 End Class

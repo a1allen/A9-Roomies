@@ -45,54 +45,57 @@ Partial Class RecordExpenseControl
         ' 
         RecordExpenseTitleLabel.AutoSize = True
         RecordExpenseTitleLabel.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point)
-        RecordExpenseTitleLabel.Location = New Point(98, 48)
+        RecordExpenseTitleLabel.Location = New Point(86, 36)
         RecordExpenseTitleLabel.Name = "RecordExpenseTitleLabel"
-        RecordExpenseTitleLabel.Size = New Size(239, 41)
+        RecordExpenseTitleLabel.Size = New Size(194, 32)
         RecordExpenseTitleLabel.TabIndex = 67
         RecordExpenseTitleLabel.Text = "Record Expense"
         ' 
         ' devider2
         ' 
         devider2.AutoSize = True
-        devider2.Location = New Point(57, 78)
+        devider2.Location = New Point(50, 58)
         devider2.Name = "devider2"
-        devider2.Size = New Size(321, 20)
+        devider2.Size = New Size(267, 15)
         devider2.TabIndex = 68
         devider2.Text = "____________________________________________________"
         ' 
         ' BudgetExpenseBackButton
         ' 
         BudgetExpenseBackButton.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        BudgetExpenseBackButton.Location = New Point(22, 19)
+        BudgetExpenseBackButton.Location = New Point(19, 14)
+        BudgetExpenseBackButton.Margin = New Padding(3, 2, 3, 2)
         BudgetExpenseBackButton.Name = "BudgetExpenseBackButton"
-        BudgetExpenseBackButton.Size = New Size(42, 42)
+        BudgetExpenseBackButton.Size = New Size(37, 32)
         BudgetExpenseBackButton.TabIndex = 69
         BudgetExpenseBackButton.Text = "X"
         BudgetExpenseBackButton.UseVisualStyleBackColor = True
         ' 
         ' AddExpenseButton
         ' 
-        AddExpenseButton.Location = New Point(151, 502)
+        AddExpenseButton.Location = New Point(132, 376)
+        AddExpenseButton.Margin = New Padding(3, 2, 3, 2)
         AddExpenseButton.Name = "AddExpenseButton"
-        AddExpenseButton.Size = New Size(131, 29)
+        AddExpenseButton.Size = New Size(115, 22)
         AddExpenseButton.TabIndex = 70
         AddExpenseButton.Text = "Add Expense"
         AddExpenseButton.UseVisualStyleBackColor = True
         ' 
         ' ExpenseAmountTextBox
         ' 
-        ExpenseAmountTextBox.Location = New Point(69, 220)
+        ExpenseAmountTextBox.Location = New Point(60, 165)
+        ExpenseAmountTextBox.Margin = New Padding(3, 2, 3, 2)
         ExpenseAmountTextBox.Name = "ExpenseAmountTextBox"
-        ExpenseAmountTextBox.Size = New Size(299, 27)
+        ExpenseAmountTextBox.Size = New Size(262, 23)
         ExpenseAmountTextBox.TabIndex = 71
         ' 
         ' ExpenseAmountTitleLabel
         ' 
         ExpenseAmountTitleLabel.AutoSize = True
         ExpenseAmountTitleLabel.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        ExpenseAmountTitleLabel.Location = New Point(69, 197)
+        ExpenseAmountTitleLabel.Location = New Point(60, 148)
         ExpenseAmountTitleLabel.Name = "ExpenseAmountTitleLabel"
-        ExpenseAmountTitleLabel.Size = New Size(71, 20)
+        ExpenseAmountTitleLabel.Size = New Size(55, 15)
         ExpenseAmountTitleLabel.TabIndex = 72
         ExpenseAmountTitleLabel.Text = "Amount:"
         ' 
@@ -100,9 +103,9 @@ Partial Class RecordExpenseControl
         ' 
         AssignExpenseToTitleLabel.AutoSize = True
         AssignExpenseToTitleLabel.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        AssignExpenseToTitleLabel.Location = New Point(69, 336)
+        AssignExpenseToTitleLabel.Location = New Point(60, 252)
         AssignExpenseToTitleLabel.Name = "AssignExpenseToTitleLabel"
-        AssignExpenseToTitleLabel.Size = New Size(152, 20)
+        AssignExpenseToTitleLabel.Size = New Size(123, 15)
         AssignExpenseToTitleLabel.TabIndex = 74
         AssignExpenseToTitleLabel.Text = "Distrubute between:"
         ' 
@@ -110,27 +113,29 @@ Partial Class RecordExpenseControl
         ' 
         whoPaidCombo.DropDownStyle = ComboBoxStyle.DropDownList
         whoPaidCombo.FormattingEnabled = True
-        whoPaidCombo.Location = New Point(69, 288)
+        whoPaidCombo.Location = New Point(60, 216)
+        whoPaidCombo.Margin = New Padding(3, 2, 3, 2)
         whoPaidCombo.Name = "whoPaidCombo"
-        whoPaidCombo.Size = New Size(299, 28)
+        whoPaidCombo.Size = New Size(262, 23)
         whoPaidCombo.TabIndex = 78
         ' 
         ' whoPaidLabel
         ' 
         whoPaidLabel.AutoSize = True
         whoPaidLabel.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        whoPaidLabel.Location = New Point(69, 265)
+        whoPaidLabel.Location = New Point(60, 199)
         whoPaidLabel.Name = "whoPaidLabel"
-        whoPaidLabel.Size = New Size(184, 20)
+        whoPaidLabel.Size = New Size(146, 15)
         whoPaidLabel.TabIndex = 77
         whoPaidLabel.Text = "Who made the payment?"
         ' 
         ' R_check
         ' 
         R_check.AutoSize = True
-        R_check.Location = New Point(69, 373)
+        R_check.Location = New Point(60, 280)
+        R_check.Margin = New Padding(3, 2, 3, 2)
         R_check.Name = "R_check"
-        R_check.Size = New Size(91, 24)
+        R_check.Size = New Size(74, 19)
         R_check.TabIndex = 79
         R_check.Text = "Everyone"
         R_check.UseVisualStyleBackColor = True
@@ -139,9 +144,10 @@ Partial Class RecordExpenseControl
         ' 
         R1_check.AutoSize = True
         R1_check.ForeColor = Color.Red
-        R1_check.Location = New Point(69, 411)
+        R1_check.Location = New Point(60, 308)
+        R1_check.Margin = New Padding(3, 2, 3, 2)
         R1_check.Name = "R1_check"
-        R1_check.Size = New Size(117, 24)
+        R1_check.Size = New Size(94, 19)
         R1_check.TabIndex = 80
         R1_check.Text = "Roommate 1"
         R1_check.UseVisualStyleBackColor = True
@@ -149,10 +155,11 @@ Partial Class RecordExpenseControl
         ' R4_check
         ' 
         R4_check.AutoSize = True
-        R4_check.ForeColor = Color.FromArgb(CByte(64), CByte(0), CByte(64))
-        R4_check.Location = New Point(204, 443)
+        R4_check.ForeColor = Color.MediumOrchid
+        R4_check.Location = New Point(178, 332)
+        R4_check.Margin = New Padding(3, 2, 3, 2)
         R4_check.Name = "R4_check"
-        R4_check.Size = New Size(117, 24)
+        R4_check.Size = New Size(94, 19)
         R4_check.TabIndex = 81
         R4_check.Text = "Roommate 4"
         R4_check.UseVisualStyleBackColor = True
@@ -160,10 +167,11 @@ Partial Class RecordExpenseControl
         ' R3_check
         ' 
         R3_check.AutoSize = True
-        R3_check.ForeColor = Color.Teal
-        R3_check.Location = New Point(69, 441)
+        R3_check.ForeColor = Color.DodgerBlue
+        R3_check.Location = New Point(60, 331)
+        R3_check.Margin = New Padding(3, 2, 3, 2)
         R3_check.Name = "R3_check"
-        R3_check.Size = New Size(117, 24)
+        R3_check.Size = New Size(94, 19)
         R3_check.TabIndex = 82
         R3_check.Text = "Roommate 3"
         R3_check.UseVisualStyleBackColor = True
@@ -171,10 +179,11 @@ Partial Class RecordExpenseControl
         ' R2_check
         ' 
         R2_check.AutoSize = True
-        R2_check.ForeColor = Color.FromArgb(CByte(0), CByte(64), CByte(0))
-        R2_check.Location = New Point(204, 411)
+        R2_check.ForeColor = Color.Green
+        R2_check.Location = New Point(178, 308)
+        R2_check.Margin = New Padding(3, 2, 3, 2)
         R2_check.Name = "R2_check"
-        R2_check.Size = New Size(117, 24)
+        R2_check.Size = New Size(94, 19)
         R2_check.TabIndex = 83
         R2_check.Text = "Roommate 2"
         R2_check.UseVisualStyleBackColor = True
@@ -182,9 +191,9 @@ Partial Class RecordExpenseControl
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(67, 385)
+        Label1.Location = New Point(59, 289)
         Label1.Name = "Label1"
-        Label1.Size = New Size(129, 20)
+        Label1.Size = New Size(107, 15)
         Label1.TabIndex = 84
         Label1.Text = "____________________"
         ' 
@@ -192,24 +201,25 @@ Partial Class RecordExpenseControl
         ' 
         Label2.AutoSize = True
         Label2.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        Label2.Location = New Point(69, 129)
+        Label2.Location = New Point(60, 97)
         Label2.Name = "Label2"
-        Label2.Size = New Size(116, 20)
+        Label2.Size = New Size(92, 15)
         Label2.TabIndex = 86
         Label2.Text = "Expense Name:"
         ' 
         ' label_of_record
         ' 
-        label_of_record.Location = New Point(69, 152)
+        label_of_record.Location = New Point(60, 114)
+        label_of_record.Margin = New Padding(3, 2, 3, 2)
         label_of_record.Name = "label_of_record"
-        label_of_record.Size = New Size(299, 27)
+        label_of_record.Size = New Size(262, 23)
         label_of_record.TabIndex = 85
         ' 
         ' RecordExpenseControl
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = Color.White
+        BackColor = Color.Transparent
         Controls.Add(Label2)
         Controls.Add(label_of_record)
         Controls.Add(R2_check)
@@ -227,8 +237,9 @@ Partial Class RecordExpenseControl
         Controls.Add(RecordExpenseTitleLabel)
         Controls.Add(devider2)
         Controls.Add(Label1)
+        Margin = New Padding(3, 2, 3, 2)
         Name = "RecordExpenseControl"
-        Size = New Size(434, 690)
+        Size = New Size(380, 518)
         ResumeLayout(False)
         PerformLayout()
     End Sub
