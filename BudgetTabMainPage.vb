@@ -146,7 +146,7 @@ Public Class BudgetTabMainPage
         'show budget page controls
         showMainPageControls()
         Dim cD As Date = (DateTime.Now).Date
-        Me.budgetHistoryControl.addExpense(New Date(2023, 12, 8), amount, payer_name, label_name_record)
+        Me.budgetHistoryControl.addExpense(cD, amount, payer_name, label_name_record)
 
     End Sub
     Private Sub CancelExpenseButton_Click(sender As Object, e As EventArgs)
@@ -224,30 +224,6 @@ Public Class BudgetTabMainPage
         AddHandler roommateOwingsPage.ExitButtonClick, AddressOf exitButton_click
 
     End Sub
-    'Private Sub RoommateOweButton2_RoommateOweButtonClick(sender As Object, e As EventArgs) Handles RoommateOweButton2.RoommateOweButtonClick
-    '    hideMainPageControls()
-    '    roommateOwingsPage = New RoommateOwingsList(2, Me)
-    '    Me.Controls.Add(roommateOwingsPage)
-
-    '    AddHandler roommateOwingsPage.ExitButtonClick, AddressOf exitButton_click
-
-    'End Sub
-    'Private Sub RoommateOweButton3_RoommateOweButtonClick(sender As Object, e As EventArgs) Handles RoommateOweButton3.RoommateOweButtonClick
-    '    hideMainPageControls()
-    '    roommateOwingsPage = New RoommateOwingsList(3, Me)
-    '    Me.Controls.Add(roommateOwingsPage)
-
-    '    AddHandler roommateOwingsPage.ExitButtonClick, AddressOf exitButton_click
-
-    'End Sub
-    'Private Sub RoommateOweButton4_RoommateOweButtonClick(sender As Object, e As EventArgs) Handles RoommateOweButton4.RoommateOweButtonClick
-    '    hideMainPageControls()
-    '    roommateOwingsPage = New RoommateOwingsList(4, Me)
-    '    Me.Controls.Add(roommateOwingsPage)
-
-    '    AddHandler roommateOwingsPage.ExitButtonClick, AddressOf exitButton_click
-
-    'End Sub
 
     Private Sub exitButton_click(sender As Object, e As EventArgs)
         Me.Controls.Remove(roommateOwingsPage)

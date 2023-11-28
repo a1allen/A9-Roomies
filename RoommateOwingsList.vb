@@ -35,12 +35,12 @@
         For x As Integer = 0 To 3
             If (currRom - 1) <> x Then
                 If roommateSummaries(k)(x) > 0 Then
-                    RoommateOwesArray(roommateIndex).Text = "Roommate " + (x + 1).ToString + " Lent: "
+                    RoommateOwesArray(roommateIndex).Text = "Roommate " + (x + 1).ToString + " Lent You: "
                     RoommateMoneyArray(roommateIndex).Text = "$" + Math.Abs(Math.Round(roommateSummaries(k)(x), 2)).ToString()
                     roommateIndex += 1
 
                 Else
-                    RoommateOwesArray(roommateIndex).Text = "Roommate " + (x + 1).ToString + " Owes: "
+                    RoommateOwesArray(roommateIndex).Text = "Roommate " + (x + 1).ToString + " Owes You: "
                     RoommateMoneyArray(roommateIndex).Text = "$" + Math.Abs(Math.Round(roommateSummaries(k)(x), 2)).ToString()
                     roommateIndex += 1
 
